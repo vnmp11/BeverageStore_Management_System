@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Beverage_Management_System
 {
     public partial class Staff : Form
     {
+
         public Staff()
         {
             InitializeComponent();
+          
         }
 
         private void label12_Click(object sender, EventArgs e)
