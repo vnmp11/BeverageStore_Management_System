@@ -17,6 +17,17 @@ namespace Beverage_Management_System
         public Staff()
         {
             InitializeComponent();
+            /*SqlConnection con = new SqlConnection("Data Source=beverage-stores-erver.database.windows.net;Initial Catalog=beverage-store;User ID=votrungtin;Password=Trungtin0701@");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("Select NAME from PERSON where ID_PERSON = @ID", con);
+            cmd.Parameters.AddWithValue("@ID", 2);
+            SqlDataReader da = cmd.ExecuteReader();
+            if(da.Read()) 
+            {
+                guna2TextBox5.Text = da["NAME"].ToString();
+            }
+            con.Close();*/
           
         }
 

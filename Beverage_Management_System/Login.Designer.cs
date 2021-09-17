@@ -37,11 +37,11 @@ namespace Beverage_Management_System
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Login = new Guna.UI2.WinForms.Guna2Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.txb_passLogin = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_Password = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.guna2TextBox14 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_Username = new Guna.UI2.WinForms.Guna2TextBox();
             this.btt_unvisible2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btt_visible2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btt_close = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -77,11 +77,11 @@ namespace Beverage_Management_System
             // panel3
             // 
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.guna2Button5);
+            this.panel3.Controls.Add(this.bt_Login);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.txb_passLogin);
+            this.panel3.Controls.Add(this.txt_Password);
             this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.guna2TextBox14);
+            this.panel3.Controls.Add(this.txt_Username);
             this.panel3.Controls.Add(this.btt_unvisible2);
             this.panel3.Controls.Add(this.btt_visible2);
             this.panel3.Location = new System.Drawing.Point(482, 38);
@@ -101,25 +101,26 @@ namespace Beverage_Management_System
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
-            // guna2Button5
+            // bt_Login
             // 
-            this.guna2Button5.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.BorderRadius = 25;
-            this.guna2Button5.BorderThickness = 1;
-            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
-            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(176, 337);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.PressedColor = System.Drawing.Color.DarkRed;
-            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(120, 50);
-            this.guna2Button5.TabIndex = 22;
-            this.guna2Button5.Text = "LOGIN";
-            this.guna2Button5.Click += new System.EventHandler(this.guna2Button4_Click);
+            this.bt_Login.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_Login.BorderRadius = 25;
+            this.bt_Login.BorderThickness = 1;
+            this.bt_Login.CheckedState.Parent = this.bt_Login;
+            this.bt_Login.CustomImages.Parent = this.bt_Login;
+            this.bt_Login.DisabledState.Parent = this.bt_Login;
+            this.bt_Login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.bt_Login.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_Login.ForeColor = System.Drawing.Color.White;
+            this.bt_Login.HoverState.Parent = this.bt_Login;
+            this.bt_Login.Location = new System.Drawing.Point(176, 337);
+            this.bt_Login.Name = "bt_Login";
+            this.bt_Login.PressedColor = System.Drawing.Color.DarkRed;
+            this.bt_Login.ShadowDecoration.Parent = this.bt_Login;
+            this.bt_Login.Size = new System.Drawing.Size(120, 50);
+            this.bt_Login.TabIndex = 22;
+            this.bt_Login.Text = "LOGIN";
+            this.bt_Login.Click += new System.EventHandler(this.bt_Login_Click);
             // 
             // label10
             // 
@@ -129,37 +130,37 @@ namespace Beverage_Management_System
             this.label10.Location = new System.Drawing.Point(28, 118);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 24);
+            this.label10.Size = new System.Drawing.Size(73, 17);
             this.label10.TabIndex = 1;
             this.label10.Text = "Username";
             // 
-            // txb_passLogin
+            // txt_Password
             // 
-            this.txb_passLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_passLogin.BorderRadius = 5;
-            this.txb_passLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txb_passLogin.DefaultText = "";
-            this.txb_passLogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txb_passLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txb_passLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_passLogin.DisabledState.Parent = this.txb_passLogin;
-            this.txb_passLogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_passLogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_passLogin.FocusedState.Parent = this.txb_passLogin;
-            this.txb_passLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_passLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_passLogin.HoverState.Parent = this.txb_passLogin;
-            this.txb_passLogin.Location = new System.Drawing.Point(32, 249);
-            this.txb_passLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txb_passLogin.Name = "txb_passLogin";
-            this.txb_passLogin.PasswordChar = '\0';
-            this.txb_passLogin.PlaceholderText = "";
-            this.txb_passLogin.SelectedText = "";
-            this.txb_passLogin.ShadowDecoration.Parent = this.txb_passLogin;
-            this.txb_passLogin.Size = new System.Drawing.Size(365, 44);
-            this.txb_passLogin.TabIndex = 20;
-            this.txb_passLogin.UseSystemPasswordChar = true;
-            this.txb_passLogin.TextChanged += new System.EventHandler(this.txb_passLogin_TextChanged);
+            this.txt_Password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txt_Password.BorderRadius = 5;
+            this.txt_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Password.DefaultText = "";
+            this.txt_Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Password.DisabledState.Parent = this.txt_Password;
+            this.txt_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Password.FocusedState.Parent = this.txt_Password;
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txt_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Password.HoverState.Parent = this.txt_Password;
+            this.txt_Password.Location = new System.Drawing.Point(32, 249);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '\0';
+            this.txt_Password.PlaceholderText = "";
+            this.txt_Password.SelectedText = "";
+            this.txt_Password.ShadowDecoration.Parent = this.txt_Password;
+            this.txt_Password.Size = new System.Drawing.Size(365, 44);
+            this.txt_Password.TabIndex = 20;
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
             // label13
             // 
@@ -172,31 +173,32 @@ namespace Beverage_Management_System
             this.label13.TabIndex = 19;
             this.label13.Text = "Password";
             // 
-            // guna2TextBox14
+            // txt_Username
             // 
-            this.guna2TextBox14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2TextBox14.BorderRadius = 5;
-            this.guna2TextBox14.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox14.DefaultText = "";
-            this.guna2TextBox14.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox14.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox14.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox14.DisabledState.Parent = this.guna2TextBox14;
-            this.guna2TextBox14.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox14.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox14.FocusedState.Parent = this.guna2TextBox14;
-            this.guna2TextBox14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2TextBox14.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox14.HoverState.Parent = this.guna2TextBox14;
-            this.guna2TextBox14.Location = new System.Drawing.Point(32, 156);
-            this.guna2TextBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox14.Name = "guna2TextBox14";
-            this.guna2TextBox14.PasswordChar = '\0';
-            this.guna2TextBox14.PlaceholderText = "";
-            this.guna2TextBox14.SelectedText = "";
-            this.guna2TextBox14.ShadowDecoration.Parent = this.guna2TextBox14;
-            this.guna2TextBox14.Size = new System.Drawing.Size(365, 44);
-            this.guna2TextBox14.TabIndex = 17;
+            this.txt_Username.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txt_Username.BorderRadius = 5;
+            this.txt_Username.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Username.DefaultText = "";
+            this.txt_Username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_Username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_Username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Username.DisabledState.Parent = this.txt_Username;
+            this.txt_Username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Username.FocusedState.Parent = this.txt_Username;
+            this.txt_Username.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txt_Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Username.HoverState.Parent = this.txt_Username;
+            this.txt_Username.Location = new System.Drawing.Point(32, 156);
+            this.txt_Username.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Username.Name = "txt_Username";
+            this.txt_Username.PasswordChar = '\0';
+            this.txt_Username.PlaceholderText = "";
+            this.txt_Username.SelectedText = "";
+            this.txt_Username.ShadowDecoration.Parent = this.txt_Username;
+            this.txt_Username.Size = new System.Drawing.Size(365, 44);
+            this.txt_Username.TabIndex = 17;
             // 
             // btt_unvisible2
             // 
@@ -204,9 +206,12 @@ namespace Beverage_Management_System
             this.btt_unvisible2.HoverState.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
             this.btt_unvisible2.HoverState.Parent = this.btt_unvisible2;
             this.btt_unvisible2.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
+            this.btt_unvisible2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_unvisible2.ImageRotate = 0F;
             this.btt_unvisible2.Location = new System.Drawing.Point(404, 258);
             this.btt_unvisible2.Name = "btt_unvisible2";
             this.btt_unvisible2.PressedState.Parent = this.btt_unvisible2;
+            this.btt_unvisible2.ShadowDecoration.Parent = this.btt_unvisible2;
             this.btt_unvisible2.Size = new System.Drawing.Size(32, 23);
             this.btt_unvisible2.TabIndex = 27;
             this.btt_unvisible2.Click += new System.EventHandler(this.btt_unvisible2_Click);
@@ -217,9 +222,12 @@ namespace Beverage_Management_System
             this.btt_visible2.HoverState.Image = global::Beverage_Management_System.Properties.Resources.view;
             this.btt_visible2.HoverState.Parent = this.btt_visible2;
             this.btt_visible2.Image = global::Beverage_Management_System.Properties.Resources.view;
+            this.btt_visible2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_visible2.ImageRotate = 0F;
             this.btt_visible2.Location = new System.Drawing.Point(404, 258);
             this.btt_visible2.Name = "btt_visible2";
             this.btt_visible2.PressedState.Parent = this.btt_visible2;
+            this.btt_visible2.ShadowDecoration.Parent = this.btt_visible2;
             this.btt_visible2.Size = new System.Drawing.Size(32, 23);
             this.btt_visible2.TabIndex = 26;
             this.btt_visible2.Click += new System.EventHandler(this.btt_visible2_Click);
@@ -231,9 +239,12 @@ namespace Beverage_Management_System
             this.btt_close.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_close.HoverState.Parent = this.btt_close;
             this.btt_close.Image = global::Beverage_Management_System.Properties.Resources.letter_x;
+            this.btt_close.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_close.ImageRotate = 0F;
             this.btt_close.Location = new System.Drawing.Point(927, 12);
             this.btt_close.Name = "btt_close";
             this.btt_close.PressedState.Parent = this.btt_close;
+            this.btt_close.ShadowDecoration.Parent = this.btt_close;
             this.btt_close.Size = new System.Drawing.Size(39, 45);
             this.btt_close.TabIndex = 25;
             this.btt_close.Click += new System.EventHandler(this.btt_close_Click);
@@ -274,11 +285,11 @@ namespace Beverage_Management_System
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button bt_Login;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2TextBox txb_passLogin;
+        private Guna.UI2.WinForms.Guna2TextBox txt_Password;
         private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox14;
+        private Guna.UI2.WinForms.Guna2TextBox txt_Username;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2ImageButton btt_visible2;
         private Guna.UI2.WinForms.Guna2ImageButton btt_unvisible2;
