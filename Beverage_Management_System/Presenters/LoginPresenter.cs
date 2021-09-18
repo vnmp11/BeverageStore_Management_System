@@ -37,13 +37,15 @@ namespace Beverage_Management_System.Presenters
                 form.Hide();
                 Dashboard dashboard = new Dashboard();
                 dashboard.Show();
-                MessageBox.Show("You have been successfully logged in", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.showBox("You have been successfully logged in", "Message");
+                //MessageBox.Show("You have been successfully logged in", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
             }
             else
             {
                 form.Refresh_UsernameAndPassword();
-                MessageBox.Show("Your username or password is incorrect", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.showBox("Your username or password is incorrect", "Message");
+                //MessageBox.Show("Your username or password is incorrect", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
       
             }
             sqlcon.Close(); 

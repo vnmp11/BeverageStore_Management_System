@@ -110,6 +110,12 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyMessageBox.Designer.cs">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Person.cs" />
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
@@ -190,6 +196,9 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyMessageBox.resx">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,7 +248,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Image1.bmp" />
   </ItemGroup>
