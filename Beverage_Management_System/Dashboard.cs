@@ -339,5 +339,12 @@ namespace Beverage_Management_System
             lb_Role.Text = role;
         }
 
+        private void bt_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Login login = new Login();
+            login.Show();
+            MyMessageBox.showBox("Logged out successfully", "Message");
+        }
     }
 }

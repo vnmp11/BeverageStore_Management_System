@@ -170,6 +170,7 @@
     <Compile Include="TrackingNote.Designer.cs">
       <DependentUpon>TrackingNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\IAddStaff.cs" />
     <Compile Include="View\ILogin.cs" />
     <Compile Include="View\IStaff.cs" />
     <EmbeddedResource Include="AddAgency.resx">

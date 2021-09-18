@@ -32,11 +32,10 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
             this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dtGridView_Staff = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,10 @@ namespace Beverage_Management_System
             this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ROLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Reload = new Guna.UI2.WinForms.Guna2Button();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_Staff)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +68,8 @@ namespace Beverage_Management_System
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.bt_Reload);
+            this.panel6.Controls.Add(this.bt_Delete);
             this.panel6.Controls.Add(this.dtGridView_Staff);
             this.panel6.Controls.Add(this.guna2TextBox5);
             this.panel6.Controls.Add(this.label12);
@@ -82,6 +87,7 @@ namespace Beverage_Management_System
             this.dtGridView_Staff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtGridView_Staff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGridView_Staff.BackgroundColor = System.Drawing.Color.White;
+            this.dtGridView_Staff.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridView_Staff.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dtGridView_Staff.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -140,57 +146,7 @@ namespace Beverage_Management_System
             this.dtGridView_Staff.ThemeStyle.RowsStyle.Height = 22;
             this.dtGridView_Staff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtGridView_Staff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            // 
-            // guna2TextBox5
-            // 
-            this.guna2TextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2TextBox5.BorderRadius = 25;
-            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox5.DefaultText = "";
-            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.DisabledState.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.FocusedState.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.HoverState.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
-            this.guna2TextBox5.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.guna2TextBox5.Location = new System.Drawing.Point(34, 67);
-            this.guna2TextBox5.Name = "guna2TextBox5";
-            this.guna2TextBox5.PasswordChar = '\0';
-            this.guna2TextBox5.PlaceholderText = "";
-            this.guna2TextBox5.SelectedText = "";
-            this.guna2TextBox5.ShadowDecoration.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.Size = new System.Drawing.Size(202, 41);
-            this.guna2TextBox5.TabIndex = 33;
-            // 
-            // guna2Button4
-            // 
-            this.guna2Button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
-            this.guna2Button4.BorderRadius = 25;
-            this.guna2Button4.BorderThickness = 1;
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Image = global::Beverage_Management_System.Properties.Resources.ic_adduser;
-            this.guna2Button4.Location = new System.Drawing.Point(705, 67);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(198, 41);
-            this.guna2Button4.TabIndex = 22;
-            this.guna2Button4.Text = "Add a new staff member";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            this.dtGridView_Staff.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_Staff_CellContentDoubleClick);
             // 
             // ID
             // 
@@ -271,6 +227,105 @@ namespace Beverage_Management_System
             this.ROLE.ReadOnly = true;
             this.ROLE.Width = 80;
             // 
+            // guna2TextBox5
+            // 
+            this.guna2TextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.guna2TextBox5.BorderRadius = 25;
+            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox5.DefaultText = "";
+            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.DisabledState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.FocusedState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.HoverState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
+            this.guna2TextBox5.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.guna2TextBox5.Location = new System.Drawing.Point(34, 67);
+            this.guna2TextBox5.Name = "guna2TextBox5";
+            this.guna2TextBox5.PasswordChar = '\0';
+            this.guna2TextBox5.PlaceholderText = "";
+            this.guna2TextBox5.SelectedText = "";
+            this.guna2TextBox5.ShadowDecoration.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.Size = new System.Drawing.Size(202, 41);
+            this.guna2TextBox5.TabIndex = 33;
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
+            this.guna2Button4.BorderRadius = 25;
+            this.guna2Button4.BorderThickness = 1;
+            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
+            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
+            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
+            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.HoverState.Parent = this.guna2Button4;
+            this.guna2Button4.Image = global::Beverage_Management_System.Properties.Resources.ic_adduser;
+            this.guna2Button4.Location = new System.Drawing.Point(705, 67);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
+            this.guna2Button4.Size = new System.Drawing.Size(198, 41);
+            this.guna2Button4.TabIndex = 22;
+            this.guna2Button4.Text = "Add a new staff member";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // bt_Delete
+            // 
+            this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.BorderRadius = 25;
+            this.bt_Delete.BorderThickness = 1;
+            this.bt_Delete.CheckedState.Parent = this.bt_Delete;
+            this.bt_Delete.CustomImages.Parent = this.bt_Delete;
+            this.bt_Delete.DisabledState.Parent = this.bt_Delete;
+            this.bt_Delete.FillColor = System.Drawing.Color.White;
+            this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.HoverState.Parent = this.bt_Delete;
+            this.bt_Delete.Image = ((System.Drawing.Image)(resources.GetObject("bt_Delete.Image")));
+            this.bt_Delete.Location = new System.Drawing.Point(580, 67);
+            this.bt_Delete.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_Delete.Name = "bt_Delete";
+            this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
+            this.bt_Delete.Size = new System.Drawing.Size(106, 41);
+            this.bt_Delete.TabIndex = 89;
+            this.bt_Delete.Text = "DELETE";
+            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
+            // 
+            // bt_Reload
+            // 
+            this.bt_Reload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Reload.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Reload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bt_Reload.BorderRadius = 25;
+            this.bt_Reload.BorderThickness = 1;
+            this.bt_Reload.CheckedState.Parent = this.bt_Reload;
+            this.bt_Reload.CustomImages.Parent = this.bt_Reload;
+            this.bt_Reload.DisabledState.Parent = this.bt_Reload;
+            this.bt_Reload.FillColor = System.Drawing.Color.White;
+            this.bt_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Reload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bt_Reload.HoverState.Parent = this.bt_Reload;
+            this.bt_Reload.Image = ((System.Drawing.Image)(resources.GetObject("bt_Reload.Image")));
+            this.bt_Reload.Location = new System.Drawing.Point(449, 67);
+            this.bt_Reload.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_Reload.Name = "bt_Reload";
+            this.bt_Reload.ShadowDecoration.Parent = this.bt_Reload;
+            this.bt_Reload.Size = new System.Drawing.Size(106, 41);
+            this.bt_Reload.TabIndex = 90;
+            this.bt_Reload.Text = "RELOAD";
+            this.bt_Reload.Click += new System.EventHandler(this.bt_Reload_Click);
+            // 
             // Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,5 +358,7 @@ namespace Beverage_Management_System
         private System.Windows.Forms.DataGridViewTextBoxColumn PHONE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ADDRESS;
         private System.Windows.Forms.DataGridViewTextBoxColumn ROLE;
+        private Guna.UI2.WinForms.Guna2Button bt_Delete;
+        private Guna.UI2.WinForms.Guna2Button bt_Reload;
     }
 }

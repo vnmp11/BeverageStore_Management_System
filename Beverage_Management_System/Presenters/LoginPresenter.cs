@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 using System.Globalization;
+using Beverage_Management_System.Connection;
 
 namespace Beverage_Management_System.Presenters
 {
@@ -26,11 +27,10 @@ namespace Beverage_Management_System.Presenters
             string username = loginView.username.Trim();
             string password = loginView.password.Trim();
 
-            SqlConnection sqlcon = new SqlConnection("Data Source=beverage-stores-erver.database.windows.net;Initial Catalog=beverage-store;User ID=votrungtin;Password=Trungtin0701@");
-            sqlcon.Open();
-
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
             string querry = "Select * from PERSON where USERNAME = '" + username + "' and PASSWORD = '" + password + "';";
-            SqlDataAdapter sda = new SqlDataAdapter(querry, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
             if (dtbl.Rows.Count > 0)
@@ -67,7 +67,7 @@ namespace Beverage_Management_System.Presenters
                 MyMessageBox.showBox("Your username or password is incorrect", "Message");
       
             }
-            sqlcon.Close(); 
+            myConnection.sqlcon.Close(); 
         }
 
         public void setDashboard_WithRole(int ROLE, string NAME, Dashboard dashboard)

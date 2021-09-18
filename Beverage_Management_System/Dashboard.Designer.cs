@@ -51,7 +51,7 @@ namespace Beverage_Management_System
             this.pl_Dashboard_Waiter = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_LogOut = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -64,7 +64,7 @@ namespace Beverage_Management_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.btt_hide = new Guna.UI2.WinForms.Guna2Button();
             this.btt_close = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pB_Image = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btt_maximize = new Guna.UI2.WinForms.Guna2Button();
             this.btt_minimize = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -76,7 +76,7 @@ namespace Beverage_Management_System
             this.pl_SubMenuProduct.SuspendLayout();
             this.pl_Dashboard_Waiter.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pB_Image)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +109,7 @@ namespace Beverage_Management_System
             this.panel2.Controls.Add(this.pL_Dashboard_Bartender);
             this.panel2.Controls.Add(this.pl_Dashboard_Owner);
             this.panel2.Controls.Add(this.pl_Dashboard_Waiter);
-            this.panel2.Controls.Add(this.guna2Button9);
+            this.panel2.Controls.Add(this.bt_LogOut);
             this.panel2.Location = new System.Drawing.Point(0, 61);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
@@ -463,28 +463,29 @@ namespace Beverage_Management_System
             this.guna2Button4.TextOffset = new System.Drawing.Point(13, 0);
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click_1);
             // 
-            // guna2Button9
+            // bt_LogOut
             // 
-            this.guna2Button9.CheckedState.Parent = this.guna2Button9;
-            this.guna2Button9.CustomImages.Parent = this.guna2Button9;
-            this.guna2Button9.DisabledState.Parent = this.guna2Button9;
-            this.guna2Button9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Button9.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.HoverState.Parent = this.guna2Button9;
-            this.guna2Button9.Image = global::Beverage_Management_System.Properties.Resources.logout;
-            this.guna2Button9.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button9.ImageOffset = new System.Drawing.Point(16, 0);
-            this.guna2Button9.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button9.Location = new System.Drawing.Point(0, 608);
-            this.guna2Button9.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
-            this.guna2Button9.Size = new System.Drawing.Size(176, 48);
-            this.guna2Button9.TabIndex = 1;
-            this.guna2Button9.Text = "LOG OUT";
-            this.guna2Button9.TextOffset = new System.Drawing.Point(20, 0);
+            this.bt_LogOut.CheckedState.Parent = this.bt_LogOut;
+            this.bt_LogOut.CustomImages.Parent = this.bt_LogOut;
+            this.bt_LogOut.DisabledState.Parent = this.bt_LogOut;
+            this.bt_LogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bt_LogOut.FillColor = System.Drawing.Color.Transparent;
+            this.bt_LogOut.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_LogOut.ForeColor = System.Drawing.Color.White;
+            this.bt_LogOut.HoverState.Parent = this.bt_LogOut;
+            this.bt_LogOut.Image = global::Beverage_Management_System.Properties.Resources.logout;
+            this.bt_LogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_LogOut.ImageOffset = new System.Drawing.Point(16, 0);
+            this.bt_LogOut.ImageSize = new System.Drawing.Size(30, 30);
+            this.bt_LogOut.Location = new System.Drawing.Point(0, 608);
+            this.bt_LogOut.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_LogOut.Name = "bt_LogOut";
+            this.bt_LogOut.ShadowDecoration.Parent = this.bt_LogOut;
+            this.bt_LogOut.Size = new System.Drawing.Size(176, 48);
+            this.bt_LogOut.TabIndex = 1;
+            this.bt_LogOut.Text = "LOG OUT";
+            this.bt_LogOut.TextOffset = new System.Drawing.Point(20, 0);
+            this.bt_LogOut.Click += new System.EventHandler(this.bt_LogOut_Click);
             // 
             // guna2Button6
             // 
@@ -604,7 +605,7 @@ namespace Beverage_Management_System
             this.panel1.Controls.Add(this.btt_hide);
             this.panel1.Controls.Add(this.btt_close);
             this.panel1.Controls.Add(this.pl_content);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel1.Controls.Add(this.pB_Image);
             this.panel1.Controls.Add(this.lb_Name);
             this.panel1.Controls.Add(this.lb_Role);
             this.panel1.Controls.Add(this.label1);
@@ -656,19 +657,19 @@ namespace Beverage_Management_System
             this.btt_close.TabIndex = 27;
             this.btt_close.Click += new System.EventHandler(this.btt_close_Click_1);
             // 
-            // guna2CirclePictureBox1
+            // pB_Image
             // 
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(16, 10);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(30, 32);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 23;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.pB_Image.Image = ((System.Drawing.Image)(resources.GetObject("pB_Image.Image")));
+            this.pB_Image.ImageRotate = 0F;
+            this.pB_Image.Location = new System.Drawing.Point(16, 10);
+            this.pB_Image.Margin = new System.Windows.Forms.Padding(2);
+            this.pB_Image.Name = "pB_Image";
+            this.pB_Image.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pB_Image.ShadowDecoration.Parent = this.pB_Image;
+            this.pB_Image.Size = new System.Drawing.Size(30, 32);
+            this.pB_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pB_Image.TabIndex = 23;
+            this.pB_Image.TabStop = false;
             // 
             // btt_maximize
             // 
@@ -744,7 +745,7 @@ namespace Beverage_Management_System
             this.pl_Dashboard_Waiter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pB_Image)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -756,13 +757,13 @@ namespace Beverage_Management_System
         private System.Windows.Forms.Panel pl_menu;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pB_Image;
         private System.Windows.Forms.Label lb_Name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_Role;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button bt_LogOut;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pl_Dashboard_Waiter;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
