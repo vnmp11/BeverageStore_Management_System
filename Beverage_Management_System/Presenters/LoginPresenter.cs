@@ -8,6 +8,7 @@ using Beverage_Management_System.View;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Globalization;
 
 namespace Beverage_Management_System.Presenters
 {
@@ -35,21 +36,64 @@ namespace Beverage_Management_System.Presenters
             if (dtbl.Rows.Count > 0)
             {
                 form.Hide();
-                Dashboard dashboard = new Dashboard();
-                dashboard.Show();
+
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    int ID = Convert.ToInt32(row["ID_PERSON"]);
+                    string USERNAME = row["USERNAME"].ToString();
+                    string PASSWORD = row["PASSWORD"].ToString();
+                    string NAME = row["NAME"].ToString();
+
+                    DateTime date = Convert.ToDateTime(row["DOB"]);
+                    string DOB = date.ToString("dd-MM-yyyy");
+
+                    string SEX = row["SEX"].ToString();
+                    string PHONE = row["PHONE"].ToString();
+                    string ADDRESS = row["ADDRESS"].ToString();
+                    int ROLE = Convert.ToInt32(row["ROLE"]);
+
+                    Dashboard dashboard = new Dashboard(ID);
+                    dashboard.Show();
+                    setDashboard_WithRole(ROLE, NAME, dashboard);
+                   
+                }
+
                 MyMessageBox.showBox("You have been successfully logged in", "Message");
-                //MessageBox.Show("You have been successfully logged in", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
             }
             else
             {
                 form.Refresh_UsernameAndPassword();
                 MyMessageBox.showBox("Your username or password is incorrect", "Message");
-                //MessageBox.Show("Your username or password is incorrect", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
       
             }
             sqlcon.Close(); 
         }
 
+        public void setDashboard_WithRole(int ROLE, string NAME, Dashboard dashboard)
+        {
+            switch (ROLE)
+            {
+                case 1:
+                    dashboard.setDashboard_Waiter();
+                    dashboard.setPersonalInformation(NAME, "Waiter");
+                    break;
+                case 2:
+                    dashboard.setDashboard_Bartender();
+                    dashboard.setPersonalInformation(NAME, "Bartender");
+                    break;
+                case 3:
+                    dashboard.setDashboard_Accountant();
+                    dashboard.setPersonalInformation(NAME, "Accountant");
+                    break;
+                default:
+                    dashboard.setDashboard_Owner();
+                    dashboard.setPersonalInformation(NAME, "Owner");
+                    break;
+
+            }
+        }
+
     }
+
 }

@@ -2,15 +2,23 @@
 using System.Runtime.InteropServices;
 using System;
 using System.Drawing;
-
+using Beverage_Management_System.Model;
 
 namespace Beverage_Management_System
 {
     public partial class Dashboard : Form
     {
+        int id_person = -1;
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        public Dashboard(int ID)
+        {
+            InitializeComponent();
+
+            id_person = ID;
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -166,22 +174,6 @@ namespace Beverage_Management_System
             openChildForm(new Inventory());
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            pl_Dashboard_Owner.Visible = true;
-            pl_Dashboard_Waiter.Visible = false;
-            pL_Dashboard_Bartender.Visible = false;
-            pl_Dashboard_Accounting.Visible = false;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            pl_Dashboard_Owner.Visible = false;
-            pl_Dashboard_Waiter.Visible = true;
-            pL_Dashboard_Bartender.Visible = false;
-            pl_Dashboard_Accounting.Visible = false;
-        }
-
         private void guna2Button4_Click(object sender, EventArgs e)
         {
            
@@ -296,24 +288,6 @@ namespace Beverage_Management_System
         {
             openChildForm(new ImportForm());
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            pl_Dashboard_Owner.Visible = false;
-            pl_Dashboard_Waiter.Visible = false;
-            pL_Dashboard_Bartender.Visible = true;
-            pl_Dashboard_Accounting.Visible = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            pl_Dashboard_Owner.Visible = false;
-            pl_Dashboard_Waiter.Visible = false;
-            pL_Dashboard_Bartender.Visible = false;
-            pl_Dashboard_Accounting.Visible = true;
-        }
-
         private void guna2Button2_Click_1(object sender, EventArgs e)
         {
             openChildForm(new TrackingNote());
@@ -328,5 +302,42 @@ namespace Beverage_Management_System
         {
 
         }
+
+        public void setDashboard_Owner()
+        {
+            pl_Dashboard_Owner.Visible = true;
+            pl_Dashboard_Waiter.Visible = false;
+            pL_Dashboard_Bartender.Visible = false;
+            pl_Dashboard_Accounting.Visible = false;
+        }
+
+        public void setDashboard_Waiter()
+        {
+            pl_Dashboard_Owner.Visible = false;
+            pl_Dashboard_Waiter.Visible = true;
+            pL_Dashboard_Bartender.Visible = false;
+            pl_Dashboard_Accounting.Visible = false;
+        }
+        public void setDashboard_Bartender()
+        {
+            pl_Dashboard_Owner.Visible = false;
+            pl_Dashboard_Waiter.Visible = false;
+            pL_Dashboard_Bartender.Visible = true;
+            pl_Dashboard_Accounting.Visible = false;
+        }
+        public void setDashboard_Accountant()
+        {
+            pl_Dashboard_Owner.Visible = false;
+            pl_Dashboard_Waiter.Visible = false;
+            pL_Dashboard_Bartender.Visible = false;
+            pl_Dashboard_Accounting.Visible = true;
+        }
+
+        public void setPersonalInformation(string name, string role)
+        {
+            lb_Name.Text = name;
+            lb_Role.Text = role;
+        }
+
     }
 }
