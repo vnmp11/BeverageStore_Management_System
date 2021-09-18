@@ -8,15 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Beverage_Management_System.Connection;
+using Beverage_Management_System.Model;
+using Beverage_Management_System.Presenters;
+using Beverage_Management_System.View;
 
 namespace Beverage_Management_System
 {
-    public partial class Staff : Form
+    public partial class Staff : Form, IStaff
     {
-
         public Staff()
         {
             InitializeComponent();
+            StaffPresenter presenter = new StaffPresenter(this);
+            presenter.setDataGV_Fill(dtGridView_Staff);
+
             /*SqlConnection con = new SqlConnection("Data Source=beverage-stores-erver.database.windows.net;Initial Catalog=beverage-store;User ID=votrungtin;Password=Trungtin0701@");
             con.Open();
 
@@ -47,9 +53,5 @@ namespace Beverage_Management_System
             frm.ShowDialog();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

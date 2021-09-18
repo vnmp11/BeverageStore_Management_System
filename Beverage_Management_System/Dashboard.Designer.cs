@@ -551,7 +551,7 @@ namespace Beverage_Management_System
             this.lb_Name.Location = new System.Drawing.Point(50, 15);
             this.lb_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
             this.lb_Name.Name = "lb_Name";
-            this.lb_Name.Size = new System.Drawing.Size(71, 16);
+            this.lb_Name.Size = new System.Drawing.Size(95, 16);
             this.lb_Name.TabIndex = 24;
             this.lb_Name.Text = "Username";
             // 
@@ -564,7 +564,7 @@ namespace Beverage_Management_System
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label1.Location = new System.Drawing.Point(130, 13);
+            this.label1.Location = new System.Drawing.Point(157, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(2, 18);
@@ -578,7 +578,7 @@ namespace Beverage_Management_System
             this.lb_Role.AutoSize = true;
             this.lb_Role.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_Role.Location = new System.Drawing.Point(136, 15);
+            this.lb_Role.Location = new System.Drawing.Point(174, 15);
             this.lb_Role.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
             this.lb_Role.Name = "lb_Role";
             this.lb_Role.Size = new System.Drawing.Size(37, 16);

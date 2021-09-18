@@ -80,6 +80,7 @@
     <Compile Include="AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connection\MyConnection.cs" />
     <Compile Include="FinancialNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +125,7 @@
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\StaffPresenter.cs" />
     <Compile Include="Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +171,7 @@
       <DependentUpon>TrackingNote.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ILogin.cs" />
+    <Compile Include="View\IStaff.cs" />
     <EmbeddedResource Include="AddAgency.resx">
       <DependentUpon>AddAgency.cs</DependentUpon>
     </EmbeddedResource>
