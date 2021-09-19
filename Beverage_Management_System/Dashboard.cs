@@ -319,6 +319,7 @@ namespace Beverage_Management_System
             pl_Dashboard_Waiter.Visible = true;
             pL_Dashboard_Bartender.Visible = false;
             pl_Dashboard_Accounting.Visible = false;
+            //pB_Image.Image =
         }
         public void setDashboard_Bartender()
         {
@@ -326,6 +327,7 @@ namespace Beverage_Management_System
             pl_Dashboard_Waiter.Visible = false;
             pL_Dashboard_Bartender.Visible = true;
             pl_Dashboard_Accounting.Visible = false;
+            //pb_Image.Image = 
         }
         public void setDashboard_Accountant()
         {
@@ -333,7 +335,9 @@ namespace Beverage_Management_System
             pl_Dashboard_Waiter.Visible = false;
             pL_Dashboard_Bartender.Visible = false;
             pl_Dashboard_Accounting.Visible = true;
+            //pb_Image.Image = 
         }
+
 
         public void setPersonalInformation(string name, string role)
         {

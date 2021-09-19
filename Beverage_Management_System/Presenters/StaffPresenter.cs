@@ -123,6 +123,69 @@ namespace Beverage_Management_System.Presenters
             form.Show();
         }
 
+        public void setInformation(Guna.UI2.WinForms.Guna2TextBox txt_ID, Guna.UI2.WinForms.Guna2TextBox txt_Username, Guna.UI2.WinForms.Guna2TextBox txt_Password,
+            Guna.UI2.WinForms.Guna2TextBox txt_Name, RadioButton rb_Male, RadioButton rb_Female, Guna.UI2.WinForms.Guna2DateTimePicker dtPicker_DOB,
+            Guna.UI2.WinForms.Guna2TextBox txt_Phone, Guna.UI2.WinForms.Guna2TextBox txt_Address, RadioButton rb_Waiter, RadioButton rb_Bartender, RadioButton rb_Accountant)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+            string querry = "Select * from PERSON where ID_PERSON = '" + id + "';";
+            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    txt_ID.Text = row["ID_PERSON"].ToString();
+                    txt_Username.Text = row["USERNAME"].ToString();
+                    txt_Password.Text = row["PASSWORD"].ToString();
+                    txt_Name.Text = row["NAME"].ToString();
+
+                    DateTime date = Convert.ToDateTime(row["DOB"]);
+                    dtPicker_DOB.Value = date;
+                    string SEX = row["SEX"].ToString();
+                    if (SEX != "Male")
+                    {
+                        rb_Female.Checked = true;
+                        rb_Male.Checked = false;
+                    }
+                    else
+                    {
+                        rb_Male.Checked = true;
+                        rb_Female.Checked = false;
+                    }
+
+                    txt_Phone.Text = row["PHONE"].ToString();
+                    txt_Address.Text = row["ADDRESS"].ToString();
+
+                    int ROLE = Convert.ToInt32(row["ROLE"]);
+                    if (ROLE == 1)
+                    {
+                        rb_Waiter.Checked = true;
+                        rb_Bartender.Checked = false;
+                        rb_Accountant.Checked = false;
+                    }
+                    else if (ROLE == 2)
+                    {
+                        rb_Waiter.Checked = false;
+                        rb_Bartender.Checked = true;
+                        rb_Accountant.Checked = false;
+                    }
+                    else
+                    {
+                        rb_Waiter.Checked = false;
+                        rb_Bartender.Checked = false;
+                        rb_Accountant.Checked = true;
+                    }
+
+
+                }
+
+            }
+            myConnection.sqlcon.Close();
+        }
+
 
         public void addStaff(AddStaff form)
         {

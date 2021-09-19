@@ -39,7 +39,9 @@ namespace Beverage_Management_System
         {  
             InitializeComponent();
 
-            setInformation(id);
+            StaffPresenter presenter = new StaffPresenter(this, id);
+            presenter.setInformation(txt_ID, txt_Username, txt_Password, txt_Name, rb_Male, rb_Female, dtPicker_DOB,
+                txt_Phone, txt_Address, rb_Waiter, rb_Bartender, rb_Accountant);
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -100,69 +102,6 @@ namespace Beverage_Management_System
             btt_visible.Show();
             btt_unvisible.Hide();
             txt_Password.UseSystemPasswordChar = false;
-        }
-
-        private void setInformation(int id)
-        {
-            MyConnection myConnection = new MyConnection();
-            myConnection.sqlcon.Open();
-            string querry = "Select * from PERSON where ID_PERSON = '" + id + "';";
-            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
-            DataTable dtbl = new DataTable();
-            sda.Fill(dtbl);
-            if (dtbl.Rows.Count > 0)
-            {
-                foreach (DataRow row in dtbl.Rows)
-                {
-                    txt_ID.Text = row["ID_PERSON"].ToString();
-                    txt_Username.Text = row["USERNAME"].ToString();
-                    txt_Password.Text = row["PASSWORD"].ToString();
-                    txt_Name.Text = row["NAME"].ToString();
-
-                    DateTime date = Convert.ToDateTime(row["DOB"]);
-                    dtPicker_DOB.Value = date;
-                    string SEX = row["SEX"].ToString();
-                    if (SEX != "Male")
-                    {
-                        rb_Female.Checked = true;
-                        rb_Male.Checked = false;
-                        //pB_avt.Image = 
-                    }
-                    else
-                    {
-                        rb_Male.Checked = true;
-                        rb_Female.Checked = false;
-                        //pB_avt.Image = 
-                    }
-
-                    txt_Phone.Text = row["PHONE"].ToString();
-                    txt_Address.Text = row["ADDRESS"].ToString();
-
-                    int ROLE = Convert.ToInt32(row["ROLE"]);
-                    if (ROLE == 1)
-                    {
-                        rb_Waiter.Checked = true;
-                        rb_Bartender.Checked = false;
-                        rb_Accountant.Checked = false;
-                    }
-                    else if (ROLE == 2)
-                    {
-                        rb_Waiter.Checked = false;
-                        rb_Bartender.Checked = true;
-                        rb_Accountant.Checked = false;
-                    }
-                    else
-                    {
-                        rb_Waiter.Checked = false;
-                        rb_Bartender.Checked = false;
-                        rb_Accountant.Checked = true;
-                    }
-
-
-                }
-
-            }
-            myConnection.sqlcon.Close();
         }
 
         private void bt_Save_Click(object sender, EventArgs e)
