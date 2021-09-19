@@ -342,7 +342,7 @@ namespace Beverage_Management_System
             this.guna2Button8.Size = new System.Drawing.Size(207, 37);
             this.guna2Button8.TabIndex = 1;
             this.guna2Button8.Text = "Import Form";
-            this.guna2Button8.TextOffset = new System.Drawing.Point(9, 0);
+            this.guna2Button8.TextOffset = new System.Drawing.Point(12, 0);
             this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click_1);
             // 
             // btt_Product
@@ -365,7 +365,7 @@ namespace Beverage_Management_System
             this.btt_Product.Size = new System.Drawing.Size(235, 59);
             this.btt_Product.TabIndex = 31;
             this.btt_Product.Text = "PRODUCT";
-            this.btt_Product.TextOffset = new System.Drawing.Point(24, 0);
+            this.btt_Product.TextOffset = new System.Drawing.Point(22, 0);
             this.btt_Product.Click += new System.EventHandler(this.btt_Product_Click);
             // 
             // btt_Staff
@@ -389,7 +389,7 @@ namespace Beverage_Management_System
             this.btt_Staff.Size = new System.Drawing.Size(235, 59);
             this.btt_Staff.TabIndex = 32;
             this.btt_Staff.Text = "STAFF";
-            this.btt_Staff.TextOffset = new System.Drawing.Point(7, 0);
+            this.btt_Staff.TextOffset = new System.Drawing.Point(5, 0);
             this.btt_Staff.Click += new System.EventHandler(this.btt_Staff_Click);
             // 
             // pl_Dashboard_Waiter
@@ -530,14 +530,15 @@ namespace Beverage_Management_System
             this.lb_Name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_Name.AutoEllipsis = true;
+            this.lb_Name.AutoSize = true;
             this.lb_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_Name.Location = new System.Drawing.Point(67, 24);
+            this.lb_Name.Location = new System.Drawing.Point(178, 23);
             this.lb_Name.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lb_Name.Name = "lb_Name";
-            this.lb_Name.Size = new System.Drawing.Size(127, 20);
+            this.lb_Name.Size = new System.Drawing.Size(53, 20);
             this.lb_Name.TabIndex = 24;
-            this.lb_Name.Text = "Username";
+            this.lb_Name.Text = "Name";
             // 
             // label1
             // 
@@ -548,7 +549,7 @@ namespace Beverage_Management_System
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label1.Location = new System.Drawing.Point(209, 22);
+            this.label1.Location = new System.Drawing.Point(170, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(2, 22);
@@ -562,12 +563,12 @@ namespace Beverage_Management_System
             this.lb_Role.AutoSize = true;
             this.lb_Role.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_Role.Location = new System.Drawing.Point(232, 24);
+            this.lb_Role.Location = new System.Drawing.Point(70, 23);
             this.lb_Role.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lb_Role.Name = "lb_Role";
-            this.lb_Role.Size = new System.Drawing.Size(43, 20);
+            this.lb_Role.Size = new System.Drawing.Size(93, 20);
             this.lb_Role.TabIndex = 24;
-            this.lb_Role.Text = "Role";
+            this.lb_Role.Text = "Accountant";
             // 
             // pl_content
             // 
@@ -590,10 +591,10 @@ namespace Beverage_Management_System
             this.panel1.Controls.Add(this.pl_content);
             this.panel1.Controls.Add(this.pB_Image);
             this.panel1.Controls.Add(this.lb_Name);
-            this.panel1.Controls.Add(this.lb_Role);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btt_maximize);
             this.panel1.Controls.Add(this.btt_minimize);
+            this.panel1.Controls.Add(this.lb_Role);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(235, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -642,12 +643,12 @@ namespace Beverage_Management_System
             // pB_Image
             // 
             this.pB_Image.Image = ((System.Drawing.Image)(resources.GetObject("pB_Image.Image")));
-            this.pB_Image.Location = new System.Drawing.Point(21, 12);
+            this.pB_Image.Location = new System.Drawing.Point(19, 10);
             this.pB_Image.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pB_Image.Name = "pB_Image";
             this.pB_Image.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.pB_Image.ShadowDecoration.Parent = this.pB_Image;
-            this.pB_Image.Size = new System.Drawing.Size(40, 39);
+            this.pB_Image.Size = new System.Drawing.Size(45, 45);
             this.pB_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pB_Image.TabIndex = 23;
             this.pB_Image.TabStop = false;

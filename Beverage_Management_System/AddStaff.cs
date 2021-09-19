@@ -17,7 +17,9 @@ namespace Beverage_Management_System
 {
     public partial class AddStaff : Form, IAddStaff
     {
-     
+        static public int message = 0;
+
+        
 
         int id;
         public string username { get => txt_Username.Text; set => throw new NotImplementedException(); }
@@ -151,16 +153,8 @@ namespace Beverage_Management_System
 
         private void AddStaff_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //this.Owner.Dispose();
 
-
-            Dashboard db = new Dashboard();
-            Staff st = new Staff();
-            st.Owner = db;
-            db.openChildForm(st);
-            db.Show();
-
-     
+            message = 1;
         }
 
         private void AddStaff_Activated(object sender, EventArgs e)
@@ -170,7 +164,8 @@ namespace Beverage_Management_System
 
         private void AddStaff_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Owner.Owner.Hide();
+            Staff f1 = (Staff)this.Owner;
+            f1.reloadTable();
         }
     }
 }

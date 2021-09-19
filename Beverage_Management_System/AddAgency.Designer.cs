@@ -40,7 +40,6 @@ namespace Beverage_Management_System
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,6 +48,8 @@ namespace Beverage_Management_System
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.btt_close = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -170,22 +171,13 @@ namespace Beverage_Management_System
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(190, 24);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(194, 20);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(146, 31);
             this.label12.TabIndex = 94;
             this.label12.Text = "AGENCY";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(48, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(450, 1);
-            this.panel1.TabIndex = 95;
             // 
             // label9
             // 
@@ -284,11 +276,11 @@ namespace Beverage_Management_System
             // 
             this.guna2ImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.HoverState.Image = global::Beverage_Management_System.Properties.Resources.letter_x;
+            this.guna2ImageButton1.HoverState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.letter_x;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(485, 14);
+            this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(492, 15);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
@@ -350,13 +342,22 @@ namespace Beverage_Management_System
             this.btt_close.Size = new System.Drawing.Size(39, 45);
             this.btt_close.TabIndex = 93;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.panel2.Controls.Add(this.guna2ImageButton1);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Location = new System.Drawing.Point(-3, -6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(547, 64);
+            this.panel2.TabIndex = 109;
+            // 
             // AddAgency
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(541, 395);
-            this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.label4);
@@ -369,14 +370,14 @@ namespace Beverage_Management_System
             this.Controls.Add(this.guna2TextBox5);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.btt_close);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddAgency";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddAgency";
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,10 +398,10 @@ namespace Beverage_Management_System
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2ImageButton btt_close;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

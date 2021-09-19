@@ -65,7 +65,8 @@ namespace Beverage_Management_System
                 StaffPresenter presenter = new StaffPresenter(this);
                 presenter.openAddStaffForm(id_choose, this);
 
-                              
+            
+
             }
         }
 
@@ -104,7 +105,7 @@ namespace Beverage_Management_System
             dtGridView_Staff.CurrentCell = null;
         }
 
-        private void bt_Reload_Click(object sender, EventArgs e)
+        public void bt_Reload_Click(object sender, EventArgs e)
         {
             StaffPresenter presenter = new StaffPresenter(this);
             refreshTable();
@@ -127,6 +128,28 @@ namespace Beverage_Management_System
        
         private void Staff_Load(object sender, EventArgs e)
         {
+           
+         
+        }
+
+        private void Staff_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Staff_DoubleClick(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void Staff_Click(object sender, EventArgs e)
+        {
+            if (AddStaff.message == 1)
+            {
+                reloadTable();
+            }
+            
+                MyMessageBox.showBox(AddStaff.message.ToString());
             
         }
     }
