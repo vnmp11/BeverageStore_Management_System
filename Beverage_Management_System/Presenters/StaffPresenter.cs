@@ -17,6 +17,7 @@ namespace Beverage_Management_System.Presenters
         IStaff staffView;
         IAddStaff addstaffView;
         int id = -1;
+      
 
         public StaffPresenter(IStaff view)
         {
@@ -108,9 +109,20 @@ namespace Beverage_Management_System.Presenters
 
         public void openAddStaffForm(int id_choosed)
         {
+      
             AddStaff form = new AddStaff(id_choosed);
+           
             form.Show();
         }
+        
+         public void openAddStaffForm(int id_choosed, Form parent)
+        {
+
+            AddStaff form = new AddStaff(id_choosed);
+            form.Owner = parent;
+            form.Show();
+        }
+
 
         public void addStaff(AddStaff form)
         {
@@ -144,6 +156,7 @@ namespace Beverage_Management_System.Presenters
                 if (result > 0)
                 {
                     MyMessageBox.showBox("Update staff's information successfully!", "Message");
+                    
                 }
                 else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
             }

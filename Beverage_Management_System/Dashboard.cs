@@ -29,8 +29,8 @@ namespace Beverage_Management_System
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private Form activeForm = null;
-        private void openChildForm(Form f)
+        public Form activeForm = null;
+        public void openChildForm(Form f)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -232,7 +232,9 @@ namespace Beverage_Management_System
 
         private void btt_Staff_Click(object sender, EventArgs e)
         {
-            openChildForm(new Staff());
+            Staff st = new Staff();
+            st.Owner = this;
+            openChildForm(st);
         }
 
         private void btt_Statistic_Click_1(object sender, EventArgs e)
@@ -341,10 +343,25 @@ namespace Beverage_Management_System
 
         private void bt_LogOut_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
             Login login = new Login();
             login.Show();
             MyMessageBox.showBox("Logged out successfully", "Message");
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Dashboard_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

@@ -60,7 +60,7 @@ namespace Beverage_Management_System
 
         private void btt_close_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btt_hide_Click(object sender, EventArgs e)

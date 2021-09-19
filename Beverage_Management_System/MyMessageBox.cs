@@ -13,7 +13,7 @@ namespace Beverage_Management_System
     public partial class MyMessageBox : Form
     {
         static MyMessageBox newMessageBox;
-        //static string ButtonID = 1;
+        static public int ButtonID ;
 
         public MyMessageBox()
         {
@@ -44,12 +44,24 @@ namespace Beverage_Management_System
 
         private void btt_ok_Click(object sender, EventArgs e)
         {
+            
             this.Close();
+           
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lb_message_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MyMessageBox_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

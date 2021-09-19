@@ -94,9 +94,9 @@ namespace Beverage_Management_System
             this.pl_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pl_menu.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.pl_menu.Location = new System.Drawing.Point(0, 0);
-            this.pl_menu.Margin = new System.Windows.Forms.Padding(2);
+            this.pl_menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pl_menu.Name = "pl_menu";
-            this.pl_menu.Size = new System.Drawing.Size(176, 731);
+            this.pl_menu.Size = new System.Drawing.Size(235, 900);
             this.pl_menu.TabIndex = 0;
             this.pl_menu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -110,20 +110,20 @@ namespace Beverage_Management_System
             this.panel2.Controls.Add(this.pl_Dashboard_Owner);
             this.panel2.Controls.Add(this.pl_Dashboard_Waiter);
             this.panel2.Controls.Add(this.bt_LogOut);
-            this.panel2.Location = new System.Drawing.Point(0, 61);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(0, 75);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(176, 656);
+            this.panel2.Size = new System.Drawing.Size(235, 807);
             this.panel2.TabIndex = 0;
             // 
             // pl_Dashboard_Accounting
             // 
             this.pl_Dashboard_Accounting.Controls.Add(this.guna2Button7);
             this.pl_Dashboard_Accounting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_Dashboard_Accounting.Location = new System.Drawing.Point(0, 504);
-            this.pl_Dashboard_Accounting.Margin = new System.Windows.Forms.Padding(2);
+            this.pl_Dashboard_Accounting.Location = new System.Drawing.Point(0, 621);
+            this.pl_Dashboard_Accounting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pl_Dashboard_Accounting.Name = "pl_Dashboard_Accounting";
-            this.pl_Dashboard_Accounting.Size = new System.Drawing.Size(176, 48);
+            this.pl_Dashboard_Accounting.Size = new System.Drawing.Size(235, 59);
             this.pl_Dashboard_Accounting.TabIndex = 0;
             this.pl_Dashboard_Accounting.Visible = false;
             // 
@@ -131,7 +131,6 @@ namespace Beverage_Management_System
             // 
             this.guna2Button7.CheckedState.Parent = this.guna2Button7;
             this.guna2Button7.CustomImages.Parent = this.guna2Button7;
-            this.guna2Button7.DisabledState.Parent = this.guna2Button7;
             this.guna2Button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button7.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,11 +141,11 @@ namespace Beverage_Management_System
             this.guna2Button7.ImageOffset = new System.Drawing.Point(16, 0);
             this.guna2Button7.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2Button7.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button7.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
-            this.guna2Button7.Size = new System.Drawing.Size(176, 48);
+            this.guna2Button7.Size = new System.Drawing.Size(235, 59);
             this.guna2Button7.TabIndex = 35;
             this.guna2Button7.Text = "NOTE";
             this.guna2Button7.TextOffset = new System.Drawing.Point(2, 0);
@@ -157,10 +156,10 @@ namespace Beverage_Management_System
             this.pL_Dashboard_Bartender.Controls.Add(this.guna2Button5);
             this.pL_Dashboard_Bartender.Controls.Add(this.guna2Button2);
             this.pL_Dashboard_Bartender.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pL_Dashboard_Bartender.Location = new System.Drawing.Point(0, 406);
-            this.pL_Dashboard_Bartender.Margin = new System.Windows.Forms.Padding(2);
+            this.pL_Dashboard_Bartender.Location = new System.Drawing.Point(0, 500);
+            this.pL_Dashboard_Bartender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pL_Dashboard_Bartender.Name = "pL_Dashboard_Bartender";
-            this.pL_Dashboard_Bartender.Size = new System.Drawing.Size(176, 98);
+            this.pL_Dashboard_Bartender.Size = new System.Drawing.Size(235, 121);
             this.pL_Dashboard_Bartender.TabIndex = 0;
             this.pL_Dashboard_Bartender.Visible = false;
             // 
@@ -168,7 +167,6 @@ namespace Beverage_Management_System
             // 
             this.guna2Button5.CheckedState.Parent = this.guna2Button5;
             this.guna2Button5.CustomImages.Parent = this.guna2Button5;
-            this.guna2Button5.DisabledState.Parent = this.guna2Button5;
             this.guna2Button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,11 +176,11 @@ namespace Beverage_Management_System
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.ImageOffset = new System.Drawing.Point(16, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button5.Location = new System.Drawing.Point(0, 48);
-            this.guna2Button5.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button5.Location = new System.Drawing.Point(0, 59);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(176, 48);
+            this.guna2Button5.Size = new System.Drawing.Size(235, 59);
             this.guna2Button5.TabIndex = 35;
             this.guna2Button5.Text = "ORDER";
             this.guna2Button5.TextOffset = new System.Drawing.Point(8, 0);
@@ -192,7 +190,6 @@ namespace Beverage_Management_System
             // 
             this.guna2Button2.CheckedState.Parent = this.guna2Button2;
             this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.DisabledState.Parent = this.guna2Button2;
             this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,11 +200,11 @@ namespace Beverage_Management_System
             this.guna2Button2.ImageOffset = new System.Drawing.Point(16, 0);
             this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2Button2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(176, 48);
+            this.guna2Button2.Size = new System.Drawing.Size(235, 59);
             this.guna2Button2.TabIndex = 34;
             this.guna2Button2.Text = "NOTE";
             this.guna2Button2.TextOffset = new System.Drawing.Point(2, 0);
@@ -222,17 +219,16 @@ namespace Beverage_Management_System
             this.pl_Dashboard_Owner.Controls.Add(this.btt_Product);
             this.pl_Dashboard_Owner.Controls.Add(this.btt_Staff);
             this.pl_Dashboard_Owner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_Dashboard_Owner.Location = new System.Drawing.Point(0, 98);
-            this.pl_Dashboard_Owner.Margin = new System.Windows.Forms.Padding(2);
+            this.pl_Dashboard_Owner.Location = new System.Drawing.Point(0, 121);
+            this.pl_Dashboard_Owner.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pl_Dashboard_Owner.Name = "pl_Dashboard_Owner";
-            this.pl_Dashboard_Owner.Size = new System.Drawing.Size(176, 308);
+            this.pl_Dashboard_Owner.Size = new System.Drawing.Size(235, 379);
             this.pl_Dashboard_Owner.TabIndex = 0;
             // 
             // guna2Button1
             // 
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
             this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,11 +238,11 @@ namespace Beverage_Management_System
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(16, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button1.Location = new System.Drawing.Point(0, 260);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 320);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(176, 48);
+            this.guna2Button1.Size = new System.Drawing.Size(235, 59);
             this.guna2Button1.TabIndex = 36;
             this.guna2Button1.Text = "AGENCY";
             this.guna2Button1.TextOffset = new System.Drawing.Point(15, 0);
@@ -256,7 +252,6 @@ namespace Beverage_Management_System
             // 
             this.btt_Report.CheckedState.Parent = this.btt_Report;
             this.btt_Report.CustomImages.Parent = this.btt_Report;
-            this.btt_Report.DisabledState.Parent = this.btt_Report;
             this.btt_Report.Dock = System.Windows.Forms.DockStyle.Top;
             this.btt_Report.FillColor = System.Drawing.Color.Transparent;
             this.btt_Report.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,11 +261,11 @@ namespace Beverage_Management_System
             this.btt_Report.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btt_Report.ImageOffset = new System.Drawing.Point(16, 0);
             this.btt_Report.ImageSize = new System.Drawing.Size(30, 30);
-            this.btt_Report.Location = new System.Drawing.Point(0, 212);
-            this.btt_Report.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_Report.Location = new System.Drawing.Point(0, 261);
+            this.btt_Report.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Report.Name = "btt_Report";
             this.btt_Report.ShadowDecoration.Parent = this.btt_Report;
-            this.btt_Report.Size = new System.Drawing.Size(176, 48);
+            this.btt_Report.Size = new System.Drawing.Size(235, 59);
             this.btt_Report.TabIndex = 35;
             this.btt_Report.Text = "REPORT";
             this.btt_Report.TextOffset = new System.Drawing.Point(13, 0);
@@ -280,7 +275,6 @@ namespace Beverage_Management_System
             // 
             this.btt_Statistic.CheckedState.Parent = this.btt_Statistic;
             this.btt_Statistic.CustomImages.Parent = this.btt_Statistic;
-            this.btt_Statistic.DisabledState.Parent = this.btt_Statistic;
             this.btt_Statistic.Dock = System.Windows.Forms.DockStyle.Top;
             this.btt_Statistic.FillColor = System.Drawing.Color.Transparent;
             this.btt_Statistic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,11 +284,11 @@ namespace Beverage_Management_System
             this.btt_Statistic.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btt_Statistic.ImageOffset = new System.Drawing.Point(16, 0);
             this.btt_Statistic.ImageSize = new System.Drawing.Size(30, 30);
-            this.btt_Statistic.Location = new System.Drawing.Point(0, 164);
-            this.btt_Statistic.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_Statistic.Location = new System.Drawing.Point(0, 202);
+            this.btt_Statistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Statistic.Name = "btt_Statistic";
             this.btt_Statistic.ShadowDecoration.Parent = this.btt_Statistic;
-            this.btt_Statistic.Size = new System.Drawing.Size(176, 48);
+            this.btt_Statistic.Size = new System.Drawing.Size(235, 59);
             this.btt_Statistic.TabIndex = 34;
             this.btt_Statistic.Text = "STATISTIC";
             this.btt_Statistic.TextOffset = new System.Drawing.Point(22, 0);
@@ -305,10 +299,10 @@ namespace Beverage_Management_System
             this.pl_SubMenuProduct.Controls.Add(this.btt_Inventory);
             this.pl_SubMenuProduct.Controls.Add(this.guna2Button8);
             this.pl_SubMenuProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_SubMenuProduct.Location = new System.Drawing.Point(0, 96);
-            this.pl_SubMenuProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.pl_SubMenuProduct.Location = new System.Drawing.Point(0, 118);
+            this.pl_SubMenuProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pl_SubMenuProduct.Name = "pl_SubMenuProduct";
-            this.pl_SubMenuProduct.Size = new System.Drawing.Size(176, 68);
+            this.pl_SubMenuProduct.Size = new System.Drawing.Size(235, 84);
             this.pl_SubMenuProduct.TabIndex = 33;
             this.pl_SubMenuProduct.Visible = false;
             // 
@@ -316,18 +310,17 @@ namespace Beverage_Management_System
             // 
             this.btt_Inventory.CheckedState.Parent = this.btt_Inventory;
             this.btt_Inventory.CustomImages.Parent = this.btt_Inventory;
-            this.btt_Inventory.DisabledState.Parent = this.btt_Inventory;
             this.btt_Inventory.FillColor = System.Drawing.Color.Transparent;
             this.btt_Inventory.Font = new System.Drawing.Font("Segoe UI", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_Inventory.ForeColor = System.Drawing.Color.White;
             this.btt_Inventory.HoverState.Parent = this.btt_Inventory;
             this.btt_Inventory.Image = global::Beverage_Management_System.Properties.Resources.box;
             this.btt_Inventory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btt_Inventory.Location = new System.Drawing.Point(18, 37);
-            this.btt_Inventory.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_Inventory.Location = new System.Drawing.Point(24, 46);
+            this.btt_Inventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Inventory.Name = "btt_Inventory";
             this.btt_Inventory.ShadowDecoration.Parent = this.btt_Inventory;
-            this.btt_Inventory.Size = new System.Drawing.Size(158, 30);
+            this.btt_Inventory.Size = new System.Drawing.Size(211, 37);
             this.btt_Inventory.TabIndex = 1;
             this.btt_Inventory.Text = "Inventory";
             this.btt_Inventory.Click += new System.EventHandler(this.btt_Inventory_Click_1);
@@ -336,18 +329,17 @@ namespace Beverage_Management_System
             // 
             this.guna2Button8.CheckedState.Parent = this.guna2Button8;
             this.guna2Button8.CustomImages.Parent = this.guna2Button8;
-            this.guna2Button8.DisabledState.Parent = this.guna2Button8;
             this.guna2Button8.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
             this.guna2Button8.HoverState.Parent = this.guna2Button8;
             this.guna2Button8.Image = global::Beverage_Management_System.Properties.Resources.plus;
             this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button8.Location = new System.Drawing.Point(18, 0);
-            this.guna2Button8.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button8.Location = new System.Drawing.Point(24, 0);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
-            this.guna2Button8.Size = new System.Drawing.Size(155, 30);
+            this.guna2Button8.Size = new System.Drawing.Size(207, 37);
             this.guna2Button8.TabIndex = 1;
             this.guna2Button8.Text = "Import Form";
             this.guna2Button8.TextOffset = new System.Drawing.Point(9, 0);
@@ -357,7 +349,6 @@ namespace Beverage_Management_System
             // 
             this.btt_Product.CheckedState.Parent = this.btt_Product;
             this.btt_Product.CustomImages.Parent = this.btt_Product;
-            this.btt_Product.DisabledState.Parent = this.btt_Product;
             this.btt_Product.Dock = System.Windows.Forms.DockStyle.Top;
             this.btt_Product.FillColor = System.Drawing.Color.Transparent;
             this.btt_Product.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -367,11 +358,11 @@ namespace Beverage_Management_System
             this.btt_Product.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btt_Product.ImageOffset = new System.Drawing.Point(16, 0);
             this.btt_Product.ImageSize = new System.Drawing.Size(30, 30);
-            this.btt_Product.Location = new System.Drawing.Point(0, 48);
-            this.btt_Product.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_Product.Location = new System.Drawing.Point(0, 59);
+            this.btt_Product.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Product.Name = "btt_Product";
             this.btt_Product.ShadowDecoration.Parent = this.btt_Product;
-            this.btt_Product.Size = new System.Drawing.Size(176, 48);
+            this.btt_Product.Size = new System.Drawing.Size(235, 59);
             this.btt_Product.TabIndex = 31;
             this.btt_Product.Text = "PRODUCT";
             this.btt_Product.TextOffset = new System.Drawing.Point(24, 0);
@@ -381,7 +372,6 @@ namespace Beverage_Management_System
             // 
             this.btt_Staff.CheckedState.Parent = this.btt_Staff;
             this.btt_Staff.CustomImages.Parent = this.btt_Staff;
-            this.btt_Staff.DisabledState.Parent = this.btt_Staff;
             this.btt_Staff.Dock = System.Windows.Forms.DockStyle.Top;
             this.btt_Staff.FillColor = System.Drawing.Color.Transparent;
             this.btt_Staff.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -392,11 +382,11 @@ namespace Beverage_Management_System
             this.btt_Staff.ImageOffset = new System.Drawing.Point(16, 0);
             this.btt_Staff.ImageSize = new System.Drawing.Size(30, 30);
             this.btt_Staff.Location = new System.Drawing.Point(0, 0);
-            this.btt_Staff.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_Staff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Staff.Name = "btt_Staff";
             this.btt_Staff.PressedColor = System.Drawing.Color.WhiteSmoke;
             this.btt_Staff.ShadowDecoration.Parent = this.btt_Staff;
-            this.btt_Staff.Size = new System.Drawing.Size(176, 48);
+            this.btt_Staff.Size = new System.Drawing.Size(235, 59);
             this.btt_Staff.TabIndex = 32;
             this.btt_Staff.Text = "STAFF";
             this.btt_Staff.TextOffset = new System.Drawing.Point(7, 0);
@@ -408,9 +398,9 @@ namespace Beverage_Management_System
             this.pl_Dashboard_Waiter.Controls.Add(this.guna2Button4);
             this.pl_Dashboard_Waiter.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_Dashboard_Waiter.Location = new System.Drawing.Point(0, 0);
-            this.pl_Dashboard_Waiter.Margin = new System.Windows.Forms.Padding(2);
+            this.pl_Dashboard_Waiter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pl_Dashboard_Waiter.Name = "pl_Dashboard_Waiter";
-            this.pl_Dashboard_Waiter.Size = new System.Drawing.Size(176, 98);
+            this.pl_Dashboard_Waiter.Size = new System.Drawing.Size(235, 121);
             this.pl_Dashboard_Waiter.TabIndex = 31;
             this.pl_Dashboard_Waiter.Visible = false;
             // 
@@ -418,7 +408,6 @@ namespace Beverage_Management_System
             // 
             this.guna2Button3.CheckedState.Parent = this.guna2Button3;
             this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.DisabledState.Parent = this.guna2Button3;
             this.guna2Button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -428,11 +417,11 @@ namespace Beverage_Management_System
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(16, 0);
             this.guna2Button3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button3.Location = new System.Drawing.Point(0, 48);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button3.Location = new System.Drawing.Point(0, 59);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(176, 48);
+            this.guna2Button3.Size = new System.Drawing.Size(235, 59);
             this.guna2Button3.TabIndex = 34;
             this.guna2Button3.Text = "MENU";
             this.guna2Button3.TextOffset = new System.Drawing.Point(6, 0);
@@ -442,7 +431,6 @@ namespace Beverage_Management_System
             // 
             this.guna2Button4.CheckedState.Parent = this.guna2Button4;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
             this.guna2Button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -453,11 +441,11 @@ namespace Beverage_Management_System
             this.guna2Button4.ImageOffset = new System.Drawing.Point(16, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2Button4.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(176, 48);
+            this.guna2Button4.Size = new System.Drawing.Size(235, 59);
             this.guna2Button4.TabIndex = 33;
             this.guna2Button4.Text = "REPORT";
             this.guna2Button4.TextOffset = new System.Drawing.Point(13, 0);
@@ -467,7 +455,6 @@ namespace Beverage_Management_System
             // 
             this.bt_LogOut.CheckedState.Parent = this.bt_LogOut;
             this.bt_LogOut.CustomImages.Parent = this.bt_LogOut;
-            this.bt_LogOut.DisabledState.Parent = this.bt_LogOut;
             this.bt_LogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bt_LogOut.FillColor = System.Drawing.Color.Transparent;
             this.bt_LogOut.Font = new System.Drawing.Font("Segoe UI Semibold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -477,11 +464,11 @@ namespace Beverage_Management_System
             this.bt_LogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_LogOut.ImageOffset = new System.Drawing.Point(16, 0);
             this.bt_LogOut.ImageSize = new System.Drawing.Size(30, 30);
-            this.bt_LogOut.Location = new System.Drawing.Point(0, 608);
-            this.bt_LogOut.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_LogOut.Location = new System.Drawing.Point(0, 748);
+            this.bt_LogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_LogOut.Name = "bt_LogOut";
             this.bt_LogOut.ShadowDecoration.Parent = this.bt_LogOut;
-            this.bt_LogOut.Size = new System.Drawing.Size(176, 48);
+            this.bt_LogOut.Size = new System.Drawing.Size(235, 59);
             this.bt_LogOut.TabIndex = 1;
             this.bt_LogOut.Text = "LOG OUT";
             this.bt_LogOut.TextOffset = new System.Drawing.Point(20, 0);
@@ -491,7 +478,6 @@ namespace Beverage_Management_System
             // 
             this.guna2Button6.CheckedState.Parent = this.guna2Button6;
             this.guna2Button6.CustomImages.Parent = this.guna2Button6;
-            this.guna2Button6.DisabledState.Parent = this.guna2Button6;
             this.guna2Button6.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
@@ -500,11 +486,11 @@ namespace Beverage_Management_System
             this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button6.ImageOffset = new System.Drawing.Point(16, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button6.Location = new System.Drawing.Point(0, 448);
-            this.guna2Button6.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button6.Location = new System.Drawing.Point(0, 551);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(150, 48);
+            this.guna2Button6.Size = new System.Drawing.Size(200, 59);
             this.guna2Button6.TabIndex = 1;
             this.guna2Button6.Text = "ADD USER";
             this.guna2Button6.TextOffset = new System.Drawing.Point(26, 0);
@@ -513,20 +499,17 @@ namespace Beverage_Management_System
             // guna2ImageButton2
             // 
             this.guna2ImageButton2.CheckedState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2ImageButton2.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.HoverState.Image")));
             this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(35, 35);
             this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
-            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton2.ImageRotate = 0F;
             this.guna2ImageButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(18, 24);
-            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(24, 30);
+            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.ShadowDecoration.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.Size = new System.Drawing.Size(27, 27);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(36, 33);
             this.guna2ImageButton2.TabIndex = 22;
             this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
@@ -549,10 +532,10 @@ namespace Beverage_Management_System
             this.lb_Name.AutoEllipsis = true;
             this.lb_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_Name.Location = new System.Drawing.Point(50, 15);
-            this.lb_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
+            this.lb_Name.Location = new System.Drawing.Point(67, 24);
+            this.lb_Name.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lb_Name.Name = "lb_Name";
-            this.lb_Name.Size = new System.Drawing.Size(95, 16);
+            this.lb_Name.Size = new System.Drawing.Size(127, 20);
             this.lb_Name.TabIndex = 24;
             this.lb_Name.Text = "Username";
             // 
@@ -565,10 +548,10 @@ namespace Beverage_Management_System
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label1.Location = new System.Drawing.Point(157, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
+            this.label1.Location = new System.Drawing.Point(209, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(2, 18);
+            this.label1.Size = new System.Drawing.Size(2, 22);
             this.label1.TabIndex = 24;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -579,10 +562,10 @@ namespace Beverage_Management_System
             this.lb_Role.AutoSize = true;
             this.lb_Role.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_Role.Location = new System.Drawing.Point(174, 15);
-            this.lb_Role.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
+            this.lb_Role.Location = new System.Drawing.Point(232, 24);
+            this.lb_Role.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lb_Role.Name = "lb_Role";
-            this.lb_Role.Size = new System.Drawing.Size(37, 16);
+            this.lb_Role.Size = new System.Drawing.Size(43, 20);
             this.lb_Role.TabIndex = 24;
             this.lb_Role.Text = "Role";
             // 
@@ -592,10 +575,10 @@ namespace Beverage_Management_System
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pl_content.BackColor = System.Drawing.Color.White;
-            this.pl_content.Location = new System.Drawing.Point(0, 50);
-            this.pl_content.Margin = new System.Windows.Forms.Padding(2);
+            this.pl_content.Location = new System.Drawing.Point(0, 62);
+            this.pl_content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pl_content.Name = "pl_content";
-            this.pl_content.Size = new System.Drawing.Size(953, 682);
+            this.pl_content.Size = new System.Drawing.Size(1271, 839);
             this.pl_content.TabIndex = 1;
             this.pl_content.Paint += new System.Windows.Forms.PaintEventHandler(this.pl_content_Paint);
             // 
@@ -612,28 +595,28 @@ namespace Beverage_Management_System
             this.panel1.Controls.Add(this.btt_maximize);
             this.panel1.Controls.Add(this.btt_minimize);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(176, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(235, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(949, 731);
+            this.panel1.Size = new System.Drawing.Size(1265, 900);
             this.panel1.TabIndex = 28;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // btt_hide
             // 
             this.btt_hide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_hide.CheckedState.Parent = this.btt_hide;
             this.btt_hide.CustomImages.Parent = this.btt_hide;
-            this.btt_hide.DisabledState.Parent = this.btt_hide;
             this.btt_hide.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
             this.btt_hide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btt_hide.ForeColor = System.Drawing.Color.White;
             this.btt_hide.HoverState.Parent = this.btt_hide;
             this.btt_hide.Image = global::Beverage_Management_System.Properties.Resources.minus;
-            this.btt_hide.Location = new System.Drawing.Point(806, 2);
-            this.btt_hide.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_hide.Location = new System.Drawing.Point(1075, 2);
+            this.btt_hide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_hide.Name = "btt_hide";
             this.btt_hide.ShadowDecoration.Parent = this.btt_hide;
-            this.btt_hide.Size = new System.Drawing.Size(47, 48);
+            this.btt_hide.Size = new System.Drawing.Size(63, 59);
             this.btt_hide.TabIndex = 27;
             this.btt_hide.Click += new System.EventHandler(this.btt_hide_Click_1);
             // 
@@ -642,31 +625,29 @@ namespace Beverage_Management_System
             this.btt_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_close.CheckedState.Parent = this.btt_close;
             this.btt_close.CustomImages.Parent = this.btt_close;
-            this.btt_close.DisabledState.Parent = this.btt_close;
             this.btt_close.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
             this.btt_close.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btt_close.ForeColor = System.Drawing.Color.White;
             this.btt_close.HoverState.Parent = this.btt_close;
             this.btt_close.Image = global::Beverage_Management_System.Properties.Resources.letter_x;
             this.btt_close.ImageSize = new System.Drawing.Size(15, 15);
-            this.btt_close.Location = new System.Drawing.Point(902, 2);
-            this.btt_close.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_close.Location = new System.Drawing.Point(1203, 2);
+            this.btt_close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_close.Name = "btt_close";
             this.btt_close.ShadowDecoration.Parent = this.btt_close;
-            this.btt_close.Size = new System.Drawing.Size(44, 48);
+            this.btt_close.Size = new System.Drawing.Size(59, 59);
             this.btt_close.TabIndex = 27;
             this.btt_close.Click += new System.EventHandler(this.btt_close_Click_1);
             // 
             // pB_Image
             // 
             this.pB_Image.Image = ((System.Drawing.Image)(resources.GetObject("pB_Image.Image")));
-            this.pB_Image.ImageRotate = 0F;
-            this.pB_Image.Location = new System.Drawing.Point(16, 10);
-            this.pB_Image.Margin = new System.Windows.Forms.Padding(2);
+            this.pB_Image.Location = new System.Drawing.Point(21, 12);
+            this.pB_Image.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pB_Image.Name = "pB_Image";
             this.pB_Image.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.pB_Image.ShadowDecoration.Parent = this.pB_Image;
-            this.pB_Image.Size = new System.Drawing.Size(30, 32);
+            this.pB_Image.Size = new System.Drawing.Size(40, 39);
             this.pB_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pB_Image.TabIndex = 23;
             this.pB_Image.TabStop = false;
@@ -676,17 +657,16 @@ namespace Beverage_Management_System
             this.btt_maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_maximize.CheckedState.Parent = this.btt_maximize;
             this.btt_maximize.CustomImages.Parent = this.btt_maximize;
-            this.btt_maximize.DisabledState.Parent = this.btt_maximize;
             this.btt_maximize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
             this.btt_maximize.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btt_maximize.ForeColor = System.Drawing.Color.White;
             this.btt_maximize.HoverState.Parent = this.btt_maximize;
             this.btt_maximize.Image = global::Beverage_Management_System.Properties.Resources.square;
-            this.btt_maximize.Location = new System.Drawing.Point(850, 2);
-            this.btt_maximize.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_maximize.Location = new System.Drawing.Point(1133, 2);
+            this.btt_maximize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_maximize.Name = "btt_maximize";
             this.btt_maximize.ShadowDecoration.Parent = this.btt_maximize;
-            this.btt_maximize.Size = new System.Drawing.Size(47, 48);
+            this.btt_maximize.Size = new System.Drawing.Size(63, 59);
             this.btt_maximize.TabIndex = 27;
             this.btt_maximize.Click += new System.EventHandler(this.btt_maximize_Click_1);
             // 
@@ -695,17 +675,16 @@ namespace Beverage_Management_System
             this.btt_minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_minimize.CheckedState.Parent = this.btt_minimize;
             this.btt_minimize.CustomImages.Parent = this.btt_minimize;
-            this.btt_minimize.DisabledState.Parent = this.btt_minimize;
             this.btt_minimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
             this.btt_minimize.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btt_minimize.ForeColor = System.Drawing.Color.White;
             this.btt_minimize.HoverState.Parent = this.btt_minimize;
             this.btt_minimize.Image = global::Beverage_Management_System.Properties.Resources.squares__4_;
-            this.btt_minimize.Location = new System.Drawing.Point(850, 2);
-            this.btt_minimize.Margin = new System.Windows.Forms.Padding(2);
+            this.btt_minimize.Location = new System.Drawing.Point(1133, 2);
+            this.btt_minimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_minimize.Name = "btt_minimize";
             this.btt_minimize.ShadowDecoration.Parent = this.btt_minimize;
-            this.btt_minimize.Size = new System.Drawing.Size(47, 48);
+            this.btt_minimize.Size = new System.Drawing.Size(63, 59);
             this.btt_minimize.TabIndex = 27;
             this.btt_minimize.Click += new System.EventHandler(this.btt_minimize_Click_1);
             // 
@@ -716,24 +695,26 @@ namespace Beverage_Management_System
             this.panel3.Controls.Add(this.pl_menu);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1125, 731);
+            this.panel3.Size = new System.Drawing.Size(1500, 900);
             this.panel3.TabIndex = 29;
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(1125, 731);
+            this.ClientSize = new System.Drawing.Size(1500, 900);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Beverage Management System";
+            this.Activated += new System.EventHandler(this.Dashboard_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
             this.pl_menu.ResumeLayout(false);
@@ -777,7 +758,6 @@ namespace Beverage_Management_System
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button btt_Product;
         private Guna.UI2.WinForms.Guna2Button btt_Staff;
-        private System.Windows.Forms.Panel pl_content;
         private Guna.UI2.WinForms.Guna2Button btt_close;
         private Guna.UI2.WinForms.Guna2Button btt_minimize;
         private Guna.UI2.WinForms.Guna2Button btt_hide;
@@ -789,5 +769,6 @@ namespace Beverage_Management_System
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Panel pl_Dashboard_Accounting;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
+        public System.Windows.Forms.Panel pl_content;
     }
 }

@@ -51,7 +51,7 @@ namespace Beverage_Management_System
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             StaffPresenter presenter = new StaffPresenter(this);
-            presenter.openAddStaffForm(id_choosed);
+            presenter.openAddStaffForm(id_choosed, this);
         }
 
         private void dtGridView_Staff_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -63,7 +63,9 @@ namespace Beverage_Management_System
                 int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
 
                 StaffPresenter presenter = new StaffPresenter(this);
-                presenter.openAddStaffForm(id_choose);
+                presenter.openAddStaffForm(id_choose, this);
+
+                              
             }
         }
 
@@ -82,6 +84,7 @@ namespace Beverage_Management_System
                     presenter.setDataGV_Fill(dtGridView_Staff);
                     dtGridView_Staff.CurrentCell = null;
                     MyMessageBox.showBox("Delete this staff successfully!", "Message");
+                    reloadTable();
                 }
                 else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
             }
@@ -93,6 +96,14 @@ namespace Beverage_Management_System
             dtGridView_Staff.Rows.Clear();
         }
 
+        public void reloadTable()
+        {
+            StaffPresenter presenter = new StaffPresenter(this);
+            refreshTable();
+            presenter.setDataGV_Fill(dtGridView_Staff);
+            dtGridView_Staff.CurrentCell = null;
+        }
+
         private void bt_Reload_Click(object sender, EventArgs e)
         {
             StaffPresenter presenter = new StaffPresenter(this);
@@ -100,6 +111,23 @@ namespace Beverage_Management_System
             presenter.setDataGV_Fill(dtGridView_Staff);
             dtGridView_Staff.CurrentCell = null;
             MyMessageBox.showBox("Refreshed! This table is up-to-date.", "Message");
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+
+        }
+
+        private void dtGridView_Staff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
+        private void Staff_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

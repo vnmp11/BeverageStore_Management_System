@@ -29,13 +29,16 @@ namespace Beverage_Management_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
             this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
             this.dtGridView_Staff = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +48,6 @@ namespace Beverage_Management_System
             this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ROLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Reload = new Guna.UI2.WinForms.Guna2Button();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_Staff)).BeginInit();
             this.SuspendLayout();
@@ -58,17 +57,15 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(375, 18);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(500, 22);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(135, 25);
+            this.label12.Size = new System.Drawing.Size(180, 31);
             this.label12.TabIndex = 23;
             this.label12.Text = "ALL STAFF";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.bt_Reload);
             this.panel6.Controls.Add(this.bt_Delete);
             this.panel6.Controls.Add(this.dtGridView_Staff);
             this.panel6.Controls.Add(this.guna2TextBox5);
@@ -76,16 +73,44 @@ namespace Beverage_Management_System
             this.panel6.Controls.Add(this.guna2Button4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(934, 568);
+            this.panel6.Size = new System.Drawing.Size(1245, 699);
             this.panel6.TabIndex = 32;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // bt_Delete
+            // 
+            this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.BorderRadius = 25;
+            this.bt_Delete.BorderThickness = 1;
+            this.bt_Delete.CheckedState.Parent = this.bt_Delete;
+            this.bt_Delete.CustomImages.Parent = this.bt_Delete;
+            this.bt_Delete.FillColor = System.Drawing.Color.White;
+            this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.HoverState.Parent = this.bt_Delete;
+            this.bt_Delete.Image = ((System.Drawing.Image)(resources.GetObject("bt_Delete.Image")));
+            this.bt_Delete.Location = new System.Drawing.Point(781, 108);
+            this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_Delete.Name = "bt_Delete";
+            this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
+            this.bt_Delete.Size = new System.Drawing.Size(141, 50);
+            this.bt_Delete.TabIndex = 89;
+            this.bt_Delete.Text = "DELETE";
+            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
             // 
             // dtGridView_Staff
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dtGridView_Staff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtGridView_Staff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtGridView_Staff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGridView_Staff.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtGridView_Staff.BackgroundColor = System.Drawing.Color.White;
             this.dtGridView_Staff.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridView_Staff.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
@@ -98,7 +123,7 @@ namespace Beverage_Management_System
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtGridView_Staff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtGridView_Staff.ColumnHeadersHeight = 25;
+            this.dtGridView_Staff.ColumnHeadersHeight = 40;
             this.dtGridView_Staff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.USERNAME,
@@ -119,12 +144,15 @@ namespace Beverage_Management_System
             this.dtGridView_Staff.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridView_Staff.EnableHeadersVisualStyles = false;
             this.dtGridView_Staff.GridColor = System.Drawing.SystemColors.Control;
-            this.dtGridView_Staff.Location = new System.Drawing.Point(34, 152);
+            this.dtGridView_Staff.Location = new System.Drawing.Point(45, 187);
+            this.dtGridView_Staff.Margin = new System.Windows.Forms.Padding(4);
             this.dtGridView_Staff.Name = "dtGridView_Staff";
             this.dtGridView_Staff.RowHeadersVisible = false;
+            this.dtGridView_Staff.RowHeadersWidth = 60;
             this.dtGridView_Staff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridView_Staff.Size = new System.Drawing.Size(869, 385);
+            this.dtGridView_Staff.Size = new System.Drawing.Size(1159, 474);
             this.dtGridView_Staff.TabIndex = 34;
+            this.dtGridView_Staff.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dtGridView_Staff.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridView_Staff.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dtGridView_Staff.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -137,7 +165,7 @@ namespace Beverage_Management_System
             this.dtGridView_Staff.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             this.dtGridView_Staff.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dtGridView_Staff.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtGridView_Staff.ThemeStyle.HeaderStyle.Height = 25;
+            this.dtGridView_Staff.ThemeStyle.HeaderStyle.Height = 40;
             this.dtGridView_Staff.ThemeStyle.ReadOnly = false;
             this.dtGridView_Staff.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dtGridView_Staff.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
@@ -146,86 +174,8 @@ namespace Beverage_Management_System
             this.dtGridView_Staff.ThemeStyle.RowsStyle.Height = 22;
             this.dtGridView_Staff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtGridView_Staff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGridView_Staff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_Staff_CellContentClick);
             this.dtGridView_Staff.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_Staff_CellContentDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID.FillWeight = 137.0558F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 40;
-            // 
-            // USERNAME
-            // 
-            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.USERNAME.FillWeight = 485.9517F;
-            this.USERNAME.HeaderText = "USERNAME";
-            this.USERNAME.Name = "USERNAME";
-            this.USERNAME.ReadOnly = true;
-            this.USERNAME.Width = 110;
-            // 
-            // PASSWORD
-            // 
-            this.PASSWORD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PASSWORD.FillWeight = 39.57035F;
-            this.PASSWORD.HeaderText = "PASSWORD";
-            this.PASSWORD.Name = "PASSWORD";
-            this.PASSWORD.ReadOnly = true;
-            this.PASSWORD.Width = 110;
-            // 
-            // NAME
-            // 
-            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.NAME.FillWeight = 39.57035F;
-            this.NAME.HeaderText = "NAME";
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            this.NAME.Width = 130;
-            // 
-            // DOB
-            // 
-            this.DOB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DOB.FillWeight = 39.57035F;
-            this.DOB.HeaderText = "DOB";
-            this.DOB.Name = "DOB";
-            this.DOB.ReadOnly = true;
-            this.DOB.Width = 90;
-            // 
-            // SEX
-            // 
-            this.SEX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.SEX.FillWeight = 39.57035F;
-            this.SEX.HeaderText = "SEX";
-            this.SEX.Name = "SEX";
-            this.SEX.ReadOnly = true;
-            this.SEX.Width = 50;
-            // 
-            // PHONE
-            // 
-            this.PHONE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PHONE.FillWeight = 39.57035F;
-            this.PHONE.HeaderText = "PHONE";
-            this.PHONE.Name = "PHONE";
-            this.PHONE.ReadOnly = true;
-            this.PHONE.Width = 95;
-            // 
-            // ADDRESS
-            // 
-            this.ADDRESS.FillWeight = 39.57035F;
-            this.ADDRESS.HeaderText = "ADDRESS";
-            this.ADDRESS.Name = "ADDRESS";
-            this.ADDRESS.ReadOnly = true;
-            // 
-            // ROLE
-            // 
-            this.ROLE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ROLE.FillWeight = 39.57035F;
-            this.ROLE.HeaderText = "ROLE";
-            this.ROLE.Name = "ROLE";
-            this.ROLE.ReadOnly = true;
-            this.ROLE.Width = 80;
             // 
             // guna2TextBox5
             // 
@@ -246,13 +196,14 @@ namespace Beverage_Management_System
             this.guna2TextBox5.HoverState.Parent = this.guna2TextBox5;
             this.guna2TextBox5.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.guna2TextBox5.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.guna2TextBox5.Location = new System.Drawing.Point(34, 67);
+            this.guna2TextBox5.Location = new System.Drawing.Point(45, 108);
+            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '\0';
             this.guna2TextBox5.PlaceholderText = "";
             this.guna2TextBox5.SelectedText = "";
             this.guna2TextBox5.ShadowDecoration.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.Size = new System.Drawing.Size(202, 41);
+            this.guna2TextBox5.Size = new System.Drawing.Size(269, 50);
             this.guna2TextBox5.TabIndex = 33;
             // 
             // guna2Button4
@@ -263,80 +214,104 @@ namespace Beverage_Management_System
             this.guna2Button4.BorderThickness = 1;
             this.guna2Button4.CheckedState.Parent = this.guna2Button4;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Image = global::Beverage_Management_System.Properties.Resources.ic_adduser;
-            this.guna2Button4.Location = new System.Drawing.Point(705, 67);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button4.Location = new System.Drawing.Point(940, 108);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(198, 41);
+            this.guna2Button4.Size = new System.Drawing.Size(264, 50);
             this.guna2Button4.TabIndex = 22;
             this.guna2Button4.Text = "Add a new staff member";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
-            // bt_Delete
+            // ID
             // 
-            this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
-            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_Delete.BorderRadius = 25;
-            this.bt_Delete.BorderThickness = 1;
-            this.bt_Delete.CheckedState.Parent = this.bt_Delete;
-            this.bt_Delete.CustomImages.Parent = this.bt_Delete;
-            this.bt_Delete.DisabledState.Parent = this.bt_Delete;
-            this.bt_Delete.FillColor = System.Drawing.Color.White;
-            this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_Delete.HoverState.Parent = this.bt_Delete;
-            this.bt_Delete.Image = ((System.Drawing.Image)(resources.GetObject("bt_Delete.Image")));
-            this.bt_Delete.Location = new System.Drawing.Point(580, 67);
-            this.bt_Delete.Margin = new System.Windows.Forms.Padding(2);
-            this.bt_Delete.Name = "bt_Delete";
-            this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
-            this.bt_Delete.Size = new System.Drawing.Size(106, 41);
-            this.bt_Delete.TabIndex = 89;
-            this.bt_Delete.Text = "DELETE";
-            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
+            this.ID.FillWeight = 10F;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 7;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // bt_Reload
+            // USERNAME
             // 
-            this.bt_Reload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_Reload.BackColor = System.Drawing.Color.Transparent;
-            this.bt_Reload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bt_Reload.BorderRadius = 25;
-            this.bt_Reload.BorderThickness = 1;
-            this.bt_Reload.CheckedState.Parent = this.bt_Reload;
-            this.bt_Reload.CustomImages.Parent = this.bt_Reload;
-            this.bt_Reload.DisabledState.Parent = this.bt_Reload;
-            this.bt_Reload.FillColor = System.Drawing.Color.White;
-            this.bt_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Reload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bt_Reload.HoverState.Parent = this.bt_Reload;
-            this.bt_Reload.Image = ((System.Drawing.Image)(resources.GetObject("bt_Reload.Image")));
-            this.bt_Reload.Location = new System.Drawing.Point(449, 67);
-            this.bt_Reload.Margin = new System.Windows.Forms.Padding(2);
-            this.bt_Reload.Name = "bt_Reload";
-            this.bt_Reload.ShadowDecoration.Parent = this.bt_Reload;
-            this.bt_Reload.Size = new System.Drawing.Size(106, 41);
-            this.bt_Reload.TabIndex = 90;
-            this.bt_Reload.Text = "RELOAD";
-            this.bt_Reload.Click += new System.EventHandler(this.bt_Reload_Click);
+            this.USERNAME.FillWeight = 35F;
+            this.USERNAME.HeaderText = "USERNAME";
+            this.USERNAME.MinimumWidth = 7;
+            this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
+            // 
+            // PASSWORD
+            // 
+            this.PASSWORD.FillWeight = 39.44861F;
+            this.PASSWORD.HeaderText = "PASSWORD";
+            this.PASSWORD.MinimumWidth = 7;
+            this.PASSWORD.Name = "PASSWORD";
+            this.PASSWORD.ReadOnly = true;
+            // 
+            // NAME
+            // 
+            this.NAME.FillWeight = 50F;
+            this.NAME.HeaderText = "NAME";
+            this.NAME.MinimumWidth = 7;
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            // 
+            // DOB
+            // 
+            this.DOB.FillWeight = 20F;
+            this.DOB.HeaderText = "DOB";
+            this.DOB.MinimumWidth = 7;
+            this.DOB.Name = "DOB";
+            this.DOB.ReadOnly = true;
+            // 
+            // SEX
+            // 
+            this.SEX.FillWeight = 15F;
+            this.SEX.HeaderText = "SEX";
+            this.SEX.MinimumWidth = 7;
+            this.SEX.Name = "SEX";
+            this.SEX.ReadOnly = true;
+            // 
+            // PHONE
+            // 
+            this.PHONE.FillWeight = 20F;
+            this.PHONE.HeaderText = "PHONE";
+            this.PHONE.MinimumWidth = 7;
+            this.PHONE.Name = "PHONE";
+            this.PHONE.ReadOnly = true;
+            // 
+            // ADDRESS
+            // 
+            this.ADDRESS.FillWeight = 45F;
+            this.ADDRESS.HeaderText = "ADDRESS";
+            this.ADDRESS.MinimumWidth = 7;
+            this.ADDRESS.Name = "ADDRESS";
+            this.ADDRESS.ReadOnly = true;
+            // 
+            // ROLE
+            // 
+            this.ROLE.FillWeight = 20F;
+            this.ROLE.HeaderText = "ROLE";
+            this.ROLE.MinimumWidth = 7;
+            this.ROLE.Name = "ROLE";
+            this.ROLE.ReadOnly = true;
             // 
             // Staff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(934, 568);
+            this.ClientSize = new System.Drawing.Size(1245, 699);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Staff";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Staff_Load);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_Staff)).EndInit();
             this.ResumeLayout(false);
@@ -348,7 +323,8 @@ namespace Beverage_Management_System
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
-        private Guna.UI2.WinForms.Guna2DataGridView dtGridView_Staff;
+        private Guna.UI2.WinForms.Guna2Button bt_Delete;
+        public Guna.UI2.WinForms.Guna2DataGridView dtGridView_Staff;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn USERNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn PASSWORD;
@@ -358,7 +334,5 @@ namespace Beverage_Management_System
         private System.Windows.Forms.DataGridViewTextBoxColumn PHONE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ADDRESS;
         private System.Windows.Forms.DataGridViewTextBoxColumn ROLE;
-        private Guna.UI2.WinForms.Guna2Button bt_Delete;
-        private Guna.UI2.WinForms.Guna2Button bt_Reload;
     }
 }

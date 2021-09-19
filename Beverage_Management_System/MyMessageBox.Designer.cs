@@ -32,10 +32,10 @@ namespace Beverage_Management_System
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lb_Title = new System.Windows.Forms.Label();
             this.btt_ok = new Guna.UI2.WinForms.Guna2Button();
             this.lb_message = new System.Windows.Forms.Label();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,21 @@ namespace Beverage_Management_System
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(485, 53);
             this.panel1.TabIndex = 0;
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.HoverState.Image = global::Beverage_Management_System.Properties.Resources.close;
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(383, 9);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
+            this.guna2ImageButton1.TabIndex = 110;
+            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
             // lb_Title
             // 
@@ -97,21 +112,7 @@ namespace Beverage_Management_System
             this.lb_message.TabIndex = 109;
             this.lb_message.Text = "label2";
             this.lb_message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.HoverState.Image = global::Beverage_Management_System.Properties.Resources.close;
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(383, 9);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
-            this.guna2ImageButton1.TabIndex = 110;
-            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            this.lb_message.Click += new System.EventHandler(this.lb_message_Click);
             // 
             // MyMessageBox
             // 
@@ -126,6 +127,7 @@ namespace Beverage_Management_System
             this.Name = "MyMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MessageBox";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyMessageBox_FormClosed);
             this.Load += new System.EventHandler(this.MessageBox_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

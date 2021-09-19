@@ -11,11 +11,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Beverage_Management_System
 {
     public partial class AddStaff : Form, IAddStaff
     {
+     
+
         int id;
         public string username { get => txt_Username.Text; set => throw new NotImplementedException(); }
         public string password { get => txt_Password.Text; set => throw new NotImplementedException(); }
@@ -31,12 +34,21 @@ namespace Beverage_Management_System
             InitializeComponent();
         }
 
+       
         public AddStaff(int id)
         {  
             InitializeComponent();
 
             setInformation(id);
         }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
 
         public string getSex(RadioButton rb)
         {
@@ -63,12 +75,7 @@ namespace Beverage_Management_System
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                pB_avt.Image = new Bitmap(open.FileName);
-            }    
+
         }
 
         private void guna2TextBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -114,7 +121,6 @@ namespace Beverage_Management_System
 
                     DateTime date = Convert.ToDateTime(row["DOB"]);
                     dtPicker_DOB.Value = date;
-
                     string SEX = row["SEX"].ToString();
                     if (SEX != "Male")
                     {
@@ -133,13 +139,13 @@ namespace Beverage_Management_System
                     txt_Address.Text = row["ADDRESS"].ToString();
 
                     int ROLE = Convert.ToInt32(row["ROLE"]);
-                    if(ROLE == 1)
+                    if (ROLE == 1)
                     {
                         rb_Waiter.Checked = true;
                         rb_Bartender.Checked = false;
                         rb_Accountant.Checked = false;
                     }
-                    else if(ROLE == 2)
+                    else if (ROLE == 2)
                     {
                         rb_Waiter.Checked = false;
                         rb_Bartender.Checked = true;
@@ -161,17 +167,19 @@ namespace Beverage_Management_System
 
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            if(txt_Username.Text.ToString().Trim() != "" && txt_Password.Text.ToString().Trim() != "" 
-                && txt_Name.Text.ToString().Trim() != "" && (rb_Male.Checked == true  || rb_Female.Checked == true)
-                && dtPicker_DOB.Value != null && txt_Phone.Text.ToString().Trim() != "" && txt_Address.Text.ToString().Trim() != ""
-                && (rb_Waiter.Checked == true || rb_Bartender.Checked == true || rb_Accountant.Checked == true))
+            if (txt_Username.Text.ToString().Trim() != "" && txt_Password.Text.ToString().Trim() != ""
+                  && txt_Name.Text.ToString().Trim() != "" && (rb_Male.Checked == true || rb_Female.Checked == true)
+                  && dtPicker_DOB.Value != null && txt_Phone.Text.ToString().Trim() != "" && txt_Address.Text.ToString().Trim() != ""
+                  && (rb_Waiter.Checked == true || rb_Bartender.Checked == true || rb_Accountant.Checked == true))
             {
                 if (txt_ID.Text.Trim() != "") id = Convert.ToInt32(txt_ID.Text);
                 else id = -1;
                 StaffPresenter presenter = new StaffPresenter(this, id);
                 presenter.addStaff(this);
+               
+                this.Close();
 
-
+               
             }
             else MyMessageBox.showBox("Please fill in the employee's information completely!", "Message");
         }
@@ -193,5 +201,37 @@ namespace Beverage_Management_System
 
         }
 
+        private void AddStaff_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void AddStaff_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //this.Owner.Dispose();
+
+
+            Dashboard db = new Dashboard();
+            Staff st = new Staff();
+            st.Owner = db;
+            db.openChildForm(st);
+            db.Show();
+
+     
+        }
+
+        private void AddStaff_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AddStaff_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Owner.Hide();
+        }
     }
 }
