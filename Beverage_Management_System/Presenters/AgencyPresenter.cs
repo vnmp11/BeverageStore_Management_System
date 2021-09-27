@@ -149,6 +149,12 @@ namespace Beverage_Management_System.Presenters
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
+
+            SqlCommand cmd1 = new SqlCommand("Delete from GOODS where ID_SUPPLIER=@id;", myConnection.sqlcon);
+            cmd1.Parameters.AddWithValue("@id", id);
+            cmd1.ExecuteNonQuery();
+           
+
             SqlCommand cmd = new SqlCommand("Delete from SUPPLIER where ID_SUPPLIER=@id;", myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@id", id);
 

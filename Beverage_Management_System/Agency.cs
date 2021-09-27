@@ -78,7 +78,6 @@ namespace Beverage_Management_System
             int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
 
             AgencyPresenter presenter = new AgencyPresenter(this);
-            //presenter.openAddStaffForm(id_choose, this);
             presenter.openGoodAgencyForm(id_choose);
         }
 
@@ -102,9 +101,10 @@ namespace Beverage_Management_System
 
                 AgencyPresenter presenter = new AgencyPresenter(this);
                 presenter.openAddAgencyForm(id_choose);
-
-
-
+            }
+            else
+            {
+                MyMessageBox.showBox("Please choose a agency whom you want to delete!", "Message");
             }
         }
     }

@@ -239,10 +239,10 @@ namespace Beverage_Management_System
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.panel2.Controls.Add(this.guna2ImageButton2);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(-8, 2);
+            this.panel2.Location = new System.Drawing.Point(-8, -7);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1271, 80);
+            this.panel2.Size = new System.Drawing.Size(1271, 89);
             this.panel2.TabIndex = 110;
             // 
             // guna2ImageButton2

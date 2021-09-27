@@ -327,6 +327,7 @@ namespace Beverage_Management_System
             this.Name = "AddGoodAgency";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddGoodAgency";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddGoodAgency_FormClosing);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

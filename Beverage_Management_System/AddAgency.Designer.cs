@@ -400,6 +400,7 @@ namespace Beverage_Management_System
             this.txt_Id_Agency.ShadowDecoration.Parent = this.txt_Id_Agency;
             this.txt_Id_Agency.Size = new System.Drawing.Size(37, 50);
             this.txt_Id_Agency.TabIndex = 110;
+            this.txt_Id_Agency.Visible = false;
             // 
             // AddAgency
             // 

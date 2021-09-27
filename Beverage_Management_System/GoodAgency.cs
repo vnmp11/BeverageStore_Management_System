@@ -31,10 +31,6 @@ namespace Beverage_Management_System
 
         }
 
-       
-
-       
-
         public void refreshTable()
         {
             dataGridView_Goods.Rows.Clear();

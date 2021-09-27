@@ -84,5 +84,11 @@ namespace Beverage_Management_System
         {
             this.Close();
         }
+
+        private void AddGoodAgency_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GoodAgency f = new GoodAgency();
+            f.reloadTable();
+        }
     }
 }

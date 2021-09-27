@@ -1,6 +1,7 @@
 ﻿using Beverage_Management_System.Presenters;
 using Beverage_Management_System.View;
 using System;
+using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,13 +50,12 @@ namespace Beverage_Management_System
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            if (!txt_Id_Agency.Text.Equals(null))
+            if (!txt_Id_Agency.Text.Equals(""))
             {
                 AgencyPresenter agencyPresenter = new AgencyPresenter(this, id);
                 agencyPresenter.UpdateSupllier(this,Int32.Parse( txt_Id_Agency.Text));
             }
-
-            else if(txt_Name_Agency.Text.ToString().Trim() != "" && txt_Address_Agency.ToString().Trim() != ""
+            else if (txt_Name_Agency.Text.ToString().Trim() != "" && txt_Address_Agency.ToString().Trim() != ""
                   && txt_Phone_Agency.ToString().Trim() != "" && txt_Item_Agency.ToString().Trim() != "")
             {
                 AgencyPresenter agencyPresenter = new AgencyPresenter(this, id);
@@ -87,7 +87,7 @@ namespace Beverage_Management_System
 
         private void AddAgency_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Agency f = (Agency)this.Owner;
+            //Agency f = (Agency)this.Owner;   
            // f.reloadTableAgency();
         }
 
