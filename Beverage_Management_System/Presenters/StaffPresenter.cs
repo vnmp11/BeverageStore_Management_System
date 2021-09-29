@@ -87,7 +87,7 @@ namespace Beverage_Management_System.Presenters
 
         }
 
-        private string getRole(int ROLE)
+        public string getRole(int ROLE)
         {
             switch (ROLE)
             {
@@ -105,14 +105,6 @@ namespace Beverage_Management_System.Presenters
                     break;
 
             }
-        }
-
-        public void openAddStaffForm(int id_choosed)
-        {
-      
-            AddStaff form = new AddStaff(id_choosed);
-           
-            form.Show();
         }
         
          public void openAddStaffForm(int id_choosed, Form parent)
@@ -261,6 +253,11 @@ namespace Beverage_Management_System.Presenters
                 return 1;
             }
             else return 0;
+        }
+
+        public void searchDataInDataGV()
+        {
+            staffView.searchData();
         }
 
     }

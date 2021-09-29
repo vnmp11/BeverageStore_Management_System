@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationManifest>app1.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2">
@@ -123,8 +123,10 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\KindOfProduct.cs" />
     <Compile Include="Model\MAgency.cs" />
     <Compile Include="Model\MGoodsAgency.cs" />
+    <Compile Include="Model\MProduct.cs" />
     <Compile Include="MyMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +142,7 @@
     </Compile>
     <Compile Include="Presenters\AgencyPresenter.cs" />
     <Compile Include="Presenters\GoodAgencyPresenter.cs" />
+    <Compile Include="Presenters\InventoryPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\StaffPresenter.cs" />
     <Compile Include="Product.cs">
@@ -188,10 +191,12 @@
     </Compile>
     <Compile Include="View\IAddAgency.cs" />
     <Compile Include="View\IAddGoodsAgency.cs" />
+    <Compile Include="View\IAddProduct.cs" />
     <Compile Include="View\IAddStaff.cs" />
     <Compile Include="View\IAgency.cs" />
     <Compile Include="View\IGoodsAgency.cs" />
     <Compile Include="View\ILogin.cs" />
+    <Compile Include="View\IInventory.cs" />
     <Compile Include="View\IStaff.cs" />
     <EmbeddedResource Include="AddAgency.resx">
       <DependentUpon>AddAgency.cs</DependentUpon>
@@ -265,6 +270,7 @@
       <DependentUpon>TrackingNote.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <None Include="app1.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

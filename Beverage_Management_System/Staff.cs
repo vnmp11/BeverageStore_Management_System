@@ -18,23 +18,14 @@ namespace Beverage_Management_System
     public partial class Staff : Form, IStaff
     {
         int id_choosed = 0;
+        StaffPresenter presenter;
+
         public Staff()
         {
             InitializeComponent();
-            StaffPresenter presenter = new StaffPresenter(this);
+            presenter = new StaffPresenter(this);
             presenter.setDataGV_Fill(dtGridView_Staff);
             dtGridView_Staff.CurrentCell = null;
-            /*SqlConnection con = new SqlConnection("Data Source=beverage-stores-erver.database.windows.net;Initial Catalog=beverage-store;User ID=votrungtin;Password=Trungtin0701@");
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("Select NAME from PERSON where ID_PERSON = @ID", con);
-            cmd.Parameters.AddWithValue("@ID", 2);
-            SqlDataReader da = cmd.ExecuteReader();
-            if(da.Read()) 
-            {
-                guna2TextBox5.Text = da["NAME"].ToString();
-            }
-            con.Close();*/
           
         }
 
@@ -56,18 +47,7 @@ namespace Beverage_Management_System
 
         private void dtGridView_Staff_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtGridView_Staff.SelectedCells.Count > 0)
-            {
-                int selected_index = dtGridView_Staff.SelectedCells[0].RowIndex;
-                DataGridViewRow selected_row = dtGridView_Staff.Rows[selected_index];
-                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
-
-                StaffPresenter presenter = new StaffPresenter(this);
-                presenter.openAddStaffForm(id_choose, this);
-
-            
-
-            }
+           
         }
 
         private void bt_Delete_Click(object sender, EventArgs e)
@@ -120,11 +100,6 @@ namespace Beverage_Management_System
 
         }
 
-        private void dtGridView_Staff_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
        
         private void Staff_Load(object sender, EventArgs e)
         {
@@ -151,6 +126,86 @@ namespace Beverage_Management_System
             
                 MyMessageBox.showBox(AddStaff.message.ToString());
             
+        }
+
+        private void dtGridView_Staff_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dtGridView_Staff.SelectedCells.Count > 0)
+            {
+                int selected_index = dtGridView_Staff.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dtGridView_Staff.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+
+                StaffPresenter presenter = new StaffPresenter(this);
+                presenter.openAddStaffForm(id_choose, this);
+
+
+
+            }
+        }
+
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+            presenter.searchDataInDataGV();
+        }
+
+        public void searchData()
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            List<Person> list = new List<Person>();
+            dtGridView_Staff.Rows.Clear();
+
+            string querry = "Select * from PERSON where NAME like '" + txt_Search.Text + "%' or ID_PERSON like '" + txt_Search.Text + "%';";
+            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+
+            if (dtbl.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    if (Convert.ToInt32(row["ROLE"]) != 0)
+                    {
+                        int ID = Convert.ToInt32(row["ID_PERSON"]);
+                        string USERNAME = row["USERNAME"].ToString();
+                        string PASSWORD = row["PASSWORD"].ToString();
+                        string NAME = row["NAME"].ToString();
+
+                        DateTime date = Convert.ToDateTime(row["DOB"]);
+                        string DOB = date.ToString("dd-MM-yyyy");
+
+                        string SEX = row["SEX"].ToString();
+                        string PHONE = row["PHONE"].ToString();
+                        string ADDRESS = row["ADDRESS"].ToString();
+                        int ROLE = Convert.ToInt32(row["ROLE"]);
+
+                        Person person = new Person(ID, USERNAME, PASSWORD, NAME, DOB, SEX, PHONE, ADDRESS, ROLE);
+                        list.Add(person);
+                    }
+                }
+            }
+
+            for (int i = 0; i < list.Count(); i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtGridView_Staff.Rows[i].Clone();
+                row.Cells[0].Value = list[i].getID();
+                row.Cells[1].Value = list[i].getUSERNAME();
+                row.Cells[2].Value = list[i].getPASSWORD();
+                row.Cells[3].Value = list[i].getNAME();
+                row.Cells[4].Value = list[i].getDOB();
+                row.Cells[5].Value = list[i].getSEX();
+                row.Cells[6].Value = list[i].getPHONE();
+                row.Cells[7].Value = list[i].getADDRESS();
+                row.Cells[8].Value = presenter.getRole(list[i].getROLE());
+
+                dtGridView_Staff.Rows.Add(row);
+
+            }
+
+            myConnection.sqlcon.Close();
+
         }
     }
 }

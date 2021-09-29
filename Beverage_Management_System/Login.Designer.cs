@@ -82,8 +82,6 @@ namespace Beverage_Management_System
             this.panel3.Controls.Add(this.txt_Password);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.txt_Username);
-            this.panel3.Controls.Add(this.btt_unvisible2);
-            this.panel3.Controls.Add(this.btt_visible2);
             this.panel3.Location = new System.Drawing.Point(482, 38);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(442, 446);

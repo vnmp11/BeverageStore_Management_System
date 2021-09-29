@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Beverage_Management_System.View
 {
-    interface IStaff
+    interface IInventory
     {
+        void setDataGV_Fill();
         void searchData();
     }
 }
