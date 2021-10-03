@@ -582,6 +582,7 @@ namespace Beverage_Management_System
             this.pl_content.Size = new System.Drawing.Size(1271, 839);
             this.pl_content.TabIndex = 1;
             this.pl_content.Paint += new System.Windows.Forms.PaintEventHandler(this.pl_content_Paint);
+            this.pl_content.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_content_MouseDown);
             // 
             // panel1
             // 
@@ -602,6 +603,7 @@ namespace Beverage_Management_System
             this.panel1.Size = new System.Drawing.Size(1265, 900);
             this.panel1.TabIndex = 28;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // btt_hide
             // 

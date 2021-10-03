@@ -119,12 +119,6 @@ namespace Beverage_Management_System
 
         private void Staff_Click(object sender, EventArgs e)
         {
-            if (AddStaff.message == 1)
-            {
-                reloadTable();
-            }
-            
-                MyMessageBox.showBox(AddStaff.message.ToString());
             
         }
 

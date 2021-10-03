@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Beverage_Management_System.View;
 using Beverage_Management_System.Presenters;
+using System.Runtime.InteropServices;
 
 namespace Beverage_Management_System
 {
@@ -16,6 +17,14 @@ namespace Beverage_Management_System
     {
         public string username { get => txt_Username.Text ; set => txt_Username.Text = value; }
         public string password { get => txt_Password.Text; set => txt_Password.Text = value; }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
 
         public Login()
         {
@@ -78,6 +87,23 @@ namespace Beverage_Management_System
         {
             txt_Username.Text = "";
             txt_Password.Text = "";
+        }
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Login.PerformClick();
+            }
         }
     }
 }

@@ -191,6 +191,16 @@ namespace Beverage_Management_System
 
             myConnection.sqlcon.Close();
         }
+
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

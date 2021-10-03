@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Beverage_Management_System.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,6 +63,12 @@ namespace Beverage_Management_System
         private void MyMessageBox_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void MyMessageBox_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ProductPresenter p = new ProductPresenter();
+            p.show_id();
         }
     }
 }

@@ -72,7 +72,7 @@ namespace Beverage_Management_System
             // lb_Title
             // 
             this.lb_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lb_Title.Font = new System.Drawing.Font("Poppins SemiBold", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Title.ForeColor = System.Drawing.Color.White;
             this.lb_Title.Location = new System.Drawing.Point(132, 13);
             this.lb_Title.Name = "lb_Title";
@@ -91,7 +91,7 @@ namespace Beverage_Management_System
             this.btt_ok.CheckedState.Parent = this.btt_ok;
             this.btt_ok.CustomImages.Parent = this.btt_ok;
             this.btt_ok.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.btt_ok.Font = new System.Drawing.Font("Poppins SemiBold", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_ok.ForeColor = System.Drawing.Color.White;
             this.btt_ok.HoverState.Parent = this.btt_ok;
             this.btt_ok.Location = new System.Drawing.Point(147, 148);
@@ -105,7 +105,7 @@ namespace Beverage_Management_System
             // lb_message
             // 
             this.lb_message.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lb_message.Font = new System.Drawing.Font("Poppins", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_message.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_message.Location = new System.Drawing.Point(24, 67);
             this.lb_message.Name = "lb_message";
             this.lb_message.Size = new System.Drawing.Size(393, 65);
@@ -127,6 +127,7 @@ namespace Beverage_Management_System
             this.Name = "MyMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MessageBox";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MyMessageBox_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyMessageBox_FormClosed);
             this.Load += new System.EventHandler(this.MessageBox_Load);
             this.panel1.ResumeLayout(false);

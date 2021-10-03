@@ -42,6 +42,7 @@ namespace Beverage_Management_System.Model
 
 
         }
+
         public int getID() { return this.id; }
         public void setID(int ID) { this.id = ID; }
 

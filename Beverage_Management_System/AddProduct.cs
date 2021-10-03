@@ -278,5 +278,10 @@ namespace Beverage_Management_System
             }
             myConnection.sqlcon.Close();
         }
+
+        private void cb_KindOfProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

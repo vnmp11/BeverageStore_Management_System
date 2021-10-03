@@ -107,5 +107,10 @@ namespace Beverage_Management_System
                 MyMessageBox.showBox("Please choose a agency whom you want to delete!", "Message");
             }
         }
+
+        private void Agency_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

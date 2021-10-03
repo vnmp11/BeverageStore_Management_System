@@ -1,7 +1,12 @@
-﻿using System;
+﻿
+using Beverage_Management_System.Connection;
+using Beverage_Management_System.Model;
+using Beverage_Management_System.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +17,22 @@ namespace Beverage_Management_System
 {
     public partial class Product : UserControl
     {
+
+        int id_product;
+        int quantity;
+        int price;
+        AddQuatity qty;
+
+
         public Product()
         {
             InitializeComponent();
+        }
+
+        public Product(String name, String price)
+        {
+            LabelProduct = name;
+            LabelPrice = price;
         }
 
         public Image ImageProduct
@@ -41,6 +59,44 @@ namespace Beverage_Management_System
             }
         }
 
+        public int idProduct
+        {
+            get
+            {
+                return id_product;
+            }
+            set
+            {
+                id_product = value;
+            }
+        }
+
+        public int p_Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                price = value;
+            }
+        }
+
+
+        public int Quantity
+        {
+            get
+            {
+                return quantity;
+            }
+            set
+            {
+                quantity = value;
+            }
+        }
+
+
         public string LabelPrice
         {
             get
@@ -53,17 +109,76 @@ namespace Beverage_Management_System
             }
         }
 
-        private void Product_Click(object sender, EventArgs e)
+        public void Product_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("click");
+            if (quantity == 0)
+            {
+                this.Click += new EventHandler(this.showBox);
+            }
+            else
+            {       
+                qty = new AddQuatity();
+                Menu menu = (Menu) this.Parent.Parent;
+                qty.Show();
+
+                qty.btt_ok.Click += (s, a) => {
+
+                    ProductPresenter pre = new ProductPresenter();
+                    Guna.UI2.WinForms.Guna2TextBox c = menu.txb_IdOrder;
+
+                    pre.addItem(this.idProduct, c.Text, int.Parse(qty.txbQuantity));
+                    menu.reloadFlowLayout();
+                    menu.showTotal();
+                };
+
+            }
+
         }
 
+    
         private void lb_Price_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pB_ProductImage_Click(object sender, EventArgs e)
+        private void lb_Price_TextChanged(object sender, EventArgs e)
+        {
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            decimal value = decimal.Parse(lb_Price.Text, System.Globalization.NumberStyles.AllowThousands);
+            lb_Price.Text = String.Format(culture, "{0:N0}", value);
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lb_NameProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Product_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void showBox(object sender, EventArgs e)
+        {
+            MyMessageBox.showBox("This product is sold out.", "Message");
+        }
+
+        public void Product_MouseClick(object sender, MouseEventArgs e)
+        {
+        
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -37,7 +37,6 @@ namespace Beverage_Management_System
             this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dataGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KIND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_GOODS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +44,7 @@ namespace Beverage_Management_System
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,10 +53,9 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(397, 19);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(529, 23);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(149, 25);
+            this.label12.Size = new System.Drawing.Size(199, 31);
             this.label12.TabIndex = 25;
             this.label12.Text = "INVENTORY";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -80,13 +79,14 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(34, 55);
+            this.txt_Search.Location = new System.Drawing.Point(56, 83);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
             this.txt_Search.PlaceholderText = "";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(202, 41);
+            this.txt_Search.Size = new System.Drawing.Size(269, 50);
             this.txt_Search.TabIndex = 32;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
@@ -98,17 +98,16 @@ namespace Beverage_Management_System
             this.guna2Button1.BorderThickness = 1;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.plus;
-            this.guna2Button1.Location = new System.Drawing.Point(758, 55);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Location = new System.Drawing.Point(986, 83);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(172, 41);
+            this.guna2Button1.Size = new System.Drawing.Size(229, 50);
             this.guna2Button1.TabIndex = 24;
             this.guna2Button1.Text = "Add a new product";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
@@ -153,13 +152,15 @@ namespace Beverage_Management_System
             this.dataGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGV.EnableHeadersVisualStyles = false;
             this.dataGV.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGV.Location = new System.Drawing.Point(42, 149);
+            this.dataGV.Location = new System.Drawing.Point(56, 144);
+            this.dataGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGV.Name = "dataGV";
             this.dataGV.RowHeadersVisible = false;
             this.dataGV.RowHeadersWidth = 60;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(869, 385);
+            this.dataGV.Size = new System.Drawing.Size(1159, 631);
             this.dataGV.TabIndex = 35;
+            this.dataGV.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -181,31 +182,8 @@ namespace Beverage_Management_System
             this.dataGV.ThemeStyle.RowsStyle.Height = 22;
             this.dataGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellContentClick);
             this.dataGV.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGV_CellMouseDoubleClick);
-            // 
-            // bt_Delete
-            // 
-            this.bt_Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
-            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_Delete.BorderRadius = 25;
-            this.bt_Delete.BorderThickness = 1;
-            this.bt_Delete.CheckedState.Parent = this.bt_Delete;
-            this.bt_Delete.CustomImages.Parent = this.bt_Delete;
-            this.bt_Delete.DisabledState.Parent = this.bt_Delete;
-            this.bt_Delete.FillColor = System.Drawing.Color.White;
-            this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_Delete.HoverState.Parent = this.bt_Delete;
-            this.bt_Delete.Image = ((System.Drawing.Image)(resources.GetObject("bt_Delete.Image")));
-            this.bt_Delete.Location = new System.Drawing.Point(633, 55);
-            this.bt_Delete.Margin = new System.Windows.Forms.Padding(2);
-            this.bt_Delete.Name = "bt_Delete";
-            this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
-            this.bt_Delete.Size = new System.Drawing.Size(106, 41);
-            this.bt_Delete.TabIndex = 87;
-            this.bt_Delete.Text = "DELETE";
-            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
             // 
             // ID
             // 
@@ -263,22 +241,46 @@ namespace Beverage_Management_System
             this.QUANTITY.Name = "QUANTITY";
             this.QUANTITY.ReadOnly = true;
             // 
+            // bt_Delete
+            // 
+            this.bt_Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.BorderRadius = 25;
+            this.bt_Delete.BorderThickness = 1;
+            this.bt_Delete.CheckedState.Parent = this.bt_Delete;
+            this.bt_Delete.CustomImages.Parent = this.bt_Delete;
+            this.bt_Delete.FillColor = System.Drawing.Color.White;
+            this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.HoverState.Parent = this.bt_Delete;
+            this.bt_Delete.Image = ((System.Drawing.Image)(resources.GetObject("bt_Delete.Image")));
+            this.bt_Delete.Location = new System.Drawing.Point(836, 83);
+            this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_Delete.Name = "bt_Delete";
+            this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
+            this.bt_Delete.Size = new System.Drawing.Size(141, 50);
+            this.bt_Delete.TabIndex = 87;
+            this.bt_Delete.Text = "DELETE";
+            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
+            // 
             // Inventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(953, 682);
+            this.ClientSize = new System.Drawing.Size(1271, 839);
             this.Controls.Add(this.bt_Delete);
             this.Controls.Add(this.dataGV);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageStaff";
+            this.Load += new System.EventHandler(this.Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
             this.ResumeLayout(false);
 

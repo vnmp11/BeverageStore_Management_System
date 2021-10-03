@@ -89,7 +89,6 @@ namespace Beverage_Management_System
             this.bt_Delete.BorderThickness = 1;
             this.bt_Delete.CheckedState.Parent = this.bt_Delete;
             this.bt_Delete.CustomImages.Parent = this.bt_Delete;
-            this.bt_Delete.DisabledState.Parent = this.bt_Delete;
             this.bt_Delete.FillColor = System.Drawing.Color.White;
             this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -288,7 +287,6 @@ namespace Beverage_Management_System
             this.guna2Button4.BorderThickness = 1;
             this.guna2Button4.CheckedState.Parent = this.guna2Button4;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;

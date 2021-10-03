@@ -17,7 +17,6 @@ namespace Beverage_Management_System
         public Dashboard(int ID)
         {
             InitializeComponent();
-
             id_person = ID;
         }
 
@@ -209,11 +208,6 @@ namespace Beverage_Management_System
             openChildForm(new IncidentReport());
         }
 
-        private void btt_order_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Menu());
-        }
-
         private void btt_Product_Click(object sender, EventArgs e)
         {
             showSubMenu(pl_SubMenuProduct);
@@ -227,7 +221,7 @@ namespace Beverage_Management_System
 
         private void guna2Button3_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new Menu());
+            openChildForm(new Menu(id_person));
         }
 
         private void btt_Staff_Click(object sender, EventArgs e)
@@ -366,6 +360,20 @@ namespace Beverage_Management_System
         public void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void pl_content_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }

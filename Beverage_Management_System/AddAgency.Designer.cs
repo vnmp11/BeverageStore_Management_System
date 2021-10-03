@@ -287,12 +287,10 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.Location = new System.Drawing.Point(556, 20);
             this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(44, 56);
             this.guna2ImageButton1.TabIndex = 108;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
@@ -306,7 +304,6 @@ namespace Beverage_Management_System
             this.guna2Button1.BorderThickness = 1;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.White;
             this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -329,7 +326,6 @@ namespace Beverage_Management_System
             this.guna2Button3.BorderThickness = 1;
             this.guna2Button3.CheckedState.Parent = this.guna2Button3;
             this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.DisabledState.Parent = this.guna2Button3;
             this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.guna2Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
@@ -352,13 +348,11 @@ namespace Beverage_Management_System
             this.btt_close.HoverState.Parent = this.btt_close;
             this.btt_close.Image = ((System.Drawing.Image)(resources.GetObject("btt_close.Image")));
             this.btt_close.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btt_close.ImageRotate = 0F;
             this.btt_close.ImageSize = new System.Drawing.Size(30, 30);
             this.btt_close.Location = new System.Drawing.Point(608, 76);
             this.btt_close.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_close.Name = "btt_close";
             this.btt_close.PressedState.Parent = this.btt_close;
-            this.btt_close.ShadowDecoration.Parent = this.btt_close;
             this.btt_close.Size = new System.Drawing.Size(44, 56);
             this.btt_close.TabIndex = 93;
             // 

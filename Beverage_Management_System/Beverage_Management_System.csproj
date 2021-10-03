@@ -68,6 +68,12 @@
     <Compile Include="AddGoodAgency.Designer.cs">
       <DependentUpon>AddGoodAgency.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddQuatity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddQuatity.Designer.cs">
+      <DependentUpon>AddQuatity.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection\MyConnection.cs" />
+    <Compile Include="DetailOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailOrder.Designer.cs">
+      <DependentUpon>DetailOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FinancialNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,12 @@
     <Compile Include="IncidentReport.Designer.cs">
       <DependentUpon>IncidentReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +144,8 @@
     <Compile Include="Model\KindOfProduct.cs" />
     <Compile Include="Model\MAgency.cs" />
     <Compile Include="Model\MGoodsAgency.cs" />
+    <Compile Include="Model\MItem.cs" />
+    <Compile Include="Model\MOrderForm.cs" />
     <Compile Include="Model\MProduct.cs" />
     <Compile Include="MyMessageBox.cs">
       <SubType>Form</SubType>
@@ -144,6 +164,8 @@
     <Compile Include="Presenters\GoodAgencyPresenter.cs" />
     <Compile Include="Presenters\InventoryPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\OrderFormPresenter.cs" />
+    <Compile Include="Presenters\ProductPresenter.cs" />
     <Compile Include="Presenters\StaffPresenter.cs" />
     <Compile Include="Product.cs">
       <SubType>UserControl</SubType>
@@ -189,6 +211,12 @@
     <Compile Include="TrackingNote.Designer.cs">
       <DependentUpon>TrackingNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateItem.Designer.cs">
+      <DependentUpon>UpdateItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\IAddAgency.cs" />
     <Compile Include="View\IAddGoodsAgency.cs" />
     <Compile Include="View\IAddProduct.cs" />
@@ -204,6 +232,9 @@
     <EmbeddedResource Include="AddGoodAgency.resx">
       <DependentUpon>AddGoodAgency.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddQuatity.resx">
+      <DependentUpon>AddQuatity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddStaff.resx">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailOrder.resx">
+      <DependentUpon>DetailOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinancialNote.resx">
       <DependentUpon>FinancialNote.cs</DependentUpon>
@@ -225,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IncidentReport.resx">
       <DependentUpon>IncidentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageReport.resx">
       <DependentUpon>ManageReport.cs</DependentUpon>
@@ -268,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrackingNote.resx">
       <DependentUpon>TrackingNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateItem.resx">
+      <DependentUpon>UpdateItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="app1.manifest" />
@@ -389,6 +429,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\visibility %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-square-outlined-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
