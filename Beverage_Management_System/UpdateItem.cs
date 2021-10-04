@@ -69,7 +69,7 @@ namespace Beverage_Management_System
         private void btt_remove_Click(object sender, EventArgs e)
         {
             ProductPresenter p = new ProductPresenter();
-            p.removeItem(id_item);
+            p.removeItem(id_item, id_order);
             this.Close();
 
         }

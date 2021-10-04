@@ -121,9 +121,9 @@ namespace Beverage_Management_System
                 Menu menu = (Menu) this.Parent.Parent;
                 qty.Show();
 
-                qty.btt_ok.Click += (s, a) => {
+                ProductPresenter pre = new ProductPresenter();
 
-                    ProductPresenter pre = new ProductPresenter();
+                qty.btt_ok.Click += (s, a) => {
                     Guna.UI2.WinForms.Guna2TextBox c = menu.txb_IdOrder;
 
                     pre.addItem(this.idProduct, c.Text, int.Parse(qty.txbQuantity));
@@ -135,7 +135,6 @@ namespace Beverage_Management_System
 
         }
 
-    
         private void lb_Price_Click(object sender, EventArgs e)
         {
 

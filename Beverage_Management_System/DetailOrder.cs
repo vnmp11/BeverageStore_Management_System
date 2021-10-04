@@ -20,7 +20,6 @@ namespace Beverage_Management_System
         public DetailOrder()
         {
             InitializeComponent();
-
         }
 
         public DetailOrder(string quantity, string price, String name, string total_price)
@@ -67,6 +66,18 @@ namespace Beverage_Management_System
             }
         }
 
+        public string LabelIn_Stock
+        {
+            get
+            {
+                return lb_InStock.Text;
+            }
+            set
+            {
+                lb_InStock.Text = value;
+            }
+        }
+
         public string NumberRicQuantity
         {
             get
@@ -81,13 +92,13 @@ namespace Beverage_Management_System
 
         private void DetailOrder_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btt_delete_Click(object sender, EventArgs e)
         {
             Menu menu2 = (Menu)this.Parent.Parent;
-            p.removeItem(id);
+            p.removeItem(id, id_order);
             menu2.pl_Order.Controls.Remove(this);
             menu2.showTotal();
         }

@@ -2,6 +2,7 @@
 using Beverage_Management_System.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -68,12 +69,11 @@ namespace Beverage_Management_System.Presenters
             else
             {
                 
-                SqlCommand cmd = new SqlCommand("Insert into DETAILS_ORDERFORM( ID_PRODUCT, ID_ORDERFORM, STATUS,QUANTITY,TOTAL_PRICE) " +
-                    "values (@id_product,@id_orderform,@status,@quantity, @total_price);",
+                SqlCommand cmd = new SqlCommand("Insert into DETAILS_ORDERFORM( ID_PRODUCT, ID_ORDERFORM,QUANTITY,TOTAL_PRICE) " +
+                    "values (@id_product,@id_orderform,@quantity, @total_price);",
                     myConnection.sqlcon);
                 cmd.Parameters.AddWithValue("@id_product", id);
                 cmd.Parameters.AddWithValue("@id_orderform", id_orderform);
-                cmd.Parameters.AddWithValue("@status", 0);
                 cmd.Parameters.AddWithValue("@quantity", quantity);
                 cmd.Parameters.AddWithValue("@total_price", getPrice(id) * quantity);
 
@@ -82,13 +82,14 @@ namespace Beverage_Management_System.Presenters
             
         }
 
-        public void removeItem(int id)
+        public void removeItem(int id, int id_order)
         {
             updateInStock(id, getQuantity(id));
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
-            SqlCommand cmd = new SqlCommand("Delete from DETAILS_ORDERFORM where ID_PRODUCT=@id;", myConnection.sqlcon);
+            SqlCommand cmd = new SqlCommand("Delete from DETAILS_ORDERFORM where ID_PRODUCT=@id and ID_ORDERFORM=@id_order;", myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@id_order", id_order);
             cmd.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
@@ -98,17 +99,23 @@ namespace Beverage_Management_System.Presenters
 
         public void removeAll(int id_order)
         {
-
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
-            SqlCommand cmd = new SqlCommand("Delete from DETAILS_ORDERFORM where ID_ORDERFORM=@id;", myConnection.sqlcon);
-            cmd.Parameters.AddWithValue("@id", id_order);
 
-            cmd.ExecuteNonQuery();
-
-            myConnection.sqlcon.Close();
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter("Select ID_PRODUCT from DETAILS_ORDERFORM where ID_ORDERFORM like '" + id_order + "%'; ", myConnection.sqlcon);
+            sda.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    int ID = Convert.ToInt32(row["ID_PRODUCT"]);
+                    removeItem(ID, id_order);
+                }
+            }
         }
 
+          
         void updateQuantity(int id_product, int qty_buy)
         {
             int qty = getIn_Stock(id_product);
@@ -134,7 +141,7 @@ namespace Beverage_Management_System.Presenters
             cmd.ExecuteNonQuery();
         }
 
-        int getIn_Stock(int id_product)
+        public int getIn_Stock(int id_product)
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
@@ -190,10 +197,10 @@ namespace Beverage_Management_System.Presenters
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            SqlCommand cmd = new SqlCommand("Insert into ORDERFORM(ID_PERSON, TOTAL_PRICE, STATUS) " +
-                "values (@id_person,@total_price,@status);",
+            SqlCommand cmd = new SqlCommand("Insert into ORDERFORM(ID_WAITER, TOTAL_PRICE, STATUS) " +
+                "values (@id_waiter,@total_price,@status);",
                 myConnection.sqlcon);
-            cmd.Parameters.AddWithValue("@id_person", "9");
+            cmd.Parameters.AddWithValue("@id_waiter", id_person);
             cmd.Parameters.AddWithValue("@total_price", "0");
             cmd.Parameters.AddWithValue("@status", "0");
 
@@ -237,6 +244,7 @@ namespace Beverage_Management_System.Presenters
                 it.LabelPrice = price.ToString("###,###,##0");
                 it.NumberRicQuantity = quantity.ToString("###,###,##0");
                 it.LabelTotal_Price = price_product.ToString("###,###,##0");
+                it.LabelIn_Stock = in_stock.ToString();
 
                 listitem.Add(it);
 

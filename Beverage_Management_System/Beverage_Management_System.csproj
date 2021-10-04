@@ -92,6 +92,12 @@
     <Compile Include="AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlertDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlertDialog.Designer.cs">
+      <DependentUpon>AlertDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection\MyConnection.cs" />
     <Compile Include="DetailOrder.cs">
       <SubType>UserControl</SubType>
@@ -164,6 +170,7 @@
     <Compile Include="Presenters\GoodAgencyPresenter.cs" />
     <Compile Include="Presenters\InventoryPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\OrderBillPresenter.cs" />
     <Compile Include="Presenters\OrderFormPresenter.cs" />
     <Compile Include="Presenters\ProductPresenter.cs" />
     <Compile Include="Presenters\StaffPresenter.cs" />
@@ -244,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlertDialog.resx">
+      <DependentUpon>AlertDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetailOrder.resx">
       <DependentUpon>DetailOrder.cs</DependentUpon>

@@ -31,27 +31,13 @@ namespace Beverage_Management_System
             idperson = id_person;
             showDataCBbox();
             txb_IdOrder.Text = p.show_id();
-            p.showItemOrder( txb_IdOrder.Text, pl_Order);
-            showTotal();
-            
+            p.showItemOrder(txb_IdOrder.Text, pl_Order);
         }
 
         public void showTotal()
         {
             int qty = 0;
             int total = 0;
-
-            //for (int i = 0; i < dtGridView_Menu.RowCount - 1; i++)
-            //{
-            //    qty += int.Parse(dtGridView_Menu.Rows[i].Cells[3].Value.ToString());
-            //    total += int.Parse(dtGridView_Menu.Rows[i].Cells[4].Value.ToString().Replace(",", ""));
-            //}
-            //double tax = 0.01 * total;
-
-            //lb_QtyItem.Text = qty.ToString();
-            //lb_subTotal.Text = total.ToString();
-            //lb_total.Text = (tax + total).ToString();
-            //lb_Tax.Text = tax.ToString();
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
@@ -153,31 +139,14 @@ namespace Beverage_Management_System
 
         public void reloadFlowLayout()
         {
-
             pl_Order.Controls.Clear();
             p.showItemOrder(txb_IdOrder.Text, pl_Order);
             showTotal();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-            Product pro = new Product();
-            pro.Dock = DockStyle.Fill;
-        }
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
@@ -193,25 +162,11 @@ namespace Beverage_Management_System
             showProduct(id_kind);
            
         }
-        private void layoutPl_product_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void layoutPl_product_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dtGridView_Menu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btt_Pay_Click(object sender, EventArgs e)
         {
-            o.addOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")));
-            MyMessageBox.showBox("Successfully");
+            o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")));
+            MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
           
             p.addOrderForm(idperson);
             txb_IdOrder.Text = p.show_id();
@@ -244,6 +199,11 @@ namespace Beverage_Management_System
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
         {
 
         }

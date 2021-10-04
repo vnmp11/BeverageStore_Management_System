@@ -13,7 +13,7 @@ namespace Beverage_Management_System.Presenters
 {
     class OrderFormPresenter
     {
-        public void addOrderForm(int id, int total_price)
+        public void updateTotalOrderForm(int id, int total_price)
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
@@ -24,6 +24,33 @@ namespace Beverage_Management_System.Presenters
             cmd.ExecuteNonQuery();
         }
 
+        public void deleteOrderForm(int id_order)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            SqlCommand cmd = new SqlCommand("Delete from ORDERFORM where ID_ORDERFORM=@id_order;", myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@id_order", id_order);
+
+            cmd.ExecuteNonQuery();
+
+            myConnection.sqlcon.Close();
+        }
+
+        public void updateStatusOrderForm(int id_order)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            SqlCommand cmd = new SqlCommand("Update ORDERFORM set STATUS=@status where ID_ORDERFORM=@id_orderform",
+                   myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@status", "1");
+            cmd.Parameters.AddWithValue("@id_orderform", id_order);
+            cmd.ExecuteNonQuery();
+
+            myConnection.sqlcon.Close();
+        }
+
         public void showOrderForm(DataGridView dt)
         {
             MyConnection myConnection = new MyConnection();
@@ -32,13 +59,14 @@ namespace Beverage_Management_System.Presenters
             List<MOrderForm> orderlist = new List<MOrderForm>();
             dt.Rows.Clear();
 
-            string query = "Select * from ORDERFORM ;";
+            string query = "Select * from ORDERFORM Where STATUS=@status";
             SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@status", "0");
             SqlDataReader sdr = cmd.ExecuteReader();
             while (sdr.Read())
             {
                 int id = (int)sdr["ID_ORDERFORM"];
-                int id_person = (int)sdr["ID_PERSON"];
+                int id_person = (int)sdr["ID_WAITER"];
                 int total_price = (int)sdr["TOTAL_PRICE"];
                 int status = (int)sdr["STATUS"];
 

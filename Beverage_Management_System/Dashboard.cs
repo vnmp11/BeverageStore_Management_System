@@ -291,7 +291,7 @@ namespace Beverage_Management_System
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            openChildForm(new OrderForm());
+            openChildForm(new OrderForm(id_person));
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)
