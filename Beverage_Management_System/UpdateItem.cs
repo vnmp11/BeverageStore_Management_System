@@ -15,6 +15,10 @@ namespace Beverage_Management_System
     {
         int id_item;
         int id_order;
+        int check = 0;
+        int id_IGF;
+        string name_IGF;
+        DataGridView dataGrid;
         public UpdateItem()
         {
             InitializeComponent();
@@ -28,6 +32,16 @@ namespace Beverage_Management_System
             id_order = idorder;
         }
 
+        public UpdateItem(int id, string name, int temp, DataGridView a)
+
+        {
+            InitializeComponent();
+            btt_remove.Visible = false;
+            check = temp;
+            id_IGF = id;
+            name_IGF = name;
+            dataGrid = a;
+        }
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,9 +75,21 @@ namespace Beverage_Management_System
 
         public void btt_ok_Click(object sender, EventArgs e)
         {
-            ProductPresenter p = new ProductPresenter();
-            p.addItem(id_item, id_order.ToString() , int.Parse(txb_quantity.Text)-p.getQuantity(id_item));
-            this.Close();
+            if (check != 0)
+            {
+                ImportGoodsPresenter presenter = new ImportGoodsPresenter();
+                presenter.addDataGV_ImportGoods(dataGrid,id_IGF, name_IGF, int.Parse(txb_quantity.Text));
+                
+                this.Close();
+            }
+            else
+            {
+
+
+                ProductPresenter p = new ProductPresenter();
+                p.addItem(id_item, id_order.ToString(), int.Parse(txb_quantity.Text) - p.getQuantity(id_item));
+                this.Close();
+            }
         }
 
         private void btt_remove_Click(object sender, EventArgs e)

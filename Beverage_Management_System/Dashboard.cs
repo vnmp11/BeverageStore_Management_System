@@ -9,6 +9,7 @@ namespace Beverage_Management_System
     public partial class Dashboard : Form
     {
         int id_person = -1;
+        public static int check = 0;
         public Dashboard()
         {
             InitializeComponent();
@@ -374,6 +375,11 @@ namespace Beverage_Management_System
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ImportForm(id_person));
         }
     }
 }

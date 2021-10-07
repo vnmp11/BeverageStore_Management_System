@@ -117,6 +117,18 @@
     <Compile Include="GoodAgency.Designer.cs">
       <DependentUpon>GoodAgency.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddImportForm.Designer.cs">
+      <DependentUpon>AddImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsInImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsInImportForm.Designer.cs">
+      <DependentUpon>GoodsInImportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,12 @@
     <Compile Include="Item.Designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListImportForm.Designer.cs">
+      <DependentUpon>ListImportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,7 +167,9 @@
     </Compile>
     <Compile Include="Model\KindOfProduct.cs" />
     <Compile Include="Model\MAgency.cs" />
+    <Compile Include="Model\MDetailGoodsImport.cs" />
     <Compile Include="Model\MGoodsAgency.cs" />
+    <Compile Include="Model\MImportGoods.cs" />
     <Compile Include="Model\MItem.cs" />
     <Compile Include="Model\MOrderForm.cs" />
     <Compile Include="Model\MProduct.cs" />
@@ -168,6 +188,7 @@
     </Compile>
     <Compile Include="Presenters\AgencyPresenter.cs" />
     <Compile Include="Presenters\GoodAgencyPresenter.cs" />
+    <Compile Include="Presenters\ImportGoodsPresenter.cs" />
     <Compile Include="Presenters\InventoryPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\OrderBillPresenter.cs" />
@@ -230,6 +251,8 @@
     <Compile Include="View\IAddStaff.cs" />
     <Compile Include="View\IAgency.cs" />
     <Compile Include="View\IGoodsAgency.cs" />
+    <Compile Include="View\IAddImportGoods.cs" />
+    <Compile Include="View\IImportGoods.cs" />
     <Compile Include="View\ILogin.cs" />
     <Compile Include="View\IInventory.cs" />
     <Compile Include="View\IStaff.cs" />
@@ -264,6 +287,13 @@
     <EmbeddedResource Include="GoodAgency.resx">
       <DependentUpon>GoodAgency.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddImportForm.resx">
+      <DependentUpon>AddImportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsInImportForm.resx">
+      <DependentUpon>GoodsInImportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportForm.resx">
       <DependentUpon>ImportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Item.resx">
       <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListImportForm.resx">
+      <DependentUpon>ListImportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageReport.resx">
       <DependentUpon>ManageReport.cs</DependentUpon>
