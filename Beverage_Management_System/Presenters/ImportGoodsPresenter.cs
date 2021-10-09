@@ -73,7 +73,7 @@ namespace Beverage_Management_System.Presenters
             SqlCommand cmd= new SqlCommand("Update GOODS_IMPORT_FORM set ID_PERSON=@id, DATE_CRE=@date where ID_GOODS_IMPORT_FORM=@idForm;", myConnection.sqlcon);
 
             
-            aDateTime = DateTime.Now.ToString();
+            aDateTime = DateTime.Now.ToString("yyyy-MM-dd");
             cmd.Parameters.AddWithValue("@id", idPerson);
             cmd.Parameters.AddWithValue("@date", aDateTime);
             cmd.Parameters.AddWithValue("@idForm", idForm);
@@ -124,10 +124,7 @@ namespace Beverage_Management_System.Presenters
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO DETAIL_GOODS_IMPORT_FORM (ID_GOODS_IMPORT_FORM, STATUS, ID_PRODUCT, NAME, QUANTITY) VALUES(@idIG, @status, @idProduct, @name, @quantity);", myConnection.sqlcon);
-
-
-
+            SqlCommand cmd = new SqlCommand("INSERT INTO DETAIL_GOODS_IMPORT_FORM (ID_GOODS_IMPORT_FORM, NAME, STATUS, QUANTITY, ID_PRODUCT) VALUES(@idIG, @name, @status, @quantity, @idProduct);", myConnection.sqlcon);
 
             cmd.Parameters.AddWithValue("@idIG", idForm);
             cmd.Parameters.AddWithValue("@status", statusDetail);
@@ -141,6 +138,7 @@ namespace Beverage_Management_System.Presenters
 
             }
             else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+            myConnection.sqlcon.Close();
         }
 
 

@@ -96,7 +96,7 @@ namespace Beverage_Management_System
             for (int i = 0; i < list_product.Count(); i++)
             {
                 DataGridViewRow row = (DataGridViewRow)DtaGridView_Warehouse.Rows[i].Clone();
-                row.Cells[0].Value = list_product[i].getID_GOODS(); 
+                row.Cells[0].Value = list_product[i].getID(); 
                 row.Cells[1].Value = list_product[i].getNAME();
                 row.Cells[2].Value = list_product[i].getQUANTITY();   
                 DtaGridView_Warehouse.Rows.Add(row);

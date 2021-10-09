@@ -13,26 +13,68 @@ namespace Beverage_Management_System.Presenters
 {
     class OrderFormPresenter
     {
+        int id_tracking_note = 0;
+        int id_order_form = 0;
         public void updateTotalOrderForm(int id, int total_price)
         {
+            this.id_order_form = id;
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
             SqlCommand cmd = new SqlCommand("Update ORDERFORM set TOTAL_PRICE=@total_price Where ID_ORDERFORM like'" + id + "%';",
                    myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@total_price", total_price);
-            cmd.ExecuteNonQuery();
+            int result = cmd.ExecuteNonQuery();
+            if (result > 0)
+            {
+                string date_confirm = DateTime.Now.ToString("yyyy-MM-dd");
+                SqlCommand cmd1 = new SqlCommand("Insert into TRACKING_NOTE(KIND, DATE_CON, ID_BILL) values (@kind, @date_con, @id_bill);", myConnection.sqlcon);
+                cmd1.Parameters.AddWithValue("@kind", 1);
+                cmd1.Parameters.AddWithValue("@date_con", date_confirm);
+                cmd1.Parameters.AddWithValue("@id_bill", id);
+                int result1 = cmd1.ExecuteNonQuery();
+                if(result1 > 0) {
+                    string query2 = "Select MAX(ID_TRACKING_NOTE) as MAX from TRACKING_NOTE;";
+                    SqlCommand cmd2 = new SqlCommand(query2, myConnection.sqlcon);
+                    SqlDataReader dr = cmd2.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        this.id_tracking_note = Convert.ToInt32(dr["MAX"]);
+                        dr.Close();
+                    }
+                }
+                else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+            }
+            else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+            myConnection.sqlcon.Close();
+
         }
+
+        public int getID_TRACKING_NOTE() { return this.id_tracking_note; }
+        public int getID_ORDER_FORM() { return this.id_order_form; }
 
         public void deleteOrderForm(int id_order)
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            SqlCommand cmd = new SqlCommand("Delete from ORDERFORM where ID_ORDERFORM=@id_order;", myConnection.sqlcon);
-            cmd.Parameters.AddWithValue("@id_order", id_order);
+            string query = "Select ID_TRACKING_NOTE from TRACKING_NOTE where KIND ='" + 1 + "' and ID_BILL ='" + id_order + "';";
+            SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if(sdr.Read())
+            {
+                int id_tracking_note = Convert.ToInt32(sdr["ID_TRACKING_NOTE"]);
+                sdr.Close();
+                SqlCommand cmd1 = new SqlCommand("Delete from DETAILS_TRACKING_NOTE where ID_TRACKING_NOTE='" + id_tracking_note + "';", myConnection.sqlcon);
+                cmd1.ExecuteNonQuery();
+                SqlCommand cmd2 = new SqlCommand("Delete from TRACKING_NOTE where ID_TRACKING_NOTE='" + id_tracking_note + "';", myConnection.sqlcon);
+                cmd2.ExecuteNonQuery();
+                SqlCommand cmd3 = new SqlCommand("Delete from ORDERFORM where ID_ORDERFORM=@id_order;", myConnection.sqlcon);
+                cmd3.Parameters.AddWithValue("@id_order", id_order);
+                cmd3.ExecuteNonQuery();
 
-            cmd.ExecuteNonQuery();
+
+            }
 
             myConnection.sqlcon.Close();
         }
@@ -127,6 +169,41 @@ namespace Beverage_Management_System.Presenters
                 i.PbItem = x;
 
                 pl.Controls.Add(i);
+            }
+            myConnection.sqlcon.Close();
+        }
+
+        public void addDetailsTrackingNote(int id_order_form, int id_tracking_note)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            List<MProduct> list = new List<MProduct> ();
+
+            string query = "Select D.ID_PRODUCT, D.QUANTITY, P.NAME from DETAILS_ORDERFORM D join PRODUCT P on D.ID_PRODUCT = P.ID_PRODUCT where ID_ORDERFORM ='" + id_order_form + "';";
+            SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                int id_product = Convert.ToInt32(sdr["ID_PRODUCT"]);
+                int quantity = Convert.ToInt32(sdr["QUANTITY"]);
+                string name = sdr["NAME"].ToString();
+
+                MProduct product = new MProduct(id_product, 0, 0, name, 0, "", quantity, null);
+                list.Add(product);
+            }
+            sdr.Close();
+
+            for(int i = 0; i < list.Count(); i++)
+            {
+                SqlCommand cmd1 = new SqlCommand("Insert into DETAILS_TRACKING_NOTE(ID_PRODUCT,ID_TRACKING_NOTE, NAME, QUANTITY) values (@id_product,@id_tracking_note,@name,@quantity);",
+                    myConnection.sqlcon);
+                cmd1.Parameters.AddWithValue("@id_product", list[i].getID());
+                cmd1.Parameters.AddWithValue("@id_tracking_note", id_tracking_note);
+                cmd1.Parameters.AddWithValue("@name", list[i].getNAME());
+                cmd1.Parameters.AddWithValue("@quantity", list[i].getQUANTITY());
+
+                cmd1.ExecuteNonQuery();
             }
         }
     }

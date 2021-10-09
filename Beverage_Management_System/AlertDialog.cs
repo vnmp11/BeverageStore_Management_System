@@ -41,6 +41,11 @@ namespace Beverage_Management_System
             this.Close();
         }
 
+        public void setMessage(string s)
+        {
+            lb_message.Text = s;
+        }
+
         private void AlertDialog_Load(object sender, EventArgs e)
         {
 

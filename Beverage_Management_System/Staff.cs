@@ -54,20 +54,29 @@ namespace Beverage_Management_System
         {
             if (dtGridView_Staff.SelectedCells.Count > 0)
             {
-                int selected_index = dtGridView_Staff.SelectedCells[0].RowIndex;
-                DataGridViewRow selected_row = dtGridView_Staff.Rows[selected_index];
-                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
-
-                StaffPresenter presenter = new StaffPresenter(this);
-                if(presenter.deleteStaff(id_choose) > 0)
+                AlertDialog dialog = new AlertDialog();
+                dialog.setMessage("Do you want to delete this staff?");
+                dialog.Show();
+                dialog.btt_ok.Click += (s, a) =>
                 {
-                    refreshTable();
-                    presenter.setDataGV_Fill(dtGridView_Staff);
-                    dtGridView_Staff.CurrentCell = null;
-                    MyMessageBox.showBox("Delete this staff successfully!", "Message");
-                    reloadTable();
-                }
-                else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                    int selected_index = dtGridView_Staff.SelectedCells[0].RowIndex;
+                    DataGridViewRow selected_row = dtGridView_Staff.Rows[selected_index];
+                    int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+
+                    StaffPresenter presenter = new StaffPresenter(this);
+                    if (presenter.deleteStaff(id_choose) > 0)
+                    {
+                        refreshTable();
+                        presenter.setDataGV_Fill(dtGridView_Staff);
+                        dtGridView_Staff.CurrentCell = null;
+                        MyMessageBox.showBox("Delete this staff successfully!", "Message");
+                        reloadTable();
+                    }
+                    else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                };
+               
+
+               
             }
             else MyMessageBox.showBox("Please choose a staff whom you want to delete!", "Message");
         }

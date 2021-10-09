@@ -47,6 +47,8 @@ namespace Beverage_Management_System
         {
             if (pl_SubMenuProduct.Visible == true)
                 pl_SubMenuProduct.Visible = false;
+            if (pl_SubMenuFinancialNote.Visible == true) pl_SubMenuFinancialNote.Visible = false;
+            if (pl_SubMenuManageInventory.Visible == true) pl_SubMenuManageInventory.Visible = false;
           
         }
 
@@ -295,11 +297,6 @@ namespace Beverage_Management_System
             openChildForm(new OrderForm(id_person));
         }
 
-        private void guna2Button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void setDashboard_Owner()
         {
             pl_Dashboard_Owner.Visible = true;
@@ -377,7 +374,37 @@ namespace Beverage_Management_System
             }
         }
 
-        private void guna2Button10_Click(object sender, EventArgs e)
+        private void btt_FinancialNote_Click(object sender, EventArgs e)
+        {
+            showSubMenu(pl_SubMenuFinancialNote);
+        }
+
+        private void btt_GoodsImportBill_Click(object sender, EventArgs e)
+        {
+            openChildForm(new GoodsImportBill(id_person));
+        }
+
+        private void btt_OrderBill_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OrderBill(id_person));
+        }
+
+        private void btt_Note_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FinancialNote());
+        }
+
+        private void btt_ManageInventory_Click(object sender, EventArgs e)
+        {
+            showSubMenu(pl_SubMenuManageInventory);
+        }
+
+        private void btt_Tracking_Note_Click(object sender, EventArgs e)
+        {
+            openChildForm(new TrackingNote());
+        }
+
+        private void btt_Import_Form_Click(object sender, EventArgs e)
         {
             openChildForm(new ImportForm(id_person));
         }

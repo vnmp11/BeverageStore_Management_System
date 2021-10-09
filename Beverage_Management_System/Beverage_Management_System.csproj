@@ -105,6 +105,12 @@
     <Compile Include="DetailOrder.Designer.cs">
       <DependentUpon>DetailOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailsBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailsBill.Designer.cs">
+      <DependentUpon>DetailsBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="FinancialNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,12 @@
     </Compile>
     <Compile Include="AddImportForm.Designer.cs">
       <DependentUpon>AddImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsImportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsImportBill.Designer.cs">
+      <DependentUpon>GoodsImportBill.cs</DependentUpon>
     </Compile>
     <Compile Include="GoodsInImportForm.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,12 @@
     <Compile Include="Item.Designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemTrackingNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemTrackingNote.Designer.cs">
+      <DependentUpon>ItemTrackingNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListImportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,11 +186,15 @@
     <Compile Include="Model\KindOfProduct.cs" />
     <Compile Include="Model\MAgency.cs" />
     <Compile Include="Model\MDetailGoodsImport.cs" />
+    <Compile Include="Model\MDetailsGoodsImportBill.cs" />
     <Compile Include="Model\MGoodsAgency.cs" />
+    <Compile Include="Model\MGoodsImportBill.cs" />
     <Compile Include="Model\MImportGoods.cs" />
     <Compile Include="Model\MItem.cs" />
+    <Compile Include="Model\MOrderBill.cs" />
     <Compile Include="Model\MOrderForm.cs" />
     <Compile Include="Model\MProduct.cs" />
+    <Compile Include="Model\MTrackingNote.cs" />
     <Compile Include="MyMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +202,12 @@
       <DependentUpon>MyMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Person.cs" />
+    <Compile Include="OrderBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderBill.Designer.cs">
+      <DependentUpon>OrderBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,7 +215,9 @@
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenters\AgencyPresenter.cs" />
+    <Compile Include="Presenters\FinancialNotePresenter.cs" />
     <Compile Include="Presenters\GoodAgencyPresenter.cs" />
+    <Compile Include="Presenters\GoodsImportBillPresenter.cs" />
     <Compile Include="Presenters\ImportGoodsPresenter.cs" />
     <Compile Include="Presenters\InventoryPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
@@ -195,6 +225,7 @@
     <Compile Include="Presenters\OrderFormPresenter.cs" />
     <Compile Include="Presenters\ProductPresenter.cs" />
     <Compile Include="Presenters\StaffPresenter.cs" />
+    <Compile Include="Presenters\TrackingNotePresenter.cs" />
     <Compile Include="Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,12 +281,16 @@
     <Compile Include="View\IAddProduct.cs" />
     <Compile Include="View\IAddStaff.cs" />
     <Compile Include="View\IAgency.cs" />
+    <Compile Include="View\IFinancialNote.cs" />
     <Compile Include="View\IGoodsAgency.cs" />
     <Compile Include="View\IAddImportGoods.cs" />
+    <Compile Include="View\IGoodsImportBill.cs" />
     <Compile Include="View\IImportGoods.cs" />
     <Compile Include="View\ILogin.cs" />
     <Compile Include="View\IInventory.cs" />
+    <Compile Include="View\IOrderBill.cs" />
     <Compile Include="View\IStaff.cs" />
+    <Compile Include="View\ITrackingNote.cs" />
     <EmbeddedResource Include="AddAgency.resx">
       <DependentUpon>AddAgency.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +316,9 @@
     <EmbeddedResource Include="DetailOrder.resx">
       <DependentUpon>DetailOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetailsBill.resx">
+      <DependentUpon>DetailsBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinancialNote.resx">
       <DependentUpon>FinancialNote.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,6 +328,9 @@
     <EmbeddedResource Include="AddImportForm.resx">
       <DependentUpon>AddImportForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsImportBill.resx">
+      <DependentUpon>GoodsImportBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GoodsInImportForm.resx">
       <DependentUpon>GoodsInImportForm.cs</DependentUpon>
@@ -303,6 +344,9 @@
     <EmbeddedResource Include="Item.resx">
       <DependentUpon>Item.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ItemTrackingNote.resx">
+      <DependentUpon>ItemTrackingNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListImportForm.resx">
       <DependentUpon>ListImportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyMessageBox.resx">
       <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderBill.resx">
+      <DependentUpon>OrderBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>

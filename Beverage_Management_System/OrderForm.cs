@@ -83,7 +83,7 @@ namespace Beverage_Management_System
         {
             if (id_waiter != 0)
             {
-                ob.addOrderBill(int.Parse(lb_id_order.Text), id, id_waiter);
+                ob.addOrderBill(int.Parse(lb_id_order.Text), id);
                 od.updateStatusOrderForm(int.Parse(lb_id_order.Text));
                 reloadGV();
                 fLayoutPl_Detail.Controls.Clear();

@@ -112,19 +112,26 @@ namespace Beverage_Management_System
         {
             if (dataGV.SelectedCells.Count > 0)
             {
-                int selected_index = dataGV.SelectedCells[0].RowIndex;
-                DataGridViewRow selected_row = dataGV.Rows[selected_index];
-                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
-
-                InventoryPresenter presenter = new InventoryPresenter(this);
-                if (presenter.deleteProduct(id_choose) > 0)
+                AlertDialog dialog = new AlertDialog();
+                dialog.setMessage("Do you want to delete this product?");
+                dialog.Show();
+                dialog.btt_ok.Click += (s, a) =>
                 {
-                    dataGV.Rows.Clear();
-                    presenter.setDataGV();
-                    dataGV.CurrentCell = null;
-                    MyMessageBox.showBox("Delete this product successfully!", "Message");
-                }
-                else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                    int selected_index = dataGV.SelectedCells[0].RowIndex;
+                    DataGridViewRow selected_row = dataGV.Rows[selected_index];
+                    int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+
+                    InventoryPresenter presenter = new InventoryPresenter(this);
+                    if (presenter.deleteProduct(id_choose) > 0)
+                    {
+                        dataGV.Rows.Clear();
+                        presenter.setDataGV();
+                        dataGV.CurrentCell = null;
+                        MyMessageBox.showBox("Delete this product successfully!", "Message");
+                    }
+                    else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                };
+                
             }
             else MyMessageBox.showBox("Please choose a product which you want to delete!", "Message");
         }
