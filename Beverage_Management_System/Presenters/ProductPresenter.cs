@@ -45,6 +45,8 @@ namespace Beverage_Management_System.Presenters
             {
                 return false;
             }
+
+            myConnection.sqlcon.Close();
         }
 
         public void addItem(int id, String id_orderform, int quantity)
@@ -79,7 +81,8 @@ namespace Beverage_Management_System.Presenters
 
                 cmd.ExecuteNonQuery();
             }
-            
+
+            myConnection.sqlcon.Close();
         }
 
         public void removeItem(int id, int id_order)
@@ -113,6 +116,8 @@ namespace Beverage_Management_System.Presenters
                     removeItem(ID, id_order);
                 }
             }
+
+            myConnection.sqlcon.Close();
         }
 
           
@@ -127,6 +132,8 @@ namespace Beverage_Management_System.Presenters
                    myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@quantity", qty-qty_buy);
             cmd.ExecuteNonQuery();
+
+            myConnection.sqlcon.Close();
         }
         void updateInStock(int id_product, int qty_buy)
         {
@@ -139,6 +146,8 @@ namespace Beverage_Management_System.Presenters
                    myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@quantity", qty + qty_buy);
             cmd.ExecuteNonQuery();
+
+            myConnection.sqlcon.Close();
         }
 
         public int getIn_Stock(int id_product)
@@ -205,7 +214,8 @@ namespace Beverage_Management_System.Presenters
             cmd.Parameters.AddWithValue("@status", "0");
 
             int result = cmd.ExecuteNonQuery();
-           
+
+            myConnection.sqlcon.Close();
         }
 
         public void showItemOrder( String idOrder, FlowLayoutPanel pl)

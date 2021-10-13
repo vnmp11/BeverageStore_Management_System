@@ -48,10 +48,6 @@ namespace Beverage_Management_System
             this.layoutPl_product = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.txb_IdOrder = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txb_searchMenu = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btt_clearAll = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btt_Pay = new Guna.UI2.WinForms.Guna2Button();
             this.pl_Order = new System.Windows.Forms.FlowLayoutPanel();
             this.detailOrder1 = new Beverage_Management_System.DetailOrder();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,6 +56,10 @@ namespace Beverage_Management_System
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.txb_searchMenu = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btt_clearAll = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btt_Pay = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.pl_Order.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,7 +68,7 @@ namespace Beverage_Management_System
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lb_total);
@@ -203,7 +203,7 @@ namespace Beverage_Management_System
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.BorderRadius = 5;
             this.guna2Elipse1.TargetControl = this.panel2;
             // 
             // label12
@@ -239,10 +239,10 @@ namespace Beverage_Management_System
             this.cb_KindofDrink.Items.AddRange(new object[] {
             ""});
             this.cb_KindofDrink.ItemsAppearance.Parent = this.cb_KindofDrink;
-            this.cb_KindofDrink.Location = new System.Drawing.Point(1083, 75);
+            this.cb_KindofDrink.Location = new System.Drawing.Point(1090, 79);
             this.cb_KindofDrink.Name = "cb_KindofDrink";
             this.cb_KindofDrink.ShadowDecoration.Parent = this.cb_KindofDrink;
-            this.cb_KindofDrink.Size = new System.Drawing.Size(147, 36);
+            this.cb_KindofDrink.Size = new System.Drawing.Size(158, 36);
             this.cb_KindofDrink.TabIndex = 94;
             this.cb_KindofDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cb_KindofDrink.TextChanged += new System.EventHandler(this.cb_KindofDrink_TextChanged);
@@ -253,27 +253,28 @@ namespace Beverage_Management_System
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.layoutPl_product.AutoScroll = true;
+            this.layoutPl_product.BackColor = System.Drawing.Color.White;
             this.layoutPl_product.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.layoutPl_product.Location = new System.Drawing.Point(781, 128);
+            this.layoutPl_product.Location = new System.Drawing.Point(728, 132);
             this.layoutPl_product.Name = "layoutPl_product";
-            this.layoutPl_product.Size = new System.Drawing.Size(449, 593);
+            this.layoutPl_product.Size = new System.Drawing.Size(520, 581);
             this.layoutPl_product.TabIndex = 96;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.20895F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label9.Location = new System.Drawing.Point(68, 81);
+            this.label9.Location = new System.Drawing.Point(68, 83);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 24);
+            this.label9.Size = new System.Drawing.Size(74, 21);
             this.label9.TabIndex = 98;
             this.label9.Text = "Number:";
             // 
             // txb_IdOrder
             // 
             this.txb_IdOrder.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_IdOrder.BorderRadius = 6;
+            this.txb_IdOrder.BorderRadius = 5;
             this.txb_IdOrder.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txb_IdOrder.DefaultText = "39";
             this.txb_IdOrder.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -298,99 +299,6 @@ namespace Beverage_Management_System
             this.txb_IdOrder.Size = new System.Drawing.Size(58, 36);
             this.txb_IdOrder.TabIndex = 99;
             this.txb_IdOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txb_searchMenu
-            // 
-            this.txb_searchMenu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_searchMenu.BorderRadius = 18;
-            this.txb_searchMenu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txb_searchMenu.DefaultText = "";
-            this.txb_searchMenu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txb_searchMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txb_searchMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_searchMenu.DisabledState.Parent = this.txb_searchMenu;
-            this.txb_searchMenu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_searchMenu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_searchMenu.FocusedState.Parent = this.txb_searchMenu;
-            this.txb_searchMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_searchMenu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_searchMenu.HoverState.Parent = this.txb_searchMenu;
-            this.txb_searchMenu.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
-            this.txb_searchMenu.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txb_searchMenu.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txb_searchMenu.Location = new System.Drawing.Point(788, 75);
-            this.txb_searchMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txb_searchMenu.Name = "txb_searchMenu";
-            this.txb_searchMenu.PasswordChar = '\0';
-            this.txb_searchMenu.PlaceholderText = "";
-            this.txb_searchMenu.SelectedText = "";
-            this.txb_searchMenu.ShadowDecoration.Parent = this.txb_searchMenu;
-            this.txb_searchMenu.Size = new System.Drawing.Size(197, 36);
-            this.txb_searchMenu.TabIndex = 91;
-            this.txb_searchMenu.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
-            // 
-            // btt_clearAll
-            // 
-            this.btt_clearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btt_clearAll.BackColor = System.Drawing.Color.Transparent;
-            this.btt_clearAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btt_clearAll.BorderRadius = 7;
-            this.btt_clearAll.BorderThickness = 1;
-            this.btt_clearAll.CheckedState.Parent = this.btt_clearAll;
-            this.btt_clearAll.CustomImages.Parent = this.btt_clearAll;
-            this.btt_clearAll.FillColor = System.Drawing.Color.White;
-            this.btt_clearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btt_clearAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btt_clearAll.HoverState.Parent = this.btt_clearAll;
-            this.btt_clearAll.Image = ((System.Drawing.Image)(resources.GetObject("btt_clearAll.Image")));
-            this.btt_clearAll.Location = new System.Drawing.Point(788, 742);
-            this.btt_clearAll.Name = "btt_clearAll";
-            this.btt_clearAll.ShadowDecoration.Parent = this.btt_clearAll;
-            this.btt_clearAll.Size = new System.Drawing.Size(136, 50);
-            this.btt_clearAll.TabIndex = 89;
-            this.btt_clearAll.Text = "CLEAR ALL";
-            this.btt_clearAll.Click += new System.EventHandler(this.btt_clearAll_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 7;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(966, 742);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(129, 50);
-            this.guna2Button2.TabIndex = 88;
-            this.guna2Button2.Text = "PRINT";
-            // 
-            // btt_Pay
-            // 
-            this.btt_Pay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btt_Pay.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_Pay.BorderRadius = 7;
-            this.btt_Pay.BorderThickness = 1;
-            this.btt_Pay.CheckedState.Parent = this.btt_Pay;
-            this.btt_Pay.CustomImages.Parent = this.btt_Pay;
-            this.btt_Pay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.btt_Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btt_Pay.ForeColor = System.Drawing.Color.White;
-            this.btt_Pay.HoverState.Parent = this.btt_Pay;
-            this.btt_Pay.Image = global::Beverage_Management_System.Properties.Resources.coin;
-            this.btt_Pay.Location = new System.Drawing.Point(1101, 742);
-            this.btt_Pay.Name = "btt_Pay";
-            this.btt_Pay.ShadowDecoration.Parent = this.btt_Pay;
-            this.btt_Pay.Size = new System.Drawing.Size(129, 50);
-            this.btt_Pay.TabIndex = 88;
-            this.btt_Pay.Text = "PAYMENT";
-            this.btt_Pay.Click += new System.EventHandler(this.btt_Pay_Click);
             // 
             // pl_Order
             // 
@@ -423,9 +331,7 @@ namespace Beverage_Management_System
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label8);
@@ -485,8 +391,102 @@ namespace Beverage_Management_System
             // 
             // guna2Elipse2
             // 
-            this.guna2Elipse2.BorderRadius = 20;
+            this.guna2Elipse2.BorderRadius = 5;
             this.guna2Elipse2.TargetControl = this.panel1;
+            // 
+            // txb_searchMenu
+            // 
+            this.txb_searchMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txb_searchMenu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txb_searchMenu.BorderRadius = 18;
+            this.txb_searchMenu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txb_searchMenu.DefaultText = "";
+            this.txb_searchMenu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txb_searchMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txb_searchMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_searchMenu.DisabledState.Parent = this.txb_searchMenu;
+            this.txb_searchMenu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_searchMenu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txb_searchMenu.FocusedState.Parent = this.txb_searchMenu;
+            this.txb_searchMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txb_searchMenu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txb_searchMenu.HoverState.Parent = this.txb_searchMenu;
+            this.txb_searchMenu.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
+            this.txb_searchMenu.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.txb_searchMenu.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.txb_searchMenu.Location = new System.Drawing.Point(906, 79);
+            this.txb_searchMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_searchMenu.Name = "txb_searchMenu";
+            this.txb_searchMenu.PasswordChar = '\0';
+            this.txb_searchMenu.PlaceholderText = "";
+            this.txb_searchMenu.SelectedText = "";
+            this.txb_searchMenu.ShadowDecoration.Parent = this.txb_searchMenu;
+            this.txb_searchMenu.Size = new System.Drawing.Size(177, 36);
+            this.txb_searchMenu.TabIndex = 91;
+            this.txb_searchMenu.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
+            // 
+            // btt_clearAll
+            // 
+            this.btt_clearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btt_clearAll.BackColor = System.Drawing.Color.Transparent;
+            this.btt_clearAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btt_clearAll.BorderRadius = 5;
+            this.btt_clearAll.BorderThickness = 1;
+            this.btt_clearAll.CheckedState.Parent = this.btt_clearAll;
+            this.btt_clearAll.CustomImages.Parent = this.btt_clearAll;
+            this.btt_clearAll.FillColor = System.Drawing.Color.White;
+            this.btt_clearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_clearAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btt_clearAll.HoverState.Parent = this.btt_clearAll;
+            this.btt_clearAll.Image = ((System.Drawing.Image)(resources.GetObject("btt_clearAll.Image")));
+            this.btt_clearAll.Location = new System.Drawing.Point(851, 729);
+            this.btt_clearAll.Name = "btt_clearAll";
+            this.btt_clearAll.ShadowDecoration.Parent = this.btt_clearAll;
+            this.btt_clearAll.Size = new System.Drawing.Size(136, 66);
+            this.btt_clearAll.TabIndex = 89;
+            this.btt_clearAll.Text = "CLEAR ALL";
+            this.btt_clearAll.Click += new System.EventHandler(this.btt_clearAll_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.Location = new System.Drawing.Point(993, 729);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(90, 67);
+            this.guna2Button2.TabIndex = 88;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // btt_Pay
+            // 
+            this.btt_Pay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btt_Pay.BorderColor = System.Drawing.Color.Transparent;
+            this.btt_Pay.BorderRadius = 5;
+            this.btt_Pay.BorderThickness = 1;
+            this.btt_Pay.CheckedState.Parent = this.btt_Pay;
+            this.btt_Pay.CustomImages.Parent = this.btt_Pay;
+            this.btt_Pay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.btt_Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_Pay.ForeColor = System.Drawing.Color.White;
+            this.btt_Pay.HoverState.Parent = this.btt_Pay;
+            this.btt_Pay.Image = global::Beverage_Management_System.Properties.Resources.coin;
+            this.btt_Pay.Location = new System.Drawing.Point(1089, 729);
+            this.btt_Pay.Name = "btt_Pay";
+            this.btt_Pay.ShadowDecoration.Parent = this.btt_Pay;
+            this.btt_Pay.Size = new System.Drawing.Size(159, 67);
+            this.btt_Pay.TabIndex = 88;
+            this.btt_Pay.Text = "PAYMENT";
+            this.btt_Pay.Click += new System.EventHandler(this.btt_Pay_Click);
             // 
             // Menu
             // 

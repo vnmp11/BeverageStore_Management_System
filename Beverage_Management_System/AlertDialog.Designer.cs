@@ -99,12 +99,12 @@ namespace Beverage_Management_System
             this.btt_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_cancel.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_cancel.BorderRadius = 10;
+            this.btt_cancel.BorderRadius = 5;
             this.btt_cancel.BorderThickness = 1;
             this.btt_cancel.CheckedState.Parent = this.btt_cancel;
             this.btt_cancel.CustomImages.Parent = this.btt_cancel;
             this.btt_cancel.FillColor = System.Drawing.Color.Brown;
-            this.btt_cancel.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_cancel.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_cancel.ForeColor = System.Drawing.Color.White;
             this.btt_cancel.HoverState.Parent = this.btt_cancel;
             this.btt_cancel.Location = new System.Drawing.Point(27, 148);
@@ -120,12 +120,12 @@ namespace Beverage_Management_System
             this.btt_ok.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_ok.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_ok.BorderRadius = 10;
+            this.btt_ok.BorderRadius = 5;
             this.btt_ok.BorderThickness = 1;
             this.btt_ok.CheckedState.Parent = this.btt_ok;
             this.btt_ok.CustomImages.Parent = this.btt_ok;
             this.btt_ok.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.btt_ok.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_ok.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_ok.ForeColor = System.Drawing.Color.White;
             this.btt_ok.HoverState.Parent = this.btt_ok;
             this.btt_ok.Location = new System.Drawing.Point(223, 148);

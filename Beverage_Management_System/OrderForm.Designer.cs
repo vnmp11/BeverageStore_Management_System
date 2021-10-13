@@ -57,10 +57,9 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(346, 14);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(461, 17);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(185, 25);
+            this.label12.Size = new System.Drawing.Size(247, 31);
             this.label12.TabIndex = 96;
             this.label12.Text = "ORDER FORM";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -96,13 +95,14 @@ namespace Beverage_Management_System
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtGridView_OrderForm.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridView_OrderForm.EnableHeadersVisualStyles = false;
             this.dtGridView_OrderForm.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtGridView_OrderForm.Location = new System.Drawing.Point(48, 69);
+            this.dtGridView_OrderForm.Location = new System.Drawing.Point(54, 85);
+            this.dtGridView_OrderForm.Margin = new System.Windows.Forms.Padding(4);
             this.dtGridView_OrderForm.Name = "dtGridView_OrderForm";
             this.dtGridView_OrderForm.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -116,8 +116,9 @@ namespace Beverage_Management_System
             this.dtGridView_OrderForm.RowHeadersVisible = false;
             this.dtGridView_OrderForm.RowHeadersWidth = 60;
             this.dtGridView_OrderForm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridView_OrderForm.Size = new System.Drawing.Size(406, 485);
+            this.dtGridView_OrderForm.Size = new System.Drawing.Size(551, 597);
             this.dtGridView_OrderForm.TabIndex = 97;
+            this.dtGridView_OrderForm.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dtGridView_OrderForm.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridView_OrderForm.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dtGridView_OrderForm.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -137,8 +138,9 @@ namespace Beverage_Management_System
             this.dtGridView_OrderForm.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtGridView_OrderForm.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtGridView_OrderForm.ThemeStyle.RowsStyle.Height = 22;
-            this.dtGridView_OrderForm.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtGridView_OrderForm.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
             this.dtGridView_OrderForm.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dtGridView_OrderForm.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_OrderForm_CellContentClick);
             this.dtGridView_OrderForm.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_OrderForm_CellDoubleClick);
             // 
             // ID1
@@ -179,10 +181,10 @@ namespace Beverage_Management_System
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fLayoutPl_Detail.AutoScroll = true;
             this.fLayoutPl_Detail.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Detail.Location = new System.Drawing.Point(479, 119);
-            this.fLayoutPl_Detail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fLayoutPl_Detail.Location = new System.Drawing.Point(639, 146);
+            this.fLayoutPl_Detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Detail.Name = "fLayoutPl_Detail";
-            this.fLayoutPl_Detail.Size = new System.Drawing.Size(391, 379);
+            this.fLayoutPl_Detail.Size = new System.Drawing.Size(521, 466);
             this.fLayoutPl_Detail.TabIndex = 98;
             // 
             // panel1
@@ -192,10 +194,10 @@ namespace Beverage_Management_System
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.panel1.Controls.Add(this.lb_id_order);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(479, 69);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(639, 85);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 46);
+            this.panel1.Size = new System.Drawing.Size(499, 57);
             this.panel1.TabIndex = 100;
             // 
             // lb_id_order
@@ -203,10 +205,9 @@ namespace Beverage_Management_System
             this.lb_id_order.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_id_order.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_id_order.ForeColor = System.Drawing.Color.White;
-            this.lb_id_order.Location = new System.Drawing.Point(249, 12);
-            this.lb_id_order.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_id_order.Location = new System.Drawing.Point(332, 15);
             this.lb_id_order.Name = "lb_id_order";
-            this.lb_id_order.Size = new System.Drawing.Size(27, 25);
+            this.lb_id_order.Size = new System.Drawing.Size(36, 31);
             this.lb_id_order.TabIndex = 96;
             this.lb_id_order.Text = "1";
             this.lb_id_order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -217,10 +218,9 @@ namespace Beverage_Management_System
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(93, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(124, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 25);
+            this.label1.Size = new System.Drawing.Size(247, 31);
             this.label1.TabIndex = 96;
             this.label1.Text = "DETAIL ORDER #";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -235,21 +235,20 @@ namespace Beverage_Management_System
             // 
             this.btt_remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_remove.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_remove.BorderRadius = 10;
+            this.btt_remove.BorderRadius = 5;
             this.btt_remove.BorderThickness = 1;
             this.btt_remove.CheckedState.Parent = this.btt_remove;
             this.btt_remove.CustomImages.Parent = this.btt_remove;
-            this.btt_remove.DisabledState.Parent = this.btt_remove;
             this.btt_remove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btt_remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_remove.ForeColor = System.Drawing.Color.White;
             this.btt_remove.HoverState.Parent = this.btt_remove;
             this.btt_remove.Image = global::Beverage_Management_System.Properties.Resources.delete1;
-            this.btt_remove.Location = new System.Drawing.Point(479, 514);
-            this.btt_remove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btt_remove.Location = new System.Drawing.Point(640, 639);
+            this.btt_remove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_remove.Name = "btt_remove";
             this.btt_remove.ShadowDecoration.Parent = this.btt_remove;
-            this.btt_remove.Size = new System.Drawing.Size(181, 41);
+            this.btt_remove.Size = new System.Drawing.Size(241, 67);
             this.btt_remove.TabIndex = 101;
             this.btt_remove.Text = "REMOVE";
             this.btt_remove.Click += new System.EventHandler(this.btt_remove_Click);
@@ -258,31 +257,30 @@ namespace Beverage_Management_System
             // 
             this.btt_confirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_confirm.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_confirm.BorderRadius = 10;
+            this.btt_confirm.BorderRadius = 5;
             this.btt_confirm.BorderThickness = 1;
             this.btt_confirm.CheckedState.Parent = this.btt_confirm;
             this.btt_confirm.CustomImages.Parent = this.btt_confirm;
-            this.btt_confirm.DisabledState.Parent = this.btt_confirm;
             this.btt_confirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.btt_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_confirm.ForeColor = System.Drawing.Color.White;
             this.btt_confirm.HoverState.Parent = this.btt_confirm;
             this.btt_confirm.Image = global::Beverage_Management_System.Properties.Resources.confirm;
-            this.btt_confirm.Location = new System.Drawing.Point(673, 514);
-            this.btt_confirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btt_confirm.Location = new System.Drawing.Point(898, 639);
+            this.btt_confirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_confirm.Name = "btt_confirm";
             this.btt_confirm.ShadowDecoration.Parent = this.btt_confirm;
-            this.btt_confirm.Size = new System.Drawing.Size(180, 41);
+            this.btt_confirm.Size = new System.Drawing.Size(240, 67);
             this.btt_confirm.TabIndex = 101;
             this.btt_confirm.Text = "CONFIRM";
             this.btt_confirm.Click += new System.EventHandler(this.btt_confirm_Click);
             // 
             // OrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(904, 632);
+            this.ClientSize = new System.Drawing.Size(1205, 778);
             this.Controls.Add(this.btt_remove);
             this.Controls.Add(this.btt_confirm);
             this.Controls.Add(this.fLayoutPl_Detail);
@@ -290,9 +288,10 @@ namespace Beverage_Management_System
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OrderForm";
             this.Text = "OrderForm";
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_OrderForm)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

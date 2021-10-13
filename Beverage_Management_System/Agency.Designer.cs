@@ -29,20 +29,20 @@ namespace Beverage_Management_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dtGridView_Agency = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
-            this.btt_Update = new Guna.UI2.WinForms.Guna2Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.btt_Update = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_Agency)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@ namespace Beverage_Management_System
             this.guna2TextBox1.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.guna2TextBox1.Location = new System.Drawing.Point(42, 84);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
@@ -91,12 +91,12 @@ namespace Beverage_Management_System
             // 
             this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 25;
+            this.guna2Button1.BorderRadius = 5;
             this.guna2Button1.BorderThickness = 1;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.plus;
@@ -110,8 +110,8 @@ namespace Beverage_Management_System
             // 
             // dtGridView_Agency
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dtGridView_Agency.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtGridView_Agency.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtGridView_Agency.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,14 +121,14 @@ namespace Beverage_Management_System
             this.dtGridView_Agency.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridView_Agency.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dtGridView_Agency.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridView_Agency.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridView_Agency.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtGridView_Agency.ColumnHeadersHeight = 40;
             this.dtGridView_Agency.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -136,18 +136,18 @@ namespace Beverage_Management_System
             this.ADDRESS,
             this.PHONE,
             this.ITEM});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridView_Agency.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridView_Agency.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridView_Agency.EnableHeadersVisualStyles = false;
             this.dtGridView_Agency.GridColor = System.Drawing.SystemColors.Control;
             this.dtGridView_Agency.Location = new System.Drawing.Point(42, 158);
-            this.dtGridView_Agency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtGridView_Agency.Margin = new System.Windows.Forms.Padding(4);
             this.dtGridView_Agency.Name = "dtGridView_Agency";
             this.dtGridView_Agency.RowHeadersVisible = false;
             this.dtGridView_Agency.RowHeadersWidth = 60;
@@ -178,52 +178,6 @@ namespace Beverage_Management_System
             this.dtGridView_Agency.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtGridView_Agency.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_Agency_CellContentClick);
             this.dtGridView_Agency.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_Agency_CellContentDoubleClick);
-            // 
-            // bt_Delete
-            // 
-            this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
-            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_Delete.BorderRadius = 25;
-            this.bt_Delete.BorderThickness = 1;
-            this.bt_Delete.CheckedState.Parent = this.bt_Delete;
-            this.bt_Delete.CustomImages.Parent = this.bt_Delete;
-            this.bt_Delete.FillColor = System.Drawing.Color.White;
-            this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_Delete.HoverState.Parent = this.bt_Delete;
-            this.bt_Delete.ImageOffset = new System.Drawing.Point(2, 0);
-            this.bt_Delete.Location = new System.Drawing.Point(820, 84);
-            this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_Delete.Name = "bt_Delete";
-            this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
-            this.bt_Delete.Size = new System.Drawing.Size(127, 50);
-            this.bt_Delete.TabIndex = 90;
-            this.bt_Delete.Text = "DELETE";
-            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
-            // 
-            // btt_Update
-            // 
-            this.btt_Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btt_Update.BackColor = System.Drawing.Color.Transparent;
-            this.btt_Update.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btt_Update.BorderRadius = 25;
-            this.btt_Update.BorderThickness = 1;
-            this.btt_Update.CheckedState.Parent = this.btt_Update;
-            this.btt_Update.CustomImages.Parent = this.btt_Update;
-            this.btt_Update.FillColor = System.Drawing.Color.White;
-            this.btt_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btt_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btt_Update.HoverState.Parent = this.btt_Update;
-            this.btt_Update.ImageOffset = new System.Drawing.Point(2, 0);
-            this.btt_Update.Location = new System.Drawing.Point(641, 84);
-            this.btt_Update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btt_Update.Name = "btt_Update";
-            this.btt_Update.ShadowDecoration.Parent = this.btt_Update;
-            this.btt_Update.Size = new System.Drawing.Size(127, 50);
-            this.btt_Update.TabIndex = 91;
-            this.btt_Update.Text = "UPDATE";
-            this.btt_Update.Click += new System.EventHandler(this.btt_Update_Click);
             // 
             // ID
             // 
@@ -258,6 +212,52 @@ namespace Beverage_Management_System
             this.ITEM.HeaderText = "ITEM";
             this.ITEM.MinimumWidth = 8;
             this.ITEM.Name = "ITEM";
+            // 
+            // bt_Delete
+            // 
+            this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.BorderRadius = 5;
+            this.bt_Delete.BorderThickness = 1;
+            this.bt_Delete.CheckedState.Parent = this.bt_Delete;
+            this.bt_Delete.CustomImages.Parent = this.bt_Delete;
+            this.bt_Delete.FillColor = System.Drawing.Color.White;
+            this.bt_Delete.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.HoverState.Parent = this.bt_Delete;
+            this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete;
+            this.bt_Delete.ImageOffset = new System.Drawing.Point(2, 0);
+            this.bt_Delete.Location = new System.Drawing.Point(954, 84);
+            this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_Delete.Name = "bt_Delete";
+            this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
+            this.bt_Delete.Size = new System.Drawing.Size(50, 50);
+            this.bt_Delete.TabIndex = 90;
+            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
+            // 
+            // btt_Update
+            // 
+            this.btt_Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btt_Update.BackColor = System.Drawing.Color.Transparent;
+            this.btt_Update.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btt_Update.BorderRadius = 5;
+            this.btt_Update.BorderThickness = 1;
+            this.btt_Update.CheckedState.Parent = this.btt_Update;
+            this.btt_Update.CustomImages.Parent = this.btt_Update;
+            this.btt_Update.FillColor = System.Drawing.Color.White;
+            this.btt_Update.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btt_Update.HoverState.Parent = this.btt_Update;
+            this.btt_Update.ImageOffset = new System.Drawing.Point(2, 0);
+            this.btt_Update.Location = new System.Drawing.Point(821, 84);
+            this.btt_Update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btt_Update.Name = "btt_Update";
+            this.btt_Update.ShadowDecoration.Parent = this.btt_Update;
+            this.btt_Update.Size = new System.Drawing.Size(127, 50);
+            this.btt_Update.TabIndex = 91;
+            this.btt_Update.Text = "UPDATE";
+            this.btt_Update.Click += new System.EventHandler(this.btt_Update_Click);
             // 
             // Agency
             // 

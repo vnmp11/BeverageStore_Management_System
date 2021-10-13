@@ -152,7 +152,6 @@ namespace Beverage_Management_System
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             fLayoutPl_Details.Visible = true;
-            lb_Details.Visible = true;
             if (e.RowIndex < dataGV.RowCount - 1)
             {
                 int id_bill = int.Parse(dataGV.Rows[e.RowIndex].Cells[0].Value.ToString());

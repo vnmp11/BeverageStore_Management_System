@@ -69,7 +69,7 @@ namespace Beverage_Management_System
             // lb_Title
             // 
             this.lb_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lb_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Title.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Title.ForeColor = System.Drawing.Color.White;
             this.lb_Title.Location = new System.Drawing.Point(140, 10);
             this.lb_Title.Name = "lb_Title";
@@ -80,7 +80,7 @@ namespace Beverage_Management_System
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.BorderRadius = 15;
             this.guna2Elipse1.TargetControl = this;
             // 
             // txb_quantity
@@ -149,7 +149,7 @@ namespace Beverage_Management_System
             this.btt_ok.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_ok.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_ok.BorderRadius = 10;
+            this.btt_ok.BorderRadius = 5;
             this.btt_ok.BorderThickness = 1;
             this.btt_ok.CheckedState.Parent = this.btt_ok;
             this.btt_ok.CustomImages.Parent = this.btt_ok;

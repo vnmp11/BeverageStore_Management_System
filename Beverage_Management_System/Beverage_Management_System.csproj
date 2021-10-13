@@ -194,6 +194,7 @@
     <Compile Include="Model\MOrderBill.cs" />
     <Compile Include="Model\MOrderForm.cs" />
     <Compile Include="Model\MProduct.cs" />
+    <Compile Include="Model\MReport.cs" />
     <Compile Include="Model\MTrackingNote.cs" />
     <Compile Include="MyMessageBox.cs">
       <SubType>Form</SubType>
@@ -219,6 +220,7 @@
     <Compile Include="Presenters\GoodAgencyPresenter.cs" />
     <Compile Include="Presenters\GoodsImportBillPresenter.cs" />
     <Compile Include="Presenters\ImportGoodsPresenter.cs" />
+    <Compile Include="Presenters\IncidentReportPresenter.cs" />
     <Compile Include="Presenters\InventoryPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\OrderBillPresenter.cs" />
@@ -231,6 +233,12 @@
     </Compile>
     <Compile Include="Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReport.Designer.cs">
+      <DependentUpon>AddReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Staff.cs">
       <SubType>Form</SubType>
@@ -367,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddReport.resx">
+      <DependentUpon>AddReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
@@ -537,6 +548,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soft-drink %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soft-drink %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

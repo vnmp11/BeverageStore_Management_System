@@ -97,5 +97,15 @@ namespace Beverage_Management_System
             }
 
         }
+
+        private void OrderForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtGridView_OrderForm_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

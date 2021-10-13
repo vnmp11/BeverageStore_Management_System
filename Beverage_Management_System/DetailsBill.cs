@@ -64,5 +64,10 @@ namespace Beverage_Management_System
                 lb_quantity.Text = value;
             }
         }
+
+        private void lb_total_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

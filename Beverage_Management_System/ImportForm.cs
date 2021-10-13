@@ -128,5 +128,10 @@ namespace Beverage_Management_System
                 MyMessageBox.showBox("Please choose the row!", "Message");
             }
         }
+
+        private void DtaGridView_IGF_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace Beverage_Management_System
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.BorderRadius = 15;
             this.guna2Elipse1.TargetControl = this;
             // 
             // panel1
@@ -86,7 +86,7 @@ namespace Beverage_Management_System
             this.btt_ok.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_ok.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_ok.BorderRadius = 10;
+            this.btt_ok.BorderRadius = 5;
             this.btt_ok.BorderThickness = 1;
             this.btt_ok.CheckedState.Parent = this.btt_ok;
             this.btt_ok.CustomImages.Parent = this.btt_ok;
@@ -105,7 +105,7 @@ namespace Beverage_Management_System
             // lb_message
             // 
             this.lb_message.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lb_message.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_message.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_message.Location = new System.Drawing.Point(24, 67);
             this.lb_message.Name = "lb_message";
             this.lb_message.Size = new System.Drawing.Size(393, 65);

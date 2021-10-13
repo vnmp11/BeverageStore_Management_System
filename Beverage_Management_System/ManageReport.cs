@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Beverage_Management_System.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,40 @@ namespace Beverage_Management_System
 {
     public partial class ManageReport : Form
     {
+        IncidentReportPresenter p = new IncidentReportPresenter();
         public ManageReport()
         {
             InitializeComponent();
-        }
-
-        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
-        {
-
+            p.showListReport(dataGV_Report);
         }
 
         private void ManageReport_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txb_Search_TextChanged(object sender, EventArgs e)
+        {
+            if (txb_Search.Text == "")
+            {
+                p.showListReport(dataGV_Report);
+            }
+            else
+            {
+                p.searchReport(dataGV_Report, txb_Search.Text);
+            }
+        }
+
+        private void dataGV_Report_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int id_orderform = int.Parse(dataGV_Report.Rows[e.RowIndex].Cells[1].Value.ToString());
+            String reason = dataGV_Report.Rows[e.RowIndex].Cells[2].Value.ToString();
+            String solution = dataGV_Report.Rows[e.RowIndex].Cells[3].Value.ToString();
+            int fine = int.Parse(dataGV_Report.Rows[e.RowIndex].Cells[4].Value.ToString().Replace(",", ""));
+            DateTime date = (DateTime)dataGV_Report.Rows[e.RowIndex].Cells[5].Value;
+
+            AddReport report = new AddReport(id_orderform, reason, solution, fine, date);
+            report.Show();
         }
     }
 }

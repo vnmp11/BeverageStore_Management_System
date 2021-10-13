@@ -57,10 +57,9 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(375, 18);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(500, 22);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(135, 25);
+            this.label12.Size = new System.Drawing.Size(180, 31);
             this.label12.TabIndex = 23;
             this.label12.Text = "ALL STAFF";
             this.label12.Click += new System.EventHandler(this.label12_Click);
@@ -74,9 +73,9 @@ namespace Beverage_Management_System
             this.panel6.Controls.Add(this.guna2Button4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(934, 568);
+            this.panel6.Size = new System.Drawing.Size(1245, 699);
             this.panel6.TabIndex = 32;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
@@ -85,7 +84,7 @@ namespace Beverage_Management_System
             this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
             this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_Delete.BorderRadius = 25;
+            this.bt_Delete.BorderRadius = 5;
             this.bt_Delete.BorderThickness = 1;
             this.bt_Delete.CheckedState.Parent = this.bt_Delete;
             this.bt_Delete.CustomImages.Parent = this.bt_Delete;
@@ -95,13 +94,12 @@ namespace Beverage_Management_System
             this.bt_Delete.HoverState.Parent = this.bt_Delete;
             this.bt_Delete.Image = ((System.Drawing.Image)(resources.GetObject("bt_Delete.Image")));
             this.bt_Delete.ImageOffset = new System.Drawing.Point(2, 0);
-            this.bt_Delete.Location = new System.Drawing.Point(605, 88);
-            this.bt_Delete.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_Delete.Location = new System.Drawing.Point(893, 108);
+            this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
-            this.bt_Delete.Size = new System.Drawing.Size(95, 41);
+            this.bt_Delete.Size = new System.Drawing.Size(41, 50);
             this.bt_Delete.TabIndex = 89;
-            this.bt_Delete.Text = "DELETE";
             this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
             // 
             // dtGridView_Staff
@@ -146,13 +144,15 @@ namespace Beverage_Management_System
             this.dtGridView_Staff.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridView_Staff.EnableHeadersVisualStyles = false;
             this.dtGridView_Staff.GridColor = System.Drawing.SystemColors.Control;
-            this.dtGridView_Staff.Location = new System.Drawing.Point(34, 152);
+            this.dtGridView_Staff.Location = new System.Drawing.Point(45, 187);
+            this.dtGridView_Staff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtGridView_Staff.Name = "dtGridView_Staff";
             this.dtGridView_Staff.RowHeadersVisible = false;
             this.dtGridView_Staff.RowHeadersWidth = 60;
             this.dtGridView_Staff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridView_Staff.Size = new System.Drawing.Size(869, 385);
+            this.dtGridView_Staff.Size = new System.Drawing.Size(1159, 474);
             this.dtGridView_Staff.TabIndex = 34;
+            this.dtGridView_Staff.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dtGridView_Staff.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridView_Staff.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dtGridView_Staff.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -268,14 +268,14 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(34, 88);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txt_Search.Location = new System.Drawing.Point(45, 108);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
             this.txt_Search.PlaceholderText = "";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(202, 41);
+            this.txt_Search.Size = new System.Drawing.Size(269, 50);
             this.txt_Search.TabIndex = 33;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
@@ -283,33 +283,33 @@ namespace Beverage_Management_System
             // 
             this.guna2Button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(216)))), ((int)(((byte)(247)))));
-            this.guna2Button4.BorderRadius = 25;
+            this.guna2Button4.BorderRadius = 5;
             this.guna2Button4.BorderThickness = 1;
             this.guna2Button4.CheckedState.Parent = this.guna2Button4;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Image = global::Beverage_Management_System.Properties.Resources.ic_adduser;
-            this.guna2Button4.Location = new System.Drawing.Point(705, 88);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button4.Location = new System.Drawing.Point(940, 108);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(198, 41);
+            this.guna2Button4.Size = new System.Drawing.Size(264, 50);
             this.guna2Button4.TabIndex = 22;
             this.guna2Button4.Text = "Add a new staff member";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // Staff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(934, 568);
+            this.ClientSize = new System.Drawing.Size(1245, 699);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Staff";
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.Staff_Activated);

@@ -183,8 +183,6 @@ namespace Beverage_Management_System
 
         private void dataGV_Order_Bill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            fLayoutPl_Details_Order_Bill.Visible = true;
-            lb_Details_Order_Bill.Visible = true;
             if (e.RowIndex < dataGV_Order_Bill.RowCount - 1)
             {
                 int id_order_form = int.Parse(dataGV_Order_Bill.Rows[e.RowIndex].Cells[1].Value.ToString());
@@ -194,8 +192,6 @@ namespace Beverage_Management_System
 
         private void dataGV_Goods_Import_Bill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            fLayoutPl_Details_Goods_Import_Bill.Visible = true;
-            lb_Details_Goods_Import_Bill.Visible = true;
             if (e.RowIndex < dataGV_Goods_Import_Bill.RowCount - 1)
             {
                 int id_goods_import_bill = int.Parse(dataGV_Goods_Import_Bill.Rows[e.RowIndex].Cells[0].Value.ToString());

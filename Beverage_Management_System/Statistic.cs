@@ -24,6 +24,15 @@ namespace Beverage_Management_System
 
         private void Statistic_Load(object sender, EventArgs e)
         {
+            chart1.Series["Series1"].IsValueShownAsLabel = true;
+            chart1.Series["Series1"].Points.AddXY(1, 10);
+            chart1.Series["Series1"].Points.AddXY(1, 20);
+            chart1.Series["Series1"].Points.AddXY(1, 30);
+            chart1.Series["Series1"].Points.AddXY(1, 40);
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
 
         }
     }
