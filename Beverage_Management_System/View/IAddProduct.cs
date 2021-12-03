@@ -10,14 +10,9 @@ namespace Beverage_Management_System.View
 {
     interface IAddProduct
     {
-        void fillDataInComboBox_KindOfProduct();
-        void fillDataInComboBox_Unit();
-
-        void fillDataInComboBox_Goods();
-
-        void setInformation();
-
-        void refreshForm();
+        string name { get; set; }
+        string price { get; set; }
+        string quantity { get; set; }
 
     }
 }

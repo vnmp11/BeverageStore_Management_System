@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Beverage_Management_System.View
 {
-    interface IFinancialNote
+    internal interface IAddReport
     {
-        string search_OrderBill { get; set; }
-        string search_GoodImportBill { get; set; }
+        string fine { get; set; }
+        string reason { get; set; }
+        string solution { get; set; }
     }
 }

@@ -8,7 +8,6 @@ namespace Beverage_Management_System.View
 {
     interface IAddImportGoods
     {
-        void setDataGV_Fill_ImportGoods();
 
         string id_IG { get; set; }
         string id_Person { get; set; }

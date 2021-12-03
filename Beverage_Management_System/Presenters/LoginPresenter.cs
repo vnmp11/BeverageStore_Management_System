@@ -16,13 +16,14 @@ namespace Beverage_Management_System.Presenters
     class LoginPresenter
     {
         ILogin loginView;
+        public Person person = new Person();
 
         public LoginPresenter(ILogin view)
         {
             loginView = view;
         }
 
-        public void Login(Login form)
+        public void Login()
         {
             string username = loginView.username.Trim();
             string password = loginView.password.Trim();
@@ -35,8 +36,6 @@ namespace Beverage_Management_System.Presenters
             sda.Fill(dtbl);
             if (dtbl.Rows.Count > 0)
             {
-                form.Hide();
-
                 foreach (DataRow row in dtbl.Rows)
                 {
                     int ID = Convert.ToInt32(row["ID_PERSON"]);
@@ -52,43 +51,51 @@ namespace Beverage_Management_System.Presenters
                     string ADDRESS = row["ADDRESS"].ToString();
                     int ROLE = Convert.ToInt32(row["ROLE"]);
 
-                    Dashboard dashboard = new Dashboard(ID);
-                    dashboard.Show();
-                    setDashboard_WithRole(ROLE, NAME, dashboard);
-                   
+                    person = new Person(ID, USERNAME, PASSWORD, NAME, DOB, SEX, PHONE, ADDRESS, ROLE);
                 }
-
-                MyMessageBox.showBox("You have been successfully logged in", "Message");
 
             }
             else
             {
-                form.Refresh_UsernameAndPassword();
-                MyMessageBox.showBox("Your username or password is incorrect", "Message");
-      
             }
-            myConnection.sqlcon.Close(); 
+            myConnection.sqlcon.Close();
         }
 
-        public void setDashboard_WithRole(int ROLE, string NAME, Dashboard dashboard)
+
+        public void handle_FaildLogin(Guna.UI2.WinForms.Guna2TextBox txt_Username, Guna.UI2.WinForms.Guna2TextBox txt_Password)
         {
-            switch (ROLE)
+            txt_Username.Text = "";
+            txt_Password.Text = "";
+            MyMessageBox.showBox("Your username or password is incorrect", "Message");
+        }
+
+        public void handle_SuccessfulLogin(Form form, Dashboard dashboard)
+        {
+            form.Hide();
+            dashboard.Show();
+            setDashboard_WithRole(dashboard);
+            MyMessageBox.showBox("You have been successfully logged in", "Message");
+        }
+
+        public void setDashboard_WithRole(Dashboard dashboard)
+        {
+            switch (person.getROLE())
             {
                 case 1:
                     dashboard.setDashboard_Waiter();
-                    dashboard.setPersonalInformation(NAME, "Waiter");
+                    dashboard.setPersonalInformation(person.getNAME(), "Waiter");
                     break;
                 case 2:
                     dashboard.setDashboard_Bartender();
-                    dashboard.setPersonalInformation(NAME, "Bartender");
+                    dashboard.setPersonalInformation(person.getNAME(), "Bartender");
                     break;
                 case 3:
                     dashboard.setDashboard_Accountant();
-                    dashboard.setPersonalInformation(NAME, "Accountant");
+                    dashboard.setPersonalInformation(person.getNAME(), "Accountant");
                     break;
                 default:
                     dashboard.setDashboard_Owner();
-                    dashboard.setPersonalInformation(NAME, "Owner");
+                    dashboard.setPersonalInformation(person.getNAME(), "Owner");
                     break;
 
             }

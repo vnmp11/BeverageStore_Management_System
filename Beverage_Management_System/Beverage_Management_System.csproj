@@ -287,6 +287,7 @@
     <Compile Include="View\IAddAgency.cs" />
     <Compile Include="View\IAddGoodsAgency.cs" />
     <Compile Include="View\IAddProduct.cs" />
+    <Compile Include="View\IAddReport.cs" />
     <Compile Include="View\IAddStaff.cs" />
     <Compile Include="View\IAgency.cs" />
     <Compile Include="View\IFinancialNote.cs" />

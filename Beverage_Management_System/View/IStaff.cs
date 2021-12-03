@@ -8,6 +8,6 @@ namespace Beverage_Management_System.View
 {
     interface IStaff
     {
-        void searchData();
+        string search { get; set; }
     }
 }

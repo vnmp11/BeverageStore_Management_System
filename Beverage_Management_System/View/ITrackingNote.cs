@@ -8,8 +8,6 @@ namespace Beverage_Management_System.View
 {
     interface ITrackingNote
     {
-        void setDataGV_Fill();
-        void getDetailsTrackingNote(int ID);
-        void searchNote();
+        string search { get; set; }
     }
 }

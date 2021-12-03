@@ -8,7 +8,6 @@ namespace Beverage_Management_System.View
 {
     interface IInventory
     {
-        void setDataGV_Fill();
-        void searchData();
+        string search { get; set; }
     }
 }

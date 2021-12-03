@@ -15,7 +15,7 @@ namespace Beverage_Management_System
 {
     public partial class Login : Form, ILogin
     {
-        public string username { get => txt_Username.Text ; set => txt_Username.Text = value; }
+        public string username { get => txt_Username.Text; set => txt_Username.Text = value; }
         public string password { get => txt_Password.Text; set => txt_Password.Text = value; }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -39,7 +39,7 @@ namespace Beverage_Management_System
 
         private void label16_Click(object sender, EventArgs e)
         {
-      
+
             panel3.Hide();
         }
 
@@ -80,13 +80,16 @@ namespace Beverage_Management_System
         private void bt_Login_Click(object sender, EventArgs e)
         {
             LoginPresenter presenter = new LoginPresenter(this);
-            presenter.Login(this);
-        }
-
-        public void Refresh_UsernameAndPassword()
-        {
-            txt_Username.Text = "";
-            txt_Password.Text = "";
+            presenter.Login();
+            if (presenter.person.getID() == 0)
+            {
+                presenter.handle_FaildLogin(txt_Username, txt_Password);
+            }
+            else
+            {
+                Dashboard dashboard = new Dashboard(presenter.person.getID());
+                presenter.handle_SuccessfulLogin(this, dashboard);
+            }
         }
 
         private void Login_MouseDown(object sender, MouseEventArgs e)

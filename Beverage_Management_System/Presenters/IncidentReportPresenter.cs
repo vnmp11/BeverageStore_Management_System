@@ -1,5 +1,6 @@
 ﻿using Beverage_Management_System.Connection;
 using Beverage_Management_System.Model;
+using Beverage_Management_System.View;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,14 @@ namespace Beverage_Management_System.Presenters
 {
     class IncidentReportPresenter
     {
+        IAddReport addReportView;
+        public IncidentReportPresenter(IAddReport view)
+        {
+            addReportView = view;
+        }
+        public IncidentReportPresenter()
+        {
+        }
         public void showId(Guna2ComboBox cb)
         {
             String query1 = "Select ID_ORDER_FORM from ORDER_BILL Where STATUS = 0;";
@@ -30,10 +39,10 @@ namespace Beverage_Management_System.Presenters
             }
 
             myConnection.sqlcon.Close();
-         
+
         }
 
-        public void addReport(String id_orderform, String reason, String solution, String fine, DateTime date)
+        public void addReport(String id_orderform, DateTime date)
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
@@ -42,17 +51,17 @@ namespace Beverage_Management_System.Presenters
                 "values (@id_orderform, @reason ,@solution, @fine, @date);",
                 myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@id_orderform", id_orderform);
-            cmd.Parameters.AddWithValue("@reason", reason);
-            cmd.Parameters.AddWithValue("@solution", solution);
+            cmd.Parameters.AddWithValue("@reason", addReportView.reason);
+            cmd.Parameters.AddWithValue("@solution", addReportView.solution);
             cmd.Parameters.AddWithValue("@date", date);
-            cmd.Parameters.AddWithValue("@fine", fine);
+            cmd.Parameters.AddWithValue("@fine", addReportView.fine);
 
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
             {
                 MyMessageBox.showBox("Submitted.");
-                updateFine(id_orderform, fine);
-            }    
+                updateFine(id_orderform, addReportView.fine);
+            }
 
             myConnection.sqlcon.Close();
 
@@ -60,7 +69,7 @@ namespace Beverage_Management_System.Presenters
 
         public void showListReport(DataGridView dt)
         {
-           
+
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
@@ -73,14 +82,14 @@ namespace Beverage_Management_System.Presenters
             SqlDataReader sdr = cmd.ExecuteReader();
             while (sdr.Read())
             {
-               
+
                 int id = (int)sdr["ID_INCIDENT_REPORT"];
                 int id_order_form = (int)sdr["ID_ORDERFORM"];
                 string reason = (string)sdr["REASON"];
                 string solution = (string)sdr["SOLUTION"];
                 int fine = (int)sdr["FINE"];
                 DateTime date = (DateTime)sdr["DATE"];
-           
+
                 MReport i = new MReport(id, id_order_form, reason, solution, fine, date);
                 reportlist.Add(i);
             }
@@ -158,7 +167,7 @@ namespace Beverage_Management_System.Presenters
             dt.Rows.Clear();
 
             string query = "Select * from INCIDENT_REPORT Where ID_ORDERFORM=@id_orderform";
-            
+
             SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@id_orderform", search);
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -190,6 +199,19 @@ namespace Beverage_Management_System.Presenters
 
                 dt.Rows.Add(row);
             }
+        }
+
+        public void setInformation(int id_orderform, String reason, String solution, int fine, DateTime date,
+            Guna.UI2.WinForms.Guna2TextBox txb_Fine, System.Windows.Forms.RichTextBox txb_Reason,
+            System.Windows.Forms.RichTextBox txb_Solution, Guna.UI2.WinForms.Guna2ComboBox cb_idOrderBill,
+            Guna.UI2.WinForms.Guna2DateTimePicker dateTime)
+        {
+            txb_Fine.Text = fine.ToString();
+            txb_Reason.Text = reason;
+            txb_Solution.Text = solution;
+            cb_idOrderBill.Items.Add(id_orderform.ToString());
+            cb_idOrderBill.SelectedIndex = 1;
+            dateTime.Value = date;
         }
     }
 }

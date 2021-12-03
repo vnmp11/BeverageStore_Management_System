@@ -91,9 +91,9 @@ namespace Beverage_Management_System
             // 
             this.label11.Font = new System.Drawing.Font("Times New Roman", 18.26866F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label11.Location = new System.Drawing.Point(170, 26);
+            this.label11.Location = new System.Drawing.Point(144, 26);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(126, 36);
+            this.label11.Size = new System.Drawing.Size(152, 36);
             this.label11.TabIndex = 24;
             this.label11.Text = "LOGIN";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,6 +106,7 @@ namespace Beverage_Management_System
             this.bt_Login.BorderThickness = 1;
             this.bt_Login.CheckedState.Parent = this.bt_Login;
             this.bt_Login.CustomImages.Parent = this.bt_Login;
+            this.bt_Login.DisabledState.Parent = this.bt_Login;
             this.bt_Login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.bt_Login.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bt_Login.ForeColor = System.Drawing.Color.White;
@@ -127,7 +128,7 @@ namespace Beverage_Management_System
             this.label10.Location = new System.Drawing.Point(28, 128);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 23);
+            this.label10.Size = new System.Drawing.Size(99, 25);
             this.label10.TabIndex = 1;
             this.label10.Text = "Username";
             // 
@@ -203,9 +204,12 @@ namespace Beverage_Management_System
             this.btt_unvisible2.HoverState.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
             this.btt_unvisible2.HoverState.Parent = this.btt_unvisible2;
             this.btt_unvisible2.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
+            this.btt_unvisible2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_unvisible2.ImageRotate = 0F;
             this.btt_unvisible2.Location = new System.Drawing.Point(404, 258);
             this.btt_unvisible2.Name = "btt_unvisible2";
             this.btt_unvisible2.PressedState.Parent = this.btt_unvisible2;
+            this.btt_unvisible2.ShadowDecoration.Parent = this.btt_unvisible2;
             this.btt_unvisible2.Size = new System.Drawing.Size(32, 23);
             this.btt_unvisible2.TabIndex = 27;
             this.btt_unvisible2.Click += new System.EventHandler(this.btt_unvisible2_Click);
@@ -216,9 +220,12 @@ namespace Beverage_Management_System
             this.btt_visible2.HoverState.Image = global::Beverage_Management_System.Properties.Resources.view;
             this.btt_visible2.HoverState.Parent = this.btt_visible2;
             this.btt_visible2.Image = global::Beverage_Management_System.Properties.Resources.view;
+            this.btt_visible2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_visible2.ImageRotate = 0F;
             this.btt_visible2.Location = new System.Drawing.Point(404, 258);
             this.btt_visible2.Name = "btt_visible2";
             this.btt_visible2.PressedState.Parent = this.btt_visible2;
+            this.btt_visible2.ShadowDecoration.Parent = this.btt_visible2;
             this.btt_visible2.Size = new System.Drawing.Size(32, 23);
             this.btt_visible2.TabIndex = 26;
             this.btt_visible2.Click += new System.EventHandler(this.btt_visible2_Click);
@@ -230,9 +237,12 @@ namespace Beverage_Management_System
             this.btt_close.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_close.HoverState.Parent = this.btt_close;
             this.btt_close.Image = global::Beverage_Management_System.Properties.Resources.letter_x;
+            this.btt_close.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_close.ImageRotate = 0F;
             this.btt_close.Location = new System.Drawing.Point(927, 12);
             this.btt_close.Name = "btt_close";
             this.btt_close.PressedState.Parent = this.btt_close;
+            this.btt_close.ShadowDecoration.Parent = this.btt_close;
             this.btt_close.Size = new System.Drawing.Size(39, 45);
             this.btt_close.TabIndex = 25;
             this.btt_close.Click += new System.EventHandler(this.btt_close_Click);

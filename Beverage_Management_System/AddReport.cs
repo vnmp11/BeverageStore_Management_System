@@ -1,4 +1,5 @@
 ﻿using Beverage_Management_System.Presenters;
+using Beverage_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,26 +12,30 @@ using System.Windows.Forms;
 
 namespace Beverage_Management_System
 {
-    public partial class AddReport : Form
+    public partial class AddReport : Form, IAddReport
     {
-        IncidentReportPresenter pre = new IncidentReportPresenter();
+        IncidentReportPresenter pre;
+
+        public string fine { get => txb_Fine.Text; set => txb_Fine.Text = value; }
+        public string reason { get => txb_Reason.Text; set => txb_Reason.Text = value; }
+        public string solution { get => txb_Solution.Text; set => txb_Solution.Text = value; }
+
         public AddReport()
         {
             InitializeComponent();
+            pre = new IncidentReportPresenter(this);
+            DateTime today = DateTime.Today;
+            dateTime.Value = today;
             pre.showId(cb_idOrderBill);
         }
 
         public AddReport(int id_orderform, String reason, String solution, int fine, DateTime date)
         {
             InitializeComponent();
+            pre = new IncidentReportPresenter(this);
+            pre.setInformation(id_orderform, reason, solution, fine, date,
+                txb_Fine, txb_Reason, txb_Solution, cb_idOrderBill, dateTime);
 
-            txb_Fine.Text = fine.ToString();
-            txb_Reason.Text = reason;
-            txb_Solution.Text = solution;
-            cb_idOrderBill.Items.Add(id_orderform.ToString());
-            cb_idOrderBill.SelectedIndex = 1;
-            dateTime.Value = date;
-           
         }
 
         bool checkEmpty()
@@ -71,7 +76,7 @@ namespace Beverage_Management_System
         {
             if (checkEmpty())
             {
-                pre.addReport(cb_idOrderBill.SelectedItem.ToString(), txb_Reason.Text, txb_Solution.Text, txb_Fine.Text.Replace(",", ""), dateTime.Value.Date);
+                pre.addReport(cb_idOrderBill.SelectedItem.ToString(), dateTime.Value.Date);
                 this.Close();
             }
         }

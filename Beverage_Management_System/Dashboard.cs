@@ -48,7 +48,6 @@ namespace Beverage_Management_System
             if (pl_SubMenuProduct.Visible == true)
                 pl_SubMenuProduct.Visible = false;
             if (pl_SubMenuFinancialNote.Visible == true) pl_SubMenuFinancialNote.Visible = false;
-            if (pl_SubMenuManageInventory.Visible == true) pl_SubMenuManageInventory.Visible = false;
           
         }
 
@@ -396,7 +395,7 @@ namespace Beverage_Management_System
 
         private void btt_ManageInventory_Click(object sender, EventArgs e)
         {
-            showSubMenu(pl_SubMenuManageInventory);
+            openChildForm(new ImportForm(id_person));
         }
 
         private void btt_Tracking_Note_Click(object sender, EventArgs e)
