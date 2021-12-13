@@ -23,10 +23,11 @@ namespace Beverage_Management_System.Presenters
         public OrderBillPresenter()
         {
         }
-
+        //them total quantity vao day(total quantity OB)
         public void addOrderBill(int id_order, int batender)
         {
             double total_price_products = 0;
+            int total_quantity = 0;
             double fine = 0;
             string date_create = DateTime.Now.ToString("yyyy-MM-dd");
             double total_price = 0;
@@ -34,20 +35,22 @@ namespace Beverage_Management_System.Presenters
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            string querry = "SELECT TOTAL_PRICE from ORDERFORM where ID_ORDERFORM ='" + id_order + "';";
+            string querry = "SELECT * from ORDERFORM where ID_ORDERFORM ='" + id_order + "';";
             SqlCommand sqlCommand = new SqlCommand(querry, myConnection.sqlcon);
             SqlDataReader dr = sqlCommand.ExecuteReader();
             if (dr.Read())
             {
                 total_price_products = Convert.ToDouble(dr["TOTAL_PRICE"]);
+                total_quantity = Convert.ToInt32(dr["TOTAL_QUANTITY"]);
+
             }
             dr.Close();
             total_price = total_price_products + fine;
-            MOrderBill orderBill = new MOrderBill(0, id_order, batender, 4, total_price_products, fine, date_create, total_price, 0);
+            MOrderBill orderBill = new MOrderBill(0, id_order, batender, 4, total_price_products, fine, date_create, total_price, 0, total_quantity);
 
             SqlCommand cmd = new SqlCommand("Insert into ORDER_BILL(ID_ORDER_FORM, ID_BARTENDER, ID_ACCOUNTANT, TOTAL_PRICE_PRODUCTS, FINE," +
-                "DATE_CRE, TOTAL_PRICE,STATUS) " +
-                "values (@id_order_form, @id_bartender, @id_accountant, @total_price_products, @fine, @date_cre, @total_price, @stautus);",
+                "DATE_CRE, TOTAL_PRICE,STATUS, TOTAL_QUANTITY) " +
+                "values (@id_order_form, @id_bartender, @id_accountant, @total_price_products, @fine, @date_cre, @total_price, @stautus, @total_quantity);",
                 myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@id_order_form", orderBill.getID_ORDER_FORM());
             cmd.Parameters.AddWithValue("@id_bartender", orderBill.getID_BARTENDER());
@@ -57,6 +60,7 @@ namespace Beverage_Management_System.Presenters
             cmd.Parameters.AddWithValue("@date_cre", orderBill.getDATE_CREATE());
             cmd.Parameters.AddWithValue("@total_price", orderBill.getTOTAL_PRICE());
             cmd.Parameters.AddWithValue("@stautus", orderBill.getSTATUS());
+            cmd.Parameters.AddWithValue("@total_quantity", orderBill.getTOTAL_QUANTITY());
 
             cmd.ExecuteNonQuery();
             myConnection.sqlcon.Close();
@@ -87,10 +91,11 @@ namespace Beverage_Management_System.Presenters
                     DateTime date = Convert.ToDateTime(row["DATE_CRE"]);
                     string DATE_CRE = date.ToString("dd-MM-yyyy");
                     double TOTAL_PRICE = Convert.ToDouble(row["TOTAL_PRICE"]);
+
                     int STATUS = 0;
+                    int TOTAL_QUANTITY = Convert.ToInt32(row["TOTAL_QUANTITY"]);
 
-
-                    MOrderBill orderBill = new MOrderBill(ID, ID_ORDER_FORM, ID_BARTENDER, ID_ACCOUNTANT, TOTAL_PRICE_PRODUCTS, FINE, DATE_CRE, TOTAL_PRICE, STATUS);
+                    MOrderBill orderBill = new MOrderBill(ID, ID_ORDER_FORM, ID_BARTENDER, ID_ACCOUNTANT, TOTAL_PRICE_PRODUCTS, FINE, DATE_CRE, TOTAL_PRICE, STATUS, TOTAL_QUANTITY);
                     list.Add(orderBill);
                 }
 
@@ -138,15 +143,48 @@ namespace Beverage_Management_System.Presenters
                 i.lb_NameProduct.Text = name;
                 i.lb_quantity.Text = quantity.ToString();
                 i.lb_total.Text = total_price.ToString("###,###,##0");
+
                 fLayoutPl_Details.Controls.Add(i);
             }
             myConnection.sqlcon.Close();
         }
 
+        public List<DetailsBill> detailsBills= new List<DetailsBill>();
+        public void printBill(int id_order_form)
+        {
+            detailsBills.Clear();
+             MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            //fLayoutPl_Details.Controls.Clear();
+
+            string query = "Select P.ID_PRODUCT, P.NAME, DO.QUANTITY, DO.TOTAL_PRICE from " +
+                "(ORDERFORM O join DETAILS_ORDERFORM DO on O.ID_ORDERFORM = DO.ID_ORDERFORM) join " +
+                "PRODUCT P on DO.ID_PRODUCT = P.ID_PRODUCT where O.ID_ORDERFORM ='" + id_order_form + "';";
+            SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                int id_product = Convert.ToInt32(sdr["ID_PRODUCT"]);
+                string name = sdr["NAME"].ToString();
+                int quantity = Convert.ToInt32(sdr["QUANTITY"]);
+                double total_price = Convert.ToDouble(sdr["TOTAL_PRICE"]);
+
+                DetailsBill i = new DetailsBill();
+                i.lb_ID_Product.Text = id_product.ToString();
+                i.lb_NameProduct.Text = name;
+                i.lb_quantity.Text = quantity.ToString();
+                i.lb_total.Text = total_price.ToString("###,###,##0");
+
+                detailsBills.Add(i);
+                //fLayoutPl_Details.Controls.Add(i);
+            }
+            myConnection.sqlcon.Close();
+        }
 
         public void browseBill(int ID, int id_accountant,
             Guna.UI2.WinForms.Guna2DataGridView dataGV, System.Windows.Forms.Label lb_Details,
-            System.Windows.Forms.FlowLayoutPanel fLayoutPl_Details)
+            System.Windows.Forms.FlowLayoutPanel fLayoutPl_Details, int id_form)
         {
 
             MyConnection myConnection = new MyConnection();
@@ -161,6 +199,14 @@ namespace Beverage_Management_System.Presenters
             cmd.Parameters.AddWithValue("@status", 1);
             cmd.Parameters.AddWithValue("@id", ID);
 
+
+            SqlCommand cmd2 = new SqlCommand("Update DETAILS_ORDERFORM set STATUSb=@status, DATEb =@date where ID_ORDERFORM=@id_orderform",
+            myConnection.sqlcon);
+            cmd2.Parameters.AddWithValue("@status", "1");
+            cmd2.Parameters.AddWithValue("@date", date_confirm);
+            cmd2.Parameters.AddWithValue("@id_orderform", id_form);
+            cmd2.ExecuteNonQuery();
+
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
             {
@@ -172,8 +218,26 @@ namespace Beverage_Management_System.Presenters
 
             }
             else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
-            myConnection.sqlcon.Close();
+            
 
+
+            //string query = "Select * from DETAILS_ORDERFORM  where ID_ORDERFORM=@id_orderform ;";
+            //SqlCommand cmd1 = new SqlCommand(query, myConnection.sqlcon);
+            //cmd1.Parameters.AddWithValue("@id_orderform", id_form);
+
+            //SqlDataReader sdr = cmd1.ExecuteReader();
+            //while (sdr.Read())
+            //{
+
+
+
+
+
+
+
+            //}
+            //sdr.Close();
+            myConnection.sqlcon.Close();
         }
 
 
@@ -203,9 +267,9 @@ namespace Beverage_Management_System.Presenters
                     DateTime date = Convert.ToDateTime(row["DATE_CRE"]);
                     string DATE_CRE = date.ToString("dd-MM-yyyy");
                     double TOTAL_PRICE = Convert.ToDouble(row["TOTAL_PRICE"]);
+                    int TOTAL_QUANTITY = Convert.ToInt32(row["TOTAL_QUANTITY"]);
 
-
-                    MOrderBill orderBill = new MOrderBill(ID, ID_ORDER_FORM, ID_BARTENDER, ID_ACCOUNTANT, TOTAL_PRICE_PRODUCTS, FINE, DATE_CRE, TOTAL_PRICE, 0);
+                    MOrderBill orderBill = new MOrderBill(ID, ID_ORDER_FORM, ID_BARTENDER, ID_ACCOUNTANT, TOTAL_PRICE_PRODUCTS, FINE, DATE_CRE, TOTAL_PRICE, 0, TOTAL_QUANTITY);
                     list.Add(orderBill);
                 }
             }
@@ -226,6 +290,70 @@ namespace Beverage_Management_System.Presenters
             }
 
             myConnection.sqlcon.Close();
+        }
+
+        public int customer;
+        public double total;
+        public int total_quantity;
+
+        public void loadListOrderBill(int d, int m, int y)
+        {
+            customer = 0;
+            total = 0;
+            total_quantity = 0;
+
+            //List<MOrderBill> list = new List<MOrderBill>();
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+            string querryD = "SELECT * from ORDER_BILL where STATUS = 1 and DAY(DATE_CON) = " + d.ToString() + "and MONTH(DATE_CON) =" + m.ToString() + "and MONTH(DATE_CON) =" + m.ToString() + ";";    
+            string querryM = "SELECT * from ORDER_BILL where STATUS = 1 and MONTH(DATE_CON) =" + m.ToString() + "and YEAR(DATE_CON) =" + y.ToString() + ";";
+            string querryY = "SELECT * from ORDER_BILL where STATUS = 1 and YEAR(DATE_CON) = '" + y.ToString() + "';";
+
+            if(d!=0 && m != 0 && y != 0)
+            {
+                SqlCommand sqlCommand = new SqlCommand(querryD, myConnection.sqlcon);
+                SqlDataReader dr = sqlCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    total = total + (double)dr["TOTAL_PRICE_PRODUCTS"];  
+                    total_quantity = total_quantity + (int)dr["TOTAL_QUANTITY"];
+                    customer += 1;
+                }
+                dr.Close();
+                myConnection.sqlcon.Close();
+            }
+            else if (d==0 && m != 0 && y!=0)
+            {
+                SqlCommand sqlCommand = new SqlCommand(querryM, myConnection.sqlcon);
+                SqlDataReader dr = sqlCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    total = total + (double)dr["TOTAL_PRICE_PRODUCTS"];
+                    total_quantity = total_quantity + (int)dr["TOTAL_QUANTITY"];
+                    customer += 1;
+                }
+                dr.Close();
+                myConnection.sqlcon.Close();
+
+            }
+            else if (d == 0 && m == 0 && y != 0)
+            {
+                SqlCommand sqlCommand = new SqlCommand(querryY, myConnection.sqlcon);
+                SqlDataReader dr = sqlCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    total = total + (double)dr["TOTAL_PRICE_PRODUCTS"];
+                    total_quantity = total_quantity + (int)dr["TOTAL_QUANTITY"];
+                    customer += 1;
+                }
+                dr.Close();
+                myConnection.sqlcon.Close();
+
+            }
+
         }
     }
 }

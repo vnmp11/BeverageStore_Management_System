@@ -25,7 +25,7 @@ namespace Beverage_Management_System
             InitializeComponent();
             btt_Add.Visible = false;
             bt_Delete.Visible = false;
-
+           
             presenter = new ImportGoodsPresenter(this);
             presenter.dataGV_IGF(DtaGridView_IGF, 1);
 
@@ -45,19 +45,33 @@ namespace Beverage_Management_System
         {
 
         }
+        //public void refreshTable()
+        //{
+        //    DtaGridView_IGF.Rows.Clear();
+        //}
 
+        //public void reloadTable()
+        //{
+        //    AgencyPresenter presenter = new AgencyPresenter(this);
+        //    refreshTable();
+        //    presenter.dataGV(dtGridView_Agency);
+        //    dtGridView_Agency.CurrentCell = null;
+        //}
         private void btt_Add_Click(object sender, EventArgs e)
         {
-            AddImportForm frm = new AddImportForm(id);
+            AddImportForm frm = new AddImportForm(id,this);
             frm.ShowDialog();
         }
 
-
-        public void refreshTable()
+        public void refreshDataGV()
         {
+            Console.WriteLine("aabc test");
             DtaGridView_IGF.Rows.Clear();
-        }
+           
+            presenter.dataGV_IGF(DtaGridView_IGF, 0);
 
+            DtaGridView_IGF.CurrentCell = null;
+        }
 
         private void bt_Delete_Click(object sender, EventArgs e)
         {
@@ -106,5 +120,7 @@ namespace Beverage_Management_System
                 form.Show();
             }
         }
+
+      
     }
 }

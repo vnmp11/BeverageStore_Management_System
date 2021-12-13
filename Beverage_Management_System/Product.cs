@@ -17,10 +17,11 @@ namespace Beverage_Management_System
 {
     public partial class Product : UserControl
     {
-
+        //add kind
         int id_product;
         int quantity;
         int price;
+        int kind;
         AddQuatity qty;
 
 
@@ -68,6 +69,18 @@ namespace Beverage_Management_System
             set
             {
                 id_product = value;
+            }
+        }
+
+        public int p_kind
+        {
+            get
+            {
+                return kind;
+            }
+            set
+            {
+                kind = value;
             }
         }
 

@@ -33,14 +33,14 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.btt_Add = new Guna.UI2.WinForms.Guna2Button();
+            this.search = new Guna.UI2.WinForms.Guna2TextBox();
             this.DtaGridView_IGF = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID_IGF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_BARTENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STATUS = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
-            this.btt_Add = new Guna.UI2.WinForms.Guna2Button();
-            this.search = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtaGridView_IGF)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,107 +56,6 @@ namespace Beverage_Management_System
             this.label12.Text = "IMPORT GOODS";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // DtaGridView_IGF
-            // 
-            this.DtaGridView_IGF.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DtaGridView_IGF.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DtaGridView_IGF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DtaGridView_IGF.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DtaGridView_IGF.BackgroundColor = System.Drawing.Color.White;
-            this.DtaGridView_IGF.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DtaGridView_IGF.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DtaGridView_IGF.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtaGridView_IGF.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DtaGridView_IGF.ColumnHeadersHeight = 60;
-            this.DtaGridView_IGF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DtaGridView_IGF.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_IGF,
-            this.ID_BARTENDER,
-            this.DATE,
-            this.STATUS});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DtaGridView_IGF.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DtaGridView_IGF.EnableHeadersVisualStyles = false;
-            this.DtaGridView_IGF.GridColor = System.Drawing.SystemColors.Control;
-            this.DtaGridView_IGF.Location = new System.Drawing.Point(64, 196);
-            this.DtaGridView_IGF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DtaGridView_IGF.Name = "DtaGridView_IGF";
-            this.DtaGridView_IGF.ReadOnly = true;
-            this.DtaGridView_IGF.RowHeadersVisible = false;
-            this.DtaGridView_IGF.RowHeadersWidth = 100;
-            this.DtaGridView_IGF.RowTemplate.Height = 60;
-            this.DtaGridView_IGF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtaGridView_IGF.Size = new System.Drawing.Size(1290, 779);
-            this.DtaGridView_IGF.TabIndex = 100;
-            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.DtaGridView_IGF.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DtaGridView_IGF.ThemeStyle.GridColor = System.Drawing.SystemColors.Control;
-            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.Height = 60;
-            this.DtaGridView_IGF.ThemeStyle.ReadOnly = true;
-            this.DtaGridView_IGF.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DtaGridView_IGF.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DtaGridView_IGF.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtaGridView_IGF.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DtaGridView_IGF.ThemeStyle.RowsStyle.Height = 60;
-            this.DtaGridView_IGF.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
-            this.DtaGridView_IGF.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DtaGridView_IGF.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtaGridView_IGF_CellDoubleClick);
-            // 
-            // ID_IGF
-            // 
-            this.ID_IGF.HeaderText = "ID IMPORT GOODS";
-            this.ID_IGF.MinimumWidth = 8;
-            this.ID_IGF.Name = "ID_IGF";
-            this.ID_IGF.ReadOnly = true;
-            // 
-            // ID_BARTENDER
-            // 
-            this.ID_BARTENDER.HeaderText = "ID_BARTENDER";
-            this.ID_BARTENDER.MinimumWidth = 8;
-            this.ID_BARTENDER.Name = "ID_BARTENDER";
-            this.ID_BARTENDER.ReadOnly = true;
-            // 
-            // DATE
-            // 
-            this.DATE.HeaderText = "DATE CREATED";
-            this.DATE.MinimumWidth = 8;
-            this.DATE.Name = "DATE";
-            this.DATE.ReadOnly = true;
-            // 
-            // STATUS
-            // 
-            this.STATUS.HeaderText = "STATUS";
-            this.STATUS.MinimumWidth = 8;
-            this.STATUS.Name = "STATUS";
-            this.STATUS.ReadOnly = true;
-            this.STATUS.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.STATUS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // bt_Delete
             // 
@@ -234,16 +133,113 @@ namespace Beverage_Management_System
             this.search.Size = new System.Drawing.Size(304, 62);
             this.search.TabIndex = 103;
             // 
+            // DtaGridView_IGF
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DtaGridView_IGF.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DtaGridView_IGF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DtaGridView_IGF.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DtaGridView_IGF.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DtaGridView_IGF.BackgroundColor = System.Drawing.Color.White;
+            this.DtaGridView_IGF.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DtaGridView_IGF.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.DtaGridView_IGF.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtaGridView_IGF.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DtaGridView_IGF.ColumnHeadersHeight = 40;
+            this.DtaGridView_IGF.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_IGF,
+            this.ID_BARTENDER,
+            this.DATE,
+            this.STATUS});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtaGridView_IGF.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DtaGridView_IGF.EnableHeadersVisualStyles = false;
+            this.DtaGridView_IGF.GridColor = System.Drawing.SystemColors.Control;
+            this.DtaGridView_IGF.Location = new System.Drawing.Point(99, 174);
+            this.DtaGridView_IGF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DtaGridView_IGF.Name = "DtaGridView_IGF";
+            this.DtaGridView_IGF.RowHeadersVisible = false;
+            this.DtaGridView_IGF.RowHeadersWidth = 60;
+            this.DtaGridView_IGF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DtaGridView_IGF.Size = new System.Drawing.Size(1128, 712);
+            this.DtaGridView_IGF.TabIndex = 104;
+            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DtaGridView_IGF.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DtaGridView_IGF.ThemeStyle.GridColor = System.Drawing.SystemColors.Control;
+            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
+            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DtaGridView_IGF.ThemeStyle.HeaderStyle.Height = 40;
+            this.DtaGridView_IGF.ThemeStyle.ReadOnly = false;
+            this.DtaGridView_IGF.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DtaGridView_IGF.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.DtaGridView_IGF.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtaGridView_IGF.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.DtaGridView_IGF.ThemeStyle.RowsStyle.Height = 22;
+            this.DtaGridView_IGF.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DtaGridView_IGF.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.DtaGridView_IGF.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtaGridView_IGF_CellDoubleClick);
+            // 
+            // ID_IGF
+            // 
+            this.ID_IGF.FillWeight = 50F;
+            this.ID_IGF.HeaderText = "ID IMPORT GOODS";
+            this.ID_IGF.MinimumWidth = 7;
+            this.ID_IGF.Name = "ID_IGF";
+            this.ID_IGF.ReadOnly = true;
+            // 
+            // ID_BARTENDER
+            // 
+            this.ID_BARTENDER.HeaderText = "ID BARTENDER";
+            this.ID_BARTENDER.MinimumWidth = 8;
+            this.ID_BARTENDER.Name = "ID_BARTENDER";
+            // 
+            // DATE
+            // 
+            this.DATE.HeaderText = "DATE CREATED";
+            this.DATE.MinimumWidth = 8;
+            this.DATE.Name = "DATE";
+            // 
+            // STATUS
+            // 
+            this.STATUS.HeaderText = "SATUS";
+            this.STATUS.MinimumWidth = 8;
+            this.STATUS.Name = "STATUS";
+            this.STATUS.ReadOnly = true;
+            this.STATUS.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.STATUS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // ImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1430, 1049);
+            this.Controls.Add(this.DtaGridView_IGF);
             this.Controls.Add(this.search);
             this.Controls.Add(this.bt_Delete);
             this.Controls.Add(this.btt_Add);
-            this.Controls.Add(this.DtaGridView_IGF);
             this.Controls.Add(this.label12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -256,13 +252,13 @@ namespace Beverage_Management_System
 
         #endregion
         private System.Windows.Forms.Label label12;
-        private Guna.UI2.WinForms.Guna2DataGridView DtaGridView_IGF;
         private Guna.UI2.WinForms.Guna2Button bt_Delete;
         private Guna.UI2.WinForms.Guna2Button btt_Add;
+        private Guna.UI2.WinForms.Guna2TextBox search;
+        public Guna.UI2.WinForms.Guna2DataGridView DtaGridView_IGF;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_IGF;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_BARTENDER;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
         private System.Windows.Forms.DataGridViewCheckBoxColumn STATUS;
-        private Guna.UI2.WinForms.Guna2TextBox search;
     }
 }

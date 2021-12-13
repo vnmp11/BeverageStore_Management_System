@@ -130,21 +130,11 @@ namespace Beverage_Management_System.Presenters
 
             }
         }
+        
 
-
-        public void openGoodAgencyForm(int id_choosed)
-        {
-            GoodAgency form = new GoodAgency(id_choosed);
-            form.Show();
-        }
-        public void openAddAgencyForm(int id_choosed)
-        {
-
-            AddAgency form = new AddAgency(id_choosed);
-
-            form.Show();
-        }
-
+       
+       
+        //fail
         public int deleteAgency(int id)
         {
             MyConnection myConnection = new MyConnection();

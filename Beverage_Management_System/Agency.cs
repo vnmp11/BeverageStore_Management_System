@@ -14,17 +14,18 @@ namespace Beverage_Management_System
 {
     public partial class Agency : Form, IAgency
     {
+        AgencyPresenter presenter;
         public Agency()
         {
             InitializeComponent();
-            AgencyPresenter agencyPresenter = new AgencyPresenter(this);
-            agencyPresenter.dataGV(dtGridView_Agency);
+            presenter = new AgencyPresenter(this);
+            presenter.dataGV(dtGridView_Agency);
             dtGridView_Agency.CurrentCell = null;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            AddAgency frm = new AddAgency();
+            AddAgency frm = new AddAgency(this);
             frm.ShowDialog();
         }
 
@@ -78,9 +79,15 @@ namespace Beverage_Management_System
             int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
 
             AgencyPresenter presenter = new AgencyPresenter(this);
-            presenter.openGoodAgencyForm(id_choose);
+            openGoodAgencyForm(id_choose);
         }
+        GoodAgency good ;
 
+        public void openGoodAgencyForm(int id_choosed)
+        {
+            GoodAgency form = new GoodAgency(id_choosed);
+            form.Show();
+        }
         private void Agency_Load(object sender, EventArgs e)
         {
 
@@ -90,7 +97,12 @@ namespace Beverage_Management_System
         {
 
         }
-
+        public void refreshDataGV()
+        {
+            dtGridView_Agency.Rows.Clear();
+            presenter.dataGV(dtGridView_Agency);
+            dtGridView_Agency.CurrentCell = null;
+        }
         private void btt_Update_Click(object sender, EventArgs e)
         {
             if (dtGridView_Agency.SelectedCells.Count > 0)
@@ -100,14 +112,20 @@ namespace Beverage_Management_System
                 int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
 
                 AgencyPresenter presenter = new AgencyPresenter(this);
-                presenter.openAddAgencyForm(id_choose);
+                openAddAgencyForm(id_choose,this);
             }
             else
             {
                 MyMessageBox.showBox("Please choose a agency whom you want to delete!", "Message");
             }
         }
+        public void openAddAgencyForm(int id_choosed, Agency form)
+        {
 
+            AddAgency form1 = new AddAgency(id_choosed,form);
+
+            form1.Show();
+        }
         private void Agency_Load_1(object sender, EventArgs e)
         {
 

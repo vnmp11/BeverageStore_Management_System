@@ -16,8 +16,11 @@ using System.Data.SqlClient;
 
 namespace Beverage_Management_System
 {
+
+   
     public partial class AddImportForm : Form, IAddImportGoods
     {
+        ImportForm parent;
 
         int id;
         int idForm;
@@ -38,15 +41,17 @@ namespace Beverage_Management_System
         public string name { get => nameIG; set => throw new NotImplementedException(); }
         public string quantity { get => quantityIG; set => throw new NotImplementedException(); }
 
-        public AddImportForm()
+        public AddImportForm(ImportForm form)
         {
             InitializeComponent();
+            this.parent = form;
         }
 
 
-        public AddImportForm(int id_batender)
+        public AddImportForm(int id_batender, ImportForm form )
         {
             InitializeComponent();
+            this.parent = form;
             id = id_batender;
             presenter = new ImportGoodsPresenter(this, id_batender);
             presenter.setDataGV(DtaGridView_Warehouse);
@@ -92,7 +97,7 @@ namespace Beverage_Management_System
 
                 presenter.addDetailImportForm();
 
-
+                
 
 
             }
@@ -100,6 +105,7 @@ namespace Beverage_Management_System
             presenter.addImportForm();
             dtaGV_GIForm.Rows.Clear();
             txt_ID_GIForm.Text = presenter.show_id().ToString();
+            parent.refreshDataGV();
 
 
         }

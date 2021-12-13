@@ -15,9 +15,11 @@ namespace Beverage_Management_System
 {
     public partial class AddAgency : Form, IAddAgency
     {
-        public AddAgency()
+        Agency parent;
+        public AddAgency(Agency form)
         {
             InitializeComponent();
+            this.parent = form;
            
         }
         public string name { get => txt_Name_Agency.Text; set => throw new NotImplementedException(); }
@@ -25,11 +27,12 @@ namespace Beverage_Management_System
         public string phone { get => txt_Phone_Agency.Text; set => throw new NotImplementedException(); }
         public string item { get => txt_Item_Agency.Text; set => throw new NotImplementedException(); }
         int id;
-        public AddAgency(int ID)
+        public AddAgency(int ID, Agency form)
         {
             InitializeComponent();
+            this.parent = form;
             AgencyPresenter agencyPresenter = new AgencyPresenter(this, ID);
-
+           
             agencyPresenter.setInforAgency( txt_Id_Agency, ID,txt_Name_Agency, txt_Address_Agency, txt_Phone_Agency, txt_Item_Agency);
         }
         
@@ -63,7 +66,7 @@ namespace Beverage_Management_System
 
                 // Agency fA = (Agency)this.Owner;
                 //fA.reloadTable();
-
+                parent.refreshDataGV();
 
                 this.Close();
 

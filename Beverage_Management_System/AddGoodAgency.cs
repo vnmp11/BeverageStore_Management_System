@@ -15,9 +15,11 @@ namespace Beverage_Management_System
 {
     public partial class AddGoodAgency : Form, IAddGoodsAgency
     {
-        public AddGoodAgency()
+        GoodAgency parent;
+        public AddGoodAgency(GoodAgency form)
         {
             InitializeComponent();
+            this.parent = form;
         }
 
         public static int idtemp2;
@@ -27,9 +29,10 @@ namespace Beverage_Management_System
         public string unit { get => txt_Unit_Good.Text; set => throw new NotImplementedException(); }
         public string quantity { get => txt_Quantity_Good.Text; set => throw new NotImplementedException(); }
 
-        public AddGoodAgency(int ID)
+        public AddGoodAgency(int ID, GoodAgency form)
         {
             InitializeComponent();
+            this.parent = form;
             idtemp2 = ID;
         }
         private void btt_Add_Good_Click(object sender, EventArgs e)
@@ -65,7 +68,7 @@ namespace Beverage_Management_System
                 // Agency fA = (Agency)this.Owner;
                 //fA.reloadTable();
 
-
+                parent.refreshDataGV();
                 this.Close();
 
             }
@@ -87,8 +90,7 @@ namespace Beverage_Management_System
 
         private void AddGoodAgency_FormClosing(object sender, FormClosingEventArgs e)
         {
-            GoodAgency f = new GoodAgency();
-            f.reloadTable();
+            
         }
     }
 }

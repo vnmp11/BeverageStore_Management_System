@@ -32,13 +32,7 @@ namespace Beverage_Management_System.Presenters
             goodsAgencyView = view;
         }
 
-        public void openAddGoodForm(int id_choosed, Form parent)
-        {
-
-            AddGoodAgency form = new AddGoodAgency(id_choosed);
-            form.Owner = parent;
-            form.Show();
-        }
+       
 
         public void dataGVGood(DataGridView dataGV, int id)
         {
@@ -88,6 +82,7 @@ namespace Beverage_Management_System.Presenters
 
         public void addGoodAgency(AddGoodAgency form, int id)
         {
+            Console.WriteLine(id.ToString());
             string name = addGoodsAgencyView.name.Trim();
             string price = addGoodsAgencyView.price.Trim();
             string unit = addGoodsAgencyView.unit.Trim();
@@ -120,7 +115,7 @@ namespace Beverage_Management_System.Presenters
 
 
         }
-
+        //fail
         public int deleteGoodAgency(int id)
         {
             MyConnection myConnection = new MyConnection();

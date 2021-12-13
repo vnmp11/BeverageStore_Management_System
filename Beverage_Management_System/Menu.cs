@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Beverage_Management_System
         ProductPresenter p = new ProductPresenter();
         OrderFormPresenter o = new OrderFormPresenter();
         int idperson;
-
+        Print printBill;
         public Menu(int id_person)
         {
             InitializeComponent();
@@ -165,12 +166,47 @@ namespace Beverage_Management_System
 
         private void btt_Pay_Click(object sender, EventArgs e)
         {
-            o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")));
-            MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
-            o.addDetailsTrackingNote(o.getID_ORDER_FORM(), o.getID_TRACKING_NOTE());
-            p.addOrderForm(idperson);
-            txb_IdOrder.Text = p.show_id();
-            reloadFlowLayout();
+            printBill = new Print();
+            printBill.Show();
+
+            ProductPresenter pre = new ProductPresenter();
+
+            printBill.btt_yes.Click += (s, a) =>
+            {
+                p.printMenu(txb_IdOrder.Text);
+                
+               
+                if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    printDocument1.Print();
+
+                }
+                printBill.Close();
+                o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
+                MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
+                o.addDetailsTrackingNote(o.getID_ORDER_FORM(), o.getID_TRACKING_NOTE());
+                p.addOrderForm(idperson);
+                txb_IdOrder.Text = p.show_id();
+                reloadFlowLayout();
+
+                
+            };
+            printBill.btt_no.Click += (s, a) =>
+            {
+                printBill.Close();
+                o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
+                MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
+                o.addDetailsTrackingNote(o.getID_ORDER_FORM(), o.getID_TRACKING_NOTE());
+                p.addOrderForm(idperson);
+                txb_IdOrder.Text = p.show_id();
+                reloadFlowLayout();
+            };
+           
+
+
+
+
+
         }
 
         public void btt_clearAll_Click(object sender, EventArgs e)
@@ -208,7 +244,59 @@ namespace Beverage_Management_System
 
         }
 
+        //btt print
         private void guna2Button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            var fnt = new Font("Times new Roman", 14, FontStyle.Bold);
+            var fnt1 = new Font("Times new Roman", 14, FontStyle.Regular);
+            int x = 200, y = 200;
+            int dy = (int)fnt.GetHeight(e.Graphics) * 1;
+
+            e.Graphics.DrawString("ORDER BILL", new Font("Times new Roman", 16, FontStyle.Bold), Brushes.Black, new PointF(350, 50));
+
+            e.Graphics.DrawString("Date: " + DateTime.Now.ToString(), fnt, Brushes.Black, new PointF(200, 90));
+            e.Graphics.DrawString("Waiter: "+ idperson.ToString(), fnt, Brushes.Black, new PointF(200, 90 + dy));
+            e.Graphics.DrawString("NUMBER ORDER: "+txb_IdOrder.Text, fnt, Brushes.Black, new PointF(200, 90 + dy+dy));
+
+            e.Graphics.DrawString("Name", fnt, Brushes.Black, new PointF(200, 170));
+            e.Graphics.DrawString("Price", fnt, Brushes.Black, new PointF(400, 170));
+            e.Graphics.DrawString("Quantity", fnt, Brushes.Black, new PointF(500, 170));
+            e.Graphics.DrawString("Total", fnt, Brushes.Black, new PointF(600, 170));
+
+            for (int i = 0; i < p.listitemPrint.Count(); i++)
+            {
+                e.Graphics.DrawString(p.listitemPrint[i].LabelName, fnt1, Brushes.Black, new PointF(200, y));
+               // 
+                e.Graphics.DrawString(p.listitemPrint[i].LabelPrice, fnt1, Brushes.Black, new PointF(400, y));
+                
+                e.Graphics.DrawString(p.listitemPrint[i].NumberRicQuantity, fnt1, Brushes.Black, new PointF(500, y));
+              
+                e.Graphics.DrawString(p.listitemPrint[i].LabelTotal_Price, fnt1, Brushes.Black, new PointF(600, y));
+                y += dy;
+            }
+
+            e.Graphics.DrawString("------------------------------------------------------------------------", fnt, Brushes.Black, new PointF(200, y += dy));
+
+
+
+            e.Graphics.DrawString("Sub total: " + lb_subTotal.Text, fnt, Brushes.Black, new PointF(x, y += dy));
+            y += dy;
+            e.Graphics.DrawString("Tax: " + lb_Tax.Text, fnt, Brushes.Black, new PointF(x, y));
+            y += dy;
+            e.Graphics.DrawString("Total Payable: " + lb_total.Text, fnt, Brushes.Black, new PointF(x, y));
+            y += dy;
+            e.Graphics.DrawString("Items Quantity: " + lb_QtyItem.Text, fnt, Brushes.Black, new PointF(x, y));
+            y += dy;
+            e.Graphics.DrawString("Thanks and see you next time!" , fnt, Brushes.Black, new PointF(320, y += dy));
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

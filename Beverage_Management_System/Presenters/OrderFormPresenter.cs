@@ -15,15 +15,18 @@ namespace Beverage_Management_System.Presenters
     {
         int id_tracking_note = 0;
         int id_order_form = 0;
-        public void updateTotalOrderForm(int id, int total_price)
+
+        //them total quantity vao day ( total quantity cua OF)
+        public void updateTotalOrderForm(int id, int total_price, int total_quantity)
         {
             this.id_order_form = id;
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            SqlCommand cmd = new SqlCommand("Update ORDERFORM set TOTAL_PRICE=@total_price Where ID_ORDERFORM like'" + id + "%';",
+            SqlCommand cmd = new SqlCommand("Update ORDERFORM set TOTAL_PRICE=@total_price,TOTAL_QUANTITY = @quantity Where ID_ORDERFORM like'" + id + "%';",
                    myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@total_price", total_price);
+            cmd.Parameters.AddWithValue("@quantity", total_quantity);
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
             {
@@ -33,7 +36,8 @@ namespace Beverage_Management_System.Presenters
                 cmd1.Parameters.AddWithValue("@date_con", date_confirm);
                 cmd1.Parameters.AddWithValue("@id_bill", id);
                 int result1 = cmd1.ExecuteNonQuery();
-                if(result1 > 0) {
+                if (result1 > 0)
+                {
                     string query2 = "Select MAX(ID_TRACKING_NOTE) as MAX from TRACKING_NOTE;";
                     SqlCommand cmd2 = new SqlCommand(query2, myConnection.sqlcon);
                     SqlDataReader dr = cmd2.ExecuteReader();
@@ -61,7 +65,7 @@ namespace Beverage_Management_System.Presenters
             string query = "Select ID_TRACKING_NOTE from TRACKING_NOTE where KIND ='" + 1 + "' and ID_BILL ='" + id_order + "';";
             SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
             SqlDataReader sdr = cmd.ExecuteReader();
-            if(sdr.Read())
+            if (sdr.Read())
             {
                 int id_tracking_note = Convert.ToInt32(sdr["ID_TRACKING_NOTE"]);
                 sdr.Close();
@@ -90,6 +94,36 @@ namespace Beverage_Management_System.Presenters
             cmd.Parameters.AddWithValue("@id_orderform", id_order);
             cmd.ExecuteNonQuery();
 
+            myConnection.sqlcon.Close();
+        }
+
+        public void updateStatusDetailOrderForm(int id_order)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            string query = "Select * from DETAILS_ORDERFORM  where ID_ORDERFORM=@id_orderform ;";
+
+            SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@id_orderform", id_order);
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (sdr.Read())
+            {
+
+
+
+                SqlCommand cmd1 = new SqlCommand("Update DETAILS_ORDERFORM set STATUSb=@status where ID_ORDERFORM=@id_orderform",
+                myConnection.sqlcon);
+                cmd1.Parameters.AddWithValue("@status", "1");
+                cmd1.Parameters.AddWithValue("@id_orderform", id_order);
+                cmd1.ExecuteNonQuery();
+
+
+
+
+            }
+            sdr.Close();
             myConnection.sqlcon.Close();
         }
 
@@ -178,7 +212,7 @@ namespace Beverage_Management_System.Presenters
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            List<MProduct> list = new List<MProduct> ();
+            List<MProduct> list = new List<MProduct>();
 
             string query = "Select D.ID_PRODUCT, D.QUANTITY, P.NAME from DETAILS_ORDERFORM D join PRODUCT P on D.ID_PRODUCT = P.ID_PRODUCT where ID_ORDERFORM ='" + id_order_form + "';";
             SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
@@ -194,7 +228,7 @@ namespace Beverage_Management_System.Presenters
             }
             sdr.Close();
 
-            for(int i = 0; i < list.Count(); i++)
+            for (int i = 0; i < list.Count(); i++)
             {
                 SqlCommand cmd1 = new SqlCommand("Insert into DETAILS_TRACKING_NOTE(ID_PRODUCT,ID_TRACKING_NOTE, NAME, QUANTITY) values (@id_product,@id_tracking_note,@name,@quantity);",
                     myConnection.sqlcon);
@@ -205,6 +239,94 @@ namespace Beverage_Management_System.Presenters
 
                 cmd1.ExecuteNonQuery();
             }
+        }
+
+        public int[] a;
+        //V1
+     
+
+        public void getOrderFormList(int d, int m, int y)
+        {
+            a = new int[11] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0 };
+
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+                    
+            if (d != 0 && m != 0 && y != 0)
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    string querryD = "SELECT SUM(QUANTITY) AS TOTAL from DETAILS_ORDERFORM where STATUSb = 1 and KIND ="+i+" and DAY(DATEb) = " + d.ToString() + "and MONTH(DATEb) =" + m.ToString() + "and YEAR(DATEb) =" + y.ToString() + ";";
+                    SqlCommand sqlCommand = new SqlCommand(querryD, myConnection.sqlcon);
+                    SqlDataReader dr = sqlCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if (dr.IsDBNull(0) == true)
+                        {
+                            a[i] = 0;
+                            Console.WriteLine(a[0].ToString());
+                        }
+                        else
+                        {
+                            a[i] = Convert.ToInt32(dr[0].ToString());
+                            Console.WriteLine(a[0].ToString());
+                        }
+
+                    }
+                    dr.Close();
+                }
+
+            }
+            else if (d == 0 && m != 0 && y != 0)
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    string querryD = "SELECT SUM(QUANTITY) AS TOTAL from DETAILS_ORDERFORM where STATUSb = 1 and KIND =" + i + "and MONTH(DATEb) =" + m.ToString() + "and YEAR(DATEb) =" + y.ToString() + ";";
+                    SqlCommand sqlCommand = new SqlCommand(querryD, myConnection.sqlcon);
+                    SqlDataReader dr = sqlCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if (dr.IsDBNull(0) == true)
+                        {
+                            a[i] = 0;
+                           
+                        }
+                        else
+                        {
+                            a[i] = Convert.ToInt32(dr[0].ToString());
+                           
+                        }
+
+                    }
+                    dr.Close();
+                }
+
+            }else if (d == 0 && m == 0 && y != 0)
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    string querryD = "SELECT SUM(QUANTITY) AS TOTAL from DETAILS_ORDERFORM where STATUSb = 1 and KIND =" + i + "and YEAR(DATEb) =" + y.ToString() + ";";
+                    SqlCommand sqlCommand = new SqlCommand(querryD, myConnection.sqlcon);
+                    SqlDataReader dr = sqlCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if (dr.IsDBNull(0) == true)
+                        {
+                            a[i] = 0;
+
+                        }
+                        else
+                        {
+                            a[i] = Convert.ToInt32(dr[0].ToString());
+
+                        }
+
+                    }
+                    dr.Close();
+                }
+
+            }
+
         }
     }
 }

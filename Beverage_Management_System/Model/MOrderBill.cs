@@ -17,6 +17,7 @@ namespace Beverage_Management_System.Model
         private string date_cre;
         private string date_con;
         private double total_price;
+        private int total_quantity;
         private int status;
 
         public MOrderBill()
@@ -31,9 +32,10 @@ namespace Beverage_Management_System.Model
             this.date_con = "Still not have confirmation date";
             this.total_price = 0;
             this.status = 0;
+            this.total_quantity = 0;
         }
 
-        public MOrderBill(int ID, int ID_ORDER_FORM, int ID_BARTENDER, int ID_ACCOUNTANT, double TOTAL_PRICE_PRODUCTS, double FINE, string DATE_CREATE, double TOTAL_PRICE, int STATUS)
+        public MOrderBill(int ID, int ID_ORDER_FORM, int ID_BARTENDER, int ID_ACCOUNTANT, double TOTAL_PRICE_PRODUCTS, double FINE, string DATE_CREATE, double TOTAL_PRICE, int STATUS, int TOTAL_QUANTITY)
         {
             this.id = ID;
             this.id_order_form = ID_ORDER_FORM;
@@ -45,6 +47,7 @@ namespace Beverage_Management_System.Model
             this.date_con = "Still not have confirmation date";
             this.total_price = TOTAL_PRICE;
             this.status = STATUS;
+            this.total_quantity = TOTAL_QUANTITY;
         }
 
         public MOrderBill(int ID, int ID_ORDER_FORM, int ID_BARTENDER, int ID_ACCOUNTANT, double TOTAL_PRICE_PRODUCTS, double FINE, string DATE_CREATE, string DATE_CON, double TOTAL_PRICE, int STATUS)
@@ -81,6 +84,9 @@ namespace Beverage_Management_System.Model
         public void setTOTAL_PRICE(double TOTAL_PRICE) { this.total_price = TOTAL_PRICE; }
         public int getSTATUS() { return this.status; }
         public void setSTATUS(int STATUS) { this.status = STATUS; }
+
+        public int getTOTAL_QUANTITY() { return this.total_quantity; }
+        public void setTOTAL_QUANTITY(int TOTAL_QUANTITY) { this.total_quantity = TOTAL_QUANTITY; }
 
     }
 }

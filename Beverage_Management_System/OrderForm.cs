@@ -85,6 +85,7 @@ namespace Beverage_Management_System
             {
                 ob.addOrderBill(int.Parse(lb_id_order.Text), id);
                 od.updateStatusOrderForm(int.Parse(lb_id_order.Text));
+                //od.updateStatusDetailOrderForm(int.Parse(lb_id_order.Text));
                 reloadGV();
                 fLayoutPl_Detail.Controls.Clear();
                 lb_id_order.Text = "1";

@@ -14,6 +14,7 @@ namespace Beverage_Management_System
     public partial class DetailOrder : UserControl
     {
         public int id;
+        public int kind;
         public int id_order;
         decimal oldValue;
         ProductPresenter p = new ProductPresenter();

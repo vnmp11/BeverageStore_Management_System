@@ -15,9 +15,12 @@ namespace Beverage_Management_System
 {
     public partial class GoodAgency : Form, IGoodsAgency
     {
+        GoodAgencyPresenter presenter;
+        
         public GoodAgency()
         {
             InitializeComponent();
+            
         }
 
         public static int idtemp;
@@ -25,12 +28,17 @@ namespace Beverage_Management_System
         {
             InitializeComponent();
 
-            GoodAgencyPresenter pre = new GoodAgencyPresenter(this);
-            pre.dataGVGood(dataGridView_Goods, ID);
+            presenter = new GoodAgencyPresenter(this);
+            presenter.dataGVGood(dataGridView_Goods, ID);
             idtemp = ID;
 
         }
-
+        public void refreshDataGV()
+        {
+            dataGridView_Goods.Rows.Clear();
+            presenter.dataGVGood(dataGridView_Goods, idtemp);
+            dataGridView_Goods.CurrentCell = null;
+        }
         public void refreshTable()
         {
             dataGridView_Goods.Rows.Clear();
@@ -48,10 +56,18 @@ namespace Beverage_Management_System
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            GoodAgencyPresenter presenter = new GoodAgencyPresenter(this);
-            presenter.openAddGoodForm(idtemp, this);
+            AddGoodAgency frm = new AddGoodAgency(idtemp,this);
+            frm.ShowDialog();
         }
+        public void openAddGoodForm(int id_choosed, GoodAgency form)
+        {
+            AddGoodAgency form1 = new AddGoodAgency(id_choosed, form);
 
+            form1.Show();
+            //AddGoodAgency form = new AddGoodAgency(id_choosed, this);
+            //form.Owner = parent;
+            //form.Show();
+        }
         private void bt_Delete_Click(object sender, EventArgs e)
         {
             if (dataGridView_Goods.SelectedCells.Count > 0)

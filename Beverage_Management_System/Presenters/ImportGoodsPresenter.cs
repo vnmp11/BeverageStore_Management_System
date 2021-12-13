@@ -211,8 +211,9 @@ namespace Beverage_Management_System.Presenters
 
 
 
-        public void dataGV_IGF(DataGridView dataGV, int role)
+        public void dataGV_IGF(Guna.UI2.WinForms.Guna2DataGridView dataGV, int role)
         {
+        
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 

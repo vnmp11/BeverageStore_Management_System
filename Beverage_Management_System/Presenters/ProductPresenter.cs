@@ -48,7 +48,7 @@ namespace Beverage_Management_System.Presenters
 
             myConnection.sqlcon.Close();
         }
-
+        //add kind vo day
         public void addItem(int id, String id_orderform, int quantity)
         {
             updateQuantity(id, quantity);
@@ -70,14 +70,32 @@ namespace Beverage_Management_System.Presenters
             }
             else
             {
-                
-                SqlCommand cmd = new SqlCommand("Insert into DETAILS_ORDERFORM( ID_PRODUCT, ID_ORDERFORM,QUANTITY,TOTAL_PRICE) " +
-                    "values (@id_product,@id_orderform,@quantity, @total_price);",
+                string date_create = DateTime.Now.ToString("yyyy-MM-dd");
+                SqlCommand cmd = new SqlCommand("Insert into DETAILS_ORDERFORM( ID_PRODUCT, ID_ORDERFORM,QUANTITY,TOTAL_PRICE, STATUSb,KIND) " +
+                    "values (@id_product,@id_orderform,@quantity, @total_price, @status, @kind );",
                     myConnection.sqlcon);
+
+                SqlCommand cmd1  = new SqlCommand("Select * from PRODUCT where ID_PRODUCT like '" + id + "%' ;",
+                   myConnection.sqlcon);
+                SqlDataReader sdr = cmd1.ExecuteReader();
+                int temp = 0;
+                if (sdr.Read())
+                {
+                    Console.WriteLine(id.ToString());
+                    int kind = Convert.ToInt32(sdr["ID_KIND"]);
+                    temp = kind;
+                    sdr.Close();
+                }
+                
                 cmd.Parameters.AddWithValue("@id_product", id);
                 cmd.Parameters.AddWithValue("@id_orderform", id_orderform);
                 cmd.Parameters.AddWithValue("@quantity", quantity);
                 cmd.Parameters.AddWithValue("@total_price", getPrice(id) * quantity);
+                cmd.Parameters.AddWithValue("@status", 0);
+                //XLy
+                cmd.Parameters.AddWithValue("@kind", temp);
+                
+             
 
                 cmd.ExecuteNonQuery();
             }
@@ -200,7 +218,7 @@ namespace Beverage_Management_System.Presenters
             return quantity;
 
         }
-
+        //add them thuoc tinh moi total quantity
         public void addOrderForm(int id_person)
         {
             MyConnection myConnection = new MyConnection();
@@ -234,23 +252,29 @@ namespace Beverage_Management_System.Presenters
                 int id_product = (int)sdr["ID_PRODUCT"];
                 int quantity = (int)sdr["QUANTITY"];
                 int price_product = (int)sdr["TOTAL_PRICE"];
+                
 
                 MyConnection myConnection2 = new MyConnection();
                 myConnection2.sqlcon.Open();
 
+                //getkind ơ day
                 string query1 = "Select * from PRODUCT where ID_PRODUCT like '" + id_product.ToString() + "%';";
                 SqlCommand cmd2 = new SqlCommand(query1, myConnection2.sqlcon);
                 SqlDataReader sdr2 = cmd2.ExecuteReader();
                 sdr2.Read();
 
                 String name_product = (String)sdr2["NAME"];
+                int kind = (int)sdr2["ID_KIND"];
                 int in_stock = (int)sdr2["QUANTITY"];
                 int price = (int)sdr2["PRICE"];
 
                 DetailOrder it = new DetailOrder();
                 it.LabelName = name_product;
                 it.id = id_product;
+
+                //them kind
                 it.id_order = int.Parse(idOrder);
+                it.kind = kind;
                 it.LabelPrice = price.ToString("###,###,##0");
                 it.NumberRicQuantity = quantity.ToString("###,###,##0");
                 it.LabelTotal_Price = price_product.ToString("###,###,##0");
@@ -267,6 +291,65 @@ namespace Beverage_Management_System.Presenters
             {
                 pl.Controls.Add(listitem[i]);
             }
+        }
+        public List<DetailOrder> listitemPrint = new List<DetailOrder>();
+        public void printMenu(String idOrder)
+        {
+            listitemPrint.Clear();
+
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            //List<MItem> item = new List<MItem>();
+            //List<DetailOrder> listitem = new List<DetailOrder>();
+
+            string query = "Select * from DETAILS_ORDERFORM where ID_ORDERFORM like '" + idOrder + "%';";
+            SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                int id_product = (int)sdr["ID_PRODUCT"];
+                int quantity = (int)sdr["QUANTITY"];
+                int price_product = (int)sdr["TOTAL_PRICE"];
+
+
+                MyConnection myConnection2 = new MyConnection();
+                myConnection2.sqlcon.Open();
+
+                //getkind ơ day
+                string query1 = "Select * from PRODUCT where ID_PRODUCT like '" + id_product.ToString() + "%';";
+                SqlCommand cmd2 = new SqlCommand(query1, myConnection2.sqlcon);
+                SqlDataReader sdr2 = cmd2.ExecuteReader();
+                sdr2.Read();
+
+                String name_product = (String)sdr2["NAME"];
+                int kind = (int)sdr2["ID_KIND"];
+                int in_stock = (int)sdr2["QUANTITY"];
+                int price = (int)sdr2["PRICE"];
+
+                DetailOrder it = new DetailOrder();
+
+               
+                it.LabelName = name_product;
+
+                it.id = id_product;
+
+                it.id_order = int.Parse(idOrder);
+
+                it.kind = kind;
+
+                it.LabelPrice = price.ToString("###,###,##0");
+
+                it.NumberRicQuantity = quantity.ToString("###,###,##0");
+
+                it.LabelTotal_Price = price_product.ToString("###,###,##0");
+
+                it.LabelIn_Stock = in_stock.ToString();
+
+                listitemPrint.Add(it);
+            }
+
+            myConnection.sqlcon.Close();
         }
     }
 }
