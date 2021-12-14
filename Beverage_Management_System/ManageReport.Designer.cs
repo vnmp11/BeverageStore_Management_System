@@ -31,7 +31,13 @@ namespace Beverage_Management_System
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.txb_Search = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGV_Report = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -47,11 +53,11 @@ namespace Beverage_Management_System
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(486, 15);
+            this.label12.Location = new System.Drawing.Point(450, 37);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(343, 31);
+            this.label12.Size = new System.Drawing.Size(478, 64);
             this.label12.TabIndex = 27;
             this.label12.Text = "MANAGE REPORT";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -69,21 +75,23 @@ namespace Beverage_Management_System
             this.txb_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txb_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_Search.FocusedState.Parent = this.txb_Search;
+            this.txb_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.txb_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_Search.HoverState.Parent = this.txb_Search;
             this.txb_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txb_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txb_Search.Location = new System.Drawing.Point(39, 80);
-            this.txb_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_Search.Location = new System.Drawing.Point(44, 100);
+            this.txb_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_Search.Name = "txb_Search";
             this.txb_Search.PasswordChar = '\0';
-            this.txb_Search.PlaceholderText = "";
+            this.txb_Search.PlaceholderText = "Search ID ";
             this.txb_Search.SelectedText = "";
             this.txb_Search.ShadowDecoration.Parent = this.txb_Search;
-            this.txb_Search.Size = new System.Drawing.Size(270, 50);
+            this.txb_Search.Size = new System.Drawing.Size(142, 62);
             this.txb_Search.TabIndex = 33;
             this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
+            this.txb_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Search_KeyDown);
             // 
             // dataGV_Report
             // 
@@ -105,7 +113,7 @@ namespace Beverage_Management_System
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGV_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGV_Report.ColumnHeadersHeight = 60;
+            this.dataGV_Report.ColumnHeadersHeight = 40;
             this.dataGV_Report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGV_Report.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -114,18 +122,18 @@ namespace Beverage_Management_System
             this.SOLUTION,
             this.FINE,
             this.DATE});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGV_Report.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGV_Report.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGV_Report.EnableHeadersVisualStyles = false;
             this.dataGV_Report.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGV_Report.Location = new System.Drawing.Point(39, 155);
-            this.dataGV_Report.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGV_Report.Location = new System.Drawing.Point(44, 194);
+            this.dataGV_Report.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV_Report.Name = "dataGV_Report";
             this.dataGV_Report.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGV_Report.RowHeadersVisible = false;
@@ -133,9 +141,8 @@ namespace Beverage_Management_System
             this.dataGV_Report.RowTemplate.Height = 35;
             this.dataGV_Report.RowTemplate.ReadOnly = true;
             this.dataGV_Report.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV_Report.Size = new System.Drawing.Size(1159, 528);
+            this.dataGV_Report.Size = new System.Drawing.Size(1360, 660);
             this.dataGV_Report.TabIndex = 127;
-            this.dataGV_Report.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -148,7 +155,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             this.dataGV_Report.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataGV_Report.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGV_Report.ThemeStyle.HeaderStyle.Height = 60;
+            this.dataGV_Report.ThemeStyle.HeaderStyle.Height = 40;
             this.dataGV_Report.ThemeStyle.ReadOnly = false;
             this.dataGV_Report.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGV_Report.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
@@ -161,62 +168,87 @@ namespace Beverage_Management_System
             // 
             // ID
             // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
             this.ID.FillWeight = 11.0432F;
-            this.ID.HeaderText = "ID";
+            this.ID.HeaderText = "  ID";
             this.ID.MinimumWidth = 7;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 60;
             // 
             // ID_ORDER_FORM
             // 
-            this.ID_ORDER_FORM.FillWeight = 30F;
-            this.ID_ORDER_FORM.HeaderText = "ID ORDER FORM";
+            this.ID_ORDER_FORM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_ORDER_FORM.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ID_ORDER_FORM.FillWeight = 117.3464F;
+            this.ID_ORDER_FORM.HeaderText = " ID ORDER FORM";
             this.ID_ORDER_FORM.MinimumWidth = 7;
             this.ID_ORDER_FORM.Name = "ID_ORDER_FORM";
             this.ID_ORDER_FORM.ReadOnly = true;
+            this.ID_ORDER_FORM.Width = 200;
             // 
             // REASON
             // 
-            this.REASON.FillWeight = 26.45159F;
-            this.REASON.HeaderText = "REASON";
+            this.REASON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.REASON.DefaultCellStyle = dataGridViewCellStyle5;
+            this.REASON.FillWeight = 7.92112F;
+            this.REASON.HeaderText = "                  REASON";
             this.REASON.MinimumWidth = 7;
             this.REASON.Name = "REASON";
             this.REASON.ReadOnly = true;
+            this.REASON.Width = 280;
             // 
             // SOLUTION
             // 
-            this.SOLUTION.FillWeight = 46.19893F;
-            this.SOLUTION.HeaderText = "SOLUTION";
+            this.SOLUTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SOLUTION.DefaultCellStyle = dataGridViewCellStyle6;
+            this.SOLUTION.FillWeight = 13.8346F;
+            this.SOLUTION.HeaderText = "                 SOLUTION";
             this.SOLUTION.MinimumWidth = 7;
             this.SOLUTION.Name = "SOLUTION";
             this.SOLUTION.ReadOnly = true;
+            this.SOLUTION.Width = 280;
             // 
             // FINE
             // 
-            this.FINE.FillWeight = 24.85566F;
-            this.FINE.HeaderText = "FINE";
+            this.FINE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FINE.DefaultCellStyle = dataGridViewCellStyle7;
+            this.FINE.FillWeight = 7.443207F;
+            this.FINE.HeaderText = "           FINE";
             this.FINE.MinimumWidth = 7;
             this.FINE.Name = "FINE";
             this.FINE.ReadOnly = true;
+            this.FINE.Width = 180;
             // 
             // DATE
             // 
-            this.DATE.FillWeight = 27.17766F;
-            this.DATE.HeaderText = "DATE";
+            this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DATE.DefaultCellStyle = dataGridViewCellStyle8;
+            this.DATE.FillWeight = 8.138547F;
+            this.DATE.HeaderText = "         CREATED DATE";
             this.DATE.MinimumWidth = 7;
             this.DATE.Name = "DATE";
             this.DATE.ReadOnly = true;
+            this.DATE.Width = 270;
             // 
             // ManageReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1271, 839);
+            this.ClientSize = new System.Drawing.Size(1430, 1049);
             this.Controls.Add(this.dataGV_Report);
             this.Controls.Add(this.txb_Search);
             this.Controls.Add(this.label12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ManageReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "1271, 839";

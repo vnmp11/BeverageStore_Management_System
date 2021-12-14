@@ -57,6 +57,7 @@ namespace Beverage_Management_System
             {
                 AgencyPresenter agencyPresenter = new AgencyPresenter(this, id);
                 agencyPresenter.UpdateSupllier(this,Int32.Parse( txt_Id_Agency.Text));
+                parent.refreshDataGV();
             }
             else if (txt_Name_Agency.Text.ToString().Trim() != "" && txt_Address_Agency.ToString().Trim() != ""
                   && txt_Phone_Agency.ToString().Trim() != "" && txt_Item_Agency.ToString().Trim() != "")
@@ -71,12 +72,7 @@ namespace Beverage_Management_System
                 this.Close();
 
             }
-            else MyMessageBox.showBox("Please fill in the employee's information completely!", "Message");
-        }
-
-        private void txt_Phone_Agency_TextChanged(object sender, EventArgs e)
-        {
-
+            else MyMessageBox.showBox("Please fill in the agency's information completely!", "Message");
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -97,6 +93,46 @@ namespace Beverage_Management_System
         private void AddAgency_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_Name_Agency_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void txt_Address_Agency_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void txt_Phone_Agency_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void txt_Item_Agency_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void AddAgency_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
         }
     }
 }

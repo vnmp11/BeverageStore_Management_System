@@ -40,7 +40,8 @@ namespace Beverage_Management_System
 
         bool checkEmpty()
         {
-            if (cb_idOrderBill.SelectedIndex == 0)
+            object id = cb_idOrderBill.SelectedItem;
+            if (id == null)
             {
                 MyMessageBox.showBox("Please choose ID order form.");
                 return false;
@@ -50,8 +51,17 @@ namespace Beverage_Management_System
                 MyMessageBox.showBox("Please enter fine.");
                 return false;
             }
-            else
-                return true;
+            else if (txb_Reason.Text == "")
+            {
+                MyMessageBox.showBox("Please enter reason.");
+                return false;
+            }
+            else if (txb_Solution.Text == "")
+            {
+                MyMessageBox.showBox("Please enter solution.");
+                return false;
+            }
+            return true;
         }
 
         private void AddReport_Load(object sender, EventArgs e)
@@ -91,6 +101,46 @@ namespace Beverage_Management_System
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !(e.KeyChar == '-'))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void AddReport_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btt_SubmitReport.PerformClick();
+            }
+        }
+
+        private void txb_Fine_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btt_SubmitReport.PerformClick();
+            }
+        }
+
+        private void txb_Reason_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btt_SubmitReport.PerformClick();
+            }
+        }
+
+        private void txb_Solution_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btt_SubmitReport.PerformClick();
+            }
+        }
+
+        private void btt_SubmitReport_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btt_SubmitReport.PerformClick();
             }
         }
     }

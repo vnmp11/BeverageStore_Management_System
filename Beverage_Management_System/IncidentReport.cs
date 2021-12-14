@@ -57,5 +57,17 @@ namespace Beverage_Management_System
             AddReport report = new AddReport(id_orderform, reason, solution, fine, date);
             report.Show();
         }
+
+        private void txb_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txb_Search.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
     }
 }

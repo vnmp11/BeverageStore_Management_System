@@ -40,17 +40,17 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_GOODS_IMPORT_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_BARTENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_CREATED = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_CONFIRMED = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
             this.btt_Browse = new Guna.UI2.WinForms.Guna2Button();
             this.lb_Details = new System.Windows.Forms.Label();
             this.fLayoutPl_Details = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.label12 = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_GOODS_IMPORT_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_BARTENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_CREATED = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,26 +74,25 @@ namespace Beverage_Management_System
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGV.ColumnHeadersHeight = 70;
+            this.dataGV.ColumnHeadersHeight = 40;
             this.dataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.ID_GOODS_IMPORT_FORM,
             this.ID_BARTENDER,
             this.DATE_CREATED,
-            this.DATE_CONFIRMED,
             this.TOTAL_PRICE});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGV.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGV.EnableHeadersVisualStyles = false;
             this.dataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGV.Location = new System.Drawing.Point(47, 100);
-            this.dataGV.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGV.Location = new System.Drawing.Point(53, 237);
+            this.dataGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -107,9 +106,8 @@ namespace Beverage_Management_System
             this.dataGV.RowHeadersVisible = false;
             this.dataGV.RowHeadersWidth = 70;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(693, 679);
+            this.dataGV.Size = new System.Drawing.Size(748, 660);
             this.dataGV.TabIndex = 99;
-            this.dataGV.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -122,7 +120,7 @@ namespace Beverage_Management_System
             this.dataGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             this.dataGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataGV.ThemeStyle.HeaderStyle.Height = 70;
+            this.dataGV.ThemeStyle.HeaderStyle.Height = 40;
             this.dataGV.ThemeStyle.ReadOnly = true;
             this.dataGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
@@ -132,64 +130,6 @@ namespace Beverage_Management_System
             this.dataGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
             this.dataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
-            // 
-            // ID
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ID.FillWeight = 8F;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // ID_GOODS_IMPORT_FORM
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID_GOODS_IMPORT_FORM.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ID_GOODS_IMPORT_FORM.FillWeight = 13F;
-            this.ID_GOODS_IMPORT_FORM.HeaderText = "GOODS IMPORT FORM";
-            this.ID_GOODS_IMPORT_FORM.MinimumWidth = 7;
-            this.ID_GOODS_IMPORT_FORM.Name = "ID_GOODS_IMPORT_FORM";
-            this.ID_GOODS_IMPORT_FORM.ReadOnly = true;
-            // 
-            // ID_BARTENDER
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID_BARTENDER.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ID_BARTENDER.FillWeight = 8F;
-            this.ID_BARTENDER.HeaderText = "BA";
-            this.ID_BARTENDER.MinimumWidth = 7;
-            this.ID_BARTENDER.Name = "ID_BARTENDER";
-            this.ID_BARTENDER.ReadOnly = true;
-            // 
-            // DATE_CREATED
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DATE_CREATED.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DATE_CREATED.FillWeight = 15F;
-            this.DATE_CREATED.HeaderText = "DATE CREATED";
-            this.DATE_CREATED.MinimumWidth = 7;
-            this.DATE_CREATED.Name = "DATE_CREATED";
-            this.DATE_CREATED.ReadOnly = true;
-            // 
-            // DATE_CONFIRMED
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DATE_CONFIRMED.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DATE_CONFIRMED.FillWeight = 15F;
-            this.DATE_CONFIRMED.HeaderText = "DATE CONFIRMED";
-            this.DATE_CONFIRMED.MinimumWidth = 7;
-            this.DATE_CONFIRMED.Name = "DATE_CONFIRMED";
-            this.DATE_CONFIRMED.ReadOnly = true;
-            // 
-            // TOTAL_PRICE
-            // 
-            this.TOTAL_PRICE.FillWeight = 20F;
-            this.TOTAL_PRICE.HeaderText = "TOTAL PRICE";
-            this.TOTAL_PRICE.MinimumWidth = 7;
-            this.TOTAL_PRICE.Name = "TOTAL_PRICE";
-            this.TOTAL_PRICE.ReadOnly = true;
             // 
             // txt_Search
             // 
@@ -210,14 +150,14 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(47, 47);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txt_Search.Location = new System.Drawing.Point(53, 171);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
-            this.txt_Search.PlaceholderText = "";
+            this.txt_Search.PlaceholderText = "Search ID or ID Form or Bartender";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(269, 42);
+            this.txt_Search.Size = new System.Drawing.Size(331, 52);
             this.txt_Search.TabIndex = 100;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
@@ -229,16 +169,17 @@ namespace Beverage_Management_System
             this.btt_Browse.BorderThickness = 1;
             this.btt_Browse.CheckedState.Parent = this.btt_Browse;
             this.btt_Browse.CustomImages.Parent = this.btt_Browse;
+            this.btt_Browse.DisabledState.Parent = this.btt_Browse;
             this.btt_Browse.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.btt_Browse.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_Browse.ForeColor = System.Drawing.Color.White;
             this.btt_Browse.HoverState.Parent = this.btt_Browse;
             this.btt_Browse.Image = global::Beverage_Management_System.Properties.Resources.confirm;
-            this.btt_Browse.Location = new System.Drawing.Point(1034, 718);
+            this.btt_Browse.Location = new System.Drawing.Point(1089, 821);
             this.btt_Browse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Browse.Name = "btt_Browse";
             this.btt_Browse.ShadowDecoration.Parent = this.btt_Browse;
-            this.btt_Browse.Size = new System.Drawing.Size(183, 61);
+            this.btt_Browse.Size = new System.Drawing.Size(206, 76);
             this.btt_Browse.TabIndex = 106;
             this.btt_Browse.Text = "BROWSE";
             this.btt_Browse.Click += new System.EventHandler(this.btt_Browse_Click);
@@ -249,9 +190,9 @@ namespace Beverage_Management_System
             this.lb_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.lb_Details.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Details.ForeColor = System.Drawing.Color.White;
-            this.lb_Details.Location = new System.Drawing.Point(805, 100);
+            this.lb_Details.Location = new System.Drawing.Point(835, 237);
             this.lb_Details.Name = "lb_Details";
-            this.lb_Details.Size = new System.Drawing.Size(388, 58);
+            this.lb_Details.Size = new System.Drawing.Size(436, 41);
             this.lb_Details.TabIndex = 108;
             this.lb_Details.Text = "DETAILS";
             this.lb_Details.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,10 +203,10 @@ namespace Beverage_Management_System
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fLayoutPl_Details.AutoScroll = true;
             this.fLayoutPl_Details.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Details.Location = new System.Drawing.Point(802, 169);
+            this.fLayoutPl_Details.Location = new System.Drawing.Point(828, 280);
             this.fLayoutPl_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Details.Name = "fLayoutPl_Details";
-            this.fLayoutPl_Details.Size = new System.Drawing.Size(417, 532);
+            this.fLayoutPl_Details.Size = new System.Drawing.Size(469, 519);
             this.fLayoutPl_Details.TabIndex = 107;
             // 
             // guna2Elipse1
@@ -273,19 +214,89 @@ namespace Beverage_Management_System
             this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this.lb_Details;
             // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.label12.Location = new System.Drawing.Point(408, 53);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(573, 55);
+            this.label12.TabIndex = 109;
+            this.label12.Text = "GOODS IMPORT BILL";
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID.FillWeight = 8F;
+            this.ID.HeaderText = "    ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 80;
+            // 
+            // ID_GOODS_IMPORT_FORM
+            // 
+            this.ID_GOODS_IMPORT_FORM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_GOODS_IMPORT_FORM.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ID_GOODS_IMPORT_FORM.FillWeight = 13F;
+            this.ID_GOODS_IMPORT_FORM.HeaderText = "  ID FORM";
+            this.ID_GOODS_IMPORT_FORM.MinimumWidth = 7;
+            this.ID_GOODS_IMPORT_FORM.Name = "ID_GOODS_IMPORT_FORM";
+            this.ID_GOODS_IMPORT_FORM.ReadOnly = true;
+            this.ID_GOODS_IMPORT_FORM.Width = 120;
+            // 
+            // ID_BARTENDER
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_BARTENDER.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ID_BARTENDER.FillWeight = 8F;
+            this.ID_BARTENDER.HeaderText = "      BARTENDER";
+            this.ID_BARTENDER.MinimumWidth = 7;
+            this.ID_BARTENDER.Name = "ID_BARTENDER";
+            this.ID_BARTENDER.ReadOnly = true;
+            // 
+            // DATE_CREATED
+            // 
+            this.DATE_CREATED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DATE_CREATED.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DATE_CREATED.FillWeight = 15F;
+            this.DATE_CREATED.HeaderText = "     CREATED";
+            this.DATE_CREATED.MinimumWidth = 7;
+            this.DATE_CREATED.Name = "DATE_CREATED";
+            this.DATE_CREATED.ReadOnly = true;
+            this.DATE_CREATED.Width = 170;
+            // 
+            // TOTAL_PRICE
+            // 
+            this.TOTAL_PRICE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TOTAL_PRICE.DefaultCellStyle = dataGridViewCellStyle7;
+            this.TOTAL_PRICE.FillWeight = 20F;
+            this.TOTAL_PRICE.HeaderText = "        TOTAL";
+            this.TOTAL_PRICE.MinimumWidth = 7;
+            this.TOTAL_PRICE.Name = "TOTAL_PRICE";
+            this.TOTAL_PRICE.ReadOnly = true;
+            this.TOTAL_PRICE.Width = 170;
+            // 
             // GoodsImportBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1271, 839);
+            this.ClientSize = new System.Drawing.Size(1356, 972);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.lb_Details);
             this.Controls.Add(this.fLayoutPl_Details);
             this.Controls.Add(this.btt_Browse);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.dataGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GoodsImportBill";
             this.Text = "GoodsImportBill";
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
@@ -300,12 +311,12 @@ namespace Beverage_Management_System
         private Guna.UI2.WinForms.Guna2Button btt_Browse;
         private System.Windows.Forms.Label lb_Details;
         private System.Windows.Forms.FlowLayoutPanel fLayoutPl_Details;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_GOODS_IMPORT_FORM;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_BARTENDER;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE_CREATED;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATE_CONFIRMED;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PRICE;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

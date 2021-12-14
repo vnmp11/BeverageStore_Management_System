@@ -72,7 +72,7 @@ namespace Beverage_Management_System
                 this.Close();
 
             }
-            else MyMessageBox.showBox("Please fill in the product's information completely!", "Message");
+            else MyMessageBox.showBox("Please fill in the goods's information completely!", "Message");
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
@@ -91,6 +91,72 @@ namespace Beverage_Management_System
         private void AddGoodAgency_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void txt_Price_Good_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Quantity_Good_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void AddGoodAgency_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void txt_Name_Good_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void txt_Price_Good_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void txt_Unit_Good_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void txt_Quantity_Good_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
+        }
+
+        private void guna2Button3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button3.PerformClick();
+            }
         }
     }
 }

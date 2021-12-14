@@ -77,8 +77,6 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Close();
         }
 
-        ///////ADD
-        ///
         public void addSupplier(AddAgency form)
         {
             string name = addAgencyView.name.Trim();
@@ -129,31 +127,54 @@ namespace Beverage_Management_System.Presenters
                 else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
 
             }
+            myConnection.sqlcon.Close();
         }
-        
 
-       
-       
-        //fail
         public int deleteAgency(int id)
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            SqlCommand cmd1 = new SqlCommand("Delete from GOODS where ID_SUPPLIER=@id;", myConnection.sqlcon);
-            cmd1.Parameters.AddWithValue("@id", id);
-            cmd1.ExecuteNonQuery();
-           
+            bool sign = false;
 
-            SqlCommand cmd = new SqlCommand("Delete from SUPPLIER where ID_SUPPLIER=@id;", myConnection.sqlcon);
-            cmd.Parameters.AddWithValue("@id", id);
+            SqlCommand cmd1 = new SqlCommand("SELECT P.ID_PRODUCT FROM (PRODUCT P JOIN GOODS G ON P.ID_GOODS = G.ID_GOODS) JOIN " +
+                "SUPPLIER S ON G.ID_SUPPLIER = S.ID_SUPPLIER WHERE" +
+                "(S.ID_SUPPLIER = '" + id + "' AND P.ID_PRODUCT IN (SELECT ID_PRODUCT FROM DETAIL_GOODS_IMPORT_FORM)) OR" +
+                "(S.ID_SUPPLIER = '" + id + "' AND G.ID_GOODS IN (SELECT ID_GOODS FROM DETAILS_GOODS_IMPORT_BILL)) OR" +
+                "(S.ID_SUPPLIER = '" + id + "' AND P.ID_PRODUCT IN (SELECT ID_PRODUCT FROM DETAILS_ORDERFORM))", myConnection.sqlcon);
+            object oCount = cmd1.ExecuteScalar();
+            if (oCount != null) sign = true;
+            else sign = false;
 
-            int result = cmd.ExecuteNonQuery();
-            if (result > 0)
+            if (sign == true)
             {
-                return 1;
+                myConnection.sqlcon.Close();
+                return 0;
             }
-            else return 0;
+
+            else
+            {
+                SqlCommand cmd2 = new SqlCommand("Delete from GOODS where ID_SUPPLIER=@id;", myConnection.sqlcon);
+                cmd2.Parameters.AddWithValue("@id", id);
+                cmd2.ExecuteNonQuery();
+
+
+                SqlCommand cmd3 = new SqlCommand("Delete from SUPPLIER where ID_SUPPLIER=@id;", myConnection.sqlcon);
+                cmd3.Parameters.AddWithValue("@id", id);
+
+                int result = cmd3.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    myConnection.sqlcon.Close();
+                    return 1;
+                }
+                else
+                {
+                    myConnection.sqlcon.Close();
+                    return -1;
+                }
+            }
+            
         }
 
 
@@ -210,7 +231,8 @@ namespace Beverage_Management_System.Presenters
                     MyMessageBox.showBox("Update supplier's information successfully!", "Message");
 
                 }
-            
+            myConnection.sqlcon.Close();
+
         }
 
     }

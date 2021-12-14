@@ -47,11 +47,6 @@ namespace Beverage_Management_System
             presenter.openAddStaffForm(id_choosed, this);
         }
 
-        private void dtGridView_Staff_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void bt_Delete_Click(object sender, EventArgs e)
         {
             if (dtGridView_Staff.SelectedCells.Count > 0)
@@ -154,6 +149,27 @@ namespace Beverage_Management_System
             presenter.searchData(dtGridView_Staff);
         }
 
+        private void txt_Search_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(txt_Search.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
     }
 }
 

@@ -104,32 +104,53 @@ namespace Beverage_Management_System.Presenters
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
             {
-                // form.refeshFrom();
-                //Agency fA = (Agency)this.Owner;
-                //fA.reloadTable();
                 MyMessageBox.showBox("Add goods's information successfully!", "Message");
             }
             else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
 
-            // }
+            myConnection.sqlcon.Close();
 
 
         }
-        //fail
         public int deleteGoodAgency(int id)
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
-            SqlCommand cmd = new SqlCommand("Delete from GOODS where ID_GOODS=@id;", myConnection.sqlcon);
-            cmd.Parameters.AddWithValue("@id", id);
 
-            int result = cmd.ExecuteNonQuery();
-            if (result > 0)
+            bool sign = false;
+            int iCount = 0;
+
+            SqlCommand cmd1 = new SqlCommand("SELECT P.ID_PRODUCT FROM (PRODUCT P JOIN GOODS G ON P.ID_GOODS = G.ID_GOODS) WHERE " +
+                "(G.ID_GOODS = '" + id + "' AND P.ID_PRODUCT IN (SELECT ID_PRODUCT FROM DETAIL_GOODS_IMPORT_FORM)) OR " +
+                "(G.ID_GOODS = '" + id + "' AND G.ID_GOODS IN (SELECT ID_GOODS FROM DETAILS_GOODS_IMPORT_BILL)) OR" +
+                "(G.ID_GOODS = '" + id + "' AND P.ID_PRODUCT IN (SELECT ID_PRODUCT FROM DETAILS_ORDERFORM))", myConnection.sqlcon);
+            object oCount = cmd1.ExecuteScalar();
+            if (oCount != null) sign = true;
+            else sign = false;
+
+            if (sign == true)
             {
-                return 1;
+                myConnection.sqlcon.Close();
+                return 0;
             }
-            else return 0;
-        }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("Delete from GOODS where ID_GOODS=@id;", myConnection.sqlcon);
+                cmd.Parameters.AddWithValue("@id", id);
 
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    myConnection.sqlcon.Close();
+                    return 1;
+                }
+                else
+                {
+                    myConnection.sqlcon.Close();
+                    return -1;
+                }
+            }
+
+        }
     }
 }

@@ -40,23 +40,6 @@ namespace Beverage_Management_System
             DtaGridView_IGF.CurrentCell = null;
 
         }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-        //public void refreshTable()
-        //{
-        //    DtaGridView_IGF.Rows.Clear();
-        //}
-
-        //public void reloadTable()
-        //{
-        //    AgencyPresenter presenter = new AgencyPresenter(this);
-        //    refreshTable();
-        //    presenter.dataGV(dtGridView_Agency);
-        //    dtGridView_Agency.CurrentCell = null;
-        //}
         private void btt_Add_Click(object sender, EventArgs e)
         {
             AddImportForm frm = new AddImportForm(id,this);
@@ -65,10 +48,18 @@ namespace Beverage_Management_System
 
         public void refreshDataGV()
         {
-            Console.WriteLine("aabc test");
             DtaGridView_IGF.Rows.Clear();
            
             presenter.dataGV_IGF(DtaGridView_IGF, 0);
+
+            DtaGridView_IGF.CurrentCell = null;
+        }
+
+        public void refreshDataGVAdmin()
+        {
+            DtaGridView_IGF.Rows.Clear();
+
+            presenter.dataGV_IGF(DtaGridView_IGF, 1);
 
             DtaGridView_IGF.CurrentCell = null;
         }
@@ -98,7 +89,7 @@ namespace Beverage_Management_System
             }
             else
             {
-                MyMessageBox.showBox("Please choose the row!", "Message");
+                MyMessageBox.showBox("Please choose the import form which you want to delete!", "Message");
             }
         }
 
@@ -111,16 +102,32 @@ namespace Beverage_Management_System
             ImportGoodsPresenter presenter = new ImportGoodsPresenter(this);
             if (id == 0)
             {
-                GoodsInImportForm form = new GoodsInImportForm(id_choose, 0);
+                GoodsInImportForm form = new GoodsInImportForm(id_choose, 0, this);
                 form.Show();
             }
             else
             {
-                GoodsInImportForm form = new GoodsInImportForm(id_choose);
+                GoodsInImportForm form = new GoodsInImportForm(id_choose, this);
                 form.Show();
             }
         }
 
-      
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+            if(id == 0) presenter.searchDataInImporForms(DtaGridView_IGF, 1, txt_Search.Text);
+            else presenter.searchDataInImporForms(DtaGridView_IGF, 0, txt_Search.Text);
+        }
+
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_Search.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
     }
 }

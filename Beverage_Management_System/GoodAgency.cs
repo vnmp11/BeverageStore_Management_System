@@ -72,20 +72,29 @@ namespace Beverage_Management_System
         {
             if (dataGridView_Goods.SelectedCells.Count > 0)
             {
-                int selected_index = dataGridView_Goods.SelectedCells[0].RowIndex;
-                DataGridViewRow selected_row = dataGridView_Goods.Rows[selected_index];
-                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
-
-                GoodAgencyPresenter presenter = new GoodAgencyPresenter(this);
-                if (presenter.deleteGoodAgency(id_choose) > 0)
+                AlertDialog dialog = new AlertDialog();
+                dialog.setMessage("Do you want to delete this goods?");
+                dialog.Show();
+                dialog.btt_ok.Click += (s, a) =>
                 {
-                    refreshTable();
-                    presenter.dataGVGood(dataGridView_Goods, idtemp);
-                    dataGridView_Goods.CurrentCell = null;
-                    MyMessageBox.showBox("Delete this product successfully!", "Message");
-                    reloadTable();
-                }
-                else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                    int selected_index = dataGridView_Goods.SelectedCells[0].RowIndex;
+                    DataGridViewRow selected_row = dataGridView_Goods.Rows[selected_index];
+                    int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+
+                    GoodAgencyPresenter presenter = new GoodAgencyPresenter(this);
+                    int result = presenter.deleteGoodAgency(id_choose);
+                    if (result == 1)
+                    {
+                        refreshTable();
+                        presenter.dataGVGood(dataGridView_Goods, idtemp);
+                        dataGridView_Goods.CurrentCell = null;
+                        MyMessageBox.showBox("Delete this product successfully!", "Message");
+                        reloadTable();
+                    }
+                    else if (result == 0) MyMessageBox.showBox("You cannot delete this goods because this action will affect the store's statistics", "Message");
+                    else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                };
+
             }
             else MyMessageBox.showBox("Please choose a product whom you want to delete!", "Message");
         }
@@ -100,6 +109,18 @@ namespace Beverage_Management_System
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (guna2TextBox1.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
         }
     }
 }

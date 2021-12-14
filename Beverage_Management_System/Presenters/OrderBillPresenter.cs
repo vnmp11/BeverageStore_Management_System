@@ -15,6 +15,7 @@ namespace Beverage_Management_System.Presenters
     class OrderBillPresenter
     {
         IOrderBill orderBillView;
+        List<Person> bartenders = new List<Person>();
 
         public OrderBillPresenter(IOrderBill view)
         {
@@ -73,6 +74,22 @@ namespace Beverage_Management_System.Presenters
 
             List<MOrderBill> list = new List<MOrderBill>();
 
+            bartenders = new List<Person>();
+
+            string query5 = "Select * from PERSON where ROLE = 2";
+            SqlCommand cmd5 = new SqlCommand(query5, myConnection.sqlcon);
+            SqlDataReader sdr5 = cmd5.ExecuteReader();
+            while (sdr5.Read())
+            {
+                int id = (int)sdr5["ID_PERSON"];
+                string name = sdr5["NAME"].ToString();
+
+                Person person = new Person(id, "", "", name, "", "", "", "", 0);
+                bartenders.Add(person);
+            }
+            sdr5.Close();
+
+
             DataTable dt = new DataTable();
             string querry = "Select * from ORDER_BILL where STATUS = 0;";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
@@ -106,12 +123,13 @@ namespace Beverage_Management_System.Presenters
                 DataGridViewRow row = (DataGridViewRow)dataGV.Rows[i].Clone();
                 row.Cells[0].Value = list[i].getID();
                 row.Cells[1].Value = list[i].getID_ORDER_FORM();
-                row.Cells[2].Value = list[i].getID_BARTENDER();
-                row.Cells[3].Value = list[i].getTOTAL_PRICE_PRODUCTS().ToString("###,###,##0");
-                row.Cells[4].Value = list[i].getFINE();
-                row.Cells[5].Value = list[i].getDATE_CREATE();
-                row.Cells[6].Value = list[i].getDATE_CONFIRM();
-                row.Cells[7].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
+                for (int j = 0; j < bartenders.Count(); j++)
+                {
+                    if (bartenders[j].getID() == list[i].getID_BARTENDER()) row.Cells[2].Value = bartenders[j].getNAME();
+                }
+                row.Cells[3].Value = list[i].getFINE();
+                row.Cells[4].Value = list[i].getDATE_CREATE();
+                row.Cells[5].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
 
                 dataGV.Rows.Add(row);
             }
@@ -183,8 +201,7 @@ namespace Beverage_Management_System.Presenters
         }
 
         public void browseBill(int ID, int id_accountant,
-            Guna.UI2.WinForms.Guna2DataGridView dataGV, System.Windows.Forms.Label lb_Details,
-            System.Windows.Forms.FlowLayoutPanel fLayoutPl_Details, int id_form)
+            Guna.UI2.WinForms.Guna2DataGridView dataGV, int id_form)
         {
 
             MyConnection myConnection = new MyConnection();
@@ -212,31 +229,11 @@ namespace Beverage_Management_System.Presenters
             {
                 dataGV.Rows.Clear();
                 setDataGV(dataGV);
-                fLayoutPl_Details.Visible = false;
-                lb_Details.Visible = false;
                 MyMessageBox.showBox("Browse this bill successfully!", "Message");
 
             }
             else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
             
-
-
-            //string query = "Select * from DETAILS_ORDERFORM  where ID_ORDERFORM=@id_orderform ;";
-            //SqlCommand cmd1 = new SqlCommand(query, myConnection.sqlcon);
-            //cmd1.Parameters.AddWithValue("@id_orderform", id_form);
-
-            //SqlDataReader sdr = cmd1.ExecuteReader();
-            //while (sdr.Read())
-            //{
-
-
-
-
-
-
-
-            //}
-            //sdr.Close();
             myConnection.sqlcon.Close();
         }
 
@@ -249,7 +246,19 @@ namespace Beverage_Management_System.Presenters
             List<MOrderBill> list = new List<MOrderBill>();
             dataGV.Rows.Clear();
 
-            string querry = "Select * from ORDER_BILL where STATUS = 0 and (ID_ORDER_BILL like '" + orderBillView.search + "%' or ID_ORDER_FORM like '" + orderBillView.search + "%');";
+            int id = 0;
+            for (int j = 0; j < bartenders.Count; j++)
+            {
+                if (bartenders[j].getNAME().Contains(orderBillView.search) == true)
+                {
+                    id = bartenders[j].getID();
+                }
+            }
+
+
+            string querry = "Select * from ORDER_BILL where STATUS = 0 and (ID_ORDER_BILL like '" + orderBillView.search + "%' or " +
+                "ID_ORDER_FORM like '" + orderBillView.search + "%' or " +
+                "ID_BARTENDER = '" + id + "');";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -279,12 +288,13 @@ namespace Beverage_Management_System.Presenters
                 DataGridViewRow row = (DataGridViewRow)dataGV.Rows[i].Clone();
                 row.Cells[0].Value = list[i].getID();
                 row.Cells[1].Value = list[i].getID_ORDER_FORM();
-                row.Cells[2].Value = list[i].getID_BARTENDER();
-                row.Cells[3].Value = list[i].getTOTAL_PRICE_PRODUCTS().ToString("###,###,##0");
-                row.Cells[4].Value = list[i].getFINE();
-                row.Cells[5].Value = list[i].getDATE_CREATE();
-                row.Cells[6].Value = list[i].getDATE_CONFIRM();
-                row.Cells[7].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
+                for (int j = 0; j < bartenders.Count(); j++)
+                {
+                    if (bartenders[j].getID() == list[i].getID_BARTENDER()) row.Cells[2].Value = bartenders[j].getNAME();
+                }
+                row.Cells[3].Value = list[i].getFINE();
+                row.Cells[4].Value = list[i].getDATE_CREATE();
+                row.Cells[5].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
 
                 dataGV.Rows.Add(row);
             }

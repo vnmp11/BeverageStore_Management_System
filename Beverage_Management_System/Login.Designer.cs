@@ -91,7 +91,7 @@ namespace Beverage_Management_System
             // 
             this.label11.Font = new System.Drawing.Font("Times New Roman", 18.26866F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label11.Location = new System.Drawing.Point(144, 26);
+            this.label11.Location = new System.Drawing.Point(148, 26);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(152, 36);
             this.label11.TabIndex = 24;
@@ -108,7 +108,7 @@ namespace Beverage_Management_System
             this.bt_Login.CustomImages.Parent = this.bt_Login;
             this.bt_Login.DisabledState.Parent = this.bt_Login;
             this.bt_Login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.bt_Login.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_Login.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Login.ForeColor = System.Drawing.Color.White;
             this.bt_Login.HoverState.Parent = this.bt_Login;
             this.bt_Login.Location = new System.Drawing.Point(176, 347);

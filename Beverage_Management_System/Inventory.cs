@@ -65,21 +65,21 @@ namespace Beverage_Management_System
                     int selected_index = dataGV.SelectedCells[0].RowIndex;
                     DataGridViewRow selected_row = dataGV.Rows[selected_index];
                     int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
-
-                    if (presenter.deleteProduct(id_choose) > 0)
+                    int result = presenter.deleteProduct(id_choose);
+                    if (result == 1)
                     {
                         dataGV.Rows.Clear();
                         presenter.setDataGV(dataGV);
                         dataGV.CurrentCell = null;
                         MyMessageBox.showBox("Delete this product successfully!", "Message");
                     }
+                    else if (result == 0) MyMessageBox.showBox("You cannot delete this product because this action will affect the store's statistics", "Message");
                     else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
                 };
 
             }
             else MyMessageBox.showBox("Please choose a product which you want to delete!", "Message");
         }
-
         public void refreshDataGV()
         {
             dataGV.Rows.Clear();
@@ -97,9 +97,16 @@ namespace Beverage_Management_System
 
         }
 
-        private void dataGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_Search.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
         }
     }
 

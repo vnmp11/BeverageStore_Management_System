@@ -2,6 +2,7 @@
 using Beverage_Management_System.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Beverage_Management_System.Presenters
     {
         int id_tracking_note = 0;
         int id_order_form = 0;
+        List<Person> waiters = new List<Person>();
 
         //them total quantity vao day ( total quantity cua OF)
         public void updateTotalOrderForm(int id, int total_price, int total_quantity)
@@ -30,24 +32,7 @@ namespace Beverage_Management_System.Presenters
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
             {
-                string date_confirm = DateTime.Now.ToString("yyyy-MM-dd");
-                SqlCommand cmd1 = new SqlCommand("Insert into TRACKING_NOTE(KIND, DATE_CON, ID_BILL) values (@kind, @date_con, @id_bill);", myConnection.sqlcon);
-                cmd1.Parameters.AddWithValue("@kind", 1);
-                cmd1.Parameters.AddWithValue("@date_con", date_confirm);
-                cmd1.Parameters.AddWithValue("@id_bill", id);
-                int result1 = cmd1.ExecuteNonQuery();
-                if (result1 > 0)
-                {
-                    string query2 = "Select MAX(ID_TRACKING_NOTE) as MAX from TRACKING_NOTE;";
-                    SqlCommand cmd2 = new SqlCommand(query2, myConnection.sqlcon);
-                    SqlDataReader dr = cmd2.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        this.id_tracking_note = Convert.ToInt32(dr["MAX"]);
-                        dr.Close();
-                    }
-                }
-                else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+               
             }
             else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
             myConnection.sqlcon.Close();
@@ -62,23 +47,9 @@ namespace Beverage_Management_System.Presenters
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            string query = "Select ID_TRACKING_NOTE from TRACKING_NOTE where KIND ='" + 1 + "' and ID_BILL ='" + id_order + "';";
-            SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
-            SqlDataReader sdr = cmd.ExecuteReader();
-            if (sdr.Read())
-            {
-                int id_tracking_note = Convert.ToInt32(sdr["ID_TRACKING_NOTE"]);
-                sdr.Close();
-                SqlCommand cmd1 = new SqlCommand("Delete from DETAILS_TRACKING_NOTE where ID_TRACKING_NOTE='" + id_tracking_note + "';", myConnection.sqlcon);
-                cmd1.ExecuteNonQuery();
-                SqlCommand cmd2 = new SqlCommand("Delete from TRACKING_NOTE where ID_TRACKING_NOTE='" + id_tracking_note + "';", myConnection.sqlcon);
-                cmd2.ExecuteNonQuery();
-                SqlCommand cmd3 = new SqlCommand("Delete from ORDERFORM where ID_ORDERFORM=@id_order;", myConnection.sqlcon);
-                cmd3.Parameters.AddWithValue("@id_order", id_order);
-                cmd3.ExecuteNonQuery();
-
-
-            }
+            SqlCommand cmd3 = new SqlCommand("Delete from ORDERFORM where ID_ORDERFORM=@id_order;", myConnection.sqlcon);
+            cmd3.Parameters.AddWithValue("@id_order", id_order);
+            cmd3.ExecuteNonQuery();
 
             myConnection.sqlcon.Close();
         }
@@ -135,6 +106,20 @@ namespace Beverage_Management_System.Presenters
             List<MOrderForm> orderlist = new List<MOrderForm>();
             dt.Rows.Clear();
 
+            waiters = new List<Person>();
+            string query5 = "Select * from PERSON where ROLE = 1";
+            SqlCommand cmd5 = new SqlCommand(query5, myConnection.sqlcon);
+            SqlDataReader sdr5 = cmd5.ExecuteReader();
+            while (sdr5.Read())
+            {
+                int id = (int)sdr5["ID_PERSON"];
+                string name = sdr5["NAME"].ToString();
+
+                Person person = new Person(id, "", "", name, "", "", "", "", 0);
+                waiters.Add(person);
+            }
+            sdr5.Close();
+
             string query = "Select * from ORDERFORM Where STATUS=@status";
             SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@status", "0");
@@ -156,9 +141,12 @@ namespace Beverage_Management_System.Presenters
             {
                 DataGridViewRow row = (DataGridViewRow)dt.Rows[i].Clone();
                 row.Cells[0].Value = orderlist[i].getID();
-                row.Cells[1].Value = orderlist[i].getID_PERSON();
+                for (int j = 0; j < waiters.Count(); j++)
+                {
+                    if(waiters[j].getID() == orderlist[i].getID_PERSON()) row.Cells[1].Value = waiters[j].getNAME();
+                }
+     
                 row.Cells[2].Value = orderlist[i].getTOTAL_PRICE().ToString("###,###,##0");
-                row.Cells[3].Value = orderlist[i].getSTATUS();
 
                 dt.Rows.Add(row);
             }
@@ -207,39 +195,7 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Close();
         }
 
-        public void addDetailsTrackingNote(int id_order_form, int id_tracking_note)
-        {
-            MyConnection myConnection = new MyConnection();
-            myConnection.sqlcon.Open();
-
-            List<MProduct> list = new List<MProduct>();
-
-            string query = "Select D.ID_PRODUCT, D.QUANTITY, P.NAME from DETAILS_ORDERFORM D join PRODUCT P on D.ID_PRODUCT = P.ID_PRODUCT where ID_ORDERFORM ='" + id_order_form + "';";
-            SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
-            SqlDataReader sdr = cmd.ExecuteReader();
-            while (sdr.Read())
-            {
-                int id_product = Convert.ToInt32(sdr["ID_PRODUCT"]);
-                int quantity = Convert.ToInt32(sdr["QUANTITY"]);
-                string name = sdr["NAME"].ToString();
-
-                MProduct product = new MProduct(id_product, 0, 0, name, 0, "", quantity, null);
-                list.Add(product);
-            }
-            sdr.Close();
-
-            for (int i = 0; i < list.Count(); i++)
-            {
-                SqlCommand cmd1 = new SqlCommand("Insert into DETAILS_TRACKING_NOTE(ID_PRODUCT,ID_TRACKING_NOTE, NAME, QUANTITY) values (@id_product,@id_tracking_note,@name,@quantity);",
-                    myConnection.sqlcon);
-                cmd1.Parameters.AddWithValue("@id_product", list[i].getID());
-                cmd1.Parameters.AddWithValue("@id_tracking_note", id_tracking_note);
-                cmd1.Parameters.AddWithValue("@name", list[i].getNAME());
-                cmd1.Parameters.AddWithValue("@quantity", list[i].getQUANTITY());
-
-                cmd1.ExecuteNonQuery();
-            }
-        }
+       
 
         public int[] a;
         //V1
@@ -326,6 +282,59 @@ namespace Beverage_Management_System.Presenters
                 }
 
             }
+            myConnection.sqlcon.Close();
+
+        }
+
+        public void searchData(Guna.UI2.WinForms.Guna2DataGridView dtGridView_OrderForm, string search)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            List<MOrderForm> orderlist = new List<MOrderForm>();
+            dtGridView_OrderForm.Rows.Clear();
+
+            int id = 0;
+            for(int j = 0; j < waiters.Count; j++)
+            {
+                if (waiters[j].getNAME().Contains(search) == true) id = waiters[j].getID();
+            }
+
+            string querry = "Select * from ORDERFORM  where (ID_ORDERFORM like '" + search + "%' and STATUS = 0 and TOTAL_PRICE != 0) or (ID_WAITER = '" + id + "' and STATUS = 0 and TOTAL_PRICE != 0);";
+            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+
+            if (dtbl.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    int ID = Convert.ToInt32(row["ID_ORDERFORM"]);
+                    int ID_WAITER = Convert.ToInt32(row["ID_WAITER"]);
+                    int STATUS = Convert.ToInt32(row["STATUS"]);
+                    int TOTAL_PRICE = Convert.ToInt32(row["TOTAL_PRICE"]);
+
+                    MOrderForm i = new MOrderForm(ID, ID_WAITER, STATUS, TOTAL_PRICE);
+                    orderlist.Add(i);
+                }
+            }
+
+            for (int i = 0; i < orderlist.Count(); i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtGridView_OrderForm.Rows[i].Clone();
+                row.Cells[0].Value = orderlist[i].getID();
+                for (int j = 0; j < waiters.Count(); j++)
+                {
+                    if (waiters[j].getID() == orderlist[i].getID_PERSON()) row.Cells[1].Value = waiters[j].getNAME();
+                }
+
+                row.Cells[2].Value = orderlist[i].getTOTAL_PRICE().ToString("###,###,##0");
+
+                dtGridView_OrderForm.Rows.Add(row);
+
+            }
+
+            myConnection.sqlcon.Close();
 
         }
     }

@@ -18,6 +18,7 @@ namespace Beverage_Management_System.Presenters
 
         List<MGoodsImportBill> goodsImportBills = new List<MGoodsImportBill>();
         List<MOrderBill> orderBills = new List<MOrderBill>();
+        List<Person> accountants = new List<Person>();
 
         public FinancialNotePresenter(IFinancialNote view)
         {
@@ -38,6 +39,20 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Open();
 
             orderBills = new List<MOrderBill>();
+            accountants = new List<Person>();
+
+            string query5 = "Select * from PERSON where ROLE = 3";
+            SqlCommand cmd5 = new SqlCommand(query5, myConnection.sqlcon);
+            SqlDataReader sdr5 = cmd5.ExecuteReader();
+            while (sdr5.Read())
+            {
+                int id = (int)sdr5["ID_PERSON"];
+                string name = sdr5["NAME"].ToString();
+
+                Person person = new Person(id, "", "", name, "", "", "", "", 0);
+                accountants.Add(person);
+            }
+            sdr5.Close();
 
             DataTable dt = new DataTable();
             string querry = "Select * from ORDER_BILL where STATUS = 1;";
@@ -71,7 +86,10 @@ namespace Beverage_Management_System.Presenters
                 DataGridViewRow row = (DataGridViewRow)dataGV_Order_Bill.Rows[i].Clone();
                 row.Cells[0].Value = orderBills[i].getID();
                 row.Cells[1].Value = orderBills[i].getID_ORDER_FORM();
-                row.Cells[2].Value = orderBills[i].getID_ACCOUNTANT();
+                for (int j = 0; j < accountants.Count(); j++)
+                {
+                    if (accountants[j].getID() == orderBills[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
+                }
                 row.Cells[3].Value = orderBills[i].getDATE_CONFIRM();
                 row.Cells[4].Value = orderBills[i].getTOTAL_PRICE().ToString("###,###,##0");
 
@@ -117,7 +135,10 @@ namespace Beverage_Management_System.Presenters
                 DataGridViewRow row = (DataGridViewRow)dataGV_Goods_Import_Bill.Rows[i].Clone();
                 row.Cells[0].Value = goodsImportBills[i].getID();
                 row.Cells[1].Value = goodsImportBills[i].getID_GOODS_IMPORT_FORM();
-                row.Cells[2].Value = goodsImportBills[i].getID_ACCOUNTANT();
+                for (int j = 0; j < accountants.Count(); j++)
+                {
+                    if (accountants[j].getID() == orderBills[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
+                }
                 row.Cells[3].Value = goodsImportBills[i].getDATE_CONFIRM();
                 row.Cells[4].Value = goodsImportBills[i].getTOTAL_PRICE().ToString("###,###,##0");
 
@@ -192,7 +213,18 @@ namespace Beverage_Management_System.Presenters
             List<MOrderBill> list = new List<MOrderBill>();
             dataGV_Order_Bill.Rows.Clear();
 
-            string querry = "Select * from ORDER_BILL where STATUS = 1 and (ID_ORDER_BILL like '" + financialNoteView.search_OrderBill + "%' or ID_ORDER_FORM like '" + financialNoteView.search_OrderBill + "%');";
+            int id = 0;
+            for (int j = 0; j < accountants.Count; j++)
+            {
+                if (accountants[j].getNAME().Contains(financialNoteView.search_OrderBill) == true)
+                {
+                    id = accountants[j].getID();
+                }
+            }
+
+            string querry = "Select * from ORDER_BILL where STATUS = 1 and (ID_ORDER_BILL like '" + financialNoteView.search_OrderBill + "%' or " +
+                    "ID_ORDER_FORM like '" + financialNoteView.search_OrderBill + "%' or " +
+                    "ID_ACCOUNTANT = '" + id + "');";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -222,7 +254,10 @@ namespace Beverage_Management_System.Presenters
                 DataGridViewRow row = (DataGridViewRow)dataGV_Order_Bill.Rows[i].Clone();
                 row.Cells[0].Value = list[i].getID();
                 row.Cells[1].Value = list[i].getID_ORDER_FORM();
-                row.Cells[2].Value = list[i].getID_ACCOUNTANT();
+                for (int j = 0; j < accountants.Count(); j++)
+                {
+                    if (accountants[j].getID() == orderBills[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
+                }
                 row.Cells[3].Value = list[i].getDATE_CONFIRM();
                 row.Cells[4].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
 
@@ -240,7 +275,19 @@ namespace Beverage_Management_System.Presenters
             List<MGoodsImportBill> list = new List<MGoodsImportBill>();
             dataGV_Goods_Import_Bill.Rows.Clear();
 
-            string querry = "Select * from GOODS_IMPORT_BILL where STATUS = 1 and (ID_GOODS_IMPORT_BILL like '" + financialNoteView.search_GoodImportBill + "%' or ID_GOODS_IMPORT_FORM like '" + financialNoteView.search_GoodImportBill + "%');";
+            int id = 0;
+            for (int j = 0; j < accountants.Count; j++)
+            {
+                if (accountants[j].getNAME().Contains(financialNoteView.search_GoodImportBill) == true)
+                {
+                    id = accountants[j].getID();
+                }
+            }
+
+
+            string querry = "Select * from GOODS_IMPORT_BILL where STATUS = 1 and (ID_GOODS_IMPORT_BILL like '" + financialNoteView.search_GoodImportBill + "%' or " +
+                "ID_GOODS_IMPORT_FORM like '" + financialNoteView.search_GoodImportBill + "%' or " +
+                "ID_ACCOUNTANT = '" + id + "');";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -268,7 +315,10 @@ namespace Beverage_Management_System.Presenters
                 DataGridViewRow row = (DataGridViewRow)dataGV_Goods_Import_Bill.Rows[i].Clone();
                 row.Cells[0].Value = list[i].getID();
                 row.Cells[1].Value = list[i].getID_GOODS_IMPORT_FORM();
-                row.Cells[2].Value = list[i].getID_ACCOUNTANT();
+                for (int j = 0; j < accountants.Count(); j++)
+                {
+                    if (accountants[j].getID() == orderBills[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
+                }
                 row.Cells[3].Value = list[i].getDATE_CONFIRM();
                 row.Cells[4].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
 

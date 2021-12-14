@@ -49,7 +49,6 @@ namespace Beverage_Management_System
             this.label9 = new System.Windows.Forms.Label();
             this.txb_IdOrder = new Guna.UI2.WinForms.Guna2TextBox();
             this.pl_Order = new System.Windows.Forms.FlowLayoutPanel();
-            this.detailOrder1 = new Beverage_Management_System.DetailOrder();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,10 +57,10 @@ namespace Beverage_Management_System
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.txb_searchMenu = new Guna.UI2.WinForms.Guna2TextBox();
             this.btt_clearAll = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btt_Pay = new Guna.UI2.WinForms.Guna2Button();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.detailOrder1 = new Beverage_Management_System.DetailOrder();
             this.panel2.SuspendLayout();
             this.pl_Order.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,21 +89,21 @@ namespace Beverage_Management_System
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.panel3.Location = new System.Drawing.Point(64, 144);
+            this.panel3.Location = new System.Drawing.Point(21, 196);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(574, 1);
+            this.panel3.Size = new System.Drawing.Size(660, 1);
             this.panel3.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label4.Location = new System.Drawing.Point(19, 174);
+            this.label4.Location = new System.Drawing.Point(17, 220);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 31);
+            this.label4.Size = new System.Drawing.Size(230, 41);
             this.label4.TabIndex = 83;
             this.label4.Text = "Total Payable:";
             this.label4.Click += new System.EventHandler(this.label3_Click);
@@ -112,9 +111,9 @@ namespace Beverage_Management_System
             // lb_total
             // 
             this.lb_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_total.Font = new System.Drawing.Font("Microsoft Tai Le", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_total.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_total.Location = new System.Drawing.Point(449, 169);
+            this.lb_total.Location = new System.Drawing.Point(449, 220);
             this.lb_total.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.lb_total.Name = "lb_total";
             this.lb_total.Size = new System.Drawing.Size(232, 36);
@@ -127,9 +126,9 @@ namespace Beverage_Management_System
             // lb_QtyItem
             // 
             this.lb_QtyItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_QtyItem.Font = new System.Drawing.Font("Microsoft Tai Le", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_QtyItem.Font = new System.Drawing.Font("Microsoft Tai Le", 14F);
             this.lb_QtyItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_QtyItem.Location = new System.Drawing.Point(426, 218);
+            this.lb_QtyItem.Location = new System.Drawing.Point(421, 22);
             this.lb_QtyItem.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.lb_QtyItem.Name = "lb_QtyItem";
             this.lb_QtyItem.Size = new System.Drawing.Size(252, 38);
@@ -141,9 +140,9 @@ namespace Beverage_Management_System
             // lb_subTotal
             // 
             this.lb_subTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_subTotal.Font = new System.Drawing.Font("Microsoft Tai Le", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_subTotal.Font = new System.Drawing.Font("Microsoft Tai Le", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_subTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_subTotal.Location = new System.Drawing.Point(459, 38);
+            this.lb_subTotal.Location = new System.Drawing.Point(452, 80);
             this.lb_subTotal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.lb_subTotal.Name = "lb_subTotal";
             this.lb_subTotal.Size = new System.Drawing.Size(222, 38);
@@ -156,12 +155,12 @@ namespace Beverage_Management_System
             // lb_Tax
             // 
             this.lb_Tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_Tax.Font = new System.Drawing.Font("Microsoft Tai Le", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Tax.Font = new System.Drawing.Font("Microsoft Tai Le", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Tax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_Tax.Location = new System.Drawing.Point(450, 90);
+            this.lb_Tax.Location = new System.Drawing.Point(450, 138);
             this.lb_Tax.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.lb_Tax.Name = "lb_Tax";
-            this.lb_Tax.Size = new System.Drawing.Size(231, 38);
+            this.lb_Tax.Size = new System.Drawing.Size(225, 38);
             this.lb_Tax.TabIndex = 83;
             this.lb_Tax.Text = "0";
             this.lb_Tax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,12 +170,12 @@ namespace Beverage_Management_System
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label3.Location = new System.Drawing.Point(19, 90);
+            this.label3.Location = new System.Drawing.Point(18, 140);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 30);
+            this.label3.Size = new System.Drawing.Size(63, 36);
             this.label3.TabIndex = 83;
             this.label3.Text = "Tax:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -184,24 +183,24 @@ namespace Beverage_Management_System
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label2.Location = new System.Drawing.Point(19, 38);
+            this.label2.Location = new System.Drawing.Point(18, 82);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 30);
+            this.label2.Size = new System.Drawing.Size(145, 36);
             this.label2.TabIndex = 83;
             this.label2.Text = "Sub Total: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 14F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label1.Location = new System.Drawing.Point(19, 222);
+            this.label1.Location = new System.Drawing.Point(18, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 23);
+            this.label1.Size = new System.Drawing.Size(202, 36);
             this.label1.TabIndex = 83;
             this.label1.Text = "Items Quantity:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -214,11 +213,11 @@ namespace Beverage_Management_System
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(603, 20);
+            this.label12.Location = new System.Drawing.Point(537, 24);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(267, 39);
+            this.label12.Size = new System.Drawing.Size(442, 58);
             this.label12.TabIndex = 90;
             this.label12.Text = "PLACE ORDER";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -321,23 +320,6 @@ namespace Beverage_Management_System
             this.pl_Order.Size = new System.Drawing.Size(736, 452);
             this.pl_Order.TabIndex = 100;
             // 
-            // detailOrder1
-            // 
-            this.detailOrder1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.detailOrder1.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.detailOrder1.LabelIn_Stock = "100";
-            this.detailOrder1.LabelName = "Coca cola";
-            this.detailOrder1.LabelPrice = "10000";
-            this.detailOrder1.LabelTotal_Price = "10000";
-            this.detailOrder1.Location = new System.Drawing.Point(3, 5);
-            this.detailOrder1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.detailOrder1.Name = "detailOrder1";
-            this.detailOrder1.NumberRicQuantity = "1";
-            this.detailOrder1.Size = new System.Drawing.Size(570, 0);
-            this.detailOrder1.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
@@ -429,10 +411,10 @@ namespace Beverage_Management_System
             this.txb_searchMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_searchMenu.Name = "txb_searchMenu";
             this.txb_searchMenu.PasswordChar = '\0';
-            this.txb_searchMenu.PlaceholderText = "";
+            this.txb_searchMenu.PlaceholderText = "Search Product";
             this.txb_searchMenu.SelectedText = "";
             this.txb_searchMenu.ShadowDecoration.Parent = this.txb_searchMenu;
-            this.txb_searchMenu.Size = new System.Drawing.Size(199, 45);
+            this.txb_searchMenu.Size = new System.Drawing.Size(199, 36);
             this.txb_searchMenu.TabIndex = 91;
             this.txb_searchMenu.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
@@ -451,7 +433,7 @@ namespace Beverage_Management_System
             this.btt_clearAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btt_clearAll.HoverState.Parent = this.btt_clearAll;
             this.btt_clearAll.Image = ((System.Drawing.Image)(resources.GetObject("btt_clearAll.Image")));
-            this.btt_clearAll.Location = new System.Drawing.Point(957, 911);
+            this.btt_clearAll.Location = new System.Drawing.Point(1052, 911);
             this.btt_clearAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_clearAll.Name = "btt_clearAll";
             this.btt_clearAll.ShadowDecoration.Parent = this.btt_clearAll;
@@ -459,28 +441,6 @@ namespace Beverage_Management_System
             this.btt_clearAll.TabIndex = 89;
             this.btt_clearAll.Text = "CLEAR ALL";
             this.btt_clearAll.Click += new System.EventHandler(this.btt_clearAll_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.DisabledState.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(1117, 911);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(101, 84);
-            this.guna2Button2.TabIndex = 88;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // btt_Pay
             // 
@@ -520,6 +480,23 @@ namespace Beverage_Management_System
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // detailOrder1
+            // 
+            this.detailOrder1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.detailOrder1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.detailOrder1.LabelIn_Stock = "100";
+            this.detailOrder1.LabelName = "Coca cola";
+            this.detailOrder1.LabelPrice = "10000";
+            this.detailOrder1.LabelTotal_Price = "10000";
+            this.detailOrder1.Location = new System.Drawing.Point(3, 5);
+            this.detailOrder1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.detailOrder1.Name = "detailOrder1";
+            this.detailOrder1.NumberRicQuantity = "1";
+            this.detailOrder1.Size = new System.Drawing.Size(570, 0);
+            this.detailOrder1.TabIndex = 0;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -535,7 +512,6 @@ namespace Beverage_Management_System
             this.Controls.Add(this.txb_searchMenu);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btt_clearAll);
-            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.btt_Pay);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -566,7 +542,6 @@ namespace Beverage_Management_System
         private System.Windows.Forms.Label lb_Tax;
         private Guna.UI2.WinForms.Guna2Button btt_Pay;
         private Guna.UI2.WinForms.Guna2Button btt_clearAll;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2TextBox txb_searchMenu;
         private Guna.UI2.WinForms.Guna2ComboBox cb_KindofDrink;

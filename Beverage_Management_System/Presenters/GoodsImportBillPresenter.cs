@@ -16,6 +16,7 @@ namespace Beverage_Management_System.Presenters
     {
         IGoodsImportBill goodsImportBillView;
         List<MGoodsImportBill> goodsImportBills = new List<MGoodsImportBill>();
+        List<Person> bartenders = new List<Person>();
 
         public GoodsImportBillPresenter(IGoodsImportBill view)
         {
@@ -30,6 +31,21 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Open();
 
             goodsImportBills = new List<MGoodsImportBill>();
+
+            bartenders = new List<Person>();
+
+            string query5 = "Select * from PERSON where ROLE = 2";
+            SqlCommand cmd5 = new SqlCommand(query5, myConnection.sqlcon);
+            SqlDataReader sdr5 = cmd5.ExecuteReader();
+            while (sdr5.Read())
+            {
+                int id = (int)sdr5["ID_PERSON"];
+                string name = sdr5["NAME"].ToString();
+
+                Person person = new Person(id, "", "", name, "", "", "", "", 0);
+                bartenders.Add(person);
+            }
+            sdr5.Close();
 
             DataTable dt = new DataTable();
             string querry = "Select * from GOODS_IMPORT_BILL where STATUS = 0;";
@@ -60,10 +76,12 @@ namespace Beverage_Management_System.Presenters
                 DataGridViewRow row = (DataGridViewRow)dataGV.Rows[i].Clone();
                 row.Cells[0].Value = goodsImportBills[i].getID();
                 row.Cells[1].Value = goodsImportBills[i].getID_GOODS_IMPORT_FORM();
-                row.Cells[2].Value = goodsImportBills[i].getID_BARTENDER();
+                for (int j = 0; j < bartenders.Count(); j++)
+                {
+                    if (bartenders[j].getID() == goodsImportBills[i].getID_BARTENDER()) row.Cells[2].Value = bartenders[j].getNAME();
+                }
                 row.Cells[3].Value = goodsImportBills[i].getDATE_CREATE();
-                row.Cells[4].Value = goodsImportBills[i].getDATE_CONFIRM();
-                row.Cells[5].Value = goodsImportBills[i].getTOTAL_PRICE().ToString("###,###,##0");
+                row.Cells[4].Value = goodsImportBills[i].getTOTAL_PRICE().ToString("###,###,##0");
 
                 dataGV.Rows.Add(row);
             }
@@ -107,6 +125,7 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Open();
 
             int count = 0;
+            string bartender = "";
 
             string date_confirm = DateTime.Now.ToString("yyyy-MM-dd");
 
@@ -123,10 +142,11 @@ namespace Beverage_Management_System.Presenters
                 List<MProduct> list_transaction = new List<MProduct>();
                 List<MProduct> list = new List<MProduct>();
 
-                string query1 = "Select P.ID_PRODUCT, P.NAME, P.QUANTITY AS Q1, DGIB.QUANTITY AS Q2, G.QUANTITY AS Q3 from " +
-                    "((GOODS_IMPORT_BILL GIB join DETAILS_GOODS_IMPORT_BILL DGIB on GIB.ID_GOODS_IMPORT_BILL = DGIB.ID_GOODS_IMPORT_BILL) join " +
+                string query1 = "Select P.ID_PRODUCT, P.NAME, P.QUANTITY AS Q1, DGIB.QUANTITY AS Q2, G.QUANTITY AS Q3, PER.NAME AS BARTENDER from " +
+                    "(((GOODS_IMPORT_BILL GIB join DETAILS_GOODS_IMPORT_BILL DGIB on GIB.ID_GOODS_IMPORT_BILL = DGIB.ID_GOODS_IMPORT_BILL) join " +
                     "PRODUCT P on DGIB.ID_GOODS = P.ID_GOODS) join " +
-                    "GOODS G on P.ID_GOODS = G.ID_GOODS where DGIB.ID_GOODS_IMPORT_BILL ='" + ID + "';";
+                    "GOODS G on P.ID_GOODS = G.ID_GOODS) join " +
+                    "PERSON PER on GIB.ID_BARTENDER = PER.ID_PERSON where DGIB.ID_GOODS_IMPORT_BILL ='" + ID + "';";
                 SqlCommand cmd1 = new SqlCommand(query1, myConnection.sqlcon);
                 SqlDataReader sdr = cmd1.ExecuteReader();
                 while (sdr.Read())
@@ -136,6 +156,7 @@ namespace Beverage_Management_System.Presenters
                     int inventory_quantity = Convert.ToInt32(sdr["Q1"]);
                     int import_quantity = Convert.ToInt32(sdr["Q2"]);
                     int quantity_per_unit = Convert.ToInt32(sdr["Q3"]);
+                    bartender = sdr["BARTENDER"].ToString();
 
                     int quantity = inventory_quantity + import_quantity * quantity_per_unit;
 
@@ -147,8 +168,8 @@ namespace Beverage_Management_System.Presenters
                 }
                 sdr.Close();
 
-                SqlCommand cmd2 = new SqlCommand("Insert into TRACKING_NOTE(KIND, DATE_CON, ID_BILL) values (@kind, @date_con, @id_bill);", myConnection.sqlcon);
-                cmd2.Parameters.AddWithValue("@kind", 2);
+                SqlCommand cmd2 = new SqlCommand("Insert into TRACKING_NOTE(BARTENDER, DATE_CON, ID_BILL) values (@bartender, @date_con, @id_bill);", myConnection.sqlcon);
+                cmd2.Parameters.AddWithValue("@bartender", bartender);
                 cmd2.Parameters.AddWithValue("@date_con", date_confirm);
                 cmd2.Parameters.AddWithValue("@id_bill", ID);
                 int result2 = cmd2.ExecuteNonQuery();
@@ -208,7 +229,19 @@ namespace Beverage_Management_System.Presenters
             List<MGoodsImportBill> list = new List<MGoodsImportBill>();
             dataGV.Rows.Clear();
 
-            string querry = "Select * from GOODS_IMPORT_BILL where STATUS = 0 and (ID_GOODS_IMPORT_BILL like '" + goodsImportBillView.search + "%' or ID_GOODS_IMPORT_FORM like '" + goodsImportBillView.search + "%');";
+            int id = 0;
+            for (int j = 0; j < bartenders.Count; j++)
+            {
+                if (bartenders[j].getNAME().Contains(goodsImportBillView.search) == true)
+                {
+                    id = bartenders[j].getID();
+                }
+            }
+
+
+            string querry = "Select * from GOODS_IMPORT_BILL where STATUS = 0 and (ID_GOODS_IMPORT_BILL like '" + goodsImportBillView.search + "%' or " +
+                "ID_GOODS_IMPORT_FORM like '" + goodsImportBillView.search + "%' or " +
+                "ID_BARTENDER = '" + id + "');";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -236,10 +269,12 @@ namespace Beverage_Management_System.Presenters
                 DataGridViewRow row = (DataGridViewRow)dataGV.Rows[i].Clone();
                 row.Cells[0].Value = list[i].getID();
                 row.Cells[1].Value = list[i].getID_GOODS_IMPORT_FORM();
-                row.Cells[2].Value = list[i].getID_BARTENDER();
+                for (int j = 0; j < bartenders.Count(); j++)
+                {
+                    if (bartenders[j].getID() == goodsImportBills[i].getID_BARTENDER()) row.Cells[2].Value = bartenders[j].getNAME();
+                }
                 row.Cells[3].Value = list[i].getDATE_CREATE();
-                row.Cells[4].Value = list[i].getDATE_CONFIRM();
-                row.Cells[5].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
+                row.Cells[4].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
 
                 dataGV.Rows.Add(row);
             }

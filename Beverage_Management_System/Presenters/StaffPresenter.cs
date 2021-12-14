@@ -238,6 +238,7 @@ namespace Beverage_Management_System.Presenters
                 else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
 
             }
+            myConnection.sqlcon.Close();
         }
 
         public int deleteStaff(int id)
@@ -250,9 +251,15 @@ namespace Beverage_Management_System.Presenters
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
             {
+                myConnection.sqlcon.Close();
                 return 1;
             }
-            else return 0;
+            else
+            {
+                myConnection.sqlcon.Close();
+                return 0;
+            }
+            
         }
 
         public void searchData(Guna.UI2.WinForms.Guna2DataGridView dtGridView_Staff)

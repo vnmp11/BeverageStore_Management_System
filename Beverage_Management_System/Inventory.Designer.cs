@@ -31,7 +31,14 @@ namespace Beverage_Management_System
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
             this.label12 = new System.Windows.Forms.Label();
             this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,11 +58,11 @@ namespace Beverage_Management_System
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(595, 29);
+            this.label12.Location = new System.Drawing.Point(509, 31);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(224, 39);
+            this.label12.Size = new System.Drawing.Size(364, 60);
             this.label12.TabIndex = 25;
             this.label12.Text = "INVENTORY";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -83,12 +90,13 @@ namespace Beverage_Management_System
             this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
-            this.txt_Search.PlaceholderText = "";
+            this.txt_Search.PlaceholderText = "Search ID or Product Name";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(303, 62);
+            this.txt_Search.Size = new System.Drawing.Size(273, 62);
             this.txt_Search.TabIndex = 32;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // guna2Button1
             // 
@@ -143,14 +151,14 @@ namespace Beverage_Management_System
             this.PRICE,
             this.UNIT,
             this.QUANTITY});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGV.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGV.EnableHeadersVisualStyles = false;
             this.dataGV.GridColor = System.Drawing.SystemColors.Control;
             this.dataGV.Location = new System.Drawing.Point(63, 180);
@@ -182,64 +190,91 @@ namespace Beverage_Management_System
             this.dataGV.ThemeStyle.RowsStyle.Height = 22;
             this.dataGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellContentClick);
             this.dataGV.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGV_CellMouseDoubleClick);
             // 
             // ID
             // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
             this.ID.FillWeight = 11.0432F;
-            this.ID.HeaderText = "ID";
+            this.ID.HeaderText = " ID";
             this.ID.MinimumWidth = 7;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 50;
             // 
             // KIND
             // 
+            this.KIND.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.KIND.DefaultCellStyle = dataGridViewCellStyle4;
             this.KIND.FillWeight = 24.87153F;
-            this.KIND.HeaderText = "KIND";
+            this.KIND.HeaderText = "                KIND";
             this.KIND.MinimumWidth = 7;
             this.KIND.Name = "KIND";
             this.KIND.ReadOnly = true;
+            this.KIND.Width = 230;
             // 
             // ID_GOODS
             // 
+            this.ID_GOODS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_GOODS.DefaultCellStyle = dataGridViewCellStyle5;
             this.ID_GOODS.FillWeight = 26.45159F;
-            this.ID_GOODS.HeaderText = "ID_GOODS";
+            this.ID_GOODS.HeaderText = "  ID_GOODS";
             this.ID_GOODS.MinimumWidth = 7;
             this.ID_GOODS.Name = "ID_GOODS";
             this.ID_GOODS.ReadOnly = true;
+            this.ID_GOODS.Width = 150;
             // 
             // NAME
             // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NAME.DefaultCellStyle = dataGridViewCellStyle6;
             this.NAME.FillWeight = 46.19893F;
-            this.NAME.HeaderText = "NAME";
+            this.NAME.HeaderText = "                   PRODUCT";
             this.NAME.MinimumWidth = 7;
             this.NAME.Name = "NAME";
             this.NAME.ReadOnly = true;
+            this.NAME.Width = 300;
             // 
             // PRICE
             // 
+            this.PRICE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PRICE.DefaultCellStyle = dataGridViewCellStyle7;
             this.PRICE.FillWeight = 24.85566F;
-            this.PRICE.HeaderText = "PRICE";
+            this.PRICE.HeaderText = "          PRICE";
             this.PRICE.MinimumWidth = 7;
             this.PRICE.Name = "PRICE";
             this.PRICE.ReadOnly = true;
+            this.PRICE.Width = 180;
             // 
             // UNIT
             // 
+            this.UNIT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UNIT.DefaultCellStyle = dataGridViewCellStyle8;
             this.UNIT.FillWeight = 27.17766F;
-            this.UNIT.HeaderText = "UNIT";
+            this.UNIT.HeaderText = "        UNIT";
             this.UNIT.MinimumWidth = 7;
             this.UNIT.Name = "UNIT";
             this.UNIT.ReadOnly = true;
+            this.UNIT.Width = 150;
             // 
             // QUANTITY
             // 
+            this.QUANTITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.QUANTITY.DefaultCellStyle = dataGridViewCellStyle9;
             this.QUANTITY.FillWeight = 28.85004F;
-            this.QUANTITY.HeaderText = "QUANTITY";
+            this.QUANTITY.HeaderText = " QUANTITY";
             this.QUANTITY.MinimumWidth = 7;
             this.QUANTITY.Name = "QUANTITY";
             this.QUANTITY.ReadOnly = true;
+            this.QUANTITY.Width = 140;
             // 
             // bt_Delete
             // 

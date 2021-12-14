@@ -83,7 +83,7 @@ namespace Beverage_Management_System
                         int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
                         int id_form = Convert.ToInt32(selected_row.Cells["ID_ORDER_FORM"].Value);
 
-                        presenter.browseBill(id_choose, id_accountant, dataGV, lb_Details, fLayoutPl_Details, id_form);
+                        presenter.browseBill(id_choose, id_accountant, dataGV, id_form);
 
                         printBill.Close();
 
@@ -95,7 +95,7 @@ namespace Beverage_Management_System
                         int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
                         int id_form = Convert.ToInt32(selected_row.Cells["ID_ORDER_FORM"].Value);
 
-                        presenter.browseBill(id_choose, id_accountant, dataGV, lb_Details, fLayoutPl_Details, id_form);
+                        presenter.browseBill(id_choose, id_accountant, dataGV, id_form);
                         printBill.Close();
 
                     };        

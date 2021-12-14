@@ -89,7 +89,7 @@ namespace Beverage_Management_System.Presenters
             }
             else
             {
-                MyMessageBox.showBox("Please fill in the product's information completely or check whether the items are selected in comboboxes!", "Message");
+                MyMessageBox.showBox("Please fill in the product's information completely!", "Message");
                 return false;
             }
         }
@@ -186,8 +186,7 @@ namespace Beverage_Management_System.Presenters
             {
                 cb_Goods.Items.Add(list[i]);
             }
-
-            cb_Goods.SelectedIndex = 0;
+            if (list.Count > 0) cb_Goods.SelectedIndex = 0;
         }
 
         public void getListOfKind()
@@ -246,7 +245,7 @@ namespace Beverage_Management_System.Presenters
                 }
             }
 
-            string query2 = "Select * from GOODS;";
+            string query2 = "SELECT * FROM GOODS WHERE ID_GOODS NOT IN (SELECT ID_GOODS FROM PRODUCT);";
             SqlCommand cmd2 = new SqlCommand(query2, myConnection.sqlcon);
 
             using (SqlDataReader sdr2 = cmd2.ExecuteReader())
@@ -382,15 +381,41 @@ namespace Beverage_Management_System.Presenters
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
-            SqlCommand cmd = new SqlCommand("Delete from PRODUCT where ID_PRODUCT=@id;", myConnection.sqlcon);
-            cmd.Parameters.AddWithValue("@id", id);
 
-            int result = cmd.ExecuteNonQuery();
-            if (result > 0)
+            bool sign = false;
+            int iCount = 0;
+
+            SqlCommand cmd1 = new SqlCommand("SELECT P.ID_PRODUCT FROM (PRODUCT P JOIN GOODS G ON P.ID_GOODS = G.ID_GOODS) WHERE " +
+                "(P.ID_PRODUCT = '" + id + "' AND P.ID_PRODUCT IN (SELECT ID_PRODUCT FROM DETAIL_GOODS_IMPORT_FORM)) OR " +
+                "(P.ID_PRODUCT = '" + id + "' AND G.ID_GOODS IN (SELECT ID_GOODS FROM DETAILS_GOODS_IMPORT_BILL)) OR " +
+                "(P.ID_PRODUCT = '" + id + "' AND P.ID_PRODUCT IN (SELECT ID_PRODUCT FROM DETAILS_ORDERFORM))", myConnection.sqlcon);
+            object oCount = cmd1.ExecuteScalar();
+            if (oCount != null) sign = true;
+            else sign = false;
+
+            if (sign == true)
             {
-                return 1;
+                myConnection.sqlcon.Close();
+                return 0;
             }
-            else return 0;
+            else
+            {
+                SqlCommand cmd = new SqlCommand("Delete from PRODUCT where ID_PRODUCT=@id;", myConnection.sqlcon);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    myConnection.sqlcon.Close();
+                    return 1;
+                }
+                else
+                {
+                    myConnection.sqlcon.Close();
+                    return -1;
+                }
+            }
+
         }
 
         public void searchData(Guna.UI2.WinForms.Guna2DataGridView dataGV)
@@ -454,7 +479,8 @@ namespace Beverage_Management_System.Presenters
             txt_Name.Text = "";
             txt_Price.Text = "";
             txt_Quantity.Text = "";
-            cb_Goods.SelectedIndex = 0;
+            if (list.Count > 0) cb_Goods.SelectedIndex = 0;
+            else cb_Goods.Items.Clear();
             cb_KindOfProduct.SelectedIndex = 0;
             cb_Unit.SelectedIndex = 0;
             pB_Product.Image = default_img;

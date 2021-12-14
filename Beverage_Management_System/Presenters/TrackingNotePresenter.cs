@@ -42,12 +42,12 @@ namespace Beverage_Management_System.Presenters
                 foreach (DataRow row in dt.Rows)
                 {
                     int ID = Convert.ToInt32(row["ID_TRACKING_NOTE"]);
-                    int KIND = Convert.ToInt32(row["KIND"]);
+                    string BARTENDER = row["BARTENDER"].ToString();
                     int ID_BILL = Convert.ToInt32(row["ID_BILL"]);
                     DateTime date = Convert.ToDateTime(row["DATE_CON"]);
                     string DATE_CON = date.ToString("dd-MM-yyyy");
 
-                    MTrackingNote trackingNote = new MTrackingNote(ID, KIND, DATE_CON, ID_BILL);
+                    MTrackingNote trackingNote = new MTrackingNote(ID, BARTENDER, DATE_CON, ID_BILL);
                     trackingNotes.Add(trackingNote);
                 }
 
@@ -57,14 +57,7 @@ namespace Beverage_Management_System.Presenters
             {
                 DataGridViewRow row = (DataGridViewRow)dataGV.Rows[i].Clone();
                 row.Cells[0].Value = trackingNotes[i].getID();
-                if (trackingNotes[i].getKIND() == 1)
-                {
-                    row.Cells[1].Value = "Import Products";
-                }
-                else if (trackingNotes[i].getKIND() == 2)
-                {
-                    row.Cells[1].Value = "Sell Products";
-                }
+                row.Cells[1].Value = trackingNotes[i].getBARTENDER();
                 row.Cells[2].Value = trackingNotes[i].getDATE_CONFIRM();
                 row.Cells[3].Value = trackingNotes[i].getID_BILL();
 
@@ -105,7 +98,9 @@ namespace Beverage_Management_System.Presenters
             List<MTrackingNote> list = new List<MTrackingNote>();
             dataGV.Rows.Clear();
 
-            string querry = "Select * from TRACKING_NOTE where ID_TRACKING_NOTE like '" + trackingNoteView.search + "%' or ID_BILL like '" + trackingNoteView.search + "%';";
+            string querry = "Select * from TRACKING_NOTE where ID_TRACKING_NOTE like '" + trackingNoteView.search + "%' or " +
+                "ID_BILL like '" + trackingNoteView.search + "%' or " +
+                "BARTENDER like '" + trackingNoteView.search + "%';";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -115,12 +110,12 @@ namespace Beverage_Management_System.Presenters
                 foreach (DataRow row in dtbl.Rows)
                 {
                     int ID = Convert.ToInt32(row["ID_TRACKING_NOTE"]);
-                    int KIND = Convert.ToInt32(row["KIND"]);
+                    string BARTENDER = row["BARTENDER"].ToString();
                     int ID_BILL = Convert.ToInt32(row["ID_BILL"]);
                     DateTime date = Convert.ToDateTime(row["DATE_CON"]);
                     string DATE_CON = date.ToString("dd-MM-yyyy");
 
-                    MTrackingNote trackingNote = new MTrackingNote(ID, KIND, DATE_CON, ID_BILL);
+                    MTrackingNote trackingNote = new MTrackingNote(ID, BARTENDER, DATE_CON, ID_BILL);
                     list.Add(trackingNote);
                 }
             }
@@ -129,14 +124,7 @@ namespace Beverage_Management_System.Presenters
             {
                 DataGridViewRow row = (DataGridViewRow)dataGV.Rows[i].Clone();
                 row.Cells[0].Value = list[i].getID();
-                if (list[i].getKIND() == 1)
-                {
-                    row.Cells[1].Value = "Import Products";
-                }
-                else if (list[i].getKIND() == 2)
-                {
-                    row.Cells[1].Value = "Sell Products";
-                }
+                row.Cells[1].Value = list[i].getBARTENDER();
                 row.Cells[2].Value = list[i].getDATE_CONFIRM();
                 row.Cells[3].Value = list[i].getID_BILL();
 

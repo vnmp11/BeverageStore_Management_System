@@ -136,6 +136,7 @@ namespace Beverage_Management_System
 
 
             }
+            myConnection.sqlcon.Close();
         }
 
         public void reloadFlowLayout()
@@ -184,7 +185,6 @@ namespace Beverage_Management_System
                 printBill.Close();
                 o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
                 MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
-                o.addDetailsTrackingNote(o.getID_ORDER_FORM(), o.getID_TRACKING_NOTE());
                 p.addOrderForm(idperson);
                 txb_IdOrder.Text = p.show_id();
                 reloadFlowLayout();
@@ -196,7 +196,6 @@ namespace Beverage_Management_System
                 printBill.Close();
                 o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
                 MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
-                o.addDetailsTrackingNote(o.getID_ORDER_FORM(), o.getID_TRACKING_NOTE());
                 p.addOrderForm(idperson);
                 txb_IdOrder.Text = p.show_id();
                 reloadFlowLayout();

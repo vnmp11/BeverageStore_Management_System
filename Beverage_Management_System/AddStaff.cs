@@ -167,5 +167,53 @@ namespace Beverage_Management_System
             Staff f1 = (Staff)this.Owner;
             f1.reloadTable();
         }
+
+        private void AddStaff_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void txt_Username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void txt_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void txt_Name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void txt_Phone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void txt_Address_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
     }
 }

@@ -126,23 +126,14 @@ namespace Beverage_Management_System.Presenters
 
             }
             else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+            myConnection.sqlcon.Close();
         }
 
         public void addImportForm()
         {
-
-            //string idForm = importGoodsView.id_IG.Trim();
-
-
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO GOODS_IMPORT_FORM ( STATUS) VALUES('0');", myConnection.sqlcon);
-
-
-
-
-            // cmd.Parameters.AddWithValue("@idIG", idForm);
-
 
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
@@ -150,6 +141,7 @@ namespace Beverage_Management_System.Presenters
                 MyMessageBox.showBox("Add successfully!", "Message");
             }
             else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+            myConnection.sqlcon.Close();
         }
 
         public bool deleteImportForm(int id_choose)
@@ -167,12 +159,14 @@ namespace Beverage_Management_System.Presenters
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
             {
+                myConnection.sqlcon.Close();
                 MyMessageBox.showBox("Delete import form successfully!", "Message");
                 return true;
 
             }
             else
             {
+                myConnection.sqlcon.Close();
                 MyMessageBox.showBox("Some errors occured!", "Message");
                 return false;
             }
@@ -218,16 +212,19 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Open();
 
             List<MImportGoods> list = new List<MImportGoods>();
+            List<string> bartenders = new List<string>();
 
             string querry;
 
             if (role == 0)
             {
-                querry = "Select * from GOODS_IMPORT_FORM where ID_PERSON IS NOT NULL ;";
+                querry = "Select G.ID_GOODS_IMPORT_FORM, G.ID_PERSON, G.STATUS, G.DATE_CRE, P.NAME  " +
+                    "from GOODS_IMPORT_FORM G JOIN PERSON P ON G.ID_PERSON = P.ID_PERSON  where G.ID_PERSON IS NOT NULL ;";
             }
             else
             {
-                querry = "Select * from GOODS_IMPORT_FORM where ID_PERSON IS NOT NULL AND STATUS =0 ;";
+                querry = "Select G.ID_GOODS_IMPORT_FORM, G.ID_PERSON, G.STATUS, G.DATE_CRE, P.NAME  " +
+                    "from GOODS_IMPORT_FORM G JOIN PERSON P ON G.ID_PERSON = P.ID_PERSON  where G.ID_PERSON IS NOT NULL AND G.STATUS = 0 ;";
             }
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dataTable = new DataTable();
@@ -240,6 +237,7 @@ namespace Beverage_Management_System.Presenters
                     string ID = row["ID_GOODS_IMPORT_FORM"].ToString();
                     string ID_Person = row["ID_PERSON"].ToString();
                     string status = row["STATUS"].ToString();
+                    string bartender = row["NAME"].ToString(); 
 
                     DateTime date = Convert.ToDateTime(row["DATE_CRE"]);
                     string dateCre = date.ToString("dd-MM-yyyy");
@@ -249,6 +247,7 @@ namespace Beverage_Management_System.Presenters
                     MImportGoods importGoods = new MImportGoods(ID, ID_Person, status, dateCre);
                     list.Add(importGoods);
 
+                    bartenders.Add(bartender);
                 }
             }
 
@@ -258,17 +257,100 @@ namespace Beverage_Management_System.Presenters
                 row.Cells[0].Value = list[i].getID();
 
                 row.Cells[1].Value = list[i].getID_P();
-                row.Cells[2].Value = list[i].getDATE();
+                row.Cells[2].Value = bartenders[i];
+                row.Cells[3].Value = list[i].getDATE();
 
                 int status = int.Parse(list[i].getSTATUS());
 
                 if (status == 0)
                 {
-                    row.Cells[3].Value = false;
+                    row.Cells[4].Value = false;
                 }
                 else
                 {
-                    row.Cells[3].Value = true;
+                    row.Cells[4].Value = true;
+                }
+
+
+
+
+                dataGV.Rows.Add(row);
+
+
+            }
+            myConnection.sqlcon.Close();
+        }
+
+        public void searchDataInImporForms(Guna.UI2.WinForms.Guna2DataGridView dataGV, int role, string search)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            dataGV.Rows.Clear();
+
+            List<MImportGoods> list = new List<MImportGoods>();
+            List<string> bartenders = new List<string>();
+
+            string querry;
+
+            if (role == 0)
+            {
+                querry = "Select G.ID_GOODS_IMPORT_FORM, G.ID_PERSON, G.STATUS, G.DATE_CRE, P.NAME  " +
+                    "from GOODS_IMPORT_FORM G JOIN PERSON P ON G.ID_PERSON = P.ID_PERSON  " +
+                    "where (G.ID_PERSON IS NOT NULL AND G.ID_GOODS_IMPORT_FORM like '" + search + "%') " +
+                    "OR (G.ID_PERSON IS NOT NULL AND P.NAME like '" + search + "%')";
+            }
+            else
+            {
+                querry = "Select G.ID_GOODS_IMPORT_FORM, G.ID_PERSON, G.STATUS, G.DATE_CRE, P.NAME  " +
+                     "from GOODS_IMPORT_FORM G JOIN PERSON P ON G.ID_PERSON = P.ID_PERSON  " +
+                     "where (G.ID_PERSON IS NOT NULL AND G.STATUS = 0 AND G.ID_GOODS_IMPORT_FORM like '" + search + "%') " +
+                     "OR (G.ID_PERSON IS NOT NULL AND G.STATUS = 0 AND P.NAME like '" + search + "%')";
+            }
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(querry, myConnection.sqlcon);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string ID = row["ID_GOODS_IMPORT_FORM"].ToString();
+                    string ID_Person = row["ID_PERSON"].ToString();
+                    string status = row["STATUS"].ToString();
+                    string bartender = row["NAME"].ToString();
+
+                    DateTime date = Convert.ToDateTime(row["DATE_CRE"]);
+                    string dateCre = date.ToString("dd-MM-yyyy");
+
+
+
+                    MImportGoods importGoods = new MImportGoods(ID, ID_Person, status, dateCre);
+                    list.Add(importGoods);
+
+                    bartenders.Add(bartender);
+                }
+            }
+
+            for (int i = 0; i < list.Count(); i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)dataGV.Rows[i].Clone();
+                row.Cells[0].Value = list[i].getID();
+
+                row.Cells[1].Value = list[i].getID_P();
+                row.Cells[2].Value = bartenders[i];
+                row.Cells[3].Value = list[i].getDATE();
+
+                int status = int.Parse(list[i].getSTATUS());
+
+                if (status == 0)
+                {
+                    row.Cells[4].Value = false;
+                }
+                else
+                {
+                    row.Cells[4].Value = true;
                 }
 
 
@@ -396,12 +478,17 @@ namespace Beverage_Management_System.Presenters
                         }
                     }
                 }
-                else return -1;
+                else
+                {
+                    myConnection.sqlcon.Close();
+                    return -1;
+                }
 
             }
 
             if (isChecked == false)
             {
+                myConnection.sqlcon.Close();
                 return 0;
             }
             else
@@ -437,6 +524,7 @@ namespace Beverage_Management_System.Presenters
                         {
                             int id_goods_import_bill = Convert.ToInt32(dr["MAX"]);
                             dr.Close();
+                            int count = 0;
                             for (int i = 0; i < list_detailsImportBill.Count(); i++)
                             {
                                 list_detailsImportBill[i].setID_GOODS_IMPORT_BILL(id_goods_import_bill);
@@ -450,20 +538,42 @@ namespace Beverage_Management_System.Presenters
                                 int result4 = cmd4.ExecuteNonQuery();
                                 if (result4 > 0)
                                 {
-                                    return 1;
+                                    count++;
                                 }
-                                else return -1;
+                                else
+                                {
+                                    myConnection.sqlcon.Close();
+                                    return -1;
+                                }
 
+                            }
+                            if (count == list_detailsImportBill.Count)
+                            {
+                                myConnection.sqlcon.Close();
+                                return 1;
+                            }
+                            else
+                            {
+                                myConnection.sqlcon.Close();
+                                return -1;
                             }
                         }
                     }
-                    else return -1;
+                    else
+                    {
+                        myConnection.sqlcon.Close();
+                        return -1;
+                    }
                 }
-                else return -1;
+                else
+                {
+                    myConnection.sqlcon.Close();
+                    return -1;
+                }
+                myConnection.sqlcon.Close();
                 return -1;
             }
 
-            myConnection.sqlcon.Close();
         }
     }
 

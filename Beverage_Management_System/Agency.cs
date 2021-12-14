@@ -54,22 +54,32 @@ namespace Beverage_Management_System
         {
             if (dtGridView_Agency.SelectedCells.Count > 0)
             {
-                int selected_index = dtGridView_Agency.SelectedCells[0].RowIndex;
-                DataGridViewRow selected_row = dtGridView_Agency.Rows[selected_index];
-                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
-
-                AgencyPresenter presenter = new AgencyPresenter(this);
-                if (presenter.deleteAgency(id_choose) > 0)
+               
+                AlertDialog dialog = new AlertDialog();
+                dialog.setMessage("Do you want to delete this agency?");
+                dialog.Show();
+                dialog.btt_ok.Click += (s, a) =>
                 {
-                    refreshTable();
-                    presenter.dataGV(dtGridView_Agency);
-                    dtGridView_Agency.CurrentCell = null;
-                    MyMessageBox.showBox("Delete this agency successfully!", "Message");
-                    reloadTableAgency();
-                }
-                else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                    int selected_index = dtGridView_Agency.SelectedCells[0].RowIndex;
+                    DataGridViewRow selected_row = dtGridView_Agency.Rows[selected_index];
+                    int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+
+                    AgencyPresenter presenter = new AgencyPresenter(this);
+                    int result = presenter.deleteAgency(id_choose);
+                    if (result == 1)
+                    {
+                        refreshTable();
+                        presenter.dataGV(dtGridView_Agency);
+                        dtGridView_Agency.CurrentCell = null;
+                        MyMessageBox.showBox("Delete this agency successfully!", "Message");
+                        reloadTableAgency();
+                    }
+                    else if (result == 0) MyMessageBox.showBox("You cannot delete this agency because this action will affect the store's statistics", "Message");
+                    else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                };
+
             }
-            else MyMessageBox.showBox("Please choose a agency whom you want to delete!", "Message");
+            else MyMessageBox.showBox("Please choose a agency which you want to delete!", "Message");
         }
 
         private void dtGridView_Agency_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -129,6 +139,18 @@ namespace Beverage_Management_System
         private void Agency_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (guna2TextBox1.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
         }
     }
 }

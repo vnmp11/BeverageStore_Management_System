@@ -46,7 +46,6 @@ namespace Beverage_Management_System
             if (e.RowIndex < dtGridView_OrderForm.RowCount - 1)
             { 
                 int id_order = int.Parse(dtGridView_OrderForm.Rows[e.RowIndex].Cells[0].Value.ToString());
-                id_waiter = int.Parse(dtGridView_OrderForm.Rows[e.RowIndex].Cells[1].Value.ToString());
                 lb_id_order.Text = id_order.ToString();
 
                 od.showDetailOrderForm(fLayoutPl_Detail, id_order);
@@ -56,46 +55,52 @@ namespace Beverage_Management_System
 
         private void btt_remove_Click(object sender, EventArgs e)
         {
-           
-            int id = int.Parse(lb_id_order.Text);
-            AlertDialog dialog = new AlertDialog();
-            dialog.Show();
-            dialog.btt_ok.Click += (s, a) =>
+            if(dtGridView_OrderForm.SelectedCells.Count > 0)
             {
-              
-                if ((id < int.Parse(pro.show_id()) && id != 1))
+                AlertDialog dialog = new AlertDialog();
+                dialog.Show();
+                dialog.btt_ok.Click += (s, a) =>
                 {
-         
+                    int selected_index = dtGridView_OrderForm.SelectedCells[0].RowIndex;
+                    DataGridViewRow selected_row = dtGridView_OrderForm.Rows[selected_index];
+                    int id = Convert.ToInt32(selected_row.Cells[0].Value);
                     pro.removeAll(id);
                     od.deleteOrderForm(id);
                     fLayoutPl_Detail.Controls.Clear();
                     reloadGV();
-                }
-                else
-                {
-                    MyMessageBox.showBox("Please choose order you want to remove!", "Message");
-                }
-            };
+                    MyMessageBox.showBox("Delete this order form successfully!", "Message");
+
+                };
+            }
+            else MyMessageBox.showBox("Please choose order you want to remove!", "Message");
             
         }
 
         private void btt_confirm_Click(object sender, EventArgs e)
         {
-            if (id_waiter != 0)
+            if (dtGridView_OrderForm.SelectedCells.Count > 0)
             {
-                ob.addOrderBill(int.Parse(lb_id_order.Text), id);
-                od.updateStatusOrderForm(int.Parse(lb_id_order.Text));
-                //od.updateStatusDetailOrderForm(int.Parse(lb_id_order.Text));
-                reloadGV();
-                fLayoutPl_Detail.Controls.Clear();
-                lb_id_order.Text = "1";
-
-                MyMessageBox.showBox("Confirmed Order!", "Message");
+                int selected_index1 = dtGridView_OrderForm.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row1 = dtGridView_OrderForm.Rows[selected_index1];
+                int id_choose1 = Convert.ToInt32(selected_row1.Cells[0].Value);
+                if (id != 0)
+                {
+                    ob.addOrderBill(id_choose1, id);
+                    od.updateStatusOrderForm(id_choose1);
+                    //od.updateStatusDetailOrderForm(int.Parse(lb_id_order.Text));
+                    reloadGV();
+                    fLayoutPl_Detail.Controls.Clear();
+                    lb_id_order.Text = "1";
+                    MyMessageBox.showBox("Confirmed Order!", "Message");
+                }
             }
             else
             {
                 MyMessageBox.showBox("Please choose order you want to confirm!", "Message");
             }
+
+                
+            
 
         }
 
@@ -107,6 +112,23 @@ namespace Beverage_Management_System
         private void dtGridView_OrderForm_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_Search.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
+
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+            od.searchData(dtGridView_OrderForm, txt_Search.Text);
         }
     }
 }

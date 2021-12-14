@@ -122,6 +122,7 @@ namespace Beverage_Management_System.Presenters
             sdr.Read();
 
             int fine = int.Parse(sdr["FINE"].ToString());
+            myConnection.sqlcon.Close();
             return fine;
 
         }
@@ -152,6 +153,7 @@ namespace Beverage_Management_System.Presenters
             sdr.Read();
 
             int total = int.Parse(sdr["TOTAL_PRICE"].ToString());
+            myConnection.sqlcon.Close();
             return total;
 
         }

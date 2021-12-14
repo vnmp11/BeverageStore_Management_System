@@ -31,18 +31,23 @@ namespace Beverage_Management_System
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dtGridView_Agency = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.btt_Update = new Guna.UI2.WinForms.Guna2Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
-            this.btt_Update = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_Agency)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +56,7 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(609, 22);
+            this.label12.Location = new System.Drawing.Point(557, 32);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(224, 39);
             this.label12.TabIndex = 26;
@@ -81,11 +86,12 @@ namespace Beverage_Management_System
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.PlaceholderText = "Search ID or Agency Name";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(304, 62);
+            this.guna2TextBox1.Size = new System.Drawing.Size(276, 62);
             this.guna2TextBox1.TabIndex = 34;
+            this.guna2TextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.guna2TextBox1_KeyDown);
             // 
             // guna2Button1
             // 
@@ -138,19 +144,20 @@ namespace Beverage_Management_System
             this.ADDRESS,
             this.PHONE,
             this.ITEM});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridView_Agency.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridView_Agency.DefaultCellStyle = dataGridViewCellStyle8;
             this.dtGridView_Agency.EnableHeadersVisualStyles = false;
             this.dtGridView_Agency.GridColor = System.Drawing.SystemColors.Control;
             this.dtGridView_Agency.Location = new System.Drawing.Point(56, 196);
             this.dtGridView_Agency.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtGridView_Agency.Name = "dtGridView_Agency";
+            this.dtGridView_Agency.ReadOnly = true;
             this.dtGridView_Agency.RowHeadersVisible = false;
             this.dtGridView_Agency.RowHeadersWidth = 60;
             this.dtGridView_Agency.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -169,7 +176,7 @@ namespace Beverage_Management_System
             this.dtGridView_Agency.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dtGridView_Agency.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dtGridView_Agency.ThemeStyle.HeaderStyle.Height = 40;
-            this.dtGridView_Agency.ThemeStyle.ReadOnly = false;
+            this.dtGridView_Agency.ThemeStyle.ReadOnly = true;
             this.dtGridView_Agency.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dtGridView_Agency.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dtGridView_Agency.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,40 +186,6 @@ namespace Beverage_Management_System
             this.dtGridView_Agency.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtGridView_Agency.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_Agency_CellContentClick);
             this.dtGridView_Agency.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_Agency_CellContentDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.FillWeight = 20F;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 7;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // NAME
-            // 
-            this.NAME.FillWeight = 50F;
-            this.NAME.HeaderText = "NAME";
-            this.NAME.MinimumWidth = 7;
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            // 
-            // ADDRESS
-            // 
-            this.ADDRESS.HeaderText = "ADDRESS";
-            this.ADDRESS.MinimumWidth = 8;
-            this.ADDRESS.Name = "ADDRESS";
-            // 
-            // PHONE
-            // 
-            this.PHONE.HeaderText = "PHONE";
-            this.PHONE.MinimumWidth = 8;
-            this.PHONE.Name = "PHONE";
-            // 
-            // ITEM
-            // 
-            this.ITEM.HeaderText = "ITEM";
-            this.ITEM.MinimumWidth = 8;
-            this.ITEM.Name = "ITEM";
             // 
             // bt_Delete
             // 
@@ -261,6 +234,66 @@ namespace Beverage_Management_System
             this.btt_Update.TabIndex = 91;
             this.btt_Update.Text = "UPDATE";
             this.btt_Update.Click += new System.EventHandler(this.btt_Update_Click);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID.FillWeight = 126.1364F;
+            this.ID.HeaderText = "  ID";
+            this.ID.MinimumWidth = 7;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 60;
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NAME.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NAME.FillWeight = 193.4091F;
+            this.NAME.HeaderText = "              NAME";
+            this.NAME.MinimumWidth = 7;
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            this.NAME.Width = 230;
+            // 
+            // ADDRESS
+            // 
+            this.ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ADDRESS.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ADDRESS.FillWeight = 16.81819F;
+            this.ADDRESS.HeaderText = "                                              ADDRESS";
+            this.ADDRESS.MinimumWidth = 8;
+            this.ADDRESS.Name = "ADDRESS";
+            this.ADDRESS.ReadOnly = true;
+            this.ADDRESS.Width = 570;
+            // 
+            // PHONE
+            // 
+            this.PHONE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PHONE.DefaultCellStyle = dataGridViewCellStyle6;
+            this.PHONE.FillWeight = 16.81819F;
+            this.PHONE.HeaderText = "          PHONE";
+            this.PHONE.MinimumWidth = 8;
+            this.PHONE.Name = "PHONE";
+            this.PHONE.ReadOnly = true;
+            this.PHONE.Width = 200;
+            // 
+            // ITEM
+            // 
+            this.ITEM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ITEM.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ITEM.FillWeight = 16.81819F;
+            this.ITEM.HeaderText = "              ITEM";
+            this.ITEM.MinimumWidth = 8;
+            this.ITEM.Name = "ITEM";
+            this.ITEM.ReadOnly = true;
+            this.ITEM.Width = 200;
             // 
             // Agency
             // 

@@ -53,82 +53,16 @@ namespace Beverage_Management_System
         }
 
 
-        //private void setChart(string series)
-        //{
-
-        //    chart1.Series[series].IsValueShownAsLabel = true;
-        //    //chart1.Series.Add(series).;
-
-        //    if (orderFormPresenter.a[1] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Soft drink", orderFormPresenter.a[1]);
-        //    }
-        //    if (orderFormPresenter.a[2] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Milk tea", orderFormPresenter.a[2]);
-        //    }
-        //    if (orderFormPresenter.a[3] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Tea", orderFormPresenter.a[3]);
-        //    }
-        //    if (orderFormPresenter.a[4] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Pure water", orderFormPresenter.a[4]);
-        //    }
-        //    if (orderFormPresenter.a[5] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Juice", orderFormPresenter.a[5]);
-        //    }
-        //    if (orderFormPresenter.a[6] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Beer", orderFormPresenter.a[6]);
-        //    }
-        //    if (orderFormPresenter.a[7] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Energy", orderFormPresenter.a[7]);
-        //    }
-        //    if (orderFormPresenter.a[8] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Ionic mineral water", orderFormPresenter.a[8]);
-        //    }
-        //    if (orderFormPresenter.a[9] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Yogurt", orderFormPresenter.a[9]);
-        //    }
-        //    if (orderFormPresenter.a[10] != 0)
-        //    {
-        //        chart1.Series[series].Points.AddXY("Others", orderFormPresenter.a[10]);
-        //    }
-
-
-        //}
-
-
         private void DrawPieChart()
         {
-            //reset your chart series and legends
             chart1.Series.Clear();
-            //chart1.Legends.Clear();
-            
-            //Add a new Legend(if needed) and do some formating
-            //chart1.Legends.Add("MyLegend");
-            //chart1.Legends[0].LegendStyle = LegendStyle.Table;
-            //chart1.Legends[0].Docking = Docking.Bottom;
-            //chart1.Legends[0].Alignment = StringAlignment.Near;
             chart1.Legends[0].Title = "KIND OF DRINKS";
-            //chart1.Legends[0].BorderColor = Color.White;
-            //chart1.Legends[0].Ar
-
-            //Add a new chart-series
             string series = "Series1";
             chart1.Series.Add(series);
             chart1.Series[series].IsValueShownAsLabel = true;
-            //set the chart-type to "Pie"
             chart1.Series[series].ChartType = SeriesChartType.Pie;
 
-            //Add some datapoints so the series. in this case you can pass the values to this method
            
-
             if (orderFormPresenter.a[1] != 0)
             {
                 chart1.Series[series].Points.AddXY("Soft drink", orderFormPresenter.a[1]);
@@ -173,12 +107,8 @@ namespace Beverage_Management_System
         }
         private void Statistic_Load(object sender, EventArgs e)
         {
-           // string char1 = chart1;
             orderFormPresenter.getOrderFormList(day, month, year);
-            //setChart("Series1");
             DrawPieChart();
-
-
 
         }
 
@@ -187,12 +117,11 @@ namespace Beverage_Management_System
 
         }
 
-
-        private void cb_idOrderBill_SelectedIndexChanged(object sender, EventArgs e)
+        private void cb_idOrderBill_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cb_idOrderBill.SelectedIndex == 0)
             {
-            
+
                 presenter.loadListOrderBill(day, month, year);
                 label3.Text = presenter.total.ToString();
                 label5.Text = presenter.customer.ToString();
@@ -204,7 +133,7 @@ namespace Beverage_Management_System
 
 
             }
-            else if(cb_idOrderBill.SelectedIndex == 1)
+            else if (cb_idOrderBill.SelectedIndex == 1)
             {
                 presenter.loadListOrderBill(0, month, year);
                 label3.Text = presenter.total.ToString();
@@ -224,7 +153,6 @@ namespace Beverage_Management_System
                 orderFormPresenter.getOrderFormList(0, 0, year);
                 DrawPieChart();
             }
-
 
         }
     }

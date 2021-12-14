@@ -17,6 +17,9 @@ namespace Beverage_Management_System
 {
     public partial class GoodsInImportForm : Form, IImportGoods
     {
+
+        ImportForm parent;
+
         public GoodsInImportForm()
         {
             InitializeComponent();
@@ -24,17 +27,19 @@ namespace Beverage_Management_System
         ImportGoodsPresenter pre;
         int idTemp;
 
-        public GoodsInImportForm(int id)
+        public GoodsInImportForm(int id, ImportForm form)
         {
             InitializeComponent();
+            this.parent = form;
             pre = new ImportGoodsPresenter(this);
             pre.dataGV_Detail(DtaGridView_Goods, id);
             bt_Save.Visible = false;
 
         }
-        public GoodsInImportForm(int id, int temp)
+        public GoodsInImportForm(int id, int temp, ImportForm form)
         {
             InitializeComponent();
+            this.parent = form;
             pre = new ImportGoodsPresenter(this);
             pre.dataGV_Detail(DtaGridView_Goods, id);
             idTemp = id;
@@ -58,6 +63,7 @@ namespace Beverage_Management_System
             }
             else if (result == 1)
             {
+                parent.refreshDataGVAdmin();
                 MyMessageBox.showBox("Confirmed successfully!", "Message");
                 this.Close();
             }

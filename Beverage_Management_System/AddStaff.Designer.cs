@@ -158,8 +158,9 @@ namespace Beverage_Management_System
             this.txt_Password.SelectedText = "";
             this.txt_Password.ShadowDecoration.Parent = this.txt_Password;
             this.txt_Password.Size = new System.Drawing.Size(303, 55);
-            this.txt_Password.TabIndex = 34;
+            this.txt_Password.TabIndex = 32;
             this.txt_Password.UseSystemPasswordChar = true;
+            this.txt_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Password_KeyDown);
             // 
             // label3
             // 
@@ -242,7 +243,8 @@ namespace Beverage_Management_System
             this.txt_Name.SelectedText = "";
             this.txt_Name.ShadowDecoration.Parent = this.txt_Name;
             this.txt_Name.Size = new System.Drawing.Size(303, 55);
-            this.txt_Name.TabIndex = 32;
+            this.txt_Name.TabIndex = 33;
+            this.txt_Name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Name_KeyDown);
             // 
             // label14
             // 
@@ -283,7 +285,8 @@ namespace Beverage_Management_System
             this.txt_Phone.SelectedText = "";
             this.txt_Phone.ShadowDecoration.Parent = this.txt_Phone;
             this.txt_Phone.Size = new System.Drawing.Size(303, 55);
-            this.txt_Phone.TabIndex = 45;
+            this.txt_Phone.TabIndex = 34;
+            this.txt_Phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Phone_KeyDown);
             this.txt_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox2_KeyPress);
             // 
             // label13
@@ -320,11 +323,13 @@ namespace Beverage_Management_System
             this.dtPicker_DOB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.dtPicker_DOB.BorderRadius = 5;
             this.dtPicker_DOB.BorderThickness = 1;
+            this.dtPicker_DOB.Checked = true;
             this.dtPicker_DOB.CheckedState.Parent = this.dtPicker_DOB;
+            this.dtPicker_DOB.CustomFormat = "dd/MM/yyyy";
             this.dtPicker_DOB.FillColor = System.Drawing.Color.White;
             this.dtPicker_DOB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtPicker_DOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.dtPicker_DOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPicker_DOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtPicker_DOB.HoverState.Parent = this.dtPicker_DOB;
             this.dtPicker_DOB.Location = new System.Drawing.Point(168, 469);
             this.dtPicker_DOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -361,7 +366,8 @@ namespace Beverage_Management_System
             this.txt_Address.SelectedText = "";
             this.txt_Address.ShadowDecoration.Parent = this.txt_Address;
             this.txt_Address.Size = new System.Drawing.Size(303, 55);
-            this.txt_Address.TabIndex = 46;
+            this.txt_Address.TabIndex = 35;
+            this.txt_Address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Address_KeyDown);
             // 
             // rb_Waiter
             // 
@@ -423,7 +429,7 @@ namespace Beverage_Management_System
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(215, 22);
+            this.label12.Location = new System.Drawing.Point(222, 22);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(152, 39);
             this.label12.TabIndex = 52;
@@ -456,6 +462,7 @@ namespace Beverage_Management_System
             this.txt_Username.ShadowDecoration.Parent = this.txt_Username;
             this.txt_Username.Size = new System.Drawing.Size(303, 55);
             this.txt_Username.TabIndex = 31;
+            this.txt_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Username_KeyDown);
             // 
             // label1
             // 
@@ -598,6 +605,7 @@ namespace Beverage_Management_System
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddStaff_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddStaff_FormClosed);
             this.Load += new System.EventHandler(this.AddStaff_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddStaff_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddStaff_MouseDown);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

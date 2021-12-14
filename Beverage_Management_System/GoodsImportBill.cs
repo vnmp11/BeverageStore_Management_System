@@ -32,7 +32,6 @@ namespace Beverage_Management_System
             this.id_accountant = ID;
             presenter = new GoodsImportBillPresenter(this);
             presenter.setDataGV(dataGV);
-            dataGV.CurrentCell.Selected = false;
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -67,7 +66,5 @@ namespace Beverage_Management_System
         {
             presenter.searchBill(dataGV);
         }
-
-
     }
 }

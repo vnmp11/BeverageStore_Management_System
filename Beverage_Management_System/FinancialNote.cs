@@ -59,5 +59,28 @@ namespace Beverage_Management_System
             presenter.searchGoodsImportBill(dataGV_Goods_Import_Bill);
         }
 
+        private void txt_SearchOrderBill_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_SearchOrderBill.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
+
+        private void txt_SearchGoodsImportBill_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_SearchGoodsImportBill.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
     }
 }

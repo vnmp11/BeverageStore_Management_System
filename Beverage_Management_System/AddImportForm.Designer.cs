@@ -56,6 +56,7 @@ namespace Beverage_Management_System
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DtaGridView_Warehouse)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGV_GIForm)).BeginInit();
@@ -71,7 +72,7 @@ namespace Beverage_Management_System
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(372, 39);
             this.label12.TabIndex = 96;
-            this.label12.Text = "Add Import Form";
+            this.label12.Text = "ADD IMPORT FORM";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
@@ -88,7 +89,7 @@ namespace Beverage_Management_System
             this.DtaGridView_Warehouse.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DtaGridView_Warehouse.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -101,11 +102,11 @@ namespace Beverage_Management_System
             this.NAME,
             this.INVENTORY});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DtaGridView_Warehouse.DefaultCellStyle = dataGridViewCellStyle3;
             this.DtaGridView_Warehouse.EnableHeadersVisualStyles = false;
@@ -198,15 +199,16 @@ namespace Beverage_Management_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.btt_clearAll);
             this.panel1.Controls.Add(this.btt_Pay);
             this.panel1.Controls.Add(this.txt_ID_GIForm);
             this.panel1.Controls.Add(this.dtaGV_GIForm);
-            this.panel1.Location = new System.Drawing.Point(493, 128);
+            this.panel1.Location = new System.Drawing.Point(493, 103);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(616, 574);
+            this.panel1.Size = new System.Drawing.Size(616, 599);
             this.panel1.TabIndex = 101;
             // 
             // guna2Button1
@@ -225,7 +227,7 @@ namespace Beverage_Management_System
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageOffset = new System.Drawing.Point(3, 0);
-            this.guna2Button1.Location = new System.Drawing.Point(170, 494);
+            this.guna2Button1.Location = new System.Drawing.Point(170, 519);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
@@ -248,7 +250,7 @@ namespace Beverage_Management_System
             this.btt_clearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_clearAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btt_clearAll.HoverState.Parent = this.btt_clearAll;
-            this.btt_clearAll.Location = new System.Drawing.Point(33, 494);
+            this.btt_clearAll.Location = new System.Drawing.Point(33, 519);
             this.btt_clearAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_clearAll.Name = "btt_clearAll";
             this.btt_clearAll.ShadowDecoration.Parent = this.btt_clearAll;
@@ -271,7 +273,7 @@ namespace Beverage_Management_System
             this.btt_Pay.ForeColor = System.Drawing.Color.White;
             this.btt_Pay.HoverState.Parent = this.btt_Pay;
             this.btt_Pay.Image = global::Beverage_Management_System.Properties.Resources.confirm;
-            this.btt_Pay.Location = new System.Drawing.Point(505, 494);
+            this.btt_Pay.Location = new System.Drawing.Point(505, 519);
             this.btt_Pay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_Pay.Name = "btt_Pay";
             this.btt_Pay.ShadowDecoration.Parent = this.btt_Pay;
@@ -292,7 +294,7 @@ namespace Beverage_Management_System
             this.dtaGV_GIForm.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtaGV_GIForm.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -305,11 +307,11 @@ namespace Beverage_Management_System
             this.NAME_GIF,
             this.QUANTITY_GIF});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtaGV_GIForm.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtaGV_GIForm.EnableHeadersVisualStyles = false;
@@ -321,7 +323,7 @@ namespace Beverage_Management_System
             this.dtaGV_GIForm.RowHeadersWidth = 62;
             this.dtaGV_GIForm.RowTemplate.Height = 28;
             this.dtaGV_GIForm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtaGV_GIForm.Size = new System.Drawing.Size(557, 394);
+            this.dtaGV_GIForm.Size = new System.Drawing.Size(557, 419);
             this.dtaGV_GIForm.TabIndex = 102;
             this.dtaGV_GIForm.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtaGV_GIForm.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -416,6 +418,18 @@ namespace Beverage_Management_System
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.label2.Location = new System.Drawing.Point(165, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(321, 39);
+            this.label2.TabIndex = 111;
+            this.label2.Text = "DETAILS";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // AddImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -461,5 +475,6 @@ namespace Beverage_Management_System
         private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn INVENTORY;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

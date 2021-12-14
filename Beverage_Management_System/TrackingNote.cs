@@ -41,5 +41,17 @@ namespace Beverage_Management_System
         {
             presenter.searchNote(dataGV);
         }
+
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_Search.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
     }
 }

@@ -64,12 +64,7 @@ namespace Beverage_Management_System
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                pB_Product.Image = new Bitmap(open.FileName);
-            }
+
         }
 
         private void guna2TextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -122,6 +117,61 @@ namespace Beverage_Management_System
         private void cb_KindOfProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void txt_Name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void txt_Quantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void txt_Price_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void guna2Button2_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pB_Product.Image = new Bitmap(open.FileName);
+            }
         }
     }
 }

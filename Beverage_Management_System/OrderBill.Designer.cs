@@ -30,27 +30,18 @@ namespace Beverage_Management_System
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderBill));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_ORDER_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_BARTENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_PRICE_PRODUCTS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FINE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_CREATED = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_CONFIRMED = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fLayoutPl_Details = new System.Windows.Forms.FlowLayoutPanel();
             this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
             this.lb_Details = new System.Windows.Forms.Label();
@@ -58,14 +49,20 @@ namespace Beverage_Management_System
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_ORDER_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_BARTENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FINE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_CREATED = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGV
             // 
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
-            this.dataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
+            this.dataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dataGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -74,50 +71,48 @@ namespace Beverage_Management_System
             this.dataGV.BackgroundColor = System.Drawing.Color.White;
             this.dataGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
-            this.dataGV.ColumnHeadersHeight = 80;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            this.dataGV.ColumnHeadersHeight = 40;
             this.dataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.ID_ORDER_FORM,
             this.ID_BARTENDER,
-            this.TOTAL_PRICE_PRODUCTS,
             this.FINE,
             this.DATE_CREATED,
-            this.DATE_CONFIRMED,
             this.TOTAL_PRICE});
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGV.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGV.DefaultCellStyle = dataGridViewCellStyle39;
             this.dataGV.EnableHeadersVisualStyles = false;
             this.dataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGV.Location = new System.Drawing.Point(28, 115);
+            this.dataGV.Location = new System.Drawing.Point(53, 237);
             this.dataGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.985075F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.985075F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle40;
             this.dataGV.RowHeadersVisible = false;
             this.dataGV.RowHeadersWidth = 70;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(795, 788);
+            this.dataGV.Size = new System.Drawing.Size(748, 666);
             this.dataGV.TabIndex = 98;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -131,7 +126,7 @@ namespace Beverage_Management_System
             this.dataGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             this.dataGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataGV.ThemeStyle.HeaderStyle.Height = 80;
+            this.dataGV.ThemeStyle.HeaderStyle.Height = 40;
             this.dataGV.ThemeStyle.ReadOnly = true;
             this.dataGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
@@ -142,96 +137,17 @@ namespace Beverage_Management_System
             this.dataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
             // 
-            // ID
-            // 
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle47;
-            this.ID.FillWeight = 8F;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // ID_ORDER_FORM
-            // 
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID_ORDER_FORM.DefaultCellStyle = dataGridViewCellStyle48;
-            this.ID_ORDER_FORM.FillWeight = 15F;
-            this.ID_ORDER_FORM.HeaderText = "ORDER FORM";
-            this.ID_ORDER_FORM.MinimumWidth = 7;
-            this.ID_ORDER_FORM.Name = "ID_ORDER_FORM";
-            this.ID_ORDER_FORM.ReadOnly = true;
-            // 
-            // ID_BARTENDER
-            // 
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID_BARTENDER.DefaultCellStyle = dataGridViewCellStyle49;
-            this.ID_BARTENDER.FillWeight = 8F;
-            this.ID_BARTENDER.HeaderText = "BA";
-            this.ID_BARTENDER.MinimumWidth = 7;
-            this.ID_BARTENDER.Name = "ID_BARTENDER";
-            this.ID_BARTENDER.ReadOnly = true;
-            // 
-            // TOTAL_PRICE_PRODUCTS
-            // 
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TOTAL_PRICE_PRODUCTS.DefaultCellStyle = dataGridViewCellStyle50;
-            this.TOTAL_PRICE_PRODUCTS.FillWeight = 20F;
-            this.TOTAL_PRICE_PRODUCTS.HeaderText = "ORDER FORM VALUE";
-            this.TOTAL_PRICE_PRODUCTS.MinimumWidth = 7;
-            this.TOTAL_PRICE_PRODUCTS.Name = "TOTAL_PRICE_PRODUCTS";
-            this.TOTAL_PRICE_PRODUCTS.ReadOnly = true;
-            // 
-            // FINE
-            // 
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.FINE.DefaultCellStyle = dataGridViewCellStyle51;
-            this.FINE.FillWeight = 15F;
-            this.FINE.HeaderText = "FINE";
-            this.FINE.MinimumWidth = 7;
-            this.FINE.Name = "FINE";
-            this.FINE.ReadOnly = true;
-            // 
-            // DATE_CREATED
-            // 
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DATE_CREATED.DefaultCellStyle = dataGridViewCellStyle52;
-            this.DATE_CREATED.FillWeight = 15F;
-            this.DATE_CREATED.HeaderText = "DATE CREATED";
-            this.DATE_CREATED.MinimumWidth = 7;
-            this.DATE_CREATED.Name = "DATE_CREATED";
-            this.DATE_CREATED.ReadOnly = true;
-            // 
-            // DATE_CONFIRMED
-            // 
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DATE_CONFIRMED.DefaultCellStyle = dataGridViewCellStyle53;
-            this.DATE_CONFIRMED.FillWeight = 15F;
-            this.DATE_CONFIRMED.HeaderText = "DATE CONFIRMED";
-            this.DATE_CONFIRMED.MinimumWidth = 7;
-            this.DATE_CONFIRMED.Name = "DATE_CONFIRMED";
-            this.DATE_CONFIRMED.ReadOnly = true;
-            // 
-            // TOTAL_PRICE
-            // 
-            this.TOTAL_PRICE.FillWeight = 20F;
-            this.TOTAL_PRICE.HeaderText = "TOTAL PRICE";
-            this.TOTAL_PRICE.MinimumWidth = 7;
-            this.TOTAL_PRICE.Name = "TOTAL_PRICE";
-            this.TOTAL_PRICE.ReadOnly = true;
-            // 
             // fLayoutPl_Details
             // 
             this.fLayoutPl_Details.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fLayoutPl_Details.AutoScroll = true;
             this.fLayoutPl_Details.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Details.Location = new System.Drawing.Point(845, 192);
+            this.fLayoutPl_Details.Location = new System.Drawing.Point(828, 280);
             this.fLayoutPl_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Details.Name = "fLayoutPl_Details";
-            this.fLayoutPl_Details.Size = new System.Drawing.Size(468, 611);
+            this.fLayoutPl_Details.Size = new System.Drawing.Size(468, 530);
             this.fLayoutPl_Details.TabIndex = 101;
-            this.fLayoutPl_Details.Visible = false;
             // 
             // txt_Search
             // 
@@ -252,14 +168,14 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(47, 55);
+            this.txt_Search.Location = new System.Drawing.Point(53, 171);
             this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
-            this.txt_Search.PlaceholderText = "";
+            this.txt_Search.PlaceholderText = "Search ID or ID Form or Bartender";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(303, 46);
+            this.txt_Search.Size = new System.Drawing.Size(331, 46);
             this.txt_Search.TabIndex = 99;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
@@ -269,13 +185,12 @@ namespace Beverage_Management_System
             this.lb_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.lb_Details.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Details.ForeColor = System.Drawing.Color.White;
-            this.lb_Details.Location = new System.Drawing.Point(850, 115);
+            this.lb_Details.Location = new System.Drawing.Point(835, 237);
             this.lb_Details.Name = "lb_Details";
-            this.lb_Details.Size = new System.Drawing.Size(436, 75);
+            this.lb_Details.Size = new System.Drawing.Size(436, 41);
             this.lb_Details.TabIndex = 103;
             this.lb_Details.Text = "DETAILS";
             this.lb_Details.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb_Details.Visible = false;
             // 
             // btt_Browse
             // 
@@ -320,15 +235,88 @@ namespace Beverage_Management_System
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // button1
+            // ID
             // 
-            this.button1.Location = new System.Drawing.Point(609, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 105;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle33;
+            this.ID.FillWeight = 8F;
+            this.ID.HeaderText = "   ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 70;
+            // 
+            // ID_ORDER_FORM
+            // 
+            this.ID_ORDER_FORM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_ORDER_FORM.DefaultCellStyle = dataGridViewCellStyle34;
+            this.ID_ORDER_FORM.FillWeight = 65.20755F;
+            this.ID_ORDER_FORM.HeaderText = "ID FORM";
+            this.ID_ORDER_FORM.MinimumWidth = 7;
+            this.ID_ORDER_FORM.Name = "ID_ORDER_FORM";
+            this.ID_ORDER_FORM.ReadOnly = true;
+            this.ID_ORDER_FORM.Width = 110;
+            // 
+            // ID_BARTENDER
+            // 
+            this.ID_BARTENDER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_BARTENDER.DefaultCellStyle = dataGridViewCellStyle35;
+            this.ID_BARTENDER.FillWeight = 3.681071F;
+            this.ID_BARTENDER.HeaderText = "   BARTENDER";
+            this.ID_BARTENDER.MinimumWidth = 7;
+            this.ID_BARTENDER.Name = "ID_BARTENDER";
+            this.ID_BARTENDER.ReadOnly = true;
+            this.ID_BARTENDER.Width = 180;
+            // 
+            // FINE
+            // 
+            this.FINE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FINE.DefaultCellStyle = dataGridViewCellStyle36;
+            this.FINE.FillWeight = 6.902008F;
+            this.FINE.HeaderText = "     FINE";
+            this.FINE.MinimumWidth = 7;
+            this.FINE.Name = "FINE";
+            this.FINE.ReadOnly = true;
+            this.FINE.Width = 120;
+            // 
+            // DATE_CREATED
+            // 
+            this.DATE_CREATED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DATE_CREATED.DefaultCellStyle = dataGridViewCellStyle37;
+            this.DATE_CREATED.FillWeight = 6.902008F;
+            this.DATE_CREATED.HeaderText = "CREATED";
+            this.DATE_CREATED.MinimumWidth = 7;
+            this.DATE_CREATED.Name = "DATE_CREATED";
+            this.DATE_CREATED.ReadOnly = true;
+            this.DATE_CREATED.Width = 120;
+            // 
+            // TOTAL_PRICE
+            // 
+            this.TOTAL_PRICE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TOTAL_PRICE.DefaultCellStyle = dataGridViewCellStyle38;
+            this.TOTAL_PRICE.FillWeight = 9.202678F;
+            this.TOTAL_PRICE.HeaderText = "    TOTAL";
+            this.TOTAL_PRICE.MinimumWidth = 7;
+            this.TOTAL_PRICE.Name = "TOTAL_PRICE";
+            this.TOTAL_PRICE.ReadOnly = true;
+            this.TOTAL_PRICE.Width = 135;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.label12.Location = new System.Drawing.Point(512, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(573, 55);
+            this.label12.TabIndex = 110;
+            this.label12.Text = "ORDER BILL";
             // 
             // OrderBill
             // 
@@ -336,7 +324,7 @@ namespace Beverage_Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1356, 972);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btt_Browse);
             this.Controls.Add(this.lb_Details);
             this.Controls.Add(this.fLayoutPl_Details);
@@ -359,16 +347,14 @@ namespace Beverage_Management_System
         private System.Windows.Forms.Label lb_Details;
         private Guna.UI2.WinForms.Guna2Button btt_Browse;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_ORDER_FORM;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_BARTENDER;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PRICE_PRODUCTS;
         private System.Windows.Forms.DataGridViewTextBoxColumn FINE;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE_CREATED;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATE_CONFIRMED;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PRICE;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label12;
     }
 }
