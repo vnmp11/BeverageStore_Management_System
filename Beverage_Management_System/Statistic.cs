@@ -123,7 +123,7 @@ namespace Beverage_Management_System
             {
 
                 presenter.loadListOrderBill(day, month, year);
-                label3.Text = presenter.total.ToString();
+                label3.Text = presenter.total.ToString("#,##0");
                 label5.Text = presenter.customer.ToString();
                 label2.Text = presenter.total_quantity.ToString();
 
@@ -136,7 +136,7 @@ namespace Beverage_Management_System
             else if (cb_idOrderBill.SelectedIndex == 1)
             {
                 presenter.loadListOrderBill(0, month, year);
-                label3.Text = presenter.total.ToString();
+                label3.Text = presenter.total.ToString("#,##0");
                 label5.Text = presenter.customer.ToString();
                 label2.Text = presenter.total_quantity.ToString();
 
@@ -146,13 +146,18 @@ namespace Beverage_Management_System
             else if (cb_idOrderBill.SelectedIndex == 2)
             {
                 presenter.loadListOrderBill(0, 0, year);
-                label3.Text = presenter.total.ToString();
+                label3.Text = presenter.total.ToString("#,##0");
                 label5.Text = presenter.customer.ToString();
                 label2.Text = presenter.total_quantity.ToString();
 
                 orderFormPresenter.getOrderFormList(0, 0, year);
                 DrawPieChart();
             }
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -58,10 +58,15 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.HoverState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(15, 15);
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
+            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(16, 16);
             this.guna2ImageButton1.Location = new System.Drawing.Point(335, 9);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
+            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(16, 16);
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
             this.guna2ImageButton1.TabIndex = 110;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
@@ -69,7 +74,7 @@ namespace Beverage_Management_System
             // lb_Title
             // 
             this.lb_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lb_Title.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Title.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Title.ForeColor = System.Drawing.Color.White;
             this.lb_Title.Location = new System.Drawing.Point(140, 10);
             this.lb_Title.Name = "lb_Title";
@@ -101,7 +106,7 @@ namespace Beverage_Management_System
             this.txb_quantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_quantity.HoverState.Parent = this.txb_quantity;
             this.txb_quantity.Location = new System.Drawing.Point(111, 80);
-            this.txb_quantity.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_quantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txb_quantity.Name = "txb_quantity";
             this.txb_quantity.PasswordChar = '\0';
             this.txb_quantity.PlaceholderText = "";
@@ -122,9 +127,13 @@ namespace Beverage_Management_System
             this.btt_plus.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_plus.HoverState.Parent = this.btt_plus;
             this.btt_plus.Image = global::Beverage_Management_System.Properties.Resources.add__1_;
+            this.btt_plus.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_plus.ImageRotate = 0F;
+            this.btt_plus.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_plus.Location = new System.Drawing.Point(208, 80);
             this.btt_plus.Name = "btt_plus";
             this.btt_plus.PressedState.Parent = this.btt_plus;
+            this.btt_plus.ShadowDecoration.Parent = this.btt_plus;
             this.btt_plus.Size = new System.Drawing.Size(39, 45);
             this.btt_plus.TabIndex = 110;
             this.btt_plus.Click += new System.EventHandler(this.btt_plus_Click);
@@ -137,9 +146,13 @@ namespace Beverage_Management_System
             this.btt_minus.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_minus.HoverState.Parent = this.btt_minus;
             this.btt_minus.Image = global::Beverage_Management_System.Properties.Resources.minus1;
+            this.btt_minus.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_minus.ImageRotate = 0F;
+            this.btt_minus.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_minus.Location = new System.Drawing.Point(65, 80);
             this.btt_minus.Name = "btt_minus";
             this.btt_minus.PressedState.Parent = this.btt_minus;
+            this.btt_minus.ShadowDecoration.Parent = this.btt_minus;
             this.btt_minus.Size = new System.Drawing.Size(39, 45);
             this.btt_minus.TabIndex = 110;
             this.btt_minus.Click += new System.EventHandler(this.btt_minus_Click);
@@ -153,8 +166,9 @@ namespace Beverage_Management_System
             this.btt_ok.BorderThickness = 1;
             this.btt_ok.CheckedState.Parent = this.btt_ok;
             this.btt_ok.CustomImages.Parent = this.btt_ok;
+            this.btt_ok.DisabledState.Parent = this.btt_ok;
             this.btt_ok.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.btt_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_ok.Font = new System.Drawing.Font("Times New Roman", 8.059701F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_ok.ForeColor = System.Drawing.Color.White;
             this.btt_ok.HoverState.Parent = this.btt_ok;
             this.btt_ok.Location = new System.Drawing.Point(102, 144);

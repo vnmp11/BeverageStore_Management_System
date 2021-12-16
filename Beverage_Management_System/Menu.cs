@@ -167,44 +167,51 @@ namespace Beverage_Management_System
 
         private void btt_Pay_Click(object sender, EventArgs e)
         {
-            printBill = new Print();
-            printBill.Show();
-
-            ProductPresenter pre = new ProductPresenter();
-
-            printBill.btt_yes.Click += (s, a) =>
+            if (o.getItemOrderForm(txb_IdOrder.Text))
             {
-                p.printMenu(txb_IdOrder.Text);
-                
-               
-                if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+
+                printBill = new Print();
+                printBill.Show();
+
+                ProductPresenter pre = new ProductPresenter();
+
+                printBill.btt_yes.Click += (s, a) =>
                 {
-                    printDocument1.Print();
+                    p.printMenu(txb_IdOrder.Text);
 
-                }
-                printBill.Close();
-                o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
-                MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
-                p.addOrderForm(idperson);
-                txb_IdOrder.Text = p.show_id();
-                reloadFlowLayout();
 
-                
-            };
-            printBill.btt_no.Click += (s, a) =>
+                    if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        printDocument1.Print();
+
+                    }
+                    printBill.Close();
+                    o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
+                    MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
+                    p.addOrderForm(idperson);
+                    txb_IdOrder.Text = p.show_id();
+                    reloadFlowLayout();
+
+
+                };
+                printBill.btt_no.Click += (s, a) =>
+                {
+                    printBill.Close();
+                    o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
+                    MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
+                    p.addOrderForm(idperson);
+                    txb_IdOrder.Text = p.show_id();
+                    reloadFlowLayout();
+                };
+
+
+
+
+            }
+            else
             {
-                printBill.Close();
-                o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
-                MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
-                p.addOrderForm(idperson);
-                txb_IdOrder.Text = p.show_id();
-                reloadFlowLayout();
-            };
-           
-
-
-
-
+                MyMessageBox.showBox("The order is empty.");
+            }
 
         }
 

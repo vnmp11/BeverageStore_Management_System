@@ -108,7 +108,7 @@ namespace Beverage_Management_System
             this.bt_Login.CustomImages.Parent = this.bt_Login;
             this.bt_Login.DisabledState.Parent = this.bt_Login;
             this.bt_Login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.bt_Login.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Login.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Login.ForeColor = System.Drawing.Color.White;
             this.bt_Login.HoverState.Parent = this.bt_Login;
             this.bt_Login.Location = new System.Drawing.Point(176, 347);
@@ -128,7 +128,7 @@ namespace Beverage_Management_System
             this.label10.Location = new System.Drawing.Point(28, 128);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 25);
+            this.label10.Size = new System.Drawing.Size(93, 23);
             this.label10.TabIndex = 1;
             this.label10.Text = "Username";
             // 
@@ -239,6 +239,7 @@ namespace Beverage_Management_System
             this.btt_close.Image = global::Beverage_Management_System.Properties.Resources.letter_x;
             this.btt_close.ImageOffset = new System.Drawing.Point(0, 0);
             this.btt_close.ImageRotate = 0F;
+            this.btt_close.ImageSize = new System.Drawing.Size(20, 20);
             this.btt_close.Location = new System.Drawing.Point(927, 12);
             this.btt_close.Name = "btt_close";
             this.btt_close.PressedState.Parent = this.btt_close;

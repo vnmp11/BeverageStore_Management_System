@@ -127,7 +127,7 @@ namespace Beverage_Management_System.Presenters
                 {
                     if (bartenders[j].getID() == list[i].getID_BARTENDER()) row.Cells[2].Value = bartenders[j].getNAME();
                 }
-                row.Cells[3].Value = list[i].getFINE();
+                row.Cells[3].Value = list[i].getFINE().ToString("###,###,##0");
                 row.Cells[4].Value = list[i].getDATE_CREATE();
                 row.Cells[5].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
 
@@ -292,7 +292,7 @@ namespace Beverage_Management_System.Presenters
                 {
                     if (bartenders[j].getID() == list[i].getID_BARTENDER()) row.Cells[2].Value = bartenders[j].getNAME();
                 }
-                row.Cells[3].Value = list[i].getFINE();
+                row.Cells[3].Value = list[i].getFINE().ToString("###,###,##0");
                 row.Cells[4].Value = list[i].getDATE_CREATE();
                 row.Cells[5].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
 

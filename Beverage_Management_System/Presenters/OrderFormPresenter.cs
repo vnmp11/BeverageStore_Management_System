@@ -39,6 +39,8 @@ namespace Beverage_Management_System.Presenters
 
         }
 
+
+
         public int getID_TRACKING_NOTE() { return this.id_tracking_note; }
         public int getID_ORDER_FORM() { return this.id_order_form; }
 
@@ -64,6 +66,26 @@ namespace Beverage_Management_System.Presenters
             cmd.Parameters.AddWithValue("@status", "1");
             cmd.Parameters.AddWithValue("@id_orderform", id_order);
             cmd.ExecuteNonQuery();
+
+            myConnection.sqlcon.Close();
+        }
+
+        public bool getItemOrderForm(String id_order)
+        {
+            bool check = false;
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            SqlCommand cmd = new SqlCommand("Select * from DETAILS_ORDERFORM where ID_ORDERFORM=@id_orderform",
+                   myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@id_orderform", id_order);
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+               check = true;
+            }
+            return check;
 
             myConnection.sqlcon.Close();
         }

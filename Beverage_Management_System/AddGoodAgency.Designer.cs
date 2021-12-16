@@ -55,10 +55,10 @@ namespace Beverage_Management_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label4.Location = new System.Drawing.Point(45, 335);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.label4.Location = new System.Drawing.Point(40, 268);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 22);
+            this.label4.Size = new System.Drawing.Size(74, 19);
             this.label4.TabIndex = 110;
             this.label4.Text = "Quantity";
             // 
@@ -69,10 +69,10 @@ namespace Beverage_Management_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label3.Location = new System.Drawing.Point(45, 265);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.label3.Location = new System.Drawing.Point(40, 212);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 22);
+            this.label3.Size = new System.Drawing.Size(42, 19);
             this.label3.TabIndex = 111;
             this.label3.Text = "Unit";
             // 
@@ -83,10 +83,10 @@ namespace Beverage_Management_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label2.Location = new System.Drawing.Point(45, 188);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.label2.Location = new System.Drawing.Point(40, 150);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 22);
+            this.label2.Size = new System.Drawing.Size(50, 19);
             this.label2.TabIndex = 108;
             this.label2.Text = "Price";
             // 
@@ -97,10 +97,10 @@ namespace Beverage_Management_System
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label1.Location = new System.Drawing.Point(45, 118);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.label1.Location = new System.Drawing.Point(40, 94);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 22);
+            this.label1.Size = new System.Drawing.Size(51, 19);
             this.label1.TabIndex = 109;
             this.label1.Text = "Name";
             // 
@@ -121,14 +121,14 @@ namespace Beverage_Management_System
             this.txt_Quantity_Good.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.txt_Quantity_Good.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Quantity_Good.HoverState.Parent = this.txt_Quantity_Good;
-            this.txt_Quantity_Good.Location = new System.Drawing.Point(150, 318);
-            this.txt_Quantity_Good.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Quantity_Good.Location = new System.Drawing.Point(133, 254);
+            this.txt_Quantity_Good.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Quantity_Good.Name = "txt_Quantity_Good";
             this.txt_Quantity_Good.PasswordChar = '\0';
             this.txt_Quantity_Good.PlaceholderText = "";
             this.txt_Quantity_Good.SelectedText = "";
             this.txt_Quantity_Good.ShadowDecoration.Parent = this.txt_Quantity_Good;
-            this.txt_Quantity_Good.Size = new System.Drawing.Size(333, 50);
+            this.txt_Quantity_Good.Size = new System.Drawing.Size(296, 40);
             this.txt_Quantity_Good.TabIndex = 119;
             this.txt_Quantity_Good.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Quantity_Good_KeyDown);
             this.txt_Quantity_Good.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Quantity_Good_KeyPress);
@@ -150,14 +150,14 @@ namespace Beverage_Management_System
             this.txt_Unit_Good.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.txt_Unit_Good.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Unit_Good.HoverState.Parent = this.txt_Unit_Good;
-            this.txt_Unit_Good.Location = new System.Drawing.Point(150, 246);
-            this.txt_Unit_Good.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Unit_Good.Location = new System.Drawing.Point(133, 197);
+            this.txt_Unit_Good.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Unit_Good.Name = "txt_Unit_Good";
             this.txt_Unit_Good.PasswordChar = '\0';
             this.txt_Unit_Good.PlaceholderText = "";
             this.txt_Unit_Good.SelectedText = "";
             this.txt_Unit_Good.ShadowDecoration.Parent = this.txt_Unit_Good;
-            this.txt_Unit_Good.Size = new System.Drawing.Size(333, 50);
+            this.txt_Unit_Good.Size = new System.Drawing.Size(296, 40);
             this.txt_Unit_Good.TabIndex = 118;
             this.txt_Unit_Good.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Unit_Good_KeyDown);
             // 
@@ -178,14 +178,14 @@ namespace Beverage_Management_System
             this.txt_Price_Good.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.txt_Price_Good.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Price_Good.HoverState.Parent = this.txt_Price_Good;
-            this.txt_Price_Good.Location = new System.Drawing.Point(150, 171);
-            this.txt_Price_Good.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Price_Good.Location = new System.Drawing.Point(133, 137);
+            this.txt_Price_Good.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Price_Good.Name = "txt_Price_Good";
             this.txt_Price_Good.PasswordChar = '\0';
             this.txt_Price_Good.PlaceholderText = "";
             this.txt_Price_Good.SelectedText = "";
             this.txt_Price_Good.ShadowDecoration.Parent = this.txt_Price_Good;
-            this.txt_Price_Good.Size = new System.Drawing.Size(333, 50);
+            this.txt_Price_Good.Size = new System.Drawing.Size(296, 40);
             this.txt_Price_Good.TabIndex = 116;
             this.txt_Price_Good.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Price_Good_KeyDown);
             this.txt_Price_Good.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Price_Good_KeyPress);
@@ -207,14 +207,14 @@ namespace Beverage_Management_System
             this.txt_Name_Good.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.txt_Name_Good.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Name_Good.HoverState.Parent = this.txt_Name_Good;
-            this.txt_Name_Good.Location = new System.Drawing.Point(150, 101);
-            this.txt_Name_Good.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Name_Good.Location = new System.Drawing.Point(133, 81);
+            this.txt_Name_Good.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Name_Good.Name = "txt_Name_Good";
             this.txt_Name_Good.PasswordChar = '\0';
             this.txt_Name_Good.PlaceholderText = "";
             this.txt_Name_Good.SelectedText = "";
             this.txt_Name_Good.ShadowDecoration.Parent = this.txt_Name_Good;
-            this.txt_Name_Good.Size = new System.Drawing.Size(333, 50);
+            this.txt_Name_Good.Size = new System.Drawing.Size(296, 40);
             this.txt_Name_Good.TabIndex = 115;
             this.txt_Name_Good.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Name_Good_KeyDown);
             // 
@@ -233,11 +233,10 @@ namespace Beverage_Management_System
             this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(310, 390);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2Button1.Location = new System.Drawing.Point(276, 312);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(155, 62);
+            this.guna2Button1.Size = new System.Drawing.Size(138, 50);
             this.guna2Button1.TabIndex = 121;
             this.guna2Button1.Text = "DELETE";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
@@ -255,12 +254,11 @@ namespace Beverage_Management_System
             this.guna2Button3.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Image = global::Beverage_Management_System.Properties.Resources.update_arrows;
-            this.guna2Button3.Location = new System.Drawing.Point(132, 390);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2Button3.Image = global::Beverage_Management_System.Properties.Resources.download__2_1;
+            this.guna2Button3.Location = new System.Drawing.Point(117, 312);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(155, 62);
+            this.guna2Button3.Size = new System.Drawing.Size(138, 50);
             this.guna2Button3.TabIndex = 120;
             this.guna2Button3.Text = "SAVE";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click_1);
@@ -271,10 +269,9 @@ namespace Beverage_Management_System
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.panel2.Controls.Add(this.guna2ImageButton1);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(0, -4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(0, -3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(574, 80);
+            this.panel2.Size = new System.Drawing.Size(510, 64);
             this.panel2.TabIndex = 120;
             // 
             // guna2ImageButton1
@@ -287,12 +284,12 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(515, 20);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(458, 16);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(44, 56);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
             this.guna2ImageButton1.TabIndex = 122;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -301,9 +298,9 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(198, 25);
+            this.label12.Location = new System.Drawing.Point(176, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(164, 39);
+            this.label12.Size = new System.Drawing.Size(146, 31);
             this.label12.TabIndex = 123;
             this.label12.Text = "GOODS";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -315,10 +312,10 @@ namespace Beverage_Management_System
             // 
             // AddGoodAgency
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(575, 481);
+            this.ClientSize = new System.Drawing.Size(511, 385);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Button3);

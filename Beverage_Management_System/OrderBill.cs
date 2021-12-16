@@ -169,5 +169,10 @@ namespace Beverage_Management_System
            
            
         }
+
+        private void dataGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

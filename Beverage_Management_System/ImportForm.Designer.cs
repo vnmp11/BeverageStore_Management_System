@@ -54,9 +54,9 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(404, 57);
+            this.label12.Location = new System.Drawing.Point(359, 46);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(624, 54);
+            this.label12.Size = new System.Drawing.Size(555, 43);
             this.label12.TabIndex = 99;
             this.label12.Text = "GOODS IMPORT FORMS";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -72,17 +72,18 @@ namespace Beverage_Management_System
             this.bt_Delete.CustomImages.Parent = this.bt_Delete;
             this.bt_Delete.DisabledState.Parent = this.bt_Delete;
             this.bt_Delete.FillColor = System.Drawing.Color.White;
-            this.bt_Delete.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Delete.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt_Delete.HoverState.Parent = this.bt_Delete;
             this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete;
             this.bt_Delete.ImageOffset = new System.Drawing.Point(2, 0);
-            this.bt_Delete.Location = new System.Drawing.Point(987, 161);
+            this.bt_Delete.Location = new System.Drawing.Point(845, 129);
             this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
-            this.bt_Delete.Size = new System.Drawing.Size(52, 62);
+            this.bt_Delete.Size = new System.Drawing.Size(92, 50);
             this.bt_Delete.TabIndex = 102;
+            this.bt_Delete.Text = "Delete";
             this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
             // 
             // btt_Add
@@ -99,11 +100,10 @@ namespace Beverage_Management_System
             this.btt_Add.ForeColor = System.Drawing.Color.White;
             this.btt_Add.HoverState.Parent = this.btt_Add;
             this.btt_Add.Image = global::Beverage_Management_System.Properties.Resources.plus;
-            this.btt_Add.Location = new System.Drawing.Point(1061, 161);
-            this.btt_Add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btt_Add.Location = new System.Drawing.Point(943, 129);
             this.btt_Add.Name = "btt_Add";
             this.btt_Add.ShadowDecoration.Parent = this.btt_Add;
-            this.btt_Add.Size = new System.Drawing.Size(294, 62);
+            this.btt_Add.Size = new System.Drawing.Size(261, 50);
             this.btt_Add.TabIndex = 101;
             this.btt_Add.Text = "Add a new goods import form";
             this.btt_Add.Click += new System.EventHandler(this.btt_Add_Click);
@@ -127,14 +127,14 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(99, 161);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Search.Location = new System.Drawing.Point(88, 129);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
             this.txt_Search.PlaceholderText = "Search ID or Bartender\'s Full Name";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(334, 62);
+            this.txt_Search.Size = new System.Drawing.Size(328, 50);
             this.txt_Search.TabIndex = 103;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
@@ -177,14 +177,14 @@ namespace Beverage_Management_System
             this.DtaGridView_IGF.DefaultCellStyle = dataGridViewCellStyle7;
             this.DtaGridView_IGF.EnableHeadersVisualStyles = false;
             this.DtaGridView_IGF.GridColor = System.Drawing.SystemColors.Control;
-            this.DtaGridView_IGF.Location = new System.Drawing.Point(99, 266);
-            this.DtaGridView_IGF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DtaGridView_IGF.Location = new System.Drawing.Point(88, 213);
+            this.DtaGridView_IGF.Margin = new System.Windows.Forms.Padding(4);
             this.DtaGridView_IGF.Name = "DtaGridView_IGF";
             this.DtaGridView_IGF.ReadOnly = true;
             this.DtaGridView_IGF.RowHeadersVisible = false;
             this.DtaGridView_IGF.RowHeadersWidth = 60;
             this.DtaGridView_IGF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtaGridView_IGF.Size = new System.Drawing.Size(1224, 684);
+            this.DtaGridView_IGF.Size = new System.Drawing.Size(1116, 547);
             this.DtaGridView_IGF.TabIndex = 104;
             this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -267,10 +267,10 @@ namespace Beverage_Management_System
             // 
             // ImportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1430, 1049);
+            this.ClientSize = new System.Drawing.Size(1271, 839);
             this.Controls.Add(this.DtaGridView_IGF);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.bt_Delete);

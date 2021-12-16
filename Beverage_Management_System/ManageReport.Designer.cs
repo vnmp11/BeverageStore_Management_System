@@ -39,7 +39,6 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
-            this.txb_Search = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGV_Report = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_ORDER_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +46,7 @@ namespace Beverage_Management_System
             this.SOLUTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FINE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txb_Search = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_Report)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,43 +55,12 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(450, 37);
+            this.label12.Location = new System.Drawing.Point(400, 30);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(478, 64);
+            this.label12.Size = new System.Drawing.Size(532, 51);
             this.label12.TabIndex = 27;
             this.label12.Text = "MANAGE REPORT";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txb_Search
-            // 
-            this.txb_Search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_Search.BorderRadius = 25;
-            this.txb_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txb_Search.DefaultText = "";
-            this.txb_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txb_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txb_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_Search.DisabledState.Parent = this.txb_Search;
-            this.txb_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_Search.FocusedState.Parent = this.txb_Search;
-            this.txb_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txb_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_Search.HoverState.Parent = this.txb_Search;
-            this.txb_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
-            this.txb_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txb_Search.Location = new System.Drawing.Point(44, 100);
-            this.txb_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txb_Search.Name = "txb_Search";
-            this.txb_Search.PasswordChar = '\0';
-            this.txb_Search.PlaceholderText = "Search ID ";
-            this.txb_Search.SelectedText = "";
-            this.txb_Search.ShadowDecoration.Parent = this.txb_Search;
-            this.txb_Search.Size = new System.Drawing.Size(142, 62);
-            this.txb_Search.TabIndex = 33;
-            this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
-            this.txb_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Search_KeyDown);
             // 
             // dataGV_Report
             // 
@@ -132,8 +101,8 @@ namespace Beverage_Management_System
             this.dataGV_Report.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGV_Report.EnableHeadersVisualStyles = false;
             this.dataGV_Report.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGV_Report.Location = new System.Drawing.Point(44, 194);
-            this.dataGV_Report.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGV_Report.Location = new System.Drawing.Point(39, 155);
+            this.dataGV_Report.Margin = new System.Windows.Forms.Padding(4);
             this.dataGV_Report.Name = "dataGV_Report";
             this.dataGV_Report.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGV_Report.RowHeadersVisible = false;
@@ -141,7 +110,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.RowTemplate.Height = 35;
             this.dataGV_Report.RowTemplate.ReadOnly = true;
             this.dataGV_Report.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV_Report.Size = new System.Drawing.Size(1360, 660);
+            this.dataGV_Report.Size = new System.Drawing.Size(1209, 528);
             this.dataGV_Report.TabIndex = 127;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -165,6 +134,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
             this.dataGV_Report.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.dataGV_Report.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_Report_CellContentDoubleClick_1);
+            this.dataGV_Report.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGV_Report_CellMouseDoubleClick);
             // 
             // ID
             // 
@@ -238,17 +208,48 @@ namespace Beverage_Management_System
             this.DATE.ReadOnly = true;
             this.DATE.Width = 270;
             // 
+            // txb_Search
+            // 
+            this.txb_Search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txb_Search.BorderRadius = 25;
+            this.txb_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txb_Search.DefaultText = "";
+            this.txb_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txb_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txb_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_Search.DisabledState.Parent = this.txb_Search;
+            this.txb_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txb_Search.FocusedState.Parent = this.txb_Search;
+            this.txb_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txb_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txb_Search.HoverState.Parent = this.txb_Search;
+            this.txb_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
+            this.txb_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.txb_Search.Location = new System.Drawing.Point(39, 80);
+            this.txb_Search.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_Search.Name = "txb_Search";
+            this.txb_Search.PasswordChar = '\0';
+            this.txb_Search.PlaceholderText = "Search ID ";
+            this.txb_Search.SelectedText = "";
+            this.txb_Search.ShadowDecoration.Parent = this.txb_Search;
+            this.txb_Search.Size = new System.Drawing.Size(148, 50);
+            this.txb_Search.TabIndex = 33;
+            this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
+            this.txb_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Search_KeyDown);
+            this.txb_Search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_Search_KeyPress);
+            // 
             // ManageReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1430, 1049);
+            this.ClientSize = new System.Drawing.Size(1271, 839);
             this.Controls.Add(this.dataGV_Report);
             this.Controls.Add(this.txb_Search);
             this.Controls.Add(this.label12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ManageReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "1271, 839";

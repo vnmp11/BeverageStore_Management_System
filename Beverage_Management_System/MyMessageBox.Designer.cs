@@ -62,9 +62,13 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
+            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2ImageButton1.Location = new System.Drawing.Point(383, 9);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
             this.guna2ImageButton1.TabIndex = 110;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
@@ -90,6 +94,7 @@ namespace Beverage_Management_System
             this.btt_ok.BorderThickness = 1;
             this.btt_ok.CheckedState.Parent = this.btt_ok;
             this.btt_ok.CustomImages.Parent = this.btt_ok;
+            this.btt_ok.DisabledState.Parent = this.btt_ok;
             this.btt_ok.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.btt_ok.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_ok.ForeColor = System.Drawing.Color.White;

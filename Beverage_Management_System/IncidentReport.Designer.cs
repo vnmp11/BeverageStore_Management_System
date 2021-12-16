@@ -40,10 +40,11 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
-            this.btt_addReport = new Guna.UI2.WinForms.Guna2Button();
             this.dataGV_Report = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txb_Search = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ID_ORDER_BILL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btt_addReport = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.ID_REPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_ORDER_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.REASON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,34 +58,12 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(439, 34);
+            this.label12.Location = new System.Drawing.Point(357, 27);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(505, 58);
+            this.label12.Size = new System.Drawing.Size(523, 46);
             this.label12.TabIndex = 28;
             this.label12.Text = "INCIDENT REPORT";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btt_addReport
-            // 
-            this.btt_addReport.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_addReport.BorderRadius = 5;
-            this.btt_addReport.BorderThickness = 1;
-            this.btt_addReport.CheckedState.Parent = this.btt_addReport;
-            this.btt_addReport.CustomImages.Parent = this.btt_addReport;
-            this.btt_addReport.DisabledState.Parent = this.btt_addReport;
-            this.btt_addReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.btt_addReport.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btt_addReport.ForeColor = System.Drawing.Color.White;
-            this.btt_addReport.HoverState.Parent = this.btt_addReport;
-            this.btt_addReport.Image = global::Beverage_Management_System.Properties.Resources.plus;
-            this.btt_addReport.Location = new System.Drawing.Point(1024, 104);
-            this.btt_addReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btt_addReport.Name = "btt_addReport";
-            this.btt_addReport.ShadowDecoration.Parent = this.btt_addReport;
-            this.btt_addReport.Size = new System.Drawing.Size(289, 58);
-            this.btt_addReport.TabIndex = 124;
-            this.btt_addReport.Text = "Add a new report";
-            this.btt_addReport.Click += new System.EventHandler(this.btt_addReport_Click);
             // 
             // dataGV_Report
             // 
@@ -93,7 +72,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGV_Report.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGV_Report.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGV_Report.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGV_Report.BackgroundColor = System.Drawing.Color.White;
             this.dataGV_Report.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -108,7 +87,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGV_Report.ColumnHeadersHeight = 40;
             this.dataGV_Report.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_ORDER_BILL,
+            this.ID_REPORT,
             this.ID_ORDER_FORM,
             this.REASON,
             this.SOLUTION,
@@ -124,8 +103,8 @@ namespace Beverage_Management_System
             this.dataGV_Report.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGV_Report.EnableHeadersVisualStyles = false;
             this.dataGV_Report.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGV_Report.Location = new System.Drawing.Point(42, 186);
-            this.dataGV_Report.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGV_Report.Location = new System.Drawing.Point(37, 149);
+            this.dataGV_Report.Margin = new System.Windows.Forms.Padding(4);
             this.dataGV_Report.Name = "dataGV_Report";
             this.dataGV_Report.ReadOnly = true;
             this.dataGV_Report.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -141,7 +120,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.RowHeadersWidth = 70;
             this.dataGV_Report.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGV_Report.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV_Report.Size = new System.Drawing.Size(1347, 780);
+            this.dataGV_Report.Size = new System.Drawing.Size(1131, 563);
             this.dataGV_Report.TabIndex = 125;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -165,6 +144,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
             this.dataGV_Report.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGV_Report.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_Report_CellContentDoubleClick);
+            this.dataGV_Report.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGV_Report_CellMouseDoubleClick);
             // 
             // txb_Search
             // 
@@ -185,30 +165,78 @@ namespace Beverage_Management_System
             this.txb_Search.HoverState.Parent = this.txb_Search;
             this.txb_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txb_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txb_Search.Location = new System.Drawing.Point(42, 91);
-            this.txb_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_Search.Location = new System.Drawing.Point(37, 83);
+            this.txb_Search.Margin = new System.Windows.Forms.Padding(4);
             this.txb_Search.Name = "txb_Search";
             this.txb_Search.PasswordChar = '\0';
             this.txb_Search.PlaceholderText = "Search ID ";
             this.txb_Search.SelectedText = "";
             this.txb_Search.ShadowDecoration.Parent = this.txb_Search;
-            this.txb_Search.Size = new System.Drawing.Size(142, 62);
+            this.txb_Search.Size = new System.Drawing.Size(204, 50);
             this.txb_Search.TabIndex = 126;
+            this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
             this.txb_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Search_KeyDown);
+            this.txb_Search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_Search_KeyPress);
             // 
-            // ID_ORDER_BILL
+            // btt_addReport
             // 
-            this.ID_ORDER_BILL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btt_addReport.BorderColor = System.Drawing.Color.Transparent;
+            this.btt_addReport.BorderRadius = 5;
+            this.btt_addReport.BorderThickness = 1;
+            this.btt_addReport.CheckedState.Parent = this.btt_addReport;
+            this.btt_addReport.CustomImages.Parent = this.btt_addReport;
+            this.btt_addReport.DisabledState.Parent = this.btt_addReport;
+            this.btt_addReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.btt_addReport.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_addReport.ForeColor = System.Drawing.Color.White;
+            this.btt_addReport.HoverState.Parent = this.btt_addReport;
+            this.btt_addReport.Image = global::Beverage_Management_System.Properties.Resources.plus;
+            this.btt_addReport.Location = new System.Drawing.Point(911, 83);
+            this.btt_addReport.Name = "btt_addReport";
+            this.btt_addReport.ShadowDecoration.Parent = this.btt_addReport;
+            this.btt_addReport.Size = new System.Drawing.Size(257, 50);
+            this.btt_addReport.TabIndex = 124;
+            this.btt_addReport.Text = "Add a new report";
+            this.btt_addReport.Click += new System.EventHandler(this.btt_addReport_Click);
+            // 
+            // bt_Delete
+            // 
+            this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.BorderRadius = 5;
+            this.bt_Delete.BorderThickness = 1;
+            this.bt_Delete.CheckedState.Parent = this.bt_Delete;
+            this.bt_Delete.CustomImages.Parent = this.bt_Delete;
+            this.bt_Delete.DisabledState.Parent = this.bt_Delete;
+            this.bt_Delete.FillColor = System.Drawing.Color.White;
+            this.bt_Delete.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.HoverState.Parent = this.bt_Delete;
+            this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete;
+            this.bt_Delete.ImageOffset = new System.Drawing.Point(2, 0);
+            this.bt_Delete.Location = new System.Drawing.Point(813, 85);
+            this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_Delete.Name = "bt_Delete";
+            this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
+            this.bt_Delete.Size = new System.Drawing.Size(92, 48);
+            this.bt_Delete.TabIndex = 127;
+            this.bt_Delete.Text = "Delete";
+            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
+            // 
+            // ID_REPORT
+            // 
+            this.ID_REPORT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID_ORDER_BILL.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ID_ORDER_BILL.FillWeight = 5F;
-            this.ID_ORDER_BILL.Frozen = true;
-            this.ID_ORDER_BILL.HeaderText = "  ID";
-            this.ID_ORDER_BILL.MinimumWidth = 8;
-            this.ID_ORDER_BILL.Name = "ID_ORDER_BILL";
-            this.ID_ORDER_BILL.ReadOnly = true;
-            this.ID_ORDER_BILL.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID_ORDER_BILL.Width = 60;
+            this.ID_REPORT.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID_REPORT.FillWeight = 5F;
+            this.ID_REPORT.Frozen = true;
+            this.ID_REPORT.HeaderText = "  ID";
+            this.ID_REPORT.MinimumWidth = 8;
+            this.ID_REPORT.Name = "ID_REPORT";
+            this.ID_REPORT.ReadOnly = true;
+            this.ID_REPORT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID_REPORT.Width = 60;
             // 
             // ID_ORDER_FORM
             // 
@@ -278,16 +306,16 @@ namespace Beverage_Management_System
             // 
             // IncidentReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1430, 1049);
+            this.ClientSize = new System.Drawing.Size(1205, 778);
+            this.Controls.Add(this.bt_Delete);
             this.Controls.Add(this.txb_Search);
             this.Controls.Add(this.dataGV_Report);
             this.Controls.Add(this.btt_addReport);
             this.Controls.Add(this.label12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "IncidentReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IncidentReport";
@@ -303,7 +331,8 @@ namespace Beverage_Management_System
         private Guna.UI2.WinForms.Guna2Button btt_addReport;
         public Guna.UI2.WinForms.Guna2DataGridView dataGV_Report;
         private Guna.UI2.WinForms.Guna2TextBox txb_Search;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_ORDER_BILL;
+        private Guna.UI2.WinForms.Guna2Button bt_Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_REPORT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_ORDER_FORM;
         private System.Windows.Forms.DataGridViewTextBoxColumn REASON;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUTION;

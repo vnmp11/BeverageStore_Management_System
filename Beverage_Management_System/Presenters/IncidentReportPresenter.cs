@@ -67,6 +67,48 @@ namespace Beverage_Management_System.Presenters
 
         }
 
+        public void updateReport(String idreport)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            SqlCommand cmd = new SqlCommand("Update INCIDENT_REPORT set FINE=@fine, SOLUTION=@solution, REASON=@reason where ID_ORDERFORM like '" + idreport + "';",
+                  myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@fine", addReportView.fine);
+            cmd.Parameters.AddWithValue("@reason", addReportView.reason);
+            cmd.Parameters.AddWithValue("@solution", addReportView.solution);
+            int result = cmd.ExecuteNonQuery();
+
+            if (result > 0)
+            {
+                MyMessageBox.showBox("Updated.");
+                updateFine2(idreport,addReportView.fine);
+            }
+
+            myConnection.sqlcon.Close();
+        }
+
+        public bool checkReport(String idreport)
+        {
+            bool check = false;
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            SqlCommand cmd = new SqlCommand("Select * from INCIDENT_REPORT where ID_ORDERFORM=@id_orderform",
+                   myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@id_orderform", idreport);
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                check = true;
+            }
+            return check;
+
+            myConnection.sqlcon.Close();
+        }
+
+
         public void showListReport(DataGridView dt)
         {
 
@@ -104,7 +146,7 @@ namespace Beverage_Management_System.Presenters
                 row.Cells[2].Value = reportlist[i].getREASON();
                 row.Cells[3].Value = reportlist[i].getSOLUTION();
                 row.Cells[4].Value = reportlist[i].getFINE().ToString("###,###,##0");
-                row.Cells[5].Value = reportlist[i].getDATE();
+                row.Cells[5].Value = reportlist[i].getDATE().ToString("dd/MM/yyyy");
 
                 dt.Rows.Add(row);
             }
@@ -135,6 +177,36 @@ namespace Beverage_Management_System.Presenters
                   myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@fine", int.Parse(fine) + getFine(id_orderbill));
             cmd.Parameters.AddWithValue("@total_price", int.Parse(fine) + getTotalBill(id_orderbill));
+            cmd.ExecuteNonQuery();
+
+            myConnection.sqlcon.Close();
+
+        }
+
+        void updateFine2(String id_orderbill, String fine)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            SqlCommand cmd = new SqlCommand("Update ORDER_BILL set FINE=@fine, TOTAL_PRICE=@total_price where ID_ORDER_FORM like '" + id_orderbill + "';",
+                  myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@fine", int.Parse(fine));
+            cmd.Parameters.AddWithValue("@total_price", int.Parse(fine) + (getTotalBill(id_orderbill) - getFine(id_orderbill)));
+            cmd.ExecuteNonQuery();
+
+            myConnection.sqlcon.Close();
+
+        }
+
+        void updateFine3(String id_orderbill)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            SqlCommand cmd = new SqlCommand("Update ORDER_BILL set FINE=@fine, TOTAL_PRICE=@total_price where ID_ORDER_FORM like '" + id_orderbill + "';",
+                  myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@fine", 0);
+            cmd.Parameters.AddWithValue("@total_price", getTotalBill(id_orderbill) - getFine(id_orderbill));
             cmd.ExecuteNonQuery();
 
             myConnection.sqlcon.Close();
@@ -214,6 +286,28 @@ namespace Beverage_Management_System.Presenters
             cb_idOrderBill.Items.Add(id_orderform.ToString());
             cb_idOrderBill.SelectedIndex = 1;
             dateTime.Value = date;
+        }
+
+        public int deleteReport(String id, String id_order)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+            SqlCommand cmd = new SqlCommand("Delete from INCIDENT_REPORT where ID_INCIDENT_REPORT=@id;", myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            int result = cmd.ExecuteNonQuery();
+            if (result > 0)
+            {
+                updateFine3(id_order);
+                myConnection.sqlcon.Close();
+                return 1;
+            }
+            else
+            {
+                myConnection.sqlcon.Close();
+                return 0;
+            }
+
         }
     }
 }

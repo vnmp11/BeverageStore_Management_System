@@ -24,7 +24,7 @@ namespace Beverage_Management_System
         {
             InitializeComponent();
             pre = new IncidentReportPresenter(this);
-            DateTime today = DateTime.Today;
+            DateTime today = DateTime.Now.Date;
             dateTime.Value = today;
             pre.showId(cb_idOrderBill);
         }
@@ -76,18 +76,32 @@ namespace Beverage_Management_System
 
         private void btt_delete_Click(object sender, EventArgs e)
         {
-            cb_idOrderBill.SelectedIndex = 0;
-            txb_Fine.Text = " ";
-            txb_Reason.Text = " ";
-            txb_Solution.Text = " ";
+           
+           
+                cb_idOrderBill.SelectedIndex = 0;
+                txb_Fine.Text = " ";
+                txb_Reason.Text = " ";
+                txb_Solution.Text = " ";
+            
+
+            
         }
 
         private void btt_SubmitReport_Click(object sender, EventArgs e)
         {
             if (checkEmpty())
             {
-                pre.addReport(cb_idOrderBill.SelectedItem.ToString(), dateTime.Value.Date);
-                this.Close();
+                if (pre.checkReport(cb_idOrderBill.SelectedItem.ToString()))
+                {
+                    pre.updateReport(cb_idOrderBill.SelectedItem.ToString());
+                    this.Close();
+
+                }
+                else
+                {
+                    pre.addReport(cb_idOrderBill.SelectedItem.ToString(), dateTime.Value.Date);
+                    this.Close();
+                }
             }
         }
 
@@ -142,6 +156,11 @@ namespace Beverage_Management_System
             {
                 btt_SubmitReport.PerformClick();
             }
+        }
+
+        private void cb_idOrderBill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
