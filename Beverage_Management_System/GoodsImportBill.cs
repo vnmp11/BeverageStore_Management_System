@@ -32,6 +32,7 @@ namespace Beverage_Management_System
             this.id_accountant = ID;
             presenter = new GoodsImportBillPresenter(this);
             presenter.setDataGV(dataGV);
+            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -56,6 +57,7 @@ namespace Beverage_Management_System
                     DataGridViewRow selected_row = dataGV.Rows[selected_index];
                     int id_choose = Convert.ToInt32(selected_row.Cells[0].Value);
                     presenter.browseBill(id_choose, id_accountant, dataGV, lb_Details, fLayoutPl_Details);
+                    if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
                 };
 
             }

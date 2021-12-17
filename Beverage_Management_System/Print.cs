@@ -17,11 +17,6 @@ namespace Beverage_Management_System
             InitializeComponent();
         }
 
-        private void Print_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -55,20 +55,9 @@ namespace Beverage_Management_System
             id = id_batender;
             presenter = new ImportGoodsPresenter(this, id_batender);
             presenter.setDataGV(DtaGridView_Warehouse);
+            if (DtaGridView_Warehouse.Rows.Count > 1) DtaGridView_Warehouse.CurrentCell.Selected = false;
             idForm = presenter.show_id();
             txt_ID_GIForm.Text = idForm.ToString();
-        }
-
-        private void DtaGridView_Warehouse_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void DtaGridView_Warehouse_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = this.DtaGridView_Warehouse.Rows[e.RowIndex];
-            UpdateItem update = new UpdateItem(int.Parse(row.Cells["ID_PRODUCT"].Value.ToString()), row.Cells["NAME"].Value.ToString(), 1, dtaGV_GIForm);
-            update.Show();
-
         }
 
         private void btt_clearAll_Click(object sender, EventArgs e)
@@ -87,18 +76,13 @@ namespace Beverage_Management_System
         private void btt_Pay_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dtaGV_GIForm.RowCount - 1; i++)
-
             {
-
                 dateCre = DateTime.Now.ToString();
                 idProduct = dtaGV_GIForm.Rows[i].Cells["ID_GIF"].Value.ToString();
                 nameIG = dtaGV_GIForm.Rows[i].Cells["NAME_GIF"].Value.ToString();
                 quantityIG = dtaGV_GIForm.Rows[i].Cells["QUANTITY_GIF"].Value.ToString();
 
                 presenter.addDetailImportForm();
-
-                
-
 
             }
             presenter.updateImportForm();
@@ -109,30 +93,17 @@ namespace Beverage_Management_System
 
 
         }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void guna2ImageButton1_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void DtaGridView_Warehouse_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-
-        private void AddImportForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //    ImportForm f = (ImportForm)this.Owner;
-
-            //    f.reloadTable();
+            DataGridViewRow row = this.DtaGridView_Warehouse.Rows[e.RowIndex];
+            UpdateItem update = new UpdateItem(int.Parse(row.Cells["ID_PRODUCT"].Value.ToString()), row.Cells["NAME"].Value.ToString(), 1, dtaGV_GIForm);
+            update.Show();
         }
     }
 }

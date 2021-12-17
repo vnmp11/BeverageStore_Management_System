@@ -43,19 +43,11 @@ namespace Beverage_Management_System
                 GoodAgencyPresenter agencyPresenter = new GoodAgencyPresenter(this, idtemp2);
                 agencyPresenter.addGoodAgency(this, idtemp2);
 
-                // Agency fA = (Agency)this.Owner;
-                //fA.reloadTable();
-
-
                 this.Close();
 
             }
             else MyMessageBox.showBox("Please fill in the product's information completely!", "Message");
         }
-
-        
-
-
 
         private void guna2Button3_Click_1(object sender, EventArgs e)
         {
@@ -64,9 +56,6 @@ namespace Beverage_Management_System
             {
                 GoodAgencyPresenter agencyPresenter = new GoodAgencyPresenter(this, idtemp2);
                 agencyPresenter.addGoodAgency(this, idtemp2);
-
-                // Agency fA = (Agency)this.Owner;
-                //fA.reloadTable();
 
                 parent.refreshDataGV();
                 this.Close();
@@ -86,11 +75,6 @@ namespace Beverage_Management_System
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void AddGoodAgency_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
         }
 
         private void txt_Price_Good_KeyPress(object sender, KeyPressEventArgs e)

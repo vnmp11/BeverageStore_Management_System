@@ -146,11 +146,6 @@ namespace Beverage_Management_System
             showTotal();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
             layoutPl_product.Controls.Clear();
@@ -169,7 +164,6 @@ namespace Beverage_Management_System
         {
             if (o.getItemOrderForm(txb_IdOrder.Text))
             {
-
                 printBill = new Print();
                 printBill.Show();
 
@@ -204,9 +198,6 @@ namespace Beverage_Management_System
                     reloadFlowLayout();
                 };
 
-
-
-
             }
             else
             {
@@ -238,22 +229,6 @@ namespace Beverage_Management_System
         {
             decimal value = decimal.Parse(lb_total.Text, System.Globalization.NumberStyles.AllowThousands);
             lb_total.Text = String.Format(culture, "{0:N0}", value);
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        //btt print
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -299,11 +274,6 @@ namespace Beverage_Management_System
             e.Graphics.DrawString("Items Quantity: " + lb_QtyItem.Text, fnt, Brushes.Black, new PointF(x, y));
             y += dy;
             e.Graphics.DrawString("Thanks and see you next time!" , fnt, Brushes.Black, new PointF(320, y += dy));
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
     }

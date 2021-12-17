@@ -64,11 +64,6 @@ namespace Beverage_Management_System
             return true;
         }
 
-        private void AddReport_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -76,14 +71,10 @@ namespace Beverage_Management_System
 
         private void btt_delete_Click(object sender, EventArgs e)
         {
-           
-           
                 cb_idOrderBill.SelectedIndex = 0;
                 txb_Fine.Text = " ";
                 txb_Reason.Text = " ";
                 txb_Solution.Text = " ";
-            
-
             
         }
 
@@ -156,11 +147,6 @@ namespace Beverage_Management_System
             {
                 btt_SubmitReport.PerformClick();
             }
-        }
-
-        private void cb_idOrderBill_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

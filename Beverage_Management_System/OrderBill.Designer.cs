@@ -97,8 +97,8 @@ namespace Beverage_Management_System
             this.dataGV.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGV.EnableHeadersVisualStyles = false;
             this.dataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGV.Location = new System.Drawing.Point(47, 190);
-            this.dataGV.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGV.Location = new System.Drawing.Point(53, 238);
+            this.dataGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -112,7 +112,7 @@ namespace Beverage_Management_System
             this.dataGV.RowHeadersVisible = false;
             this.dataGV.RowHeadersWidth = 70;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(665, 533);
+            this.dataGV.Size = new System.Drawing.Size(748, 666);
             this.dataGV.TabIndex = 98;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -135,7 +135,6 @@ namespace Beverage_Management_System
             this.dataGV.ThemeStyle.RowsStyle.Height = 22;
             this.dataGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
             this.dataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellContentClick);
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
             // 
             // ID
@@ -216,10 +215,10 @@ namespace Beverage_Management_System
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fLayoutPl_Details.AutoScroll = true;
             this.fLayoutPl_Details.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Details.Location = new System.Drawing.Point(736, 260);
+            this.fLayoutPl_Details.Location = new System.Drawing.Point(828, 325);
             this.fLayoutPl_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Details.Name = "fLayoutPl_Details";
-            this.fLayoutPl_Details.Size = new System.Drawing.Size(416, 388);
+            this.fLayoutPl_Details.Size = new System.Drawing.Size(468, 485);
             this.fLayoutPl_Details.TabIndex = 101;
             // 
             // txt_Search
@@ -241,14 +240,14 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(47, 127);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txt_Search.Location = new System.Drawing.Point(53, 159);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
             this.txt_Search.PlaceholderText = "Search ID or ID Form or Bartender";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(325, 47);
+            this.txt_Search.Size = new System.Drawing.Size(366, 59);
             this.txt_Search.TabIndex = 99;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
@@ -258,9 +257,9 @@ namespace Beverage_Management_System
             this.lb_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.lb_Details.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Details.ForeColor = System.Drawing.Color.White;
-            this.lb_Details.Location = new System.Drawing.Point(742, 190);
+            this.lb_Details.Location = new System.Drawing.Point(835, 238);
             this.lb_Details.Name = "lb_Details";
-            this.lb_Details.Size = new System.Drawing.Size(388, 59);
+            this.lb_Details.Size = new System.Drawing.Size(436, 74);
             this.lb_Details.TabIndex = 103;
             this.lb_Details.Text = "DETAILS";
             this.lb_Details.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,11 +278,11 @@ namespace Beverage_Management_System
             this.btt_Browse.ForeColor = System.Drawing.Color.White;
             this.btt_Browse.HoverState.Parent = this.btt_Browse;
             this.btt_Browse.Image = global::Beverage_Management_System.Properties.Resources.confirm;
-            this.btt_Browse.Location = new System.Drawing.Point(980, 677);
+            this.btt_Browse.Location = new System.Drawing.Point(1102, 846);
             this.btt_Browse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Browse.Name = "btt_Browse";
             this.btt_Browse.ShadowDecoration.Parent = this.btt_Browse;
-            this.btt_Browse.Size = new System.Drawing.Size(172, 46);
+            this.btt_Browse.Size = new System.Drawing.Size(194, 58);
             this.btt_Browse.TabIndex = 104;
             this.btt_Browse.Text = "BROWSE";
             this.btt_Browse.Click += new System.EventHandler(this.btt_Browse_Click);
@@ -313,18 +312,18 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 26F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label12.Location = new System.Drawing.Point(455, 38);
+            this.label12.Location = new System.Drawing.Point(512, 48);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(509, 44);
+            this.label12.Size = new System.Drawing.Size(573, 55);
             this.label12.TabIndex = 110;
             this.label12.Text = "ORDER BILL";
             // 
             // OrderBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1205, 778);
+            this.ClientSize = new System.Drawing.Size(1356, 972);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btt_Browse);
             this.Controls.Add(this.lb_Details);
@@ -332,7 +331,7 @@ namespace Beverage_Management_System
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.dataGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "OrderBill";
             this.Text = "OrderBill";
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();

@@ -36,7 +36,6 @@ namespace Beverage_Management_System
             agencyPresenter.setInforAgency( txt_Id_Agency, ID,txt_Name_Agency, txt_Address_Agency, txt_Phone_Agency, txt_Item_Agency);
         }
         
-
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -65,8 +64,6 @@ namespace Beverage_Management_System
                 AgencyPresenter agencyPresenter = new AgencyPresenter(this, id);
                 agencyPresenter.addSupplier(this);
 
-                // Agency fA = (Agency)this.Owner;
-                //fA.reloadTable();
                 parent.refreshDataGV();
 
                 this.Close();
@@ -81,17 +78,6 @@ namespace Beverage_Management_System
             txt_Address_Agency.Text = "";
             txt_Phone_Agency.Text = "";
             txt_Item_Agency.Text = "";
-
-        }
-
-        private void AddAgency_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Agency f = (Agency)this.Owner;   
-           // f.reloadTableAgency();
-        }
-
-        private void AddAgency_Load(object sender, EventArgs e)
-        {
 
         }
 

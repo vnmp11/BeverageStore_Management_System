@@ -27,18 +27,7 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter = new StaffPresenter(this);
             presenter.setDataGV_Fill(dtGridView_Staff);
-            dtGridView_Staff.CurrentCell = null;
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            if(dtGridView_Staff.Rows.Count > 1) dtGridView_Staff.CurrentCell.Selected = false;
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -65,7 +54,7 @@ namespace Beverage_Management_System
                     {
                         refreshTable();
                         presenter.setDataGV_Fill(dtGridView_Staff);
-                        dtGridView_Staff.CurrentCell = null;
+                        if (dtGridView_Staff.Rows.Count > 1) dtGridView_Staff.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this staff successfully!", "Message");
                         reloadTable();
                     }
@@ -88,45 +77,9 @@ namespace Beverage_Management_System
             StaffPresenter presenter = new StaffPresenter(this);
             refreshTable();
             presenter.setDataGV_Fill(dtGridView_Staff);
-            dtGridView_Staff.CurrentCell = null;
+            if (dtGridView_Staff.Rows.Count > 1) dtGridView_Staff.CurrentCell.Selected = false;
         }
 
-        public void bt_Reload_Click(object sender, EventArgs e)
-        {
-            StaffPresenter presenter = new StaffPresenter(this);
-            refreshTable();
-            presenter.setDataGV_Fill(dtGridView_Staff);
-            dtGridView_Staff.CurrentCell = null;
-            MyMessageBox.showBox("Refreshed! This table is up-to-date.", "Message");
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-
-        }
-
-
-        private void Staff_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void Staff_Activated(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Staff_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Staff_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dtGridView_Staff_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -147,16 +100,6 @@ namespace Beverage_Management_System
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
             presenter.searchData(dtGridView_Staff);
-        }
-
-        private void txt_Search_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Search_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)

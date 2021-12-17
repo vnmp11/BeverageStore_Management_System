@@ -21,11 +21,6 @@ namespace Beverage_Management_System
             InitializeComponent();
         }
 
-        private void MessageBox_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public static void showBox(string txt)
         {
             newMessageBox = new MyMessageBox();
@@ -53,16 +48,6 @@ namespace Beverage_Management_System
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void lb_message_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MyMessageBox_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
         }
 
         private void MyMessageBox_FormClosing(object sender, FormClosingEventArgs e)

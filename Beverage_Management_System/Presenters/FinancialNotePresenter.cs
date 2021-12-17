@@ -137,7 +137,7 @@ namespace Beverage_Management_System.Presenters
                 row.Cells[1].Value = goodsImportBills[i].getID_GOODS_IMPORT_FORM();
                 for (int j = 0; j < accountants.Count(); j++)
                 {
-                    if (accountants[j].getID() == orderBills[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
+                    if (accountants[j].getID() == goodsImportBills[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
                 }
                 row.Cells[3].Value = goodsImportBills[i].getDATE_CONFIRM();
                 row.Cells[4].Value = goodsImportBills[i].getTOTAL_PRICE().ToString("###,###,##0");

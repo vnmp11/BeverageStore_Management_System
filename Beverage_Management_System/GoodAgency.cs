@@ -31,13 +31,14 @@ namespace Beverage_Management_System
             presenter = new GoodAgencyPresenter(this);
             presenter.dataGVGood(dataGridView_Goods, ID);
             idtemp = ID;
+            if (dataGridView_Goods.Rows.Count > 1) dataGridView_Goods.CurrentCell.Selected = false;
 
         }
         public void refreshDataGV()
         {
             dataGridView_Goods.Rows.Clear();
             presenter.dataGVGood(dataGridView_Goods, idtemp);
-            dataGridView_Goods.CurrentCell = null;
+            if (dataGridView_Goods.Rows.Count > 1) dataGridView_Goods.CurrentCell.Selected = false;
         }
         public void refreshTable()
         {
@@ -49,25 +50,16 @@ namespace Beverage_Management_System
             GoodAgencyPresenter presenter = new GoodAgencyPresenter(this);
             refreshTable();
             presenter.dataGVGood(dataGridView_Goods, idtemp);
-            dataGridView_Goods.CurrentCell = null;
+            if (dataGridView_Goods.Rows.Count > 1) dataGridView_Goods.CurrentCell.Selected = false;
         }
 
        
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             AddGoodAgency frm = new AddGoodAgency(idtemp,this);
             frm.ShowDialog();
         }
-        public void openAddGoodForm(int id_choosed, GoodAgency form)
-        {
-            AddGoodAgency form1 = new AddGoodAgency(id_choosed, form);
-
-            form1.Show();
-            //AddGoodAgency form = new AddGoodAgency(id_choosed, this);
-            //form.Owner = parent;
-            //form.Show();
-        }
+       
         private void bt_Delete_Click(object sender, EventArgs e)
         {
             if (dataGridView_Goods.SelectedCells.Count > 0)
@@ -87,7 +79,7 @@ namespace Beverage_Management_System
                     {
                         refreshTable();
                         presenter.dataGVGood(dataGridView_Goods, idtemp);
-                        dataGridView_Goods.CurrentCell = null;
+                        if (dataGridView_Goods.Rows.Count > 1) dataGridView_Goods.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this product successfully!", "Message");
                         reloadTable();
                     }
@@ -98,13 +90,6 @@ namespace Beverage_Management_System
             }
             else MyMessageBox.showBox("Please choose a product whom you want to delete!", "Message");
         }
-
-        private void GoodAgency_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {

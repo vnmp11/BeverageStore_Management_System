@@ -27,19 +27,15 @@ namespace Beverage_Management_System
             InitializeComponent();
             id = id_batender;
             od.showOrderForm(dtGridView_OrderForm);
+            if (dtGridView_OrderForm.Rows.Count > 1) dtGridView_OrderForm.CurrentCell.Selected = false;
         }
 
         void reloadGV()
         {
             dtGridView_OrderForm.Rows.Clear();
             od.showOrderForm(dtGridView_OrderForm);
+            if (dtGridView_OrderForm.Rows.Count > 1) dtGridView_OrderForm.CurrentCell.Selected = false;
         }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dtGridView_OrderForm_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -87,7 +83,7 @@ namespace Beverage_Management_System
                 {
                     ob.addOrderBill(id_choose1, id);
                     od.updateStatusOrderForm(id_choose1);
-                    //od.updateStatusDetailOrderForm(int.Parse(lb_id_order.Text));
+                   
                     reloadGV();
                     fLayoutPl_Detail.Controls.Clear();
                     lb_id_order.Text = "1";
@@ -99,20 +95,8 @@ namespace Beverage_Management_System
                 MyMessageBox.showBox("Please choose order you want to confirm!", "Message");
             }
 
-                
-            
-
         }
 
-        private void OrderForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtGridView_OrderForm_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)
         {

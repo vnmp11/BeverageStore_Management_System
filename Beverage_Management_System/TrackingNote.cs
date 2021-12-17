@@ -24,7 +24,7 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter = new TrackingNotePresenter(this);
             presenter.setDataGV(dataGV);
-            dataGV.CurrentCell.Selected = false;
+            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

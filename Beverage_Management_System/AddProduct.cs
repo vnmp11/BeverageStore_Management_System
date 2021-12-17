@@ -52,19 +52,9 @@ namespace Beverage_Management_System
                 cb_KindOfProduct, cb_Unit, cb_Goods);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void guna2TextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -77,16 +67,6 @@ namespace Beverage_Management_System
 
         }
 
-        private void Product_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2TextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -95,13 +75,6 @@ namespace Beverage_Management_System
                 e.Handled = true;
             }
         }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void bt_Save_Click(object sender, EventArgs e)
         {
@@ -112,11 +85,6 @@ namespace Beverage_Management_System
                     cb_KindOfProduct, cb_Unit, pB_Product, default_img);
                 parent.refreshDataGV();
             }
-        }
-
-        private void cb_KindOfProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void AddProduct_KeyDown(object sender, KeyEventArgs e)
@@ -154,14 +122,6 @@ namespace Beverage_Management_System
         private void guna2Button2_KeyDown(object sender, KeyEventArgs e)
         {
 
-        }
-
-        private void guna2Button2_KeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                bt_Save.PerformClick();
-            }
         }
 
         private void guna2Button2_Click_1(object sender, EventArgs e)

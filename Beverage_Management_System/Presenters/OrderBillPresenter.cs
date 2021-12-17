@@ -133,6 +133,7 @@ namespace Beverage_Management_System.Presenters
 
                 dataGV.Rows.Add(row);
             }
+            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
 
             myConnection.sqlcon.Close();
         }
@@ -174,7 +175,6 @@ namespace Beverage_Management_System.Presenters
              MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            //fLayoutPl_Details.Controls.Clear();
 
             string query = "Select P.ID_PRODUCT, P.NAME, DO.QUANTITY, DO.TOTAL_PRICE from " +
                 "(ORDERFORM O join DETAILS_ORDERFORM DO on O.ID_ORDERFORM = DO.ID_ORDERFORM) join " +
@@ -195,7 +195,6 @@ namespace Beverage_Management_System.Presenters
                 i.lb_total.Text = total_price.ToString("###,###,##0");
 
                 detailsBills.Add(i);
-                //fLayoutPl_Details.Controls.Add(i);
             }
             myConnection.sqlcon.Close();
         }

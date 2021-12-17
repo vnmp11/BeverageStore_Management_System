@@ -28,11 +28,7 @@ namespace Beverage_Management_System
             presenter = new InventoryPresenter(this);
             presenter.getListOfKind();
             presenter.setDataGV(dataGV);
-            dataGV.CurrentCell = null;
-        }
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
+            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
@@ -70,7 +66,7 @@ namespace Beverage_Management_System
                     {
                         dataGV.Rows.Clear();
                         presenter.setDataGV(dataGV);
-                        dataGV.CurrentCell = null;
+                        if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this product successfully!", "Message");
                     }
                     else if (result == 0) MyMessageBox.showBox("You cannot delete this product because this action will affect the store's statistics", "Message");
@@ -84,17 +80,12 @@ namespace Beverage_Management_System
         {
             dataGV.Rows.Clear();
             presenter.setDataGV(dataGV);
-            dataGV.CurrentCell = null;
+            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
         }
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
             presenter.searchData(dataGV);
-        }
-
-        private void Inventory_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)

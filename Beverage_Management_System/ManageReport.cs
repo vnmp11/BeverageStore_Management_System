@@ -18,11 +18,7 @@ namespace Beverage_Management_System
         {
             InitializeComponent();
             p.showListReport(dataGV_Report);
-            dataGV_Report.CurrentCell = null;
-        }
-
-        private void ManageReport_Load(object sender, EventArgs e)
-        {
+            if(dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
 
         }
 

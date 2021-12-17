@@ -31,28 +31,6 @@ namespace Beverage_Management_System
             InitializeComponent();
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-            panel3.Hide();
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ImageButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btt_visible2_Click(object sender, EventArgs e)
         {
             btt_visible2.Hide();
@@ -70,11 +48,6 @@ namespace Beverage_Management_System
         private void btt_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void btt_hide_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void bt_Login_Click(object sender, EventArgs e)

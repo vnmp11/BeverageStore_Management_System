@@ -162,7 +162,7 @@ namespace Beverage_Management_System.Presenters
             {
                 cb_KindOfProduct.Items.Add(list_kind[i].getNAME());
             }
-            cb_KindOfProduct.SelectedIndex = 0;
+            if(cb_KindOfProduct.Items.Count > 0) cb_KindOfProduct.SelectedIndex = 0;
         }
 
         public void fillDataInComboBox_Unit(Guna.UI2.WinForms.Guna2ComboBox cb_Unit)
@@ -176,7 +176,7 @@ namespace Beverage_Management_System.Presenters
                 cb_Unit.Items.Add(list[i]);
             }
 
-            cb_Unit.SelectedIndex = 0;
+            if(cb_Unit.Items.Count > 0) cb_Unit.SelectedIndex = 0;
         }
 
         public void fillDataInComboBox_Goods(Guna.UI2.WinForms.Guna2ComboBox cb_Goods)
@@ -274,6 +274,34 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Close();
         }
 
+        public string getGoods(int id_product)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            string name = "";
+            string goods = "";
+            string supplier = "";
+
+            string query1 = "Select S.NAME AS SNAME, G.NAME AS GNAME from " +
+                "SUPPLIER S JOIN GOODS G ON S.ID_SUPPLIER = G.ID_SUPPLIER JOIN PRODUCT P ON " +
+                "G.ID_GOODS = P.ID_GOODS WHERE P.ID_PRODUCT = '" + id_product + "';";
+            SqlCommand cmd1 = new SqlCommand(query1, myConnection.sqlcon);
+
+            using (SqlDataReader sdr1 = cmd1.ExecuteReader())
+            {
+                while (sdr1.Read())
+                {
+                    supplier = sdr1.GetString(0);
+                    goods = sdr1.GetString(1);
+                }
+            }
+            
+            myConnection.sqlcon.Close();
+            name = supplier + " - " + goods;
+            return name;
+        }
+
         public void setDataGV(Guna.UI2.WinForms.Guna2DataGridView dataGV)
         {
             MyConnection myConnection = new MyConnection();
@@ -358,7 +386,13 @@ namespace Beverage_Management_System.Presenters
                     {
                         if (list_Goods[i].getID() == id_goods) index_goods = i;
                     }
-                    cb_Goods.SelectedIndex = index_goods;
+                    if(cb_Goods.Items.Count < index_goods || cb_Goods.Items.Count == 0)
+                    {
+                        cb_Goods.Items.Add(getGoods(id));
+                        cb_Goods.SelectedIndex = cb_Goods.Items.Count - 1;
+                        MGoodsAgency goods = new MGoodsAgency(id_goods, "", "", "", "");
+                        list_Goods.Add(goods);
+                    }
                     string unit = row["UNIT"].ToString();
                     if (unit.Trim() == "Bottle") cb_Unit.SelectedIndex = 0;
                     else cb_Unit.SelectedIndex = 1;
@@ -479,10 +513,9 @@ namespace Beverage_Management_System.Presenters
             txt_Name.Text = "";
             txt_Price.Text = "";
             txt_Quantity.Text = "";
-            if (list.Count > 0) cb_Goods.SelectedIndex = 0;
-            else cb_Goods.Items.Clear();
-            cb_KindOfProduct.SelectedIndex = 0;
-            cb_Unit.SelectedIndex = 0;
+            if (cb_Goods.Items.Count > 0) cb_Goods.SelectedIndex = 0;
+            if(cb_KindOfProduct.Items.Count > 0) cb_KindOfProduct.SelectedIndex = 0;
+            if(cb_Unit.Items.Count > 0) cb_Unit.SelectedIndex = 0;
             pB_Product.Image = default_img;
         }
 

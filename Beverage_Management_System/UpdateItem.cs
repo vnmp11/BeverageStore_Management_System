@@ -47,11 +47,6 @@ namespace Beverage_Management_System
             this.Close();
         }
 
-        private void UpdateItem_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btt_plus_Click(object sender, EventArgs e)
         {
             txb_quantity.Text = (int.Parse(txb_quantity.Text) + 1).ToString();
@@ -84,8 +79,6 @@ namespace Beverage_Management_System
             }
             else
             {
-
-
                 ProductPresenter p = new ProductPresenter();
                 p.addItem(id_item, id_order.ToString(), int.Parse(txb_quantity.Text) - p.getQuantity(id_item));
                 this.Close();

@@ -20,7 +20,8 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter = new AgencyPresenter(this);
             presenter.dataGV(dtGridView_Agency);
-            dtGridView_Agency.CurrentCell = null;
+            if(dtGridView_Agency.Rows.Count > 1) dtGridView_Agency.CurrentCell.Selected = false;
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -28,14 +29,6 @@ namespace Beverage_Management_System
             AddAgency frm = new AddAgency(this);
             frm.ShowDialog();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        
 
         public void refreshTable()
         {
@@ -47,7 +40,7 @@ namespace Beverage_Management_System
             AgencyPresenter presenter = new AgencyPresenter(this);
             refreshTable();
             presenter.dataGV(dtGridView_Agency);
-            dtGridView_Agency.CurrentCell = null;
+            if (dtGridView_Agency.Rows.Count > 1) dtGridView_Agency.CurrentCell.Selected = false;
         }
 
         private void bt_Delete_Click(object sender, EventArgs e)
@@ -70,7 +63,7 @@ namespace Beverage_Management_System
                     {
                         refreshTable();
                         presenter.dataGV(dtGridView_Agency);
-                        dtGridView_Agency.CurrentCell = null;
+                        if (dtGridView_Agency.Rows.Count > 1) dtGridView_Agency.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this agency successfully!", "Message");
                         reloadTableAgency();
                     }
@@ -98,20 +91,11 @@ namespace Beverage_Management_System
             GoodAgency form = new GoodAgency(id_choosed);
             form.Show();
         }
-        private void Agency_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtGridView_Agency_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         public void refreshDataGV()
         {
             dtGridView_Agency.Rows.Clear();
             presenter.dataGV(dtGridView_Agency);
-            dtGridView_Agency.CurrentCell = null;
+            if (dtGridView_Agency.Rows.Count > 1) dtGridView_Agency.CurrentCell.Selected = false;
         }
         private void btt_Update_Click(object sender, EventArgs e)
         {
@@ -135,10 +119,6 @@ namespace Beverage_Management_System
             AddAgency form1 = new AddAgency(id_choosed,form);
 
             form1.Show();
-        }
-        private void Agency_Load_1(object sender, EventArgs e)
-        {
-
         }
 
         private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)

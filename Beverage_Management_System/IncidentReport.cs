@@ -18,16 +18,7 @@ namespace Beverage_Management_System
         {
             InitializeComponent();
             p.showListReport(dataGV_Report);
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IncidentReport_Load(object sender, EventArgs e)
-        {
-
+            if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
         }
 
         private void btt_addReport_Click(object sender, EventArgs e)
@@ -38,12 +29,8 @@ namespace Beverage_Management_System
             {
                 dataGV_Report.Rows.Clear();
                 p.showListReport(dataGV_Report);
+                if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
             };
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            p.showListReport(dataGV_Report);
         }
 
         private void dataGV_Report_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -60,6 +47,7 @@ namespace Beverage_Management_System
             {
                 dataGV_Report.Rows.Clear();
                 p.showListReport(dataGV_Report);
+                if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
             };
         }
 
@@ -80,6 +68,7 @@ namespace Beverage_Management_System
             if (txb_Search.Text == "")
             {
                 p.showListReport(dataGV_Report);
+                if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
             }
             else
             {
@@ -110,6 +99,7 @@ namespace Beverage_Management_System
             {
                 dataGV_Report.Rows.Clear();
                 p.showListReport(dataGV_Report);
+                if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
             };
         }
 
@@ -131,8 +121,8 @@ namespace Beverage_Management_System
                     {
                         dataGV_Report.Rows.Clear();
                         p.showListReport(dataGV_Report);
-                        dataGV_Report.CurrentCell = null;
-                        MyMessageBox.showBox("Delete this staff successfully!", "Message");
+                        if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
+                        MyMessageBox.showBox("Delete this report successfully!", "Message");
                     }
                     else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
                 };
@@ -140,7 +130,7 @@ namespace Beverage_Management_System
 
 
             }
-            else MyMessageBox.showBox("Please choose a staff whom you want to delete!", "Message");
+            else MyMessageBox.showBox("Please choose a report which you want to delete!", "Message");
 
         }
     }

@@ -45,15 +45,5 @@ namespace Beverage_Management_System
         {
             lb_message.Text = s;
         }
-
-        private void AlertDialog_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_message_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

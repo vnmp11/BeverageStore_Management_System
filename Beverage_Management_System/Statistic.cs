@@ -15,11 +15,8 @@ namespace Beverage_Management_System
 {
     public partial class Statistic : Form
     {
-
-
         OrderBillPresenter presenter = new OrderBillPresenter();
         OrderFormPresenter orderFormPresenter = new OrderFormPresenter();
-
 
         public int temp = 0;
         public string search { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -38,20 +35,11 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter.loadListOrderBill(day, month, year);
 
-
             label3.Text = presenter.total.ToString();
             label5.Text = presenter.customer.ToString();
             label2.Text = presenter.total_quantity.ToString();
 
         }
-
-
-
-        private void Sale_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void DrawPieChart()
         {
@@ -111,17 +99,10 @@ namespace Beverage_Management_System
             DrawPieChart();
 
         }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cb_idOrderBill_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cb_idOrderBill.SelectedIndex == 0)
             {
-
                 presenter.loadListOrderBill(day, month, year);
                 label3.Text = presenter.total.ToString("#,##0");
                 label5.Text = presenter.customer.ToString();
@@ -129,8 +110,6 @@ namespace Beverage_Management_System
 
                 orderFormPresenter.getOrderFormList(day, month, year);
                 DrawPieChart();
-
-
 
             }
             else if (cb_idOrderBill.SelectedIndex == 1)
@@ -153,11 +132,6 @@ namespace Beverage_Management_System
                 orderFormPresenter.getOrderFormList(0, 0, year);
                 DrawPieChart();
             }
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
 
         }
     }

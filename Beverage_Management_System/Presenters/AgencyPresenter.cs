@@ -30,8 +30,6 @@ namespace Beverage_Management_System.Presenters
             id = ID;
         }
 
-       
-
         public void dataGV(DataGridView dataGV)
         {
             MyConnection myConnection = new MyConnection();
@@ -119,9 +117,6 @@ namespace Beverage_Management_System.Presenters
                 int result = cmd.ExecuteNonQuery();
                 if (result > 0)
                 {
-                    //form.refeshFrom();
-                    //Agency fA = (Agency)this.Owner;
-                    //fA.reloadTable();
                     MyMessageBox.showBox("Add supplier's information successfully!", "Message");
                 }
                 else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
@@ -177,7 +172,6 @@ namespace Beverage_Management_System.Presenters
             
         }
 
-
         public void setInforAgency (Guna.UI2.WinForms.Guna2TextBox txt_id, int txt_ID, Guna.UI2.WinForms.Guna2TextBox txt_Name, Guna.UI2.WinForms.Guna2TextBox txt_Address,
            Guna.UI2.WinForms.Guna2TextBox txt_Phone, Guna.UI2.WinForms.Guna2TextBox txt_Item)
         {
@@ -191,8 +185,6 @@ namespace Beverage_Management_System.Presenters
             {
                 foreach (DataRow row in dtbl.Rows)
                 {
-                  //  id =  row["ID_SUPPLIER"].ToString();
-                    
                     txt_Name.Text = row["NAME"].ToString();
                     txt_id.Text = row["ID_SUPPLIER"].ToString();
 

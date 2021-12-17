@@ -97,7 +97,6 @@ namespace Beverage_Management_System
             this.label11.TabIndex = 24;
             this.label11.Text = "LOGIN";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // bt_Login
             // 
@@ -128,7 +127,7 @@ namespace Beverage_Management_System
             this.label10.Location = new System.Drawing.Point(28, 128);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 23);
+            this.label10.Size = new System.Drawing.Size(99, 25);
             this.label10.TabIndex = 1;
             this.label10.Text = "Username";
             // 
@@ -262,7 +261,6 @@ namespace Beverage_Management_System
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.ResumeLayout(false);

@@ -18,11 +18,6 @@ namespace Beverage_Management_System
             InitializeComponent();
             txbQuantity = txb_quantity.Text;
         }
-        public AddQuatity(Form parent)
-        {
-            this.Owner = parent;
-        }
-
         public string txbQuantity
         {
             get
@@ -57,11 +52,6 @@ namespace Beverage_Management_System
         {
             
             this.Close();
-        }
-
-        private void AddQuatity_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void txb_quantity_TextChanged(object sender, EventArgs e)

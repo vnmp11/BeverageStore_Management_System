@@ -51,11 +51,12 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(393, 5);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(442, 6);
+            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(44, 56);
             this.guna2ImageButton1.TabIndex = 110;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -64,9 +65,9 @@ namespace Beverage_Management_System
             this.lb_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_Title.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Title.ForeColor = System.Drawing.Color.White;
-            this.lb_Title.Location = new System.Drawing.Point(132, 9);
+            this.lb_Title.Location = new System.Drawing.Point(148, 11);
             this.lb_Title.Name = "lb_Title";
-            this.lb_Title.Size = new System.Drawing.Size(189, 41);
+            this.lb_Title.Size = new System.Drawing.Size(213, 51);
             this.lb_Title.TabIndex = 0;
             this.lb_Title.Text = "Send Message";
             this.lb_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,9 +77,10 @@ namespace Beverage_Management_System
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.panel1.Controls.Add(this.guna2ImageButton1);
             this.panel1.Controls.Add(this.lb_Title);
-            this.panel1.Location = new System.Drawing.Point(-10, -1);
+            this.panel1.Location = new System.Drawing.Point(-11, -1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 53);
+            this.panel1.Size = new System.Drawing.Size(546, 66);
             this.panel1.TabIndex = 1;
             // 
             // guna2Elipse1
@@ -90,13 +92,12 @@ namespace Beverage_Management_System
             // 
             this.lb_message.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_message.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_message.Location = new System.Drawing.Point(24, 74);
+            this.lb_message.Location = new System.Drawing.Point(27, 92);
             this.lb_message.Name = "lb_message";
-            this.lb_message.Size = new System.Drawing.Size(393, 65);
+            this.lb_message.Size = new System.Drawing.Size(442, 81);
             this.lb_message.TabIndex = 111;
             this.lb_message.Text = "Do you want to remove this order?";
             this.lb_message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb_message.Click += new System.EventHandler(this.lb_message_Click);
             // 
             // btt_cancel
             // 
@@ -112,10 +113,11 @@ namespace Beverage_Management_System
             this.btt_cancel.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_cancel.ForeColor = System.Drawing.Color.White;
             this.btt_cancel.HoverState.Parent = this.btt_cancel;
-            this.btt_cancel.Location = new System.Drawing.Point(27, 148);
+            this.btt_cancel.Location = new System.Drawing.Point(30, 185);
+            this.btt_cancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_cancel.Name = "btt_cancel";
             this.btt_cancel.ShadowDecoration.Parent = this.btt_cancel;
-            this.btt_cancel.Size = new System.Drawing.Size(190, 50);
+            this.btt_cancel.Size = new System.Drawing.Size(214, 62);
             this.btt_cancel.TabIndex = 112;
             this.btt_cancel.Text = "Cancel";
             this.btt_cancel.Click += new System.EventHandler(this.btt_cancel_Click);
@@ -134,28 +136,29 @@ namespace Beverage_Management_System
             this.btt_ok.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_ok.ForeColor = System.Drawing.Color.White;
             this.btt_ok.HoverState.Parent = this.btt_ok;
-            this.btt_ok.Location = new System.Drawing.Point(223, 148);
+            this.btt_ok.Location = new System.Drawing.Point(251, 185);
+            this.btt_ok.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_ok.Name = "btt_ok";
             this.btt_ok.ShadowDecoration.Parent = this.btt_ok;
-            this.btt_ok.Size = new System.Drawing.Size(190, 50);
+            this.btt_ok.Size = new System.Drawing.Size(214, 62);
             this.btt_ok.TabIndex = 112;
             this.btt_ok.Text = "Ok";
             this.btt_ok.Click += new System.EventHandler(this.btt_ok_Click);
             // 
             // AlertDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 210);
+            this.ClientSize = new System.Drawing.Size(483, 262);
             this.Controls.Add(this.btt_ok);
             this.Controls.Add(this.btt_cancel);
             this.Controls.Add(this.lb_message);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AlertDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AlertDialog";
-            this.Load += new System.EventHandler(this.AlertDialog_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

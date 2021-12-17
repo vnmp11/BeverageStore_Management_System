@@ -35,8 +35,7 @@ namespace Beverage_Management_System
             this.id_accountant = ID;
             presenter = new OrderBillPresenter(this);
             presenter.setDataGV(dataGV);
-           // loi khi khong co bill TIN
-            dataGV.CurrentCell.Selected = false;
+            if(dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -162,17 +161,6 @@ namespace Beverage_Management_System
             //e.Graphics.DrawString("Items Quantity: " + lb_QtyItem.Text, fnt, Brushes.Black, new PointF(x, y));
             //y += dy;
             e.Graphics.DrawString("Thanks and see you next time!", fnt, Brushes.Black, new PointF(320, y += dy));
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-           
-        }
-
-        private void dataGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

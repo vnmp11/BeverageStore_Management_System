@@ -62,26 +62,6 @@ namespace Beverage_Management_System
                 submenu.Visible = false;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, System.EventArgs e)
-        {
-           
-        }
-
-        private void label1_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
         private void guna2ImageButton2_Click(object sender, System.EventArgs e)
         {
             if (pl_menu.Width == 80)
@@ -90,16 +70,6 @@ namespace Beverage_Management_System
             }
             else
                 pl_menu.Width = 80;
-        }
-
-        private void label3_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, System.EventArgs e)
-        {
-
         }
 
         private void Form2_MouseDown(object sender, MouseEventArgs e)
@@ -111,103 +81,10 @@ namespace Beverage_Management_System
             }
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void btt_maximize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btt_maximize.Visible = false;
-            btt_minimize.Visible = true;
-        }
-
-        private void btt_hide_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btt_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btt_minimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btt_maximize.Visible = true;
-            btt_minimize.Visible = false;
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             openChildForm(new Staff());
             showSubMenu(pl_SubMenuProduct);
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Staff());
-        }
-
-        private void guna2Button8_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Staff());
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pl_SubMenuProduct);
-        }
-
-        private void btt_manageStaff_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Inventory());
-        }
-
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btt_Inventory_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Inventory());
-        }
-
-        private void btt_statistic_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Statistic());
-        }
-
-        private void btt_agency_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Agency());
-        }
-
-        private void btt_report_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ManageReport());
-        }
-
-        private void pl_content_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btt_report_waiter_Click(object sender, EventArgs e)
-        {
-            openChildForm(new IncidentReport());
         }
 
         private void btt_Product_Click(object sender, EventArgs e)
@@ -272,11 +149,6 @@ namespace Beverage_Management_System
             btt_maximize.Visible = true;
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new Agency());
-        }
-
         private void guna2Button1_Click_2(object sender, EventArgs e)
         {
             openChildForm(new Agency());
@@ -329,7 +201,6 @@ namespace Beverage_Management_System
             //pb_Image.Image = 
         }
 
-
         public void setPersonalInformation(string name, string role)
         {
             lb_Name.Text = name;
@@ -342,26 +213,6 @@ namespace Beverage_Management_System
             Login login = new Login();
             login.Show();
             MyMessageBox.showBox("Logged out successfully", "Message");
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Dashboard_Activated(object sender, EventArgs e)
-        {
-            
-        }
-
-        public void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
-
-        private void pl_content_MouseDown(object sender, MouseEventArgs e)
-        {
-
         }
 
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
@@ -398,14 +249,5 @@ namespace Beverage_Management_System
             openChildForm(new ImportForm(id_person));
         }
 
-        private void btt_Tracking_Note_Click(object sender, EventArgs e)
-        {
-            openChildForm(new TrackingNote());
-        }
-
-        private void btt_Import_Form_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ImportForm(id_person));
-        }
     }
 }

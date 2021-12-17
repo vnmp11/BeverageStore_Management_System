@@ -29,7 +29,7 @@ namespace Beverage_Management_System
             presenter = new ImportGoodsPresenter(this);
             presenter.dataGV_IGF(DtaGridView_IGF, 1);
 
-            DtaGridView_IGF.CurrentCell = null;
+            if(DtaGridView_IGF.Rows.Count > 1) DtaGridView_IGF.CurrentCell.Selected = false;
         }
         public ImportForm(int id_batender)
         {
@@ -37,7 +37,7 @@ namespace Beverage_Management_System
             id = id_batender;
             presenter = new ImportGoodsPresenter(this);
             presenter.dataGV_IGF(DtaGridView_IGF, 0);
-            DtaGridView_IGF.CurrentCell = null;
+            if (DtaGridView_IGF.Rows.Count > 1) DtaGridView_IGF.CurrentCell.Selected = false;
 
         }
         private void btt_Add_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace Beverage_Management_System
            
             presenter.dataGV_IGF(DtaGridView_IGF, 0);
 
-            DtaGridView_IGF.CurrentCell = null;
+            if (DtaGridView_IGF.Rows.Count > 1) DtaGridView_IGF.CurrentCell.Selected = false;
         }
 
         public void refreshDataGVAdmin()
@@ -61,7 +61,7 @@ namespace Beverage_Management_System
 
             presenter.dataGV_IGF(DtaGridView_IGF, 1);
 
-            DtaGridView_IGF.CurrentCell = null;
+            if (DtaGridView_IGF.Rows.Count > 1) DtaGridView_IGF.CurrentCell.Selected = false;
         }
 
         private void bt_Delete_Click(object sender, EventArgs e)

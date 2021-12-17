@@ -27,8 +27,8 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter = new FinancialNotePresenter(this);
             presenter.setDataGV(dataGV_Goods_Import_Bill, dataGV_Order_Bill);
-            dataGV_Goods_Import_Bill.CurrentCell.Selected = false;
-            dataGV_Order_Bill.CurrentCell.Selected = false;
+            if(dataGV_Goods_Import_Bill.Rows.Count > 1) dataGV_Goods_Import_Bill.CurrentCell.Selected = false;
+            if(dataGV_Order_Bill.Rows.Count > 1) dataGV_Order_Bill.CurrentCell.Selected = false;
         }
 
         private void dataGV_Order_Bill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -19,8 +19,6 @@ namespace Beverage_Management_System
     {
         static public int message = 0;
 
-        
-
         int id;
         public string username { get => txt_Username.Text; set => throw new NotImplementedException(); }
         public string password { get => txt_Password.Text; set => throw new NotImplementedException(); }
@@ -35,8 +33,6 @@ namespace Beverage_Management_System
         {
             InitializeComponent();
         }
-
-       
         public AddStaff(int id)
         {  
             InitializeComponent();
@@ -70,16 +66,6 @@ namespace Beverage_Management_System
         private void btt_close_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void AddStaff_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void guna2TextBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -155,11 +141,6 @@ namespace Beverage_Management_System
         {
 
             message = 1;
-        }
-
-        private void AddStaff_Activated(object sender, EventArgs e)
-        {
-            
         }
 
         private void AddStaff_FormClosing(object sender, FormClosingEventArgs e)

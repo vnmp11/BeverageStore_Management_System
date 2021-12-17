@@ -34,6 +34,7 @@ namespace Beverage_Management_System
             pre = new ImportGoodsPresenter(this);
             pre.dataGV_Detail(DtaGridView_Goods, id);
             bt_Save.Visible = false;
+            if (DtaGridView_Goods.Rows.Count > 1) DtaGridView_Goods.CurrentCell.Selected = false;
 
         }
         public GoodsInImportForm(int id, int temp, ImportForm form)
@@ -43,10 +44,7 @@ namespace Beverage_Management_System
             pre = new ImportGoodsPresenter(this);
             pre.dataGV_Detail(DtaGridView_Goods, id);
             idTemp = id;
-
-        }
-        private void GoodsInImportForm_Load(object sender, EventArgs e)
-        {
+            if (DtaGridView_Goods.Rows.Count > 1) DtaGridView_Goods.CurrentCell.Selected = false;
 
         }
 

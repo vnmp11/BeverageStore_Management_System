@@ -56,9 +56,9 @@ namespace Beverage_Management_System
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(317, 18);
+            this.label12.Location = new System.Drawing.Point(357, 22);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(163, 31);
+            this.label12.Size = new System.Drawing.Size(183, 39);
             this.label12.TabIndex = 124;
             this.label12.Text = "REPORT";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -75,12 +75,12 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(743, 10);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(836, 12);
             this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(39, 46);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(44, 58);
             this.guna2ImageButton1.TabIndex = 125;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -91,10 +91,10 @@ namespace Beverage_Management_System
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.guna2ImageButton1);
-            this.panel2.Location = new System.Drawing.Point(-4, -5);
+            this.panel2.Location = new System.Drawing.Point(-4, -6);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(797, 62);
+            this.panel2.Size = new System.Drawing.Size(897, 78);
             this.panel2.TabIndex = 111;
             // 
             // guna2Elipse1
@@ -119,12 +119,12 @@ namespace Beverage_Management_System
             this.cb_idOrderBill.Items.AddRange(new object[] {
             ""});
             this.cb_idOrderBill.ItemsAppearance.Parent = this.cb_idOrderBill;
-            this.cb_idOrderBill.Location = new System.Drawing.Point(43, 111);
+            this.cb_idOrderBill.Location = new System.Drawing.Point(48, 139);
+            this.cb_idOrderBill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_idOrderBill.Name = "cb_idOrderBill";
             this.cb_idOrderBill.ShadowDecoration.Parent = this.cb_idOrderBill;
-            this.cb_idOrderBill.Size = new System.Drawing.Size(108, 36);
+            this.cb_idOrderBill.Size = new System.Drawing.Size(121, 36);
             this.cb_idOrderBill.TabIndex = 117;
-            this.cb_idOrderBill.SelectedIndexChanged += new System.EventHandler(this.cb_idOrderBill_SelectedIndexChanged);
             // 
             // txb_Reason
             // 
@@ -133,9 +133,10 @@ namespace Beverage_Management_System
             this.txb_Reason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txb_Reason.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_Reason.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_Reason.Location = new System.Drawing.Point(43, 310);
+            this.txb_Reason.Location = new System.Drawing.Point(48, 388);
+            this.txb_Reason.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txb_Reason.Name = "txb_Reason";
-            this.txb_Reason.Size = new System.Drawing.Size(328, 171);
+            this.txb_Reason.Size = new System.Drawing.Size(368, 213);
             this.txb_Reason.TabIndex = 120;
             this.txb_Reason.Text = "";
             this.txb_Reason.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Reason_KeyDown);
@@ -153,12 +154,13 @@ namespace Beverage_Management_System
             this.dateTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTime.HoverState.Parent = this.dateTime;
-            this.dateTime.Location = new System.Drawing.Point(43, 199);
+            this.dateTime.Location = new System.Drawing.Point(48, 249);
+            this.dateTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTime.Name = "dateTime";
             this.dateTime.ShadowDecoration.Parent = this.dateTime;
-            this.dateTime.Size = new System.Drawing.Size(197, 44);
+            this.dateTime.Size = new System.Drawing.Size(222, 55);
             this.dateTime.TabIndex = 118;
             this.dateTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dateTime.Value = new System.DateTime(2021, 9, 9, 15, 39, 29, 875);
@@ -170,10 +172,10 @@ namespace Beverage_Management_System
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label9.Location = new System.Drawing.Point(39, 86);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label9.Location = new System.Drawing.Point(44, 108);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 22);
+            this.label9.Size = new System.Drawing.Size(32, 24);
             this.label9.TabIndex = 112;
             this.label9.Text = "ID";
             // 
@@ -184,10 +186,10 @@ namespace Beverage_Management_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label4.Location = new System.Drawing.Point(39, 275);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label4.Location = new System.Drawing.Point(44, 344);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 22);
+            this.label4.Size = new System.Drawing.Size(76, 24);
             this.label4.TabIndex = 113;
             this.label4.Text = "Reason";
             // 
@@ -198,10 +200,10 @@ namespace Beverage_Management_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label2.Location = new System.Drawing.Point(39, 170);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label2.Location = new System.Drawing.Point(44, 212);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 22);
+            this.label2.Size = new System.Drawing.Size(53, 24);
             this.label2.TabIndex = 114;
             this.label2.Text = "Date";
             // 
@@ -211,9 +213,10 @@ namespace Beverage_Management_System
             this.txb_Solution.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txb_Solution.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_Solution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.txb_Solution.Location = new System.Drawing.Point(405, 308);
+            this.txb_Solution.Location = new System.Drawing.Point(456, 385);
+            this.txb_Solution.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txb_Solution.Name = "txb_Solution";
-            this.txb_Solution.Size = new System.Drawing.Size(358, 173);
+            this.txb_Solution.Size = new System.Drawing.Size(402, 215);
             this.txb_Solution.TabIndex = 121;
             this.txb_Solution.Text = "";
             this.txb_Solution.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Solution_KeyDown);
@@ -224,10 +227,10 @@ namespace Beverage_Management_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label6.Location = new System.Drawing.Point(401, 170);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label6.Location = new System.Drawing.Point(451, 212);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 22);
+            this.label6.Size = new System.Drawing.Size(50, 24);
             this.label6.TabIndex = 118;
             this.label6.Text = "Fine";
             // 
@@ -237,10 +240,10 @@ namespace Beverage_Management_System
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.label5.Location = new System.Drawing.Point(401, 275);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label5.Location = new System.Drawing.Point(451, 344);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 22);
+            this.label5.Size = new System.Drawing.Size(83, 24);
             this.label5.TabIndex = 119;
             this.label5.Text = "Solution";
             // 
@@ -262,14 +265,14 @@ namespace Beverage_Management_System
             this.txb_Fine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
             this.txb_Fine.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_Fine.HoverState.Parent = this.txb_Fine;
-            this.txb_Fine.Location = new System.Drawing.Point(405, 199);
-            this.txb_Fine.Margin = new System.Windows.Forms.Padding(6);
+            this.txb_Fine.Location = new System.Drawing.Point(456, 249);
+            this.txb_Fine.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.txb_Fine.Name = "txb_Fine";
             this.txb_Fine.PasswordChar = '\0';
             this.txb_Fine.PlaceholderText = "";
             this.txb_Fine.SelectedText = "";
             this.txb_Fine.ShadowDecoration.Parent = this.txb_Fine;
-            this.txb_Fine.Size = new System.Drawing.Size(201, 44);
+            this.txb_Fine.Size = new System.Drawing.Size(226, 55);
             this.txb_Fine.TabIndex = 119;
             this.txb_Fine.TextChanged += new System.EventHandler(this.txb_Fine_TextChanged);
             this.txb_Fine.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Fine_KeyDown);
@@ -291,10 +294,11 @@ namespace Beverage_Management_System
             this.btt_delete.HoverState.Parent = this.btt_delete;
             this.btt_delete.Image = ((System.Drawing.Image)(resources.GetObject("btt_delete.Image")));
             this.btt_delete.ImageOffset = new System.Drawing.Point(2, 0);
-            this.btt_delete.Location = new System.Drawing.Point(573, 507);
+            this.btt_delete.Location = new System.Drawing.Point(645, 634);
+            this.btt_delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_delete.Name = "btt_delete";
             this.btt_delete.ShadowDecoration.Parent = this.btt_delete;
-            this.btt_delete.Size = new System.Drawing.Size(92, 48);
+            this.btt_delete.Size = new System.Drawing.Size(104, 60);
             this.btt_delete.TabIndex = 123;
             this.btt_delete.Text = "Delete";
             this.btt_delete.Click += new System.EventHandler(this.btt_delete_Click);
@@ -313,10 +317,11 @@ namespace Beverage_Management_System
             this.btt_SubmitReport.ForeColor = System.Drawing.Color.White;
             this.btt_SubmitReport.HoverState.Parent = this.btt_SubmitReport;
             this.btt_SubmitReport.Image = global::Beverage_Management_System.Properties.Resources.confirm;
-            this.btt_SubmitReport.Location = new System.Drawing.Point(671, 507);
+            this.btt_SubmitReport.Location = new System.Drawing.Point(755, 634);
+            this.btt_SubmitReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_SubmitReport.Name = "btt_SubmitReport";
             this.btt_SubmitReport.ShadowDecoration.Parent = this.btt_SubmitReport;
-            this.btt_SubmitReport.Size = new System.Drawing.Size(92, 48);
+            this.btt_SubmitReport.Size = new System.Drawing.Size(104, 60);
             this.btt_SubmitReport.TabIndex = 122;
             this.btt_SubmitReport.Text = "Submit";
             this.btt_SubmitReport.Click += new System.EventHandler(this.btt_SubmitReport_Click);
@@ -324,10 +329,10 @@ namespace Beverage_Management_System
             // 
             // AddReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(794, 583);
+            this.ClientSize = new System.Drawing.Size(893, 729);
             this.Controls.Add(this.btt_delete);
             this.Controls.Add(this.btt_SubmitReport);
             this.Controls.Add(this.txb_Solution);
@@ -342,10 +347,10 @@ namespace Beverage_Management_System
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
-            this.Load += new System.EventHandler(this.AddReport_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddReport_KeyDown);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
