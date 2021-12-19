@@ -42,13 +42,12 @@ namespace Beverage_Management_System
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.panel1.Controls.Add(this.guna2ImageButton1);
             this.panel1.Controls.Add(this.lb_Title);
-            this.panel1.Location = new System.Drawing.Point(-8, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(-7, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(490, 69);
+            this.panel1.Size = new System.Drawing.Size(436, 55);
             this.panel1.TabIndex = 112;
             // 
             // guna2ImageButton1
@@ -61,12 +60,12 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(15, 15);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(434, 9);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(386, 7);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(44, 56);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
             this.guna2ImageButton1.TabIndex = 110;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -75,9 +74,9 @@ namespace Beverage_Management_System
             this.lb_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_Title.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Title.ForeColor = System.Drawing.Color.White;
-            this.lb_Title.Location = new System.Drawing.Point(143, 9);
+            this.lb_Title.Location = new System.Drawing.Point(127, 7);
             this.lb_Title.Name = "lb_Title";
-            this.lb_Title.Size = new System.Drawing.Size(213, 51);
+            this.lb_Title.Size = new System.Drawing.Size(189, 41);
             this.lb_Title.TabIndex = 0;
             this.lb_Title.Text = "Message";
             this.lb_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,20 +91,19 @@ namespace Beverage_Management_System
             this.btt_yes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_yes.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_yes.BorderRadius = 5;
+            this.btt_yes.BorderRadius = 25;
             this.btt_yes.BorderThickness = 1;
             this.btt_yes.CheckedState.Parent = this.btt_yes;
             this.btt_yes.CustomImages.Parent = this.btt_yes;
             this.btt_yes.DisabledState.Parent = this.btt_yes;
-            this.btt_yes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.btt_yes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.btt_yes.Font = new System.Drawing.Font("Times New Roman", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_yes.ForeColor = System.Drawing.Color.White;
             this.btt_yes.HoverState.Parent = this.btt_yes;
-            this.btt_yes.Location = new System.Drawing.Point(72, 182);
-            this.btt_yes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btt_yes.Location = new System.Drawing.Point(64, 140);
             this.btt_yes.Name = "btt_yes";
             this.btt_yes.ShadowDecoration.Parent = this.btt_yes;
-            this.btt_yes.Size = new System.Drawing.Size(146, 50);
+            this.btt_yes.Size = new System.Drawing.Size(130, 46);
             this.btt_yes.TabIndex = 120;
             this.btt_yes.Text = "YES";
             // 
@@ -114,20 +112,19 @@ namespace Beverage_Management_System
             this.btt_no.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btt_no.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_no.BorderRadius = 5;
+            this.btt_no.BorderRadius = 25;
             this.btt_no.BorderThickness = 1;
             this.btt_no.CheckedState.Parent = this.btt_no;
             this.btt_no.CustomImages.Parent = this.btt_no;
             this.btt_no.DisabledState.Parent = this.btt_no;
-            this.btt_no.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.btt_no.FillColor = System.Drawing.Color.Firebrick;
             this.btt_no.Font = new System.Drawing.Font("Times New Roman", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btt_no.ForeColor = System.Drawing.Color.White;
             this.btt_no.HoverState.Parent = this.btt_no;
-            this.btt_no.Location = new System.Drawing.Point(260, 182);
-            this.btt_no.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btt_no.Location = new System.Drawing.Point(231, 140);
             this.btt_no.Name = "btt_no";
             this.btt_no.ShadowDecoration.Parent = this.btt_no;
-            this.btt_no.Size = new System.Drawing.Size(146, 50);
+            this.btt_no.Size = new System.Drawing.Size(130, 46);
             this.btt_no.TabIndex = 121;
             this.btt_no.Text = "NO";
             // 
@@ -135,17 +132,18 @@ namespace Beverage_Management_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(114, 102);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.label1.Location = new System.Drawing.Point(101, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 27);
+            this.label1.Size = new System.Drawing.Size(222, 26);
             this.label1.TabIndex = 122;
             this.label1.Text = "Do you want to print ?";
             // 
             // Print
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 266);
+            this.ClientSize = new System.Drawing.Size(426, 213);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btt_no);
             this.Controls.Add(this.btt_yes);

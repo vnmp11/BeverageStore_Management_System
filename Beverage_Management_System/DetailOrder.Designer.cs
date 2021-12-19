@@ -48,8 +48,8 @@ namespace Beverage_Management_System
             // lb_NameProduct
             // 
             this.lb_NameProduct.BackColor = System.Drawing.Color.Transparent;
-            this.lb_NameProduct.Font = new System.Drawing.Font("Microsoft Tai Le", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NameProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.lb_NameProduct.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NameProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.lb_NameProduct.Location = new System.Drawing.Point(60, 12);
             this.lb_NameProduct.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lb_NameProduct.Name = "lb_NameProduct";
@@ -61,8 +61,8 @@ namespace Beverage_Management_System
             // lb_total
             // 
             this.lb_total.BackColor = System.Drawing.Color.Transparent;
-            this.lb_total.Font = new System.Drawing.Font("Microsoft Tai Le", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.lb_total.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.lb_total.Location = new System.Drawing.Point(469, 28);
             this.lb_total.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lb_total.Name = "lb_total";
@@ -75,7 +75,7 @@ namespace Beverage_Management_System
             // lb_price
             // 
             this.lb_price.BackColor = System.Drawing.Color.Transparent;
-            this.lb_price.Font = new System.Drawing.Font("Microsoft Tai Le", 10.20895F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_price.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_price.ForeColor = System.Drawing.Color.DimGray;
             this.lb_price.Location = new System.Drawing.Point(60, 40);
             this.lb_price.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
@@ -92,11 +92,14 @@ namespace Beverage_Management_System
             this.btt_delete.HoverState.ImageSize = new System.Drawing.Size(33, 33);
             this.btt_delete.HoverState.Parent = this.btt_delete;
             this.btt_delete.Image = global::Beverage_Management_System.Properties.Resources.delete;
+            this.btt_delete.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_delete.ImageRotate = 0F;
             this.btt_delete.ImageSize = new System.Drawing.Size(30, 30);
             this.btt_delete.Location = new System.Drawing.Point(19, 17);
             this.btt_delete.Name = "btt_delete";
             this.btt_delete.PressedState.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_delete.PressedState.Parent = this.btt_delete;
+            this.btt_delete.ShadowDecoration.Parent = this.btt_delete;
             this.btt_delete.Size = new System.Drawing.Size(35, 37);
             this.btt_delete.TabIndex = 92;
             this.btt_delete.Click += new System.EventHandler(this.btt_delete_Click);
@@ -104,8 +107,8 @@ namespace Beverage_Management_System
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.label1.Location = new System.Drawing.Point(359, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label1.Name = "label1";
@@ -118,8 +121,8 @@ namespace Beverage_Management_System
             // txb_quatityItem
             // 
             this.txb_quatityItem.BackColor = System.Drawing.Color.Transparent;
-            this.txb_quatityItem.Font = new System.Drawing.Font("Microsoft Tai Le", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_quatityItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.txb_quatityItem.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_quatityItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.txb_quatityItem.Location = new System.Drawing.Point(377, 28);
             this.txb_quatityItem.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.txb_quatityItem.Name = "txb_quatityItem";
@@ -132,8 +135,8 @@ namespace Beverage_Management_System
             // lb_InStock
             // 
             this.lb_InStock.BackColor = System.Drawing.Color.Transparent;
-            this.lb_InStock.Font = new System.Drawing.Font("Microsoft Tai Le", 10.20895F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_InStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.lb_InStock.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_InStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.lb_InStock.Location = new System.Drawing.Point(211, 28);
             this.lb_InStock.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lb_InStock.Name = "lb_InStock";

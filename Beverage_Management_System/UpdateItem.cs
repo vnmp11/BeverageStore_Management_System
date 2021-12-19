@@ -92,5 +92,10 @@ namespace Beverage_Management_System
             this.Close();
 
         }
+
+        private void UpdateItem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

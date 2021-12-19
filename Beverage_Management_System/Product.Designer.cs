@@ -42,7 +42,7 @@ namespace Beverage_Management_System
             // 
             this.lb_Price.BackColor = System.Drawing.Color.Transparent;
             this.lb_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.985075F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.lb_Price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.lb_Price.Location = new System.Drawing.Point(35, 128);
             this.lb_Price.Name = "lb_Price";
             this.lb_Price.Size = new System.Drawing.Size(68, 18);
@@ -56,7 +56,7 @@ namespace Beverage_Management_System
             // 
             this.lb_NameProduct.BackColor = System.Drawing.Color.Transparent;
             this.lb_NameProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NameProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.lb_NameProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.lb_NameProduct.Location = new System.Drawing.Point(19, 106);
             this.lb_NameProduct.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lb_NameProduct.Name = "lb_NameProduct";

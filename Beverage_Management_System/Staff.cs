@@ -113,6 +113,11 @@ namespace Beverage_Management_System
                 else MyMessageBox.showBox("The result of searching is below", "Message");
             }
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

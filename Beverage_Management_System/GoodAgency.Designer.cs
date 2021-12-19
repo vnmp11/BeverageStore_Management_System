@@ -59,23 +59,22 @@ namespace Beverage_Management_System
             // 
             this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
-            this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_Delete.BorderRadius = 5;
+            this.bt_Delete.BorderColor = System.Drawing.Color.Firebrick;
+            this.bt_Delete.BorderRadius = 25;
             this.bt_Delete.BorderThickness = 1;
             this.bt_Delete.CheckedState.Parent = this.bt_Delete;
             this.bt_Delete.CustomImages.Parent = this.bt_Delete;
             this.bt_Delete.DisabledState.Parent = this.bt_Delete;
-            this.bt_Delete.FillColor = System.Drawing.Color.White;
+            this.bt_Delete.FillColor = System.Drawing.Color.Firebrick;
             this.bt_Delete.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_Delete.ForeColor = System.Drawing.Color.White;
             this.bt_Delete.HoverState.Parent = this.bt_Delete;
-            this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete;
-            this.bt_Delete.ImageOffset = new System.Drawing.Point(2, 0);
-            this.bt_Delete.Location = new System.Drawing.Point(444, 114);
+            this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete2;
+            this.bt_Delete.Location = new System.Drawing.Point(417, 91);
             this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
-            this.bt_Delete.Size = new System.Drawing.Size(104, 60);
+            this.bt_Delete.Size = new System.Drawing.Size(134, 50);
             this.bt_Delete.TabIndex = 94;
             this.bt_Delete.Text = "Delete";
             this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
@@ -94,10 +93,10 @@ namespace Beverage_Management_System
             this.dataGridView_Goods.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridView_Goods.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_Goods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -111,20 +110,20 @@ namespace Beverage_Management_System
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Goods.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_Goods.EnableHeadersVisualStyles = false;
             this.dataGridView_Goods.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView_Goods.Location = new System.Drawing.Point(36, 184);
-            this.dataGridView_Goods.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_Goods.Location = new System.Drawing.Point(32, 147);
+            this.dataGridView_Goods.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_Goods.Name = "dataGridView_Goods";
             this.dataGridView_Goods.RowHeadersVisible = false;
             this.dataGridView_Goods.RowHeadersWidth = 60;
             this.dataGridView_Goods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Goods.Size = new System.Drawing.Size(741, 509);
+            this.dataGridView_Goods.Size = new System.Drawing.Size(659, 407);
             this.dataGridView_Goods.TabIndex = 93;
             this.dataGridView_Goods.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView_Goods.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -133,7 +132,7 @@ namespace Beverage_Management_System
             this.dataGridView_Goods.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dataGridView_Goods.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView_Goods.ThemeStyle.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView_Goods.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.dataGridView_Goods.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.dataGridView_Goods.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView_Goods.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             this.dataGridView_Goods.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
@@ -143,9 +142,9 @@ namespace Beverage_Management_System
             this.dataGridView_Goods.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView_Goods.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridView_Goods.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView_Goods.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.dataGridView_Goods.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.dataGridView_Goods.ThemeStyle.RowsStyle.Height = 22;
-            this.dataGridView_Goods.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridView_Goods.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.dataGridView_Goods.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
             // ID
@@ -210,7 +209,7 @@ namespace Beverage_Management_System
             // 
             // guna2TextBox1
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.guna2TextBox1.BorderRadius = 25;
             this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2TextBox1.DefaultText = "";
@@ -222,20 +221,20 @@ namespace Beverage_Management_System
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
+            this.guna2TextBox1.IconLeft = global::Beverage_Management_System.Properties.Resources.search1;
             this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.guna2TextBox1.Location = new System.Drawing.Point(36, 114);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2TextBox1.Location = new System.Drawing.Point(32, 91);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "Search ID or Goods";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(227, 60);
+            this.guna2TextBox1.Size = new System.Drawing.Size(202, 48);
             this.guna2TextBox1.TabIndex = 92;
             this.guna2TextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.guna2TextBox1_KeyDown);
             // 
@@ -243,21 +242,20 @@ namespace Beverage_Management_System
             // 
             this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.BorderRadius = 25;
             this.guna2Button1.BorderThickness = 1;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.plus;
-            this.guna2Button1.Location = new System.Drawing.Point(555, 114);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2Button1.Location = new System.Drawing.Point(557, 91);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(223, 60);
+            this.guna2Button1.Size = new System.Drawing.Size(134, 50);
             this.guna2Button1.TabIndex = 95;
             this.guna2Button1.Text = "Add goods";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -266,13 +264,12 @@ namespace Beverage_Management_System
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.panel2.Controls.Add(this.guna2ImageButton2);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(-8, -8);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(-7, -6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(825, 81);
+            this.panel2.Size = new System.Drawing.Size(733, 65);
             this.panel2.TabIndex = 110;
             // 
             // guna2ImageButton2
@@ -285,24 +282,24 @@ namespace Beverage_Management_System
             this.guna2ImageButton2.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton2.ImageRotate = 0F;
-            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(765, 20);
-            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(680, 16);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
+            this.guna2ImageButton2.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.ShadowDecoration.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.Size = new System.Drawing.Size(44, 56);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(39, 45);
             this.guna2ImageButton2.TabIndex = 108;
             this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 16.1194F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(322, 25);
+            this.label12.Location = new System.Drawing.Point(293, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(164, 39);
+            this.label12.Size = new System.Drawing.Size(146, 31);
             this.label12.TabIndex = 94;
             this.label12.Text = "GOODS";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -314,10 +311,10 @@ namespace Beverage_Management_System
             // 
             // GoodAgency
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(814, 728);
+            this.ClientSize = new System.Drawing.Size(724, 582);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.bt_Delete);

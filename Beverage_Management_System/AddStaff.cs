@@ -196,5 +196,10 @@ namespace Beverage_Management_System
                 bt_Save.PerformClick();
             }
         }
+
+        private void AddStaff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

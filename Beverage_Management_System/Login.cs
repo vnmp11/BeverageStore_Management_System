@@ -60,7 +60,7 @@ namespace Beverage_Management_System
             }
             else
             {
-                Dashboard dashboard = new Dashboard(presenter.person.getID());
+                Dashboard dashboard = new Dashboard(presenter.person.getID(), presenter.person.getSEX());
                 presenter.handle_SuccessfulLogin(this, dashboard);
             }
         }
@@ -80,6 +80,11 @@ namespace Beverage_Management_System
             {
                 bt_Login.PerformClick();
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
