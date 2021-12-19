@@ -18,7 +18,8 @@ namespace Beverage_Management_System
         {
             InitializeComponent();
             p.showListReport(dataGV_Report);
-            if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
+            dataGV_Report.AllowUserToAddRows = false;
+            if (dataGV_Report.Rows.Count > 0) dataGV_Report.CurrentCell.Selected = false;
         }
 
         private void btt_addReport_Click(object sender, EventArgs e)
@@ -27,9 +28,11 @@ namespace Beverage_Management_System
             report.Show();
             report.FormClosing += (s, a) =>
             {
+                dataGV_Report.AllowUserToAddRows = true;
                 dataGV_Report.Rows.Clear();
                 p.showListReport(dataGV_Report);
-                if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
+                dataGV_Report.AllowUserToAddRows = false;
+                if (dataGV_Report.Rows.Count > 0) dataGV_Report.CurrentCell.Selected = false;
             };
         }
 
@@ -45,9 +48,11 @@ namespace Beverage_Management_System
             report.Show();
             report.FormClosing += (s, a) =>
             {
+                dataGV_Report.AllowUserToAddRows = true;
                 dataGV_Report.Rows.Clear();
                 p.showListReport(dataGV_Report);
-                if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
+                dataGV_Report.AllowUserToAddRows = false;
+                if (dataGV_Report.Rows.Count > 0) dataGV_Report.CurrentCell.Selected = false;
             };
         }
 
@@ -67,12 +72,16 @@ namespace Beverage_Management_System
         {
             if (txb_Search.Text == "")
             {
+                dataGV_Report.AllowUserToAddRows = true;
                 p.showListReport(dataGV_Report);
-                if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
+                dataGV_Report.AllowUserToAddRows = false;
+                if (dataGV_Report.Rows.Count > 0) dataGV_Report.CurrentCell.Selected = false;
             }
             else
             {
+                dataGV_Report.AllowUserToAddRows = true;
                 p.searchReport(dataGV_Report, txb_Search.Text);
+                dataGV_Report.AllowUserToAddRows = false;
             }
         }
 
@@ -93,13 +102,15 @@ namespace Beverage_Management_System
             int fine = int.Parse(dataGV_Report.Rows[e.RowIndex].Cells[4].Value.ToString().Replace(",", ""));
             DateTime date = DateTime.ParseExact(dataGV_Report.Rows[e.RowIndex].Cells[5].Value.ToString(), "dd/MM/yyyy", null);
 
-            AddReport report = new AddReport(id_orderform, reason, solution, fine, date);
+            AddReport report = new AddReport(id_orderform, reason, solution, fine, date, false);
             report.Show();
               report.FormClosing += (s, a) =>
             {
+                dataGV_Report.AllowUserToAddRows = true;
                 dataGV_Report.Rows.Clear();
                 p.showListReport(dataGV_Report);
-                if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
+                dataGV_Report.AllowUserToAddRows = false;
+                if (dataGV_Report.Rows.Count > 0) dataGV_Report.CurrentCell.Selected = false;
             };
         }
 
@@ -119,8 +130,10 @@ namespace Beverage_Management_System
                     IncidentReportPresenter presenter = new IncidentReportPresenter();
                     if (presenter.deleteReport(id_choose.ToString(), (selected_row.Cells["ID_ORDER_FORM"].Value).ToString()) > 0)
                     {
+                        dataGV_Report.AllowUserToAddRows = true;
                         dataGV_Report.Rows.Clear();
                         p.showListReport(dataGV_Report);
+                        dataGV_Report.AllowUserToAddRows = false;
                         if (dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this report successfully!", "Message");
                     }

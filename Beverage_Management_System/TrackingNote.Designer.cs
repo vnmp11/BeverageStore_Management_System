@@ -56,9 +56,9 @@ namespace Beverage_Management_System
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 22.02985F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label12.Location = new System.Drawing.Point(48, 32);
+            this.label12.Location = new System.Drawing.Point(54, 40);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(374, 47);
+            this.label12.Size = new System.Drawing.Size(406, 52);
             this.label12.TabIndex = 24;
             this.label12.Text = "TRACKING NOTE";
             // 
@@ -98,8 +98,8 @@ namespace Beverage_Management_System
             this.dataGV.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGV.EnableHeadersVisualStyles = false;
             this.dataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGV.Location = new System.Drawing.Point(56, 189);
-            this.dataGV.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGV.Location = new System.Drawing.Point(63, 236);
+            this.dataGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -113,7 +113,7 @@ namespace Beverage_Management_System
             this.dataGV.RowHeadersVisible = false;
             this.dataGV.RowHeadersWidth = 60;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(614, 542);
+            this.dataGV.Size = new System.Drawing.Size(691, 678);
             this.dataGV.TabIndex = 101;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -190,9 +190,9 @@ namespace Beverage_Management_System
             this.lb_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.lb_Details.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Details.ForeColor = System.Drawing.Color.White;
-            this.lb_Details.Location = new System.Drawing.Point(766, 189);
+            this.lb_Details.Location = new System.Drawing.Point(862, 236);
             this.lb_Details.Name = "lb_Details";
-            this.lb_Details.Size = new System.Drawing.Size(399, 62);
+            this.lb_Details.Size = new System.Drawing.Size(449, 78);
             this.lb_Details.TabIndex = 105;
             this.lb_Details.Text = "DETAILS";
             this.lb_Details.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,12 +204,11 @@ namespace Beverage_Management_System
             this.fLayoutPl_Details.AutoScroll = true;
             this.fLayoutPl_Details.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.fLayoutPl_Details.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Details.Location = new System.Drawing.Point(764, 253);
+            this.fLayoutPl_Details.Location = new System.Drawing.Point(860, 316);
             this.fLayoutPl_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Details.Name = "fLayoutPl_Details";
-            this.fLayoutPl_Details.Size = new System.Drawing.Size(401, 478);
+            this.fLayoutPl_Details.Size = new System.Drawing.Size(451, 598);
             this.fLayoutPl_Details.TabIndex = 104;
-            this.fLayoutPl_Details.Visible = false;
             // 
             // txt_Search
             // 
@@ -230,14 +229,14 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search1;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(56, 117);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txt_Search.Location = new System.Drawing.Point(63, 146);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
             this.txt_Search.PlaceholderText = "Search ID or ID Bill or Bartender";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(280, 50);
+            this.txt_Search.Size = new System.Drawing.Size(315, 62);
             this.txt_Search.TabIndex = 100;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
@@ -249,10 +248,10 @@ namespace Beverage_Management_System
             // 
             // TrackingNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1205, 778);
+            this.ClientSize = new System.Drawing.Size(1356, 972);
             this.Controls.Add(this.lb_Details);
             this.Controls.Add(this.fLayoutPl_Details);
             this.Controls.Add(this.dataGV);

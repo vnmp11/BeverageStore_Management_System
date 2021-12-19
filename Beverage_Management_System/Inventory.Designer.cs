@@ -59,9 +59,9 @@ namespace Beverage_Management_System
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 22.02985F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label12.Location = new System.Drawing.Point(48, 19);
+            this.label12.Location = new System.Drawing.Point(54, 24);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(270, 47);
+            this.label12.Size = new System.Drawing.Size(294, 52);
             this.label12.TabIndex = 25;
             this.label12.Text = "INVENTORY";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -85,14 +85,14 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(56, 82);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txt_Search.Location = new System.Drawing.Point(63, 102);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
             this.txt_Search.PlaceholderText = "Search ID or Product Name";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(278, 50);
+            this.txt_Search.Size = new System.Drawing.Size(313, 62);
             this.txt_Search.TabIndex = 32;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
@@ -111,11 +111,11 @@ namespace Beverage_Management_System
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.plus;
-            this.guna2Button1.Location = new System.Drawing.Point(1016, 82);
+            this.guna2Button1.Location = new System.Drawing.Point(1143, 102);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(199, 50);
+            this.guna2Button1.Size = new System.Drawing.Size(224, 62);
             this.guna2Button1.TabIndex = 24;
             this.guna2Button1.Text = "Add a new product";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
@@ -160,13 +160,13 @@ namespace Beverage_Management_System
             this.dataGV.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGV.EnableHeadersVisualStyles = false;
             this.dataGV.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGV.Location = new System.Drawing.Point(56, 144);
-            this.dataGV.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGV.Location = new System.Drawing.Point(63, 180);
+            this.dataGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV.Name = "dataGV";
             this.dataGV.RowHeadersVisible = false;
             this.dataGV.RowHeadersWidth = 60;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(1159, 631);
+            this.dataGV.Size = new System.Drawing.Size(1304, 789);
             this.dataGV.TabIndex = 35;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -290,21 +290,21 @@ namespace Beverage_Management_System
             this.bt_Delete.ForeColor = System.Drawing.Color.White;
             this.bt_Delete.HoverState.Parent = this.bt_Delete;
             this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete2;
-            this.bt_Delete.Location = new System.Drawing.Point(835, 144);
+            this.bt_Delete.Location = new System.Drawing.Point(976, 180);
             this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
-            this.bt_Delete.Size = new System.Drawing.Size(105, 50);
+            this.bt_Delete.Size = new System.Drawing.Size(118, 62);
             this.bt_Delete.TabIndex = 87;
             this.bt_Delete.Text = "Delete";
             this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
             // 
             // Inventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1271, 839);
+            this.ClientSize = new System.Drawing.Size(1430, 1049);
             this.Controls.Add(this.bt_Delete);
             this.Controls.Add(this.dataGV);
             this.Controls.Add(this.txt_Search);

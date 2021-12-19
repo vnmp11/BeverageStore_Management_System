@@ -47,7 +47,7 @@ namespace Beverage_Management_System.Presenters
             }
             dr.Close();
             total_price = total_price_products + fine;
-            MOrderBill orderBill = new MOrderBill(0, id_order, batender, 4, total_price_products, fine, date_create, total_price, 0, total_quantity);
+            MOrderBill orderBill = new MOrderBill(0, id_order, batender, 5, total_price_products, fine, date_create, total_price, 0, total_quantity);
 
             SqlCommand cmd = new SqlCommand("Insert into ORDER_BILL(ID_ORDER_FORM, ID_BARTENDER, ID_ACCOUNTANT, TOTAL_PRICE_PRODUCTS, FINE," +
                 "DATE_CRE, TOTAL_PRICE,STATUS, TOTAL_QUANTITY) " +
@@ -200,7 +200,7 @@ namespace Beverage_Management_System.Presenters
         }
 
         public void browseBill(int ID, int id_accountant,
-            Guna.UI2.WinForms.Guna2DataGridView dataGV, int id_form)
+            Guna.UI2.WinForms.Guna2DataGridView dataGV, int id_form, System.Windows.Forms.FlowLayoutPanel fLayoutPl_Details)
         {
 
             MyConnection myConnection = new MyConnection();
@@ -228,6 +228,7 @@ namespace Beverage_Management_System.Presenters
             {
                 dataGV.Rows.Clear();
                 setDataGV(dataGV);
+                fLayoutPl_Details.Controls.Clear();
                 MyMessageBox.showBox("Browse this bill successfully!", "Message");
 
             }

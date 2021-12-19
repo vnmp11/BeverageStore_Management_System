@@ -508,7 +508,7 @@ namespace Beverage_Management_System.Presenters
 
                     SqlCommand cmd2 = new SqlCommand("INSERT INTO GOODS_IMPORT_BILL (ID_BARTENDER, ID_ACCOUNTANT, ID_GOODS_IMPORT_FORM, TOTAL_PRICE, DATE_CRE, STATUS) VALUES(@id_bartender, @id_accountant, @id_goods_import_form, @total_price, @date_cre, @status);", myConnection.sqlcon);
                     cmd2.Parameters.AddWithValue("@id_bartender", id_bartender);
-                    cmd2.Parameters.AddWithValue("@id_accountant", 4);
+                    cmd2.Parameters.AddWithValue("@id_accountant", 5);
                     cmd2.Parameters.AddWithValue("@id_goods_import_form", id_goods_import_form);
                     cmd2.Parameters.AddWithValue("@total_price", bill_totalPrice);
                     cmd2.Parameters.AddWithValue("@date_cre", date_create);

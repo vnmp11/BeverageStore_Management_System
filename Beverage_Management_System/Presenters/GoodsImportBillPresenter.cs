@@ -118,8 +118,7 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Close();
         }
         public void browseBill(int ID, int id_accountant,
-            Guna.UI2.WinForms.Guna2DataGridView dataGV,
-            System.Windows.Forms.Label lb_Details, System.Windows.Forms.FlowLayoutPanel fLayoutPl_Details)
+            Guna.UI2.WinForms.Guna2DataGridView dataGV, System.Windows.Forms.FlowLayoutPanel fLayoutPl_Details)
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
@@ -211,8 +210,7 @@ namespace Beverage_Management_System.Presenters
                 {
                     dataGV.Rows.Clear();
                     setDataGV(dataGV);
-                    fLayoutPl_Details.Visible = false;
-                    lb_Details.Visible = false;
+                    fLayoutPl_Details.Controls.Clear();
 
                     MyMessageBox.showBox("Browse this bill successfully!", "Message");
                 }

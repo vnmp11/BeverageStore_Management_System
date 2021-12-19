@@ -245,6 +245,31 @@ namespace Beverage_Management_System.Presenters
         {
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
+
+            SqlCommand cmd11 = new SqlCommand("Delete from INCIDENT_REPORT WHERE ID_ORDERFORM IN (SELECT ID_ORDERFORM FROM ORDERFORM where ID_WAITER = '" + id + "');", myConnection.sqlcon);
+            cmd11.ExecuteNonQuery();
+
+            SqlCommand cmd1 = new SqlCommand("Delete from ORDER_BILL where ID_ACCOUNTANT = '" + id + "' or ID_BARTENDER = '" + id + "';", myConnection.sqlcon);
+            cmd1.ExecuteNonQuery();
+
+            SqlCommand cmd2 = new SqlCommand("Delete from DETAILS_ORDERFORM WHERE ID_DETAILS_ORDERFORM IN (SELECT D.ID_DETAILS_ORDERFORM FROM DETAILS_ORDERFORM D JOIN ORDERFORM O ON D.ID_ORDERFORM = O.ID_ORDERFORM where O.ID_WAITER = '" + id + "');", myConnection.sqlcon);
+            cmd2.ExecuteNonQuery();
+
+            SqlCommand cmd3 = new SqlCommand("Delete from ORDERFORM where ID_WAITER = '" + id + "';", myConnection.sqlcon);
+            cmd3.ExecuteNonQuery();
+
+            SqlCommand cmd4 = new SqlCommand("Delete from DETAILS_GOODS_IMPORT_BILL WHERE ID_DETAILS_GOODS_IMPORT_BILL IN (SELECT D.ID_DETAILS_GOODS_IMPORT_BILL FROM DETAILS_GOODS_IMPORT_BILL D JOIN GOODS_IMPORT_BILL G ON D.ID_GOODS_IMPORT_BILL = G.ID_GOODS_IMPORT_BILL where G.ID_ACCOUNTANT = '" + id + "' or G.ID_BARTENDER = '" + id + "');", myConnection.sqlcon);
+            cmd4.ExecuteNonQuery();
+
+            SqlCommand cmd5 = new SqlCommand("Delete from GOODS_IMPORT_BILL where ID_ACCOUNTANT = '" + id + "' or ID_BARTENDER = '" + id + "';", myConnection.sqlcon);
+            cmd5.ExecuteNonQuery();
+
+            SqlCommand cmd6 = new SqlCommand("Delete from DETAIL_GOODS_IMPORT_FORM WHERE ID_DETAIL_GOODS_IMPORT_FORM IN (SELECT D.ID_DETAIL_GOODS_IMPORT_FORM FROM DETAIL_GOODS_IMPORT_FORM D JOIN GOODS_IMPORT_FORM G ON D.ID_GOODS_IMPORT_FORM = G.ID_GOODS_IMPORT_FORM where G.ID_PERSON = '" + id + "');", myConnection.sqlcon);
+            cmd6.ExecuteNonQuery();
+
+            SqlCommand cmd7 = new SqlCommand("Delete from GOODS_IMPORT_FORM where ID_PERSON = '" + id + "';", myConnection.sqlcon);
+            cmd7.ExecuteNonQuery();
+
             SqlCommand cmd = new SqlCommand("Delete from PERSON where ID_PERSON=@id;", myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@id", id);
 

@@ -56,9 +56,9 @@ namespace Beverage_Management_System
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 22.02985F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label12.Location = new System.Drawing.Point(42, 21);
+            this.label12.Location = new System.Drawing.Point(47, 26);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(199, 47);
+            this.label12.Size = new System.Drawing.Size(216, 52);
             this.label12.TabIndex = 26;
             this.label12.Text = "AGENCY";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -79,7 +79,7 @@ namespace Beverage_Management_System
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtGridView_Agency.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -100,14 +100,14 @@ namespace Beverage_Management_System
             this.dtGridView_Agency.DefaultCellStyle = dataGridViewCellStyle8;
             this.dtGridView_Agency.EnableHeadersVisualStyles = false;
             this.dtGridView_Agency.GridColor = System.Drawing.SystemColors.Control;
-            this.dtGridView_Agency.Location = new System.Drawing.Point(50, 151);
-            this.dtGridView_Agency.Margin = new System.Windows.Forms.Padding(4);
+            this.dtGridView_Agency.Location = new System.Drawing.Point(56, 189);
+            this.dtGridView_Agency.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtGridView_Agency.Name = "dtGridView_Agency";
             this.dtGridView_Agency.ReadOnly = true;
             this.dtGridView_Agency.RowHeadersVisible = false;
             this.dtGridView_Agency.RowHeadersWidth = 60;
             this.dtGridView_Agency.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridView_Agency.Size = new System.Drawing.Size(1197, 641);
+            this.dtGridView_Agency.Size = new System.Drawing.Size(1347, 801);
             this.dtGridView_Agency.TabIndex = 35;
             this.dtGridView_Agency.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridView_Agency.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -208,11 +208,11 @@ namespace Beverage_Management_System
             this.btt_Update.HoverState.Parent = this.btt_Update;
             this.btt_Update.Image = global::Beverage_Management_System.Properties.Resources.update_arrows;
             this.btt_Update.ImageSize = new System.Drawing.Size(15, 15);
-            this.btt_Update.Location = new System.Drawing.Point(937, 84);
+            this.btt_Update.Location = new System.Drawing.Point(1054, 105);
             this.btt_Update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Update.Name = "btt_Update";
             this.btt_Update.ShadowDecoration.Parent = this.btt_Update;
-            this.btt_Update.Size = new System.Drawing.Size(105, 50);
+            this.btt_Update.Size = new System.Drawing.Size(118, 62);
             this.btt_Update.TabIndex = 91;
             this.btt_Update.Text = "Update";
             this.btt_Update.Click += new System.EventHandler(this.btt_Update_Click);
@@ -233,11 +233,11 @@ namespace Beverage_Management_System
             this.bt_Delete.HoverState.Parent = this.bt_Delete;
             this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete2;
             this.bt_Delete.ImageSize = new System.Drawing.Size(18, 18);
-            this.bt_Delete.Location = new System.Drawing.Point(826, 84);
+            this.bt_Delete.Location = new System.Drawing.Point(929, 105);
             this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
-            this.bt_Delete.Size = new System.Drawing.Size(105, 50);
+            this.bt_Delete.Size = new System.Drawing.Size(118, 62);
             this.bt_Delete.TabIndex = 90;
             this.bt_Delete.Text = "Delete";
             this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
@@ -261,14 +261,14 @@ namespace Beverage_Management_System
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.IconLeft = global::Beverage_Management_System.Properties.Resources.search1;
             this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.guna2TextBox1.Location = new System.Drawing.Point(50, 84);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2TextBox1.Location = new System.Drawing.Point(56, 105);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "Search ID or Agency Name";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(286, 50);
+            this.guna2TextBox1.Size = new System.Drawing.Size(322, 62);
             this.guna2TextBox1.TabIndex = 34;
             this.guna2TextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.guna2TextBox1_KeyDown);
             // 
@@ -286,20 +286,21 @@ namespace Beverage_Management_System
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.plus;
-            this.guna2Button1.Location = new System.Drawing.Point(1048, 84);
+            this.guna2Button1.Location = new System.Drawing.Point(1179, 105);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(199, 50);
+            this.guna2Button1.Size = new System.Drawing.Size(224, 62);
             this.guna2Button1.TabIndex = 28;
             this.guna2Button1.Text = "Add a new agency";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // Agency
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1271, 839);
+            this.ClientSize = new System.Drawing.Size(1430, 1049);
             this.Controls.Add(this.btt_Update);
             this.Controls.Add(this.bt_Delete);
             this.Controls.Add(this.dtGridView_Agency);
@@ -307,6 +308,7 @@ namespace Beverage_Management_System
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.label12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Agency";
             this.Text = "Agency";
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_Agency)).EndInit();

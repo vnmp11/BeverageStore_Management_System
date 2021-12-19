@@ -32,15 +32,18 @@ namespace Beverage_Management_System
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.DtaGridView_Warehouse = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ID_PRODUCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INVENTORY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_ID_GIForm = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,14 +51,17 @@ namespace Beverage_Management_System
             this.btt_clearAll = new Guna.UI2.WinForms.Guna2Button();
             this.btt_Pay = new Guna.UI2.WinForms.Guna2Button();
             this.dtaGV_GIForm = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ID_GIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME_GIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTITY_GIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.ID_GIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME_GIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTITY_GIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_PRODUCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INVENTORY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DtaGridView_Warehouse)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGV_GIForm)).BeginInit();
@@ -67,9 +73,9 @@ namespace Beverage_Management_System
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 16.1194F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(369, 22);
+            this.label12.Location = new System.Drawing.Point(415, 28);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(331, 31);
+            this.label12.Size = new System.Drawing.Size(372, 39);
             this.label12.TabIndex = 96;
             this.label12.Text = "ADD IMPORT FORM";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -98,17 +104,17 @@ namespace Beverage_Management_System
             this.ID_PRODUCT,
             this.NAME,
             this.INVENTORY});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DtaGridView_Warehouse.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtaGridView_Warehouse.DefaultCellStyle = dataGridViewCellStyle6;
             this.DtaGridView_Warehouse.EnableHeadersVisualStyles = false;
             this.DtaGridView_Warehouse.GridColor = System.Drawing.SystemColors.Control;
-            this.DtaGridView_Warehouse.Location = new System.Drawing.Point(40, 135);
+            this.DtaGridView_Warehouse.Location = new System.Drawing.Point(45, 169);
             this.DtaGridView_Warehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DtaGridView_Warehouse.Name = "DtaGridView_Warehouse";
             this.DtaGridView_Warehouse.ReadOnly = true;
@@ -116,7 +122,7 @@ namespace Beverage_Management_System
             this.DtaGridView_Warehouse.RowHeadersWidth = 62;
             this.DtaGridView_Warehouse.RowTemplate.Height = 35;
             this.DtaGridView_Warehouse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtaGridView_Warehouse.Size = new System.Drawing.Size(381, 426);
+            this.DtaGridView_Warehouse.Size = new System.Drawing.Size(429, 532);
             this.DtaGridView_Warehouse.TabIndex = 97;
             this.DtaGridView_Warehouse.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DtaGridView_Warehouse.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -141,27 +147,6 @@ namespace Beverage_Management_System
             this.DtaGridView_Warehouse.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.DtaGridView_Warehouse.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtaGridView_Warehouse_CellDoubleClick);
             // 
-            // ID_PRODUCT
-            // 
-            this.ID_PRODUCT.HeaderText = "ID";
-            this.ID_PRODUCT.MinimumWidth = 8;
-            this.ID_PRODUCT.Name = "ID_PRODUCT";
-            this.ID_PRODUCT.ReadOnly = true;
-            // 
-            // NAME
-            // 
-            this.NAME.HeaderText = "NAME";
-            this.NAME.MinimumWidth = 8;
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            // 
-            // INVENTORY
-            // 
-            this.INVENTORY.HeaderText = "INVENTORY";
-            this.INVENTORY.MinimumWidth = 8;
-            this.INVENTORY.Name = "INVENTORY";
-            this.INVENTORY.ReadOnly = true;
-            // 
             // txt_ID_GIForm
             // 
             this.txt_ID_GIForm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
@@ -180,15 +165,15 @@ namespace Beverage_Management_System
             this.txt_ID_GIForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.txt_ID_GIForm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_ID_GIForm.HoverState.Parent = this.txt_ID_GIForm;
-            this.txt_ID_GIForm.Location = new System.Drawing.Point(29, 12);
-            this.txt_ID_GIForm.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ID_GIForm.Location = new System.Drawing.Point(33, 15);
+            this.txt_ID_GIForm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_ID_GIForm.Name = "txt_ID_GIForm";
             this.txt_ID_GIForm.PasswordChar = '\0';
             this.txt_ID_GIForm.PlaceholderText = "";
             this.txt_ID_GIForm.SelectedText = "";
             this.txt_ID_GIForm.SelectionStart = 1;
             this.txt_ID_GIForm.ShadowDecoration.Parent = this.txt_ID_GIForm;
-            this.txt_ID_GIForm.Size = new System.Drawing.Size(58, 36);
+            this.txt_ID_GIForm.Size = new System.Drawing.Size(65, 45);
             this.txt_ID_GIForm.TabIndex = 100;
             this.txt_ID_GIForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -201,10 +186,10 @@ namespace Beverage_Management_System
             this.panel1.Controls.Add(this.btt_Pay);
             this.panel1.Controls.Add(this.txt_ID_GIForm);
             this.panel1.Controls.Add(this.dtaGV_GIForm);
-            this.panel1.Location = new System.Drawing.Point(438, 82);
+            this.panel1.Location = new System.Drawing.Point(493, 102);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(548, 479);
+            this.panel1.Size = new System.Drawing.Size(616, 599);
             this.panel1.TabIndex = 101;
             // 
             // label2
@@ -212,9 +197,9 @@ namespace Beverage_Management_System
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label2.Location = new System.Drawing.Point(147, 17);
+            this.label2.Location = new System.Drawing.Point(165, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(285, 31);
+            this.label2.Size = new System.Drawing.Size(321, 39);
             this.label2.TabIndex = 111;
             this.label2.Text = "DETAILS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -236,10 +221,11 @@ namespace Beverage_Management_System
             this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.delete2;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(1, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(18, 18);
-            this.guna2Button1.Location = new System.Drawing.Point(139, 426);
+            this.guna2Button1.Location = new System.Drawing.Point(156, 532);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(104, 39);
+            this.guna2Button1.Size = new System.Drawing.Size(117, 49);
             this.guna2Button1.TabIndex = 105;
             this.guna2Button1.Text = "DELETE";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -260,10 +246,11 @@ namespace Beverage_Management_System
             this.btt_clearAll.HoverState.Parent = this.btt_clearAll;
             this.btt_clearAll.Image = global::Beverage_Management_System.Properties.Resources.archeology;
             this.btt_clearAll.ImageSize = new System.Drawing.Size(18, 18);
-            this.btt_clearAll.Location = new System.Drawing.Point(29, 426);
+            this.btt_clearAll.Location = new System.Drawing.Point(33, 532);
+            this.btt_clearAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_clearAll.Name = "btt_clearAll";
             this.btt_clearAll.ShadowDecoration.Parent = this.btt_clearAll;
-            this.btt_clearAll.Size = new System.Drawing.Size(104, 39);
+            this.btt_clearAll.Size = new System.Drawing.Size(117, 49);
             this.btt_clearAll.TabIndex = 104;
             this.btt_clearAll.Text = "CLEAR";
             this.btt_clearAll.Click += new System.EventHandler(this.btt_clearAll_Click);
@@ -283,18 +270,19 @@ namespace Beverage_Management_System
             this.btt_Pay.HoverState.Parent = this.btt_Pay;
             this.btt_Pay.Image = global::Beverage_Management_System.Properties.Resources.download__2_1;
             this.btt_Pay.ImageSize = new System.Drawing.Size(18, 18);
-            this.btt_Pay.Location = new System.Drawing.Point(420, 426);
+            this.btt_Pay.Location = new System.Drawing.Point(472, 532);
+            this.btt_Pay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_Pay.Name = "btt_Pay";
             this.btt_Pay.ShadowDecoration.Parent = this.btt_Pay;
-            this.btt_Pay.Size = new System.Drawing.Size(104, 39);
+            this.btt_Pay.Size = new System.Drawing.Size(117, 49);
             this.btt_Pay.TabIndex = 103;
             this.btt_Pay.Text = "SAVE";
             this.btt_Pay.Click += new System.EventHandler(this.btt_Pay_Click);
             // 
             // dtaGV_GIForm
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dtaGV_GIForm.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dtaGV_GIForm.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dtaGV_GIForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dtaGV_GIForm.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -303,37 +291,37 @@ namespace Beverage_Management_System
             this.dtaGV_GIForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtaGV_GIForm.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtaGV_GIForm.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtaGV_GIForm.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtaGV_GIForm.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dtaGV_GIForm.ColumnHeadersHeight = 32;
             this.dtaGV_GIForm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_GIF,
             this.NAME_GIF,
             this.QUANTITY_GIF});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtaGV_GIForm.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(130)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtaGV_GIForm.DefaultCellStyle = dataGridViewCellStyle12;
             this.dtaGV_GIForm.EnableHeadersVisualStyles = false;
             this.dtaGV_GIForm.GridColor = System.Drawing.SystemColors.Control;
-            this.dtaGV_GIForm.Location = new System.Drawing.Point(29, 54);
+            this.dtaGV_GIForm.Location = new System.Drawing.Point(33, 68);
             this.dtaGV_GIForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtaGV_GIForm.Name = "dtaGV_GIForm";
             this.dtaGV_GIForm.RowHeadersVisible = false;
             this.dtaGV_GIForm.RowHeadersWidth = 62;
             this.dtaGV_GIForm.RowTemplate.Height = 28;
             this.dtaGV_GIForm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtaGV_GIForm.Size = new System.Drawing.Size(495, 335);
+            this.dtaGV_GIForm.Size = new System.Drawing.Size(557, 419);
             this.dtaGV_GIForm.TabIndex = 102;
             this.dtaGV_GIForm.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtaGV_GIForm.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -357,24 +345,6 @@ namespace Beverage_Management_System
             this.dtaGV_GIForm.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
             this.dtaGV_GIForm.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             // 
-            // ID_GIF
-            // 
-            this.ID_GIF.HeaderText = "ID";
-            this.ID_GIF.MinimumWidth = 8;
-            this.ID_GIF.Name = "ID_GIF";
-            // 
-            // NAME_GIF
-            // 
-            this.NAME_GIF.HeaderText = "NAME";
-            this.NAME_GIF.MinimumWidth = 8;
-            this.NAME_GIF.Name = "NAME_GIF";
-            // 
-            // QUANTITY_GIF
-            // 
-            this.QUANTITY_GIF.HeaderText = "QUANTITY";
-            this.QUANTITY_GIF.MinimumWidth = 8;
-            this.QUANTITY_GIF.Name = "QUANTITY_GIF";
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 0;
@@ -385,9 +355,10 @@ namespace Beverage_Management_System
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.panel2.Controls.Add(this.guna2ImageButton1);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(-13, -6);
+            this.panel2.Location = new System.Drawing.Point(-15, -8);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1035, 71);
+            this.panel2.Size = new System.Drawing.Size(1164, 89);
             this.panel2.TabIndex = 110;
             // 
             // guna2ImageButton1
@@ -396,18 +367,18 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.HoverState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton1.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(20, 20);
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(982, 16);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(1105, 20);
+            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(39, 45);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(44, 56);
             this.guna2ImageButton1.TabIndex = 108;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click_1);
             // 
@@ -421,24 +392,88 @@ namespace Beverage_Management_System
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.8209F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label1.Location = new System.Drawing.Point(85, 92);
+            this.label1.Location = new System.Drawing.Point(96, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 38);
+            this.label1.Size = new System.Drawing.Size(321, 48);
             this.label1.TabIndex = 109;
             this.label1.Text = "INVENTORY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // ID_GIF
+            // 
+            this.ID_GIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_GIF.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ID_GIF.HeaderText = "   ID";
+            this.ID_GIF.MinimumWidth = 8;
+            this.ID_GIF.Name = "ID_GIF";
+            this.ID_GIF.Width = 80;
+            // 
+            // NAME_GIF
+            // 
+            this.NAME_GIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NAME_GIF.DefaultCellStyle = dataGridViewCellStyle10;
+            this.NAME_GIF.FillWeight = 183.3333F;
+            this.NAME_GIF.HeaderText = "                 PRODUCT";
+            this.NAME_GIF.MinimumWidth = 8;
+            this.NAME_GIF.Name = "NAME_GIF";
+            this.NAME_GIF.Width = 310;
+            // 
+            // QUANTITY_GIF
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.QUANTITY_GIF.DefaultCellStyle = dataGridViewCellStyle11;
+            this.QUANTITY_GIF.FillWeight = 16.66667F;
+            this.QUANTITY_GIF.HeaderText = "   QUANTITY";
+            this.QUANTITY_GIF.MinimumWidth = 8;
+            this.QUANTITY_GIF.Name = "QUANTITY_GIF";
+            // 
+            // ID_PRODUCT
+            // 
+            this.ID_PRODUCT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_PRODUCT.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID_PRODUCT.HeaderText = "   ID";
+            this.ID_PRODUCT.MinimumWidth = 8;
+            this.ID_PRODUCT.Name = "ID_PRODUCT";
+            this.ID_PRODUCT.ReadOnly = true;
+            this.ID_PRODUCT.Width = 80;
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NAME.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NAME.HeaderText = "      PRODUCT";
+            this.NAME.MinimumWidth = 8;
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            this.NAME.Width = 190;
+            // 
+            // INVENTORY
+            // 
+            this.INVENTORY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.INVENTORY.DefaultCellStyle = dataGridViewCellStyle5;
+            this.INVENTORY.HeaderText = "AVAILABLE";
+            this.INVENTORY.MinimumWidth = 8;
+            this.INVENTORY.Name = "INVENTORY";
+            this.INVENTORY.ReadOnly = true;
+            this.INVENTORY.Width = 140;
+            // 
             // AddImportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1020, 590);
+            this.ClientSize = new System.Drawing.Size(1148, 738);
             this.Controls.Add(this.DtaGridView_Warehouse);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddImportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImportForm";
@@ -457,9 +492,6 @@ namespace Beverage_Management_System
         public Guna.UI2.WinForms.Guna2TextBox txt_ID_GIForm;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView dtaGV_GIForm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_GIF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAME_GIF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY_GIF;
         private Guna.UI2.WinForms.Guna2Button btt_Pay;
         private Guna.UI2.WinForms.Guna2Button btt_clearAll;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
@@ -467,10 +499,13 @@ namespace Beverage_Management_System
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn INVENTORY;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_GIF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME_GIF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY_GIF;
     }
 }

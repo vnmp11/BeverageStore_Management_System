@@ -32,16 +32,25 @@ namespace Beverage_Management_System
             this.id_accountant = ID;
             presenter = new GoodsImportBillPresenter(this);
             presenter.setDataGV(dataGV);
-            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
+            dataGV.AllowUserToAddRows = false;
+            if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < dataGV.RowCount - 1)
+            if (dataGV.SelectedCells.Count > 0)
             {
-                int id_goods_import_bill = int.Parse(dataGV.Rows[e.RowIndex].Cells[0].Value.ToString());
-                presenter.getDetailsGoodsImportBill(id_goods_import_bill, fLayoutPl_Details);
+                int selected_index = dataGV.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dataGV.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+
+                if (id_choose > 0)
+                {
+                    presenter.getDetailsGoodsImportBill(id_choose, fLayoutPl_Details);
+                }
+
             }
+
         }
 
         private void btt_Browse_Click(object sender, EventArgs e)
@@ -56,8 +65,10 @@ namespace Beverage_Management_System
                     int selected_index = dataGV.SelectedCells[0].RowIndex;
                     DataGridViewRow selected_row = dataGV.Rows[selected_index];
                     int id_choose = Convert.ToInt32(selected_row.Cells[0].Value);
-                    presenter.browseBill(id_choose, id_accountant, dataGV, lb_Details, fLayoutPl_Details);
-                    if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
+                    dataGV.AllowUserToAddRows = true;
+                    presenter.browseBill(id_choose, id_accountant, dataGV, fLayoutPl_Details);
+                    dataGV.AllowUserToAddRows = false;
+                    if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
                 };
 
             }
@@ -66,7 +77,9 @@ namespace Beverage_Management_System
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
+            dataGV.AllowUserToAddRows = true;
             presenter.searchBill(dataGV);
+            dataGV.AllowUserToAddRows = false;
         }
     }
 }

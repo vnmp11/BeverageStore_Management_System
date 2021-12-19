@@ -33,11 +33,13 @@ namespace Beverage_Management_System
             year = today.Year;
 
             InitializeComponent();
+            cb_idOrderBill.SelectedIndex = 0;
             presenter.loadListOrderBill(day, month, year);
 
-            label3.Text = presenter.total.ToString();
-            label5.Text = presenter.customer.ToString();
-            label2.Text = presenter.total_quantity.ToString();
+            label3.Text = presenter.total.ToString("#,##0");
+            label5.Text = presenter.customer.ToString("#,##0");
+            label2.Text = presenter.total_quantity.ToString("#,##0");
+
 
         }
 
@@ -105,8 +107,8 @@ namespace Beverage_Management_System
             {
                 presenter.loadListOrderBill(day, month, year);
                 label3.Text = presenter.total.ToString("#,##0");
-                label5.Text = presenter.customer.ToString();
-                label2.Text = presenter.total_quantity.ToString();
+                label5.Text = presenter.customer.ToString("#,##0");
+                label2.Text = presenter.total_quantity.ToString("#,##0");
 
                 orderFormPresenter.getOrderFormList(day, month, year);
                 DrawPieChart();
@@ -116,8 +118,8 @@ namespace Beverage_Management_System
             {
                 presenter.loadListOrderBill(0, month, year);
                 label3.Text = presenter.total.ToString("#,##0");
-                label5.Text = presenter.customer.ToString();
-                label2.Text = presenter.total_quantity.ToString();
+                label5.Text = presenter.customer.ToString("#,##0");
+                label2.Text = presenter.total_quantity.ToString("#,##0");
 
                 orderFormPresenter.getOrderFormList(0, month, year);
                 DrawPieChart();
@@ -126,8 +128,8 @@ namespace Beverage_Management_System
             {
                 presenter.loadListOrderBill(0, 0, year);
                 label3.Text = presenter.total.ToString("#,##0");
-                label5.Text = presenter.customer.ToString();
-                label2.Text = presenter.total_quantity.ToString();
+                label5.Text = presenter.customer.ToString("#,##0");
+                label2.Text = presenter.total_quantity.ToString("#,##0");
 
                 orderFormPresenter.getOrderFormList(0, 0, year);
                 DrawPieChart();

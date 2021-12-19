@@ -27,26 +27,34 @@ namespace Beverage_Management_System
             InitializeComponent();
             id = id_batender;
             od.showOrderForm(dtGridView_OrderForm);
-            if (dtGridView_OrderForm.Rows.Count > 1) dtGridView_OrderForm.CurrentCell.Selected = false;
+            dtGridView_OrderForm.AllowUserToAddRows = false;
+            if (dtGridView_OrderForm.Rows.Count > 0) dtGridView_OrderForm.CurrentCell.Selected = false;
         }
 
         void reloadGV()
         {
+            dtGridView_OrderForm.AllowUserToAddRows = true;
             dtGridView_OrderForm.Rows.Clear();
             od.showOrderForm(dtGridView_OrderForm);
-            if (dtGridView_OrderForm.Rows.Count > 1) dtGridView_OrderForm.CurrentCell.Selected = false;
+            dtGridView_OrderForm.AllowUserToAddRows = false;
+            if (dtGridView_OrderForm.Rows.Count > 0) dtGridView_OrderForm.CurrentCell.Selected = false;
         }
         private void dtGridView_OrderForm_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex < dtGridView_OrderForm.RowCount - 1)
-            { 
-                int id_order = int.Parse(dtGridView_OrderForm.Rows[e.RowIndex].Cells[0].Value.ToString());
-                lb_id_order.Text = id_order.ToString();
+            if (dtGridView_OrderForm.SelectedCells.Count > 0)
+            {
+                int selected_index = dtGridView_OrderForm.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dtGridView_OrderForm.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells["ID1"].Value);
 
-                od.showDetailOrderForm(fLayoutPl_Detail, id_order);
-            } 
-                 
+                if (id_choose > 0)
+                {
+                    od.showDetailOrderForm(fLayoutPl_Detail, id_choose);
+                }
+
+            }
+
         }
 
         private void btt_remove_Click(object sender, EventArgs e)
@@ -112,7 +120,9 @@ namespace Beverage_Management_System
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
+            dtGridView_OrderForm.AllowUserToAddRows = true;
             od.searchData(dtGridView_OrderForm, txt_Search.Text);
+            dtGridView_OrderForm.AllowUserToAddRows = false;
         }
     }
 }

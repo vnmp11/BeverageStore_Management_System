@@ -18,7 +18,8 @@ namespace Beverage_Management_System
         {
             InitializeComponent();
             p.showListReport(dataGV_Report);
-            if(dataGV_Report.Rows.Count > 1) dataGV_Report.CurrentCell.Selected = false;
+            dataGV_Report.AllowUserToAddRows = false;
+            if(dataGV_Report.Rows.Count > 0) dataGV_Report.CurrentCell.Selected = false;
 
         }
 
@@ -26,11 +27,15 @@ namespace Beverage_Management_System
         {
             if (txb_Search.Text == "")
             {
+                dataGV_Report.AllowUserToAddRows = true;
                 p.showListReport(dataGV_Report);
+                dataGV_Report.AllowUserToAddRows = false;
             }
             else
             {
+                dataGV_Report.AllowUserToAddRows = true;
                 p.searchReport(dataGV_Report, txb_Search.Text);
+                dataGV_Report.AllowUserToAddRows = false;
             }
         }
 

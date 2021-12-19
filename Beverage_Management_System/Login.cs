@@ -29,6 +29,7 @@ namespace Beverage_Management_System
         public Login()
         {
             InitializeComponent();
+            txt_Password.UseSystemPasswordChar = true;
         }
 
         private void btt_visible2_Click(object sender, EventArgs e)
@@ -82,9 +83,18 @@ namespace Beverage_Management_System
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void btt_unvisible_Click(object sender, EventArgs e)
         {
+            btt_visible.Show();
+            btt_unvisible.Hide();
+            txt_Password.UseSystemPasswordChar = false;
+        }
 
+        private void btt_visible_Click(object sender, EventArgs e)
+        {
+            btt_visible.Hide();
+            btt_unvisible.Show();
+            txt_Password.UseSystemPasswordChar = true;
         }
     }
 }

@@ -31,14 +31,17 @@ namespace Beverage_Management_System
             presenter = new GoodAgencyPresenter(this);
             presenter.dataGVGood(dataGridView_Goods, ID);
             idtemp = ID;
-            if (dataGridView_Goods.Rows.Count > 1) dataGridView_Goods.CurrentCell.Selected = false;
+            dataGridView_Goods.AllowUserToAddRows = false;
+            if (dataGridView_Goods.Rows.Count > 0) dataGridView_Goods.CurrentCell.Selected = false;
 
         }
         public void refreshDataGV()
         {
+            dataGridView_Goods.AllowUserToAddRows = true;
             dataGridView_Goods.Rows.Clear();
             presenter.dataGVGood(dataGridView_Goods, idtemp);
-            if (dataGridView_Goods.Rows.Count > 1) dataGridView_Goods.CurrentCell.Selected = false;
+            dataGridView_Goods.AllowUserToAddRows = false;
+            if (dataGridView_Goods.Rows.Count > 0) dataGridView_Goods.CurrentCell.Selected = false;
         }
         public void refreshTable()
         {
@@ -47,10 +50,12 @@ namespace Beverage_Management_System
 
         public void reloadTable()
         {
+            dataGridView_Goods.AllowUserToAddRows = true;
             GoodAgencyPresenter presenter = new GoodAgencyPresenter(this);
             refreshTable();
             presenter.dataGVGood(dataGridView_Goods, idtemp);
-            if (dataGridView_Goods.Rows.Count > 1) dataGridView_Goods.CurrentCell.Selected = false;
+            dataGridView_Goods.AllowUserToAddRows = false;
+            if (dataGridView_Goods.Rows.Count > 0) dataGridView_Goods.CurrentCell.Selected = false;
         }
 
        
@@ -77,9 +82,11 @@ namespace Beverage_Management_System
                     int result = presenter.deleteGoodAgency(id_choose);
                     if (result == 1)
                     {
+                        dataGridView_Goods.AllowUserToAddRows = true;
                         refreshTable();
                         presenter.dataGVGood(dataGridView_Goods, idtemp);
-                        if (dataGridView_Goods.Rows.Count > 1) dataGridView_Goods.CurrentCell.Selected = false;
+                        dataGridView_Goods.AllowUserToAddRows = false;
+                        if (dataGridView_Goods.Rows.Count > 0) dataGridView_Goods.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this product successfully!", "Message");
                         reloadTable();
                     }

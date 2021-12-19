@@ -55,7 +55,8 @@ namespace Beverage_Management_System
             id = id_batender;
             presenter = new ImportGoodsPresenter(this, id_batender);
             presenter.setDataGV(DtaGridView_Warehouse);
-            if (DtaGridView_Warehouse.Rows.Count > 1) DtaGridView_Warehouse.CurrentCell.Selected = false;
+            DtaGridView_Warehouse.AllowUserToAddRows = false;
+            if (DtaGridView_Warehouse.Rows.Count > 0) DtaGridView_Warehouse.CurrentCell.Selected = false;
             idForm = presenter.show_id();
             txt_ID_GIForm.Text = idForm.ToString();
         }

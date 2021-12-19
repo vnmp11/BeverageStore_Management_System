@@ -24,22 +24,31 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter = new TrackingNotePresenter(this);
             presenter.setDataGV(dataGV);
-            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
+            dataGV.AllowUserToAddRows = false;
+            if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            fLayoutPl_Details.Visible = true;
-            if (e.RowIndex < dataGV.RowCount - 1)
+            if (dataGV.SelectedCells.Count > 0)
             {
-                int id_bill = int.Parse(dataGV.Rows[e.RowIndex].Cells[0].Value.ToString());
-                presenter.getDetailsTrackingNote(id_bill, fLayoutPl_Details);
+                int selected_index = dataGV.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dataGV.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+
+                if (id_choose > 0)
+                {
+                    presenter.getDetailsTrackingNote(id_choose, fLayoutPl_Details);
+                }
+
             }
         }
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
+            dataGV.AllowUserToAddRows = true;
             presenter.searchNote(dataGV);
+            dataGV.AllowUserToAddRows = false;
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)

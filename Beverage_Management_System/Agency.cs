@@ -20,7 +20,8 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter = new AgencyPresenter(this);
             presenter.dataGV(dtGridView_Agency);
-            if(dtGridView_Agency.Rows.Count > 1) dtGridView_Agency.CurrentCell.Selected = false;
+            dtGridView_Agency.AllowUserToAddRows = false;
+            if(dtGridView_Agency.Rows.Count > 0) dtGridView_Agency.CurrentCell.Selected = false;
 
         }
 
@@ -37,9 +38,11 @@ namespace Beverage_Management_System
      
         public void reloadTableAgency()
         {
+            dtGridView_Agency.AllowUserToAddRows = true;
             AgencyPresenter presenter = new AgencyPresenter(this);
             refreshTable();
             presenter.dataGV(dtGridView_Agency);
+            dtGridView_Agency.AllowUserToAddRows = false;
             if (dtGridView_Agency.Rows.Count > 1) dtGridView_Agency.CurrentCell.Selected = false;
         }
 
@@ -61,9 +64,11 @@ namespace Beverage_Management_System
                     int result = presenter.deleteAgency(id_choose);
                     if (result == 1)
                     {
+                        dtGridView_Agency.AllowUserToAddRows = true;
                         refreshTable();
                         presenter.dataGV(dtGridView_Agency);
-                        if (dtGridView_Agency.Rows.Count > 1) dtGridView_Agency.CurrentCell.Selected = false;
+                        dtGridView_Agency.AllowUserToAddRows = false;
+                        if (dtGridView_Agency.Rows.Count > 0) dtGridView_Agency.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this agency successfully!", "Message");
                         reloadTableAgency();
                     }
@@ -93,9 +98,11 @@ namespace Beverage_Management_System
         }
         public void refreshDataGV()
         {
+            dtGridView_Agency.AllowUserToAddRows = true;
             dtGridView_Agency.Rows.Clear();
             presenter.dataGV(dtGridView_Agency);
-            if (dtGridView_Agency.Rows.Count > 1) dtGridView_Agency.CurrentCell.Selected = false;
+            dtGridView_Agency.AllowUserToAddRows = false;
+            if (dtGridView_Agency.Rows.Count > 0) dtGridView_Agency.CurrentCell.Selected = false;
         }
         private void btt_Update_Click(object sender, EventArgs e)
         {

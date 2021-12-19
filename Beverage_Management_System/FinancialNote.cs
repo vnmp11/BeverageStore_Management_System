@@ -27,36 +27,57 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter = new FinancialNotePresenter(this);
             presenter.setDataGV(dataGV_Goods_Import_Bill, dataGV_Order_Bill);
-            if(dataGV_Goods_Import_Bill.Rows.Count > 1) dataGV_Goods_Import_Bill.CurrentCell.Selected = false;
-            if(dataGV_Order_Bill.Rows.Count > 1) dataGV_Order_Bill.CurrentCell.Selected = false;
+            dataGV_Goods_Import_Bill.AllowUserToAddRows = false;
+            dataGV_Order_Bill.AllowUserToAddRows = false;
+            if(dataGV_Goods_Import_Bill.Rows.Count > 0) dataGV_Goods_Import_Bill.CurrentCell.Selected = false;
+            if(dataGV_Order_Bill.Rows.Count > 0) dataGV_Order_Bill.CurrentCell.Selected = false;
         }
 
         private void dataGV_Order_Bill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < dataGV_Order_Bill.RowCount - 1)
+            if (dataGV_Order_Bill.SelectedCells.Count > 0)
             {
-                int id_order_form = int.Parse(dataGV_Order_Bill.Rows[e.RowIndex].Cells[1].Value.ToString());
-                presenter.getDetailsOrderBill(id_order_form, fLayoutPl_Details_Order_Bill);
+                int selected_index = dataGV_Order_Bill.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dataGV_Order_Bill.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells["ID_ORDER_FORM"].Value);
+
+                if (id_choose > 0)
+                {
+                    presenter.getDetailsOrderBill(id_choose, fLayoutPl_Details_Order_Bill);
+                }
+
             }
+
         }
 
         private void dataGV_Goods_Import_Bill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < dataGV_Goods_Import_Bill.RowCount - 1)
+            if (dataGV_Goods_Import_Bill.SelectedCells.Count > 0)
             {
-                int id_goods_import_bill = int.Parse(dataGV_Goods_Import_Bill.Rows[e.RowIndex].Cells[0].Value.ToString());
-                presenter.getDetailsGoodsImportBill(id_goods_import_bill, fLayoutPl_Details_Goods_Import_Bill);
+                int selected_index = dataGV_Goods_Import_Bill.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dataGV_Goods_Import_Bill.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells["ID_GOODS_IMPORT_BILL"].Value);
+
+                if (id_choose > 0)
+                {
+                    presenter.getDetailsGoodsImportBill(id_choose, fLayoutPl_Details_Goods_Import_Bill);
+                }
+
             }
         }
 
         private void txt_SearchOrderBill_TextChanged(object sender, EventArgs e)
         {
+            dataGV_Order_Bill.AllowUserToAddRows = true;
             presenter.searchOrderBill(dataGV_Order_Bill);
+            dataGV_Order_Bill.AllowUserToAddRows = false;
         }
 
         private void txt_SearchGoodsImportBill_TextChanged(object sender, EventArgs e)
         {
+            dataGV_Goods_Import_Bill.AllowUserToAddRows = true;
             presenter.searchGoodsImportBill(dataGV_Goods_Import_Bill);
+            dataGV_Goods_Import_Bill.AllowUserToAddRows = false;
         }
 
         private void txt_SearchOrderBill_KeyDown(object sender, KeyEventArgs e)

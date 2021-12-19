@@ -35,18 +35,25 @@ namespace Beverage_Management_System
             this.id_accountant = ID;
             presenter = new OrderBillPresenter(this);
             presenter.setDataGV(dataGV);
-            if(dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
+            dataGV.AllowUserToAddRows = false;
+            if(dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            fLayoutPl_Details.Visible = true;
-            lb_Details.Visible = true;
-            if (e.RowIndex < dataGV.RowCount - 1)
+            if (dataGV.SelectedCells.Count > 0)
             {
-                int id_order_form = int.Parse(dataGV.Rows[e.RowIndex].Cells[1].Value.ToString());
-                presenter.getDetailsOrderBill(id_order_form, fLayoutPl_Details);
+                int selected_index = dataGV.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dataGV.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells["ID_ORDER_FORM"].Value);
+
+                if (id_choose > 0)
+                {
+                    presenter.getDetailsOrderBill(id_choose, fLayoutPl_Details);
+                }
+
             }
+
         }
 
 
@@ -81,9 +88,10 @@ namespace Beverage_Management_System
                         DataGridViewRow selected_row = dataGV.Rows[selected_index];
                         int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
                         int id_form = Convert.ToInt32(selected_row.Cells["ID_ORDER_FORM"].Value);
-
-                        presenter.browseBill(id_choose, id_accountant, dataGV, id_form);
-
+                        dataGV.AllowUserToAddRows = true;
+                        presenter.browseBill(id_choose, id_accountant, dataGV, id_form, fLayoutPl_Details);
+                        dataGV.AllowUserToAddRows = false;
+                        if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
                         printBill.Close();
 
                     };
@@ -93,8 +101,10 @@ namespace Beverage_Management_System
                         DataGridViewRow selected_row = dataGV.Rows[selected_index];
                         int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
                         int id_form = Convert.ToInt32(selected_row.Cells["ID_ORDER_FORM"].Value);
-
-                        presenter.browseBill(id_choose, id_accountant, dataGV, id_form);
+                        dataGV.AllowUserToAddRows = true;
+                        presenter.browseBill(id_choose, id_accountant, dataGV, id_form, fLayoutPl_Details);
+                        dataGV.AllowUserToAddRows = false;
+                        if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
                         printBill.Close();
 
                     };        
@@ -107,7 +117,9 @@ namespace Beverage_Management_System
         }
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
+            dataGV.AllowUserToAddRows = true;
             presenter.searchBill(dataGV);
+            dataGV.AllowUserToAddRows = false;
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

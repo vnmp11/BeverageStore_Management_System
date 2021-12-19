@@ -38,6 +38,27 @@ namespace Beverage_Management_System
 
         }
 
+        public AddReport(int id_orderform, String reason, String solution, int fine, DateTime date, bool isSeen)
+        {
+            if(isSeen)
+            {
+                InitializeComponent();
+                pre = new IncidentReportPresenter(this);
+                pre.setInformation(id_orderform, reason, solution, fine, date,
+                    txb_Fine, txb_Reason, txb_Solution, cb_idOrderBill, dateTime);
+            }
+            else
+            {
+                InitializeComponent();
+                pre = new IncidentReportPresenter(this);
+                pre.setInformation(id_orderform, reason, solution, fine, date,
+                    txb_Fine, txb_Reason, txb_Solution, cb_idOrderBill, dateTime);
+                btt_SubmitReport.Visible = false;
+                btt_delete.Visible = false;
+            }
+
+        }
+
         bool checkEmpty()
         {
             object id = cb_idOrderBill.SelectedItem;

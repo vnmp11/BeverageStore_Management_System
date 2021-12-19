@@ -28,7 +28,8 @@ namespace Beverage_Management_System
             presenter = new InventoryPresenter(this);
             presenter.getListOfKind();
             presenter.setDataGV(dataGV);
-            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
+            dataGV.AllowUserToAddRows = false;
+            if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
@@ -64,9 +65,11 @@ namespace Beverage_Management_System
                     int result = presenter.deleteProduct(id_choose);
                     if (result == 1)
                     {
+                        dataGV.AllowUserToAddRows = true;
                         dataGV.Rows.Clear();
                         presenter.setDataGV(dataGV);
-                        if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
+                        dataGV.AllowUserToAddRows = false;
+                        if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this product successfully!", "Message");
                     }
                     else if (result == 0) MyMessageBox.showBox("You cannot delete this product because this action will affect the store's statistics", "Message");
@@ -75,17 +78,22 @@ namespace Beverage_Management_System
 
             }
             else MyMessageBox.showBox("Please choose a product which you want to delete!", "Message");
+            dataGV.AllowUserToAddRows = false;
         }
         public void refreshDataGV()
         {
+            dataGV.AllowUserToAddRows = true;
             dataGV.Rows.Clear();
             presenter.setDataGV(dataGV);
-            if (dataGV.Rows.Count > 1) dataGV.CurrentCell.Selected = false;
+            dataGV.AllowUserToAddRows = false;
+            if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
         }
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
+            dataGV.AllowUserToAddRows = true;
             presenter.searchData(dataGV);
+            dataGV.AllowUserToAddRows = false;
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)

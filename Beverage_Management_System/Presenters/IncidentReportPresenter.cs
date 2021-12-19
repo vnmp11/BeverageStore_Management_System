@@ -24,7 +24,7 @@ namespace Beverage_Management_System.Presenters
         }
         public void showId(Guna2ComboBox cb)
         {
-            String query1 = "Select ID_ORDER_FORM from ORDER_BILL Where STATUS = 0;";
+            String query1 = "Select ID_ORDER_FORM from ORDER_BILL Where STATUS = 0 and ID_ORDER_FORM not in (Select ID_ORDERFORM FROM INCIDENT_REPORT);";
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
@@ -240,7 +240,7 @@ namespace Beverage_Management_System.Presenters
             List<MReport> reportlist = new List<MReport>();
             dt.Rows.Clear();
 
-            string query = "Select * from INCIDENT_REPORT Where ID_ORDERFORM=@id_orderform";
+            string query = "Select * from INCIDENT_REPORT Where ID_ORDERFORM=@id_orderform or ID_INCIDENT_REPORT =@id_orderform";
 
             SqlCommand cmd = new SqlCommand(query, myConnection.sqlcon);
             cmd.Parameters.AddWithValue("@id_orderform", search);
@@ -269,7 +269,7 @@ namespace Beverage_Management_System.Presenters
                 row.Cells[2].Value = reportlist[i].getREASON();
                 row.Cells[3].Value = reportlist[i].getSOLUTION();
                 row.Cells[4].Value = reportlist[i].getFINE().ToString("###,###,##0");
-                row.Cells[5].Value = reportlist[i].getDATE();
+                row.Cells[5].Value = reportlist[i].getDATE().ToString("dd/MM/yyyy");
 
                 dt.Rows.Add(row);
             }
@@ -281,11 +281,16 @@ namespace Beverage_Management_System.Presenters
             Guna.UI2.WinForms.Guna2DateTimePicker dateTime)
         {
             txb_Fine.Text = fine.ToString();
+            txb_Fine.Enabled = false;
             txb_Reason.Text = reason;
+            txb_Reason.Enabled = false;
             txb_Solution.Text = solution;
+            txb_Solution.Enabled = false;
             cb_idOrderBill.Items.Add(id_orderform.ToString());
             cb_idOrderBill.SelectedIndex = 1;
+            cb_idOrderBill.Enabled = false;
             dateTime.Value = date;
+            dateTime.Enabled = false;
         }
 
         public int deleteReport(String id, String id_order)

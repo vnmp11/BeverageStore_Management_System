@@ -33,8 +33,10 @@ namespace Beverage_Management_System
             this.parent = form;
             pre = new ImportGoodsPresenter(this);
             pre.dataGV_Detail(DtaGridView_Goods, id);
+            DtaGridView_Goods.AllowUserToAddRows = false;
             bt_Save.Visible = false;
-            if (DtaGridView_Goods.Rows.Count > 1) DtaGridView_Goods.CurrentCell.Selected = false;
+            DtaGridView_Goods.ReadOnly = true;
+            if (DtaGridView_Goods.Rows.Count > 0) DtaGridView_Goods.CurrentCell.Selected = false;
 
         }
         public GoodsInImportForm(int id, int temp, ImportForm form)
@@ -43,8 +45,9 @@ namespace Beverage_Management_System
             this.parent = form;
             pre = new ImportGoodsPresenter(this);
             pre.dataGV_Detail(DtaGridView_Goods, id);
+            DtaGridView_Goods.AllowUserToAddRows = false;
             idTemp = id;
-            if (DtaGridView_Goods.Rows.Count > 1) DtaGridView_Goods.CurrentCell.Selected = false;
+            if (DtaGridView_Goods.Rows.Count > 0) DtaGridView_Goods.CurrentCell.Selected = false;
 
         }
 

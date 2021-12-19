@@ -36,6 +36,8 @@ namespace Beverage_Management_System
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btt_unvisible = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btt_visible = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txt_Password = new Guna.UI2.WinForms.Guna2TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.bt_Login = new Guna.UI2.WinForms.Guna2Button();
@@ -74,14 +76,54 @@ namespace Beverage_Management_System
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btt_unvisible);
+            this.panel3.Controls.Add(this.btt_visible);
             this.panel3.Controls.Add(this.txt_Password);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.bt_Login);
             this.panel3.Controls.Add(this.txt_Username);
             this.panel3.Location = new System.Drawing.Point(482, 38);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(442, 446);
+            this.panel3.Size = new System.Drawing.Size(454, 446);
             this.panel3.TabIndex = 23;
+            // 
+            // btt_unvisible
+            // 
+            this.btt_unvisible.CheckedState.Parent = this.btt_unvisible;
+            this.btt_unvisible.HoverState.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
+            this.btt_unvisible.HoverState.ImageSize = new System.Drawing.Size(15, 15);
+            this.btt_unvisible.HoverState.Parent = this.btt_unvisible;
+            this.btt_unvisible.Image = global::Beverage_Management_System.Properties.Resources.visibility;
+            this.btt_unvisible.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_unvisible.ImageRotate = 0F;
+            this.btt_unvisible.ImageSize = new System.Drawing.Size(25, 25);
+            this.btt_unvisible.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btt_unvisible.Location = new System.Drawing.Point(401, 232);
+            this.btt_unvisible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btt_unvisible.Name = "btt_unvisible";
+            this.btt_unvisible.PressedState.Parent = this.btt_unvisible;
+            this.btt_unvisible.ShadowDecoration.Parent = this.btt_unvisible;
+            this.btt_unvisible.Size = new System.Drawing.Size(50, 46);
+            this.btt_unvisible.TabIndex = 38;
+            this.btt_unvisible.Click += new System.EventHandler(this.btt_unvisible_Click);
+            // 
+            // btt_visible
+            // 
+            this.btt_visible.CheckedState.Parent = this.btt_visible;
+            this.btt_visible.HoverState.Image = global::Beverage_Management_System.Properties.Resources.view;
+            this.btt_visible.HoverState.Parent = this.btt_visible;
+            this.btt_visible.Image = global::Beverage_Management_System.Properties.Resources.visibility__1_;
+            this.btt_visible.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btt_visible.ImageRotate = 0F;
+            this.btt_visible.ImageSize = new System.Drawing.Size(25, 25);
+            this.btt_visible.Location = new System.Drawing.Point(406, 241);
+            this.btt_visible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btt_visible.Name = "btt_visible";
+            this.btt_visible.PressedState.Parent = this.btt_visible;
+            this.btt_visible.ShadowDecoration.Parent = this.btt_visible;
+            this.btt_visible.Size = new System.Drawing.Size(36, 29);
+            this.btt_visible.TabIndex = 37;
+            this.btt_visible.Click += new System.EventHandler(this.btt_visible_Click);
             // 
             // txt_Password
             // 
@@ -107,7 +149,7 @@ namespace Beverage_Management_System
             this.txt_Password.Location = new System.Drawing.Point(32, 232);
             this.txt_Password.Margin = new System.Windows.Forms.Padding(5);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.PasswordChar = '*';
+            this.txt_Password.PasswordChar = '\0';
             this.txt_Password.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txt_Password.PlaceholderText = "Password";
             this.txt_Password.SelectedText = "";
@@ -123,7 +165,7 @@ namespace Beverage_Management_System
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.label11.Location = new System.Drawing.Point(24, 68);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(211, 46);
+            this.label11.Size = new System.Drawing.Size(231, 50);
             this.label11.TabIndex = 24;
             this.label11.Text = "Get Started!";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,7 +179,7 @@ namespace Beverage_Management_System
             this.bt_Login.CustomImages.Parent = this.bt_Login;
             this.bt_Login.DisabledState.Parent = this.bt_Login;
             this.bt_Login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.bt_Login.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Login.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Login.ForeColor = System.Drawing.Color.White;
             this.bt_Login.HoverState.Parent = this.bt_Login;
             this.bt_Login.Location = new System.Drawing.Point(155, 348);
@@ -246,7 +288,6 @@ namespace Beverage_Management_System
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.ResumeLayout(false);
@@ -270,6 +311,8 @@ namespace Beverage_Management_System
         private Guna.UI2.WinForms.Guna2ImageButton btt_unvisible2;
         private Guna.UI2.WinForms.Guna2ImageButton btt_close;
         private Guna.UI2.WinForms.Guna2TextBox txt_Password;
+        private Guna.UI2.WinForms.Guna2ImageButton btt_visible;
+        private Guna.UI2.WinForms.Guna2ImageButton btt_unvisible;
     }
     
 }

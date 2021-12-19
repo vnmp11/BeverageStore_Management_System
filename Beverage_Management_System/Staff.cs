@@ -27,7 +27,8 @@ namespace Beverage_Management_System
             InitializeComponent();
             presenter = new StaffPresenter(this);
             presenter.setDataGV_Fill(dtGridView_Staff);
-            if(dtGridView_Staff.Rows.Count > 1) dtGridView_Staff.CurrentCell.Selected = false;
+            dtGridView_Staff.AllowUserToAddRows = false;
+            if(dtGridView_Staff.Rows.Count > 0) dtGridView_Staff.CurrentCell.Selected = false;
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -52,9 +53,11 @@ namespace Beverage_Management_System
                     StaffPresenter presenter = new StaffPresenter(this);
                     if (presenter.deleteStaff(id_choose) > 0)
                     {
+                        dtGridView_Staff.AllowUserToAddRows = true;
                         refreshTable();
                         presenter.setDataGV_Fill(dtGridView_Staff);
-                        if (dtGridView_Staff.Rows.Count > 1) dtGridView_Staff.CurrentCell.Selected = false;
+                        dtGridView_Staff.AllowUserToAddRows = false;
+                        if (dtGridView_Staff.Rows.Count > 0) dtGridView_Staff.CurrentCell.Selected = false;
                         MyMessageBox.showBox("Delete this staff successfully!", "Message");
                         reloadTable();
                     }
@@ -65,6 +68,7 @@ namespace Beverage_Management_System
 
             }
             else MyMessageBox.showBox("Please choose a staff whom you want to delete!", "Message");
+            
         }
 
         public void refreshTable()
@@ -74,10 +78,12 @@ namespace Beverage_Management_System
 
         public void reloadTable()
         {
+            dtGridView_Staff.AllowUserToAddRows = true;
             StaffPresenter presenter = new StaffPresenter(this);
             refreshTable();
             presenter.setDataGV_Fill(dtGridView_Staff);
-            if (dtGridView_Staff.Rows.Count > 1) dtGridView_Staff.CurrentCell.Selected = false;
+            if (dtGridView_Staff.Rows.Count > 0) dtGridView_Staff.CurrentCell.Selected = false;
+            dtGridView_Staff.AllowUserToAddRows = false;
         }
 
 
@@ -89,17 +95,20 @@ namespace Beverage_Management_System
                 DataGridViewRow selected_row = dtGridView_Staff.Rows[selected_index];
                 int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
 
-                StaffPresenter presenter = new StaffPresenter(this);
-                presenter.openAddStaffForm(id_choose, this);
-
-
+                if(id_choose > 0)
+                {
+                    StaffPresenter presenter = new StaffPresenter(this);
+                    presenter.openAddStaffForm(id_choose, this);
+                } 
 
             }
         }
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
+            dtGridView_Staff.AllowUserToAddRows = true;
             presenter.searchData(dtGridView_Staff);
+            dtGridView_Staff.AllowUserToAddRows = false;
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)
