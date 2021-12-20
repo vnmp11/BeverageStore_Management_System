@@ -356,14 +356,14 @@ namespace Beverage_Management_System
             this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.delete2;
+            this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.archeology;
             this.guna2Button1.Location = new System.Drawing.Point(328, 385);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(151, 62);
             this.guna2Button1.TabIndex = 107;
-            this.guna2Button1.Text = "DELETE";
+            this.guna2Button1.Text = "CLEAR";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button3

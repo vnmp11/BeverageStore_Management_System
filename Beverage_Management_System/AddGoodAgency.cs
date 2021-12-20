@@ -23,6 +23,7 @@ namespace Beverage_Management_System
         }
 
         public static int idtemp2;
+        public int id_selected_goods = 0;
 
         public string name { get => txt_Name_Good.Text; set => throw new NotImplementedException(); }
         public string price { get => txt_Price_Good.Text; set => throw new NotImplementedException(); }
@@ -36,18 +37,16 @@ namespace Beverage_Management_System
             this.parent = form;
             idtemp2 = ID;
         }
-        private void btt_Add_Good_Click(object sender, EventArgs e)
+
+        public AddGoodAgency(int id_supplier, GoodAgency form, int id_goods)
         {
-            if (txt_Name_Good.Text.ToString().Trim() != "" && txt_Price_Good.ToString().Trim() != ""
-                  && txt_Unit_Good.ToString().Trim() != "" && txt_Quantity_Good.ToString().Trim() != "")
-            {
-                GoodAgencyPresenter agencyPresenter = new GoodAgencyPresenter(this, idtemp2);
-                agencyPresenter.addGoodAgency(this, idtemp2);
+            InitializeComponent();
+            this.parent = form;
+            idtemp2 = id_supplier;
+            this.id_selected_goods = id_goods;
 
-                this.Close();
-
-            }
-            else MyMessageBox.showBox("Please fill in the product's information completely!", "Message");
+            GoodAgencyPresenter presenter = new GoodAgencyPresenter(this, idtemp2, id_selected_goods);
+            presenter.setInformation(txt_Name_Good, txt_Price_Good, txt_Unit_Good, txt_Quantity_Good);
         }
 
         private void guna2Button3_Click_1(object sender, EventArgs e)
@@ -56,7 +55,7 @@ namespace Beverage_Management_System
                   && txt_Unit_Good.ToString().Trim() != "" && txt_Quantity_Good.ToString().Trim() != "")
             {
                 GoodAgencyPresenter agencyPresenter = new GoodAgencyPresenter(this, idtemp2);
-                agencyPresenter.addGoodAgency(this, idtemp2);
+                agencyPresenter.addGoodAgency(this, idtemp2, id_selected_goods);
 
                 parent.refreshDataGV();
                 this.Close();

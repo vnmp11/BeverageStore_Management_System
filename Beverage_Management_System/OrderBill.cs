@@ -161,7 +161,7 @@ namespace Beverage_Management_System
 
             int selected_index = dataGV.SelectedCells[0].RowIndex;
             DataGridViewRow selected_row = dataGV.Rows[selected_index];
-            int fine = Convert.ToInt32(selected_row.Cells["FINE"].Value);
+            string fine = selected_row.Cells["FINE"].Value.ToString();
             String total = selected_row.Cells["TOTAL_PRICE"].Value.ToString();
 
             e.Graphics.DrawString("Fine: " + fine.ToString(), fnt, Brushes.Black, new PointF(200, y += dy));

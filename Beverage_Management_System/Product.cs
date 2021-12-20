@@ -130,7 +130,7 @@ namespace Beverage_Management_System
             }
             else
             {       
-                qty = new AddQuatity();
+                qty = new AddQuatity(true);
                 Menu menu = (Menu) this.Parent.Parent;
                 qty.Show();
 

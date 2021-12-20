@@ -18,6 +18,7 @@ namespace Beverage_Management_System
         int id_IGF;
         string name_IGF;
         DataGridView dataGrid;
+        bool isInMenu = false;
 
         public AddQuatity()
         {
@@ -25,6 +26,13 @@ namespace Beverage_Management_System
             txbQuantity = txb_quantity.Text;
 
 
+        }
+
+        public AddQuatity(bool isINMENU)
+        {
+            InitializeComponent();
+            txbQuantity = txb_quantity.Text;
+            this.isInMenu = isINMENU;
         }
         public AddQuatity(int id, string name, int temp, DataGridView a)
         {
@@ -68,9 +76,14 @@ namespace Beverage_Management_System
 
         public void btt_ok_Click(object sender, EventArgs e)
         {
-            ImportGoodsPresenter presenter = new ImportGoodsPresenter();
-            presenter.addDataGV_ImportGoods(dataGrid, id_IGF, name_IGF, int.Parse(txb_quantity.Text));
-            this.Close();
+            if (isInMenu == false)
+            {
+                ImportGoodsPresenter presenter = new ImportGoodsPresenter();
+                presenter.addDataGV_ImportGoods(dataGrid, id_IGF, name_IGF, int.Parse(txb_quantity.Text));
+                this.Close();
+            }
+            else this.Close();
+           
         }
 
         private void txb_quantity_TextChanged(object sender, EventArgs e)

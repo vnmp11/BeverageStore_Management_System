@@ -155,7 +155,7 @@ namespace Beverage_Management_System
             this.txt_Password.Location = new System.Drawing.Point(168, 261);
             this.txt_Password.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.PasswordChar = '\0';
+            this.txt_Password.PasswordChar = '●';
             this.txt_Password.PlaceholderText = "";
             this.txt_Password.SelectedText = "";
             this.txt_Password.ShadowDecoration.Parent = this.txt_Password;
@@ -532,7 +532,7 @@ namespace Beverage_Management_System
             this.bt_Save.Name = "bt_Save";
             this.bt_Save.ShadowDecoration.Parent = this.bt_Save;
             this.bt_Save.Size = new System.Drawing.Size(159, 62);
-            this.bt_Save.TabIndex = 89;
+            this.bt_Save.TabIndex = 10;
             this.bt_Save.Text = "SAVE";
             this.bt_Save.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);

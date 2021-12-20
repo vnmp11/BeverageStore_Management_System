@@ -71,7 +71,17 @@ namespace Beverage_Management_System
         {
             if (dtaGV_GIForm.SelectedCells.Count > 0)
             {
-                dtaGV_GIForm.Rows.RemoveAt(dtaGV_GIForm.SelectedRows[0].Index);
+                int selected_index = dtaGV_GIForm.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dtaGV_GIForm.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells[0].Value);
+
+                if (id_choose > 0)
+                {
+                    dtaGV_GIForm.Rows.RemoveAt(dtaGV_GIForm.SelectedRows[0].Index);
+                }
+                else MyMessageBox.showBox("Please choose a product which you want to delete in goods import form", "Message");
+
+
             }
         }
 

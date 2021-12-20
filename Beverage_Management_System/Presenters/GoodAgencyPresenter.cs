@@ -18,6 +18,7 @@ namespace Beverage_Management_System.Presenters
         IGoodsAgency goodsAgencyView;
         IAddGoodsAgency addGoodsAgencyView;
         int id = -1;
+        int id_selected_goods = 0;
 
         public Agency Owner { get; private set; }
 
@@ -27,9 +28,40 @@ namespace Beverage_Management_System.Presenters
             id = ID;
         }
 
+        public GoodAgencyPresenter(IAddGoodsAgency view, int ID, int ID1)
+        {
+            addGoodsAgencyView = view;
+            id = ID;
+            id_selected_goods = ID1;
+        }
+
         public GoodAgencyPresenter(IGoodsAgency view)
         {
             goodsAgencyView = view;
+        }
+
+        public void setInformation(Guna.UI2.WinForms.Guna2TextBox txt_Name_Good, Guna.UI2.WinForms.Guna2TextBox txt_Price_Good,
+            Guna.UI2.WinForms.Guna2TextBox txt_Unit_Good, Guna.UI2.WinForms.Guna2TextBox txt_Quantity_Good)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+            string querry = "Select * from GOODS where ID_GOODS = '" + id_selected_goods + "';";
+            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    txt_Name_Good.Text = row["NAME"].ToString();
+                    txt_Price_Good.Text = row["PRICE"].ToString();
+                    txt_Unit_Good.Text = row["UNIT"].ToString();
+                    txt_Quantity_Good.Text = row["QUANTITY"].ToString();
+
+                }
+
+            }
+            myConnection.sqlcon.Close();
         }
 
        
@@ -84,34 +116,56 @@ namespace Beverage_Management_System.Presenters
         }
 
 
-        public void addGoodAgency(AddGoodAgency form, int id)
+        public void addGoodAgency(AddGoodAgency form, int id, int selected_goods)
         {
-            Console.WriteLine(id.ToString());
             string name = addGoodsAgencyView.name.Trim();
             string price = addGoodsAgencyView.price.Trim();
             string unit = addGoodsAgencyView.unit.Trim();
             string quantity = addGoodsAgencyView.quantity.Trim();
+
             int idSupplier = id;
+            id_selected_goods = selected_goods;
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
-           
-            SqlCommand cmd = new SqlCommand("Insert into GOODS(NAME,PRICE,UNIT,QUANTITY,ID_SUPPLIER) " +
-                "values (@name,@price,@unit,@quantity, @id);",
-                myConnection.sqlcon);
-            cmd.Parameters.AddWithValue("@name", name);
-            cmd.Parameters.AddWithValue("@price", price);
-            cmd.Parameters.AddWithValue("@unit", unit);
-            cmd.Parameters.AddWithValue("@quantity", quantity);
-            cmd.Parameters.AddWithValue("@id", idSupplier);
 
-            int result = cmd.ExecuteNonQuery();
-            if (result > 0)
+            if(id_selected_goods == 0)
             {
-                MyMessageBox.showBox("Add goods's information successfully!", "Message");
-            }
-            else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                SqlCommand cmd = new SqlCommand("Insert into GOODS(NAME,PRICE,UNIT,QUANTITY,ID_SUPPLIER) " +
+               "values (@name,@price,@unit,@quantity, @id);",
+               myConnection.sqlcon);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@unit", unit);
+                cmd.Parameters.AddWithValue("@quantity", quantity);
+                cmd.Parameters.AddWithValue("@id", idSupplier);
 
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MyMessageBox.showBox("Add goods's information successfully!", "Message");
+                }
+                else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+            }
+
+            else
+            {
+                SqlCommand cmd = new SqlCommand("Update GOODS set NAME=@name, PRICE=@price, UNIT=@unit, QUANTITY=@quantity where ID_GOODS=@id;",
+                   myConnection.sqlcon);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@unit", unit);
+                cmd.Parameters.AddWithValue("@quantity", quantity);
+                cmd.Parameters.AddWithValue("@id", id_selected_goods);
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MyMessageBox.showBox("Update goods's information successfully!", "Message");
+
+                }
+                else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+            }
+           
             myConnection.sqlcon.Close();
 
 
@@ -208,6 +262,13 @@ namespace Beverage_Management_System.Presenters
 
             myConnection.sqlcon.Close();
 
+        }
+
+        public void openAddGoodsForm(int id_supplier, GoodAgency parent, int id_choosed)
+        {
+
+            AddGoodAgency form = new AddGoodAgency(id_supplier, parent, id_choosed);
+            form.Show();
         }
     }
 }

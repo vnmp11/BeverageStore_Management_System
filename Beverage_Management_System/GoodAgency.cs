@@ -123,5 +123,21 @@ namespace Beverage_Management_System
             Console.WriteLine(idtemp);
             dataGridView_Goods.AllowUserToAddRows = false;
         }
+
+        private void dataGridView_Goods_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dataGridView_Goods.SelectedCells.Count > 0)
+            {
+                int selected_index = dataGridView_Goods.SelectedCells[0].RowIndex;
+                DataGridViewRow selected_row = dataGridView_Goods.Rows[selected_index];
+                int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+
+                if (id_choose > 0)
+                {
+                    presenter.openAddGoodsForm(idtemp, this, id_choose);
+                }
+
+            }
+        }
     }
 }
