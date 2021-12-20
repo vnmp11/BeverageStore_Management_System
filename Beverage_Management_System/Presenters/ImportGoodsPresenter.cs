@@ -81,11 +81,36 @@ namespace Beverage_Management_System.Presenters
 
         public void addDataGV_ImportGoods(DataGridView data, int id, string name, int quantity)
         {
+            //Boolean to check if he has row has been
+            bool Found = false;
+            if (data.Rows.Count > 1)
+            {
 
+                //Check if the product Id exists with the same Price
+                foreach (DataGridViewRow row in data.Rows)
+                {
+                    if (Convert.ToString(row.Cells[0].Value) == id.ToString())
+                    {
+                        //Update the Quantity of the found row
+                        row.Cells[2].Value = Convert.ToString(quantity + Convert.ToInt16(row.Cells[2].Value));
+                        Found = true;
+                    }
 
-            data.Rows.Add(id, name, quantity);
+                }
+                if (!Found)
+                {
+                    //Add the row to grid view
+                    data.Rows.Add(id, name, quantity);
+                }
 
+            }
+            else
+            {
+                //Add the row to grid view for the first time
+                data.Rows.Add(id, name, quantity);
+            }
         }
+    
 
         public int show_id()
         {
@@ -207,7 +232,7 @@ namespace Beverage_Management_System.Presenters
 
         public void dataGV_IGF(Guna.UI2.WinForms.Guna2DataGridView dataGV, int role)
         {
-        
+
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
@@ -237,7 +262,7 @@ namespace Beverage_Management_System.Presenters
                     string ID = row["ID_GOODS_IMPORT_FORM"].ToString();
                     string ID_Person = row["ID_PERSON"].ToString();
                     string status = row["STATUS"].ToString();
-                    string bartender = row["NAME"].ToString(); 
+                    string bartender = row["NAME"].ToString();
 
                     DateTime date = Convert.ToDateTime(row["DATE_CRE"]);
                     string dateCre = date.ToString("dd-MM-yyyy");
@@ -575,6 +600,58 @@ namespace Beverage_Management_System.Presenters
             }
 
         }
+
+        public void searchData(Guna.UI2.WinForms.Guna2DataGridView dtGridView_AddGood)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            List<MProduct> list = new List<MProduct>();
+
+            dtGridView_AddGood.Rows.Clear();
+            
+            string querry = "Select * from PRODUCT where (QUANTITY <100) AND (NAME like '" + importGoodsView.search + "%' or ID_PRODUCT like '" + importGoodsView.search + "%');";
+
+            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+
+            if (dtbl.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    int ID = Convert.ToInt32(row["ID_PRODUCT"]);
+                    int ID_KIND = Convert.ToInt32(row["ID_KIND"]);
+                    int ID_GOODS = Convert.ToInt32(row["ID_GOODS"]);
+                    string NAME = row["NAME"].ToString();
+                    double PRICE = Convert.ToDouble(row["PRICE"]);
+                    string UNIT = row["UNIT"].ToString();
+                    int QUANTITY = Convert.ToInt32(row["QUANTITY"]);
+                    byte[] IMAGE = null;
+
+
+                    MProduct product = new MProduct(ID, ID_KIND, ID_GOODS, NAME, PRICE, UNIT, QUANTITY, IMAGE);
+                    list.Add(product);
+                }
+
+            }
+
+            for (int i = 0; i < list.Count(); i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtGridView_AddGood.Rows[i].Clone();
+
+                row.Cells[0].Value = list[i].getID();
+                row.Cells[1].Value = list[i].getNAME();
+                row.Cells[2].Value = list[i].getQUANTITY();
+
+                dtGridView_AddGood.Rows.Add(row);
+            }
+
+            myConnection.sqlcon.Close();
+        }
+    
     }
+
+
 
 }

@@ -28,6 +28,7 @@ namespace Beverage_Management_System
         public string price { get => txt_Price_Good.Text; set => throw new NotImplementedException(); }
         public string unit { get => txt_Unit_Good.Text; set => throw new NotImplementedException(); }
         public string quantity { get => txt_Quantity_Good.Text; set => throw new NotImplementedException(); }
+        //public string search { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public AddGoodAgency(int ID, GoodAgency form)
         {

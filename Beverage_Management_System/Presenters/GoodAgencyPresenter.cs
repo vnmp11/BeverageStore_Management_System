@@ -68,8 +68,12 @@ namespace Beverage_Management_System.Presenters
                 row.Cells[0].Value = list[i].getID();
 
                 row.Cells[1].Value = list[i].getNAME();
+                int price =  int.Parse(list[i].getPRICE());
 
-                row.Cells[2].Value = list[i].getPRICE();
+              
+               
+                row.Cells[2].Value = price.ToString("###,###,##0");
+
                 row.Cells[3].Value = list[i].getUNIT();
 
                 row.Cells[4].Value = list[i].getQUANTITY();
@@ -154,6 +158,55 @@ namespace Beverage_Management_System.Presenters
                     return -1;
                 }
             }
+
+        }
+        public void searchData(Guna.UI2.WinForms.Guna2DataGridView dtGridView_Good, int id)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            List<MGoodsAgency> list = new List<MGoodsAgency>();
+            dtGridView_Good.Rows.Clear();
+
+            string querry = "Select * from GOODS where (ID_SUPPLIER = " + id + ")and (NAME like '" + goodsAgencyView.search + "%' or ID_GOODS like '" + goodsAgencyView.search + "%');";
+
+            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+
+            if (dtbl.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    int ID = Convert.ToInt32(row["ID_GOODS"]);
+                    string NAME = row["NAME"].ToString();
+                    string PHONE = row["PRICE"].ToString();
+                    string ADDRESS = row["UNIT"].ToString();
+                    string ITEM = row["QUANTITY"].ToString();
+
+                    MGoodsAgency good = new MGoodsAgency(ID, NAME, PHONE, ADDRESS, ITEM);
+                    list.Add(good);
+
+                }
+            }
+
+            for (int i = 0; i < list.Count(); i++)
+            {
+             
+                DataGridViewRow row = (DataGridViewRow)dtGridView_Good.Rows[i].Clone();
+                row.Cells[0].Value = list[i].getID();
+
+                row.Cells[1].Value = list[i].getNAME();
+
+                row.Cells[2].Value = list[i].getPRICE();
+                row.Cells[3].Value = list[i].getUNIT();
+
+                row.Cells[4].Value = list[i].getQUANTITY();
+                dtGridView_Good.Rows.Add(row);
+
+            }
+
+            myConnection.sqlcon.Close();
 
         }
     }

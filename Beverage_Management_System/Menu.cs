@@ -238,7 +238,9 @@ namespace Beverage_Management_System
             int x = 200, y = 200;
             int dy = (int)fnt.GetHeight(e.Graphics) * 1;
 
-            e.Graphics.DrawString("ORDER BILL", new Font("Times new Roman", 16, FontStyle.Bold), Brushes.Black, new PointF(350, 50));
+
+
+            e.Graphics.DrawString("ORDER FORM", new Font("Times new Roman", 16, FontStyle.Bold), Brushes.Black, new PointF(350, 50));
 
             e.Graphics.DrawString("Date: " + DateTime.Now.ToString(), fnt, Brushes.Black, new PointF(200, 90));
             e.Graphics.DrawString("Waiter: "+ idperson.ToString(), fnt, Brushes.Black, new PointF(200, 90 + dy));

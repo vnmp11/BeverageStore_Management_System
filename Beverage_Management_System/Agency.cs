@@ -91,6 +91,8 @@ namespace Beverage_Management_System
         }
         GoodAgency good ;
 
+        //public string search { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string search { get => guna2TextBox1.Text; set => guna2TextBox1.Text = value; }
         public void openGoodAgencyForm(int id_choosed)
         {
             GoodAgency form = new GoodAgency(id_choosed);
@@ -139,5 +141,13 @@ namespace Beverage_Management_System
                 else MyMessageBox.showBox("The result of searching is below", "Message");
             }
         }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            dtGridView_Agency.AllowUserToAddRows = true;
+            presenter.searchData(dtGridView_Agency);
+            dtGridView_Agency.AllowUserToAddRows = false;
+        }
+
     }
 }

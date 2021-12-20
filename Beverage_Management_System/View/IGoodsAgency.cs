@@ -8,5 +8,7 @@ namespace Beverage_Management_System.View
 {
     interface IGoodsAgency
     {
+
+        string search { get; set; }
     }
 }

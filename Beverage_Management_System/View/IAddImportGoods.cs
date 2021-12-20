@@ -22,5 +22,8 @@ namespace Beverage_Management_System.View
         string name { get; set; }
         string quantity { get; set; }
 
+       
+        string search { get; set; }
+
     }
 }

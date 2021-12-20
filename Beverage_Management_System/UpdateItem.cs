@@ -70,20 +70,12 @@ namespace Beverage_Management_System
 
         public void btt_ok_Click(object sender, EventArgs e)
         {
-            if (check != 0)
-            {
-                ImportGoodsPresenter presenter = new ImportGoodsPresenter();
-                presenter.addDataGV_ImportGoods(dataGrid,id_IGF, name_IGF, int.Parse(txb_quantity.Text));
-                
-                this.Close();
-            }
-            else
-            {
-                ProductPresenter p = new ProductPresenter();
-                p.addItem(id_item, id_order.ToString(), int.Parse(txb_quantity.Text) - p.getQuantity(id_item));
-                this.Close();
-            }
+
+            ProductPresenter p = new ProductPresenter();
+            p.addItem(id_item, id_order.ToString(), int.Parse(txb_quantity.Text) - p.getQuantity(id_item));
+            this.Close();
         }
+        
 
         private void btt_remove_Click(object sender, EventArgs e)
         {

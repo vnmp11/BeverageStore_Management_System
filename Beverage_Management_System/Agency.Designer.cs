@@ -58,7 +58,7 @@ namespace Beverage_Management_System
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.label12.Location = new System.Drawing.Point(47, 26);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(216, 52);
+            this.label12.Size = new System.Drawing.Size(217, 52);
             this.label12.TabIndex = 26;
             this.label12.Text = "AGENCY";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -270,6 +270,7 @@ namespace Beverage_Management_System
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(322, 62);
             this.guna2TextBox1.TabIndex = 34;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             this.guna2TextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.guna2TextBox1_KeyDown);
             // 
             // guna2Button1

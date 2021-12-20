@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Beverage_Management_System.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,28 @@ namespace Beverage_Management_System
     public partial class AddQuatity : Form
     {
         string quantity;
+
+        int id_IGF;
+        string name_IGF;
+        DataGridView dataGrid;
+
         public AddQuatity()
         {
             InitializeComponent();
             txbQuantity = txb_quantity.Text;
+
+
         }
+        public AddQuatity(int id, string name, int temp, DataGridView a)
+        {
+            InitializeComponent();
+            txbQuantity = txb_quantity.Text;
+            id_IGF = id;
+            name_IGF = name;
+            dataGrid = a;
+
+        }
+       
         public string txbQuantity
         {
             get
@@ -50,7 +68,8 @@ namespace Beverage_Management_System
 
         public void btt_ok_Click(object sender, EventArgs e)
         {
-            
+            ImportGoodsPresenter presenter = new ImportGoodsPresenter();
+            presenter.addDataGV_ImportGoods(dataGrid, id_IGF, name_IGF, int.Parse(txb_quantity.Text));
             this.Close();
         }
 

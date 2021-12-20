@@ -13,5 +13,6 @@ namespace Beverage_Management_System.View
         string price { get; set; }
         string unit { get; set; }
         string quantity { get; set; }
+        
     }
 }

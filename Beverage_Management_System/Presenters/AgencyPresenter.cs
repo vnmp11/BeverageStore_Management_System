@@ -231,5 +231,57 @@ namespace Beverage_Management_System.Presenters
 
         }
 
+        public void searchData(Guna.UI2.WinForms.Guna2DataGridView dtGridView_Agency)
+        {
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            List<MAgency> list = new List<MAgency>();
+
+            dtGridView_Agency.Rows.Clear();
+
+            string querry = "Select * from SUPPLIER where NAME like '" + agencyView.search + "%' or ID_SUPPLIER like '" + agencyView.search + "%';";
+            SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+
+            if (dtbl.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    int ID = Convert.ToInt32(row["ID_SUPPLIER"]);
+                    string NAME = row["NAME"].ToString();
+                    string PHONE = row["PHONE"].ToString();
+                    string ADDRESS = row["ADDRESS"].ToString();
+                    string ITEM = row["ITEM"].ToString();
+
+                    MAgency agency = new MAgency(ID, NAME, PHONE, ADDRESS, ITEM);
+                    list.Add(agency);
+
+                }
+            }
+
+            for (int i = 0; i < list.Count(); i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtGridView_Agency.Rows[i].Clone();
+               
+
+                row.Cells[0].Value = list[i].getID();
+
+                row.Cells[1].Value = list[i].getNAME();
+
+                row.Cells[2].Value = list[i].getPHONE();
+                row.Cells[3].Value = list[i].getADDRESS();
+
+                row.Cells[4].Value = list[i].getITEM();
+                
+                dtGridView_Agency.Rows.Add(row);
+
+            }
+
+            myConnection.sqlcon.Close();
+
+        }
+
     }
 }

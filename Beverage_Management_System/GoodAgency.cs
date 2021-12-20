@@ -22,7 +22,7 @@ namespace Beverage_Management_System
             InitializeComponent();
             
         }
-
+        public string search { get => guna2TextBox1.Text; set => guna2TextBox1.Text = value; }
         public static int idtemp;
         public GoodAgency(int ID)
         {
@@ -113,6 +113,15 @@ namespace Beverage_Management_System
                 }
                 else MyMessageBox.showBox("The result of searching is below", "Message");
             }
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            //dataGridView_Goods.Rows.Clear();
+            dataGridView_Goods.AllowUserToAddRows = true;
+            presenter.searchData(dataGridView_Goods,idtemp);
+            Console.WriteLine(idtemp);
+            dataGridView_Goods.AllowUserToAddRows = false;
         }
     }
 }

@@ -8,6 +8,6 @@ namespace Beverage_Management_System.View
 {
     interface IAgency
     {
-
+        string search { get; set; }
     }
 }
