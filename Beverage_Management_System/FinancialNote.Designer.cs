@@ -81,9 +81,9 @@ namespace Beverage_Management_System
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 22.02985F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label12.Location = new System.Drawing.Point(17, 28);
+            this.label12.Location = new System.Drawing.Point(19, 35);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(378, 47);
+            this.label12.Size = new System.Drawing.Size(411, 52);
             this.label12.TabIndex = 25;
             this.label12.Text = "FINANCIAL NOTE";
             // 
@@ -92,10 +92,10 @@ namespace Beverage_Management_System
             this.lb_BrowsedOrderBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_BrowsedOrderBill.BackColor = System.Drawing.Color.White;
             this.lb_BrowsedOrderBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_BrowsedOrderBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(77)))));
-            this.lb_BrowsedOrderBill.Location = new System.Drawing.Point(175, 346);
+            this.lb_BrowsedOrderBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.lb_BrowsedOrderBill.Location = new System.Drawing.Point(197, 432);
             this.lb_BrowsedOrderBill.Name = "lb_BrowsedOrderBill";
-            this.lb_BrowsedOrderBill.Size = new System.Drawing.Size(337, 48);
+            this.lb_BrowsedOrderBill.Size = new System.Drawing.Size(379, 60);
             this.lb_BrowsedOrderBill.TabIndex = 104;
             this.lb_BrowsedOrderBill.Text = "BROWSED ORDER BILLS";
             this.lb_BrowsedOrderBill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,8 +137,8 @@ namespace Beverage_Management_System
             this.dataGV_Order_Bill.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGV_Order_Bill.EnableHeadersVisualStyles = false;
             this.dataGV_Order_Bill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGV_Order_Bill.Location = new System.Drawing.Point(25, 160);
-            this.dataGV_Order_Bill.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGV_Order_Bill.Location = new System.Drawing.Point(28, 200);
+            this.dataGV_Order_Bill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV_Order_Bill.Name = "dataGV_Order_Bill";
             this.dataGV_Order_Bill.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -152,7 +152,7 @@ namespace Beverage_Management_System
             this.dataGV_Order_Bill.RowHeadersVisible = false;
             this.dataGV_Order_Bill.RowHeadersWidth = 70;
             this.dataGV_Order_Bill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV_Order_Bill.Size = new System.Drawing.Size(716, 234);
+            this.dataGV_Order_Bill.Size = new System.Drawing.Size(806, 292);
             this.dataGV_Order_Bill.TabIndex = 105;
             this.dataGV_Order_Bill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV_Order_Bill.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -243,9 +243,9 @@ namespace Beverage_Management_System
             this.lb_BrowsedGoodsImportBill.BackColor = System.Drawing.Color.White;
             this.lb_BrowsedGoodsImportBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_BrowsedGoodsImportBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.lb_BrowsedGoodsImportBill.Location = new System.Drawing.Point(95, 685);
+            this.lb_BrowsedGoodsImportBill.Location = new System.Drawing.Point(107, 856);
             this.lb_BrowsedGoodsImportBill.Name = "lb_BrowsedGoodsImportBill";
-            this.lb_BrowsedGoodsImportBill.Size = new System.Drawing.Size(533, 48);
+            this.lb_BrowsedGoodsImportBill.Size = new System.Drawing.Size(600, 60);
             this.lb_BrowsedGoodsImportBill.TabIndex = 106;
             this.lb_BrowsedGoodsImportBill.Text = "BROWSED GOODS IMPORT BILLS";
             this.lb_BrowsedGoodsImportBill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -287,8 +287,8 @@ namespace Beverage_Management_System
             this.dataGV_Goods_Import_Bill.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGV_Goods_Import_Bill.EnableHeadersVisualStyles = false;
             this.dataGV_Goods_Import_Bill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGV_Goods_Import_Bill.Location = new System.Drawing.Point(25, 508);
-            this.dataGV_Goods_Import_Bill.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGV_Goods_Import_Bill.Location = new System.Drawing.Point(28, 635);
+            this.dataGV_Goods_Import_Bill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV_Goods_Import_Bill.Name = "dataGV_Goods_Import_Bill";
             this.dataGV_Goods_Import_Bill.ReadOnly = true;
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -302,7 +302,7 @@ namespace Beverage_Management_System
             this.dataGV_Goods_Import_Bill.RowHeadersVisible = false;
             this.dataGV_Goods_Import_Bill.RowHeadersWidth = 70;
             this.dataGV_Goods_Import_Bill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV_Goods_Import_Bill.Size = new System.Drawing.Size(716, 234);
+            this.dataGV_Goods_Import_Bill.Size = new System.Drawing.Size(806, 292);
             this.dataGV_Goods_Import_Bill.TabIndex = 107;
             this.dataGV_Goods_Import_Bill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV_Goods_Import_Bill.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -408,14 +408,14 @@ namespace Beverage_Management_System
             this.txt_SearchOrderBill.IconLeft = ((System.Drawing.Image)(resources.GetObject("txt_SearchOrderBill.IconLeft")));
             this.txt_SearchOrderBill.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.txt_SearchOrderBill.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txt_SearchOrderBill.Location = new System.Drawing.Point(100, 117);
-            this.txt_SearchOrderBill.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txt_SearchOrderBill.Location = new System.Drawing.Point(112, 146);
+            this.txt_SearchOrderBill.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_SearchOrderBill.Name = "txt_SearchOrderBill";
             this.txt_SearchOrderBill.PasswordChar = '\0';
             this.txt_SearchOrderBill.PlaceholderText = "Search ID or ID BIll or Accountant";
             this.txt_SearchOrderBill.SelectedText = "";
             this.txt_SearchOrderBill.ShadowDecoration.Parent = this.txt_SearchOrderBill;
-            this.txt_SearchOrderBill.Size = new System.Drawing.Size(311, 33);
+            this.txt_SearchOrderBill.Size = new System.Drawing.Size(350, 41);
             this.txt_SearchOrderBill.TabIndex = 108;
             this.txt_SearchOrderBill.TextChanged += new System.EventHandler(this.txt_SearchOrderBill_TextChanged);
             this.txt_SearchOrderBill.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_SearchOrderBill_KeyDown);
@@ -441,14 +441,14 @@ namespace Beverage_Management_System
             this.txt_SearchGoodsImportBill.IconLeft = ((System.Drawing.Image)(resources.GetObject("txt_SearchGoodsImportBill.IconLeft")));
             this.txt_SearchGoodsImportBill.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.txt_SearchGoodsImportBill.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txt_SearchGoodsImportBill.Location = new System.Drawing.Point(100, 464);
-            this.txt_SearchGoodsImportBill.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txt_SearchGoodsImportBill.Location = new System.Drawing.Point(112, 580);
+            this.txt_SearchGoodsImportBill.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_SearchGoodsImportBill.Name = "txt_SearchGoodsImportBill";
             this.txt_SearchGoodsImportBill.PasswordChar = '\0';
             this.txt_SearchGoodsImportBill.PlaceholderText = "Search ID or ID BIll or Accountant";
             this.txt_SearchGoodsImportBill.SelectedText = "";
             this.txt_SearchGoodsImportBill.ShadowDecoration.Parent = this.txt_SearchGoodsImportBill;
-            this.txt_SearchGoodsImportBill.Size = new System.Drawing.Size(311, 33);
+            this.txt_SearchGoodsImportBill.Size = new System.Drawing.Size(350, 41);
             this.txt_SearchGoodsImportBill.TabIndex = 109;
             this.txt_SearchGoodsImportBill.TextChanged += new System.EventHandler(this.txt_SearchGoodsImportBill_TextChanged);
             this.txt_SearchGoodsImportBill.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_SearchGoodsImportBill_KeyDown);
@@ -459,9 +459,9 @@ namespace Beverage_Management_System
             this.lb_Details_Order_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.lb_Details_Order_Bill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Details_Order_Bill.ForeColor = System.Drawing.Color.White;
-            this.lb_Details_Order_Bill.Location = new System.Drawing.Point(810, 161);
+            this.lb_Details_Order_Bill.Location = new System.Drawing.Point(911, 201);
             this.lb_Details_Order_Bill.Name = "lb_Details_Order_Bill";
-            this.lb_Details_Order_Bill.Size = new System.Drawing.Size(388, 34);
+            this.lb_Details_Order_Bill.Size = new System.Drawing.Size(436, 42);
             this.lb_Details_Order_Bill.TabIndex = 111;
             this.lb_Details_Order_Bill.Text = "DETAILS ORDER BILL";
             this.lb_Details_Order_Bill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -471,10 +471,10 @@ namespace Beverage_Management_System
             this.fLayoutPl_Details_Order_Bill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fLayoutPl_Details_Order_Bill.AutoScroll = true;
             this.fLayoutPl_Details_Order_Bill.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Details_Order_Bill.Location = new System.Drawing.Point(804, 196);
+            this.fLayoutPl_Details_Order_Bill.Location = new System.Drawing.Point(904, 245);
             this.fLayoutPl_Details_Order_Bill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Details_Order_Bill.Name = "fLayoutPl_Details_Order_Bill";
-            this.fLayoutPl_Details_Order_Bill.Size = new System.Drawing.Size(427, 94);
+            this.fLayoutPl_Details_Order_Bill.Size = new System.Drawing.Size(480, 118);
             this.fLayoutPl_Details_Order_Bill.TabIndex = 110;
             // 
             // lb_Details_Goods_Import_Bill
@@ -483,9 +483,9 @@ namespace Beverage_Management_System
             this.lb_Details_Goods_Import_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.lb_Details_Goods_Import_Bill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Details_Goods_Import_Bill.ForeColor = System.Drawing.Color.White;
-            this.lb_Details_Goods_Import_Bill.Location = new System.Drawing.Point(810, 508);
+            this.lb_Details_Goods_Import_Bill.Location = new System.Drawing.Point(911, 635);
             this.lb_Details_Goods_Import_Bill.Name = "lb_Details_Goods_Import_Bill";
-            this.lb_Details_Goods_Import_Bill.Size = new System.Drawing.Size(388, 34);
+            this.lb_Details_Goods_Import_Bill.Size = new System.Drawing.Size(436, 42);
             this.lb_Details_Goods_Import_Bill.TabIndex = 113;
             this.lb_Details_Goods_Import_Bill.Text = "DETAILS GOODS IMPORT BILL";
             this.lb_Details_Goods_Import_Bill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -496,10 +496,10 @@ namespace Beverage_Management_System
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fLayoutPl_Details_Goods_Import_Bill.AutoScroll = true;
             this.fLayoutPl_Details_Goods_Import_Bill.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Details_Goods_Import_Bill.Location = new System.Drawing.Point(804, 544);
+            this.fLayoutPl_Details_Goods_Import_Bill.Location = new System.Drawing.Point(904, 680);
             this.fLayoutPl_Details_Goods_Import_Bill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Details_Goods_Import_Bill.Name = "fLayoutPl_Details_Goods_Import_Bill";
-            this.fLayoutPl_Details_Goods_Import_Bill.Size = new System.Drawing.Size(427, 152);
+            this.fLayoutPl_Details_Goods_Import_Bill.Size = new System.Drawing.Size(480, 190);
             this.fLayoutPl_Details_Goods_Import_Bill.TabIndex = 112;
             // 
             // guna2Elipse1
@@ -514,10 +514,10 @@ namespace Beverage_Management_System
             // 
             // FinancialNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1271, 839);
+            this.ClientSize = new System.Drawing.Size(1430, 1049);
             this.Controls.Add(this.lb_BrowsedGoodsImportBill);
             this.Controls.Add(this.lb_Details_Goods_Import_Bill);
             this.Controls.Add(this.fLayoutPl_Details_Goods_Import_Bill);

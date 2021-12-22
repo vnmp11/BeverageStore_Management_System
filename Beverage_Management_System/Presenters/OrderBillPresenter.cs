@@ -365,5 +365,26 @@ namespace Beverage_Management_System.Presenters
             }
 
         }
+
+        public string getNameOfAccountant(int id_accountant)
+        {
+            string name = "";
+            MyConnection myConnection = new MyConnection();
+            myConnection.sqlcon.Open();
+
+            SqlCommand cmd = new SqlCommand("Select * from PERSON where ID_PERSON=@id_person",
+                   myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@id_person", id_accountant);
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                name = sdr["NAME"].ToString();
+            }
+            myConnection.sqlcon.Close();
+            return name;
+
+
+        }
     }
 }

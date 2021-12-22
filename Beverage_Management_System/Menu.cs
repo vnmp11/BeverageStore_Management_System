@@ -237,13 +237,13 @@ namespace Beverage_Management_System
             var fnt1 = new Font("Times new Roman", 14, FontStyle.Regular);
             int x = 200, y = 200;
             int dy = (int)fnt.GetHeight(e.Graphics) * 1;
-
+            string waiter = o.getNameOfWaiter(idperson);
 
 
             e.Graphics.DrawString("ORDER FORM", new Font("Times new Roman", 16, FontStyle.Bold), Brushes.Black, new PointF(350, 50));
 
             e.Graphics.DrawString("Date: " + DateTime.Now.ToString(), fnt, Brushes.Black, new PointF(200, 90));
-            e.Graphics.DrawString("Waiter: "+ idperson.ToString(), fnt, Brushes.Black, new PointF(200, 90 + dy));
+            e.Graphics.DrawString("Waiter: "+ waiter, fnt, Brushes.Black, new PointF(200, 90 + dy));
             e.Graphics.DrawString("NUMBER ORDER: "+txb_IdOrder.Text, fnt, Brushes.Black, new PointF(200, 90 + dy+dy));
 
             e.Graphics.DrawString("Name", fnt, Brushes.Black, new PointF(200, 170));
