@@ -459,7 +459,7 @@ namespace Beverage_Management_System.Presenters
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
-            for (int i = 0; i < DtaGridView_Goods.RowCount - 1; i++)
+            for (int i = 0; i < DtaGridView_Goods.RowCount; i++)
             {
                 int id1 = Convert.ToInt32(DtaGridView_Goods.Rows[i].Cells["ID"].Value);
 
