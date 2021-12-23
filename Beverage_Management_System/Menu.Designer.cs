@@ -49,6 +49,7 @@ namespace Beverage_Management_System
             this.label9 = new System.Windows.Forms.Label();
             this.txb_IdOrder = new Guna.UI2.WinForms.Guna2TextBox();
             this.pl_Order = new System.Windows.Forms.FlowLayoutPanel();
+            this.detailOrder1 = new Beverage_Management_System.DetailOrder();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@ namespace Beverage_Management_System
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.detailOrder1 = new Beverage_Management_System.DetailOrder();
             this.panel2.SuspendLayout();
             this.pl_Order.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -230,7 +230,7 @@ namespace Beverage_Management_System
             this.cb_KindofDrink.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_KindofDrink.FocusedColor = System.Drawing.Color.Empty;
             this.cb_KindofDrink.FocusedState.Parent = this.cb_KindofDrink;
-            this.cb_KindofDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.985075F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_KindofDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.985075F);
             this.cb_KindofDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.cb_KindofDrink.FormattingEnabled = true;
             this.cb_KindofDrink.HoverState.Parent = this.cb_KindofDrink;
@@ -239,7 +239,7 @@ namespace Beverage_Management_System
             this.cb_KindofDrink.Items.AddRange(new object[] {
             ""});
             this.cb_KindofDrink.ItemsAppearance.Parent = this.cb_KindofDrink;
-            this.cb_KindofDrink.Location = new System.Drawing.Point(1226, 99);
+            this.cb_KindofDrink.Location = new System.Drawing.Point(1226, 103);
             this.cb_KindofDrink.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_KindofDrink.Name = "cb_KindofDrink";
             this.cb_KindofDrink.ShadowDecoration.Parent = this.cb_KindofDrink;
@@ -311,10 +311,27 @@ namespace Beverage_Management_System
             this.pl_Order.BackColor = System.Drawing.Color.White;
             this.pl_Order.Controls.Add(this.detailOrder1);
             this.pl_Order.Location = new System.Drawing.Point(69, 239);
-            this.pl_Order.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pl_Order.Margin = new System.Windows.Forms.Padding(6);
             this.pl_Order.Name = "pl_Order";
             this.pl_Order.Size = new System.Drawing.Size(741, 494);
             this.pl_Order.TabIndex = 100;
+            // 
+            // detailOrder1
+            // 
+            this.detailOrder1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.detailOrder1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.detailOrder1.LabelIn_Stock = "100";
+            this.detailOrder1.LabelName = "Coca cola";
+            this.detailOrder1.LabelPrice = "10000";
+            this.detailOrder1.LabelTotal_Price = "10000";
+            this.detailOrder1.Location = new System.Drawing.Point(3, 5);
+            this.detailOrder1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.detailOrder1.Name = "detailOrder1";
+            this.detailOrder1.NumberRicQuantity = "1";
+            this.detailOrder1.Size = new System.Drawing.Size(570, 0);
+            this.detailOrder1.TabIndex = 0;
             // 
             // panel1
             // 
@@ -504,23 +521,6 @@ namespace Beverage_Management_System
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
             this.guna2Panel3.Size = new System.Drawing.Size(3, 500);
             this.guna2Panel3.TabIndex = 102;
-            // 
-            // detailOrder1
-            // 
-            this.detailOrder1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.detailOrder1.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.detailOrder1.LabelIn_Stock = "100";
-            this.detailOrder1.LabelName = "Coca cola";
-            this.detailOrder1.LabelPrice = "10000";
-            this.detailOrder1.LabelTotal_Price = "10000";
-            this.detailOrder1.Location = new System.Drawing.Point(3, 5);
-            this.detailOrder1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.detailOrder1.Name = "detailOrder1";
-            this.detailOrder1.NumberRicQuantity = "1";
-            this.detailOrder1.Size = new System.Drawing.Size(570, 0);
-            this.detailOrder1.TabIndex = 0;
             // 
             // Menu
             // 

@@ -222,12 +222,6 @@
     <Compile Include="Presenters\ProductPresenter.cs" />
     <Compile Include="Presenters\StaffPresenter.cs" />
     <Compile Include="Presenters\TrackingNotePresenter.cs" />
-    <Compile Include="Print.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Print.Designer.cs">
-      <DependentUpon>Print.cs</DependentUpon>
-    </Compile>
     <Compile Include="Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -376,9 +370,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Print.resx">
-      <DependentUpon>Print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>

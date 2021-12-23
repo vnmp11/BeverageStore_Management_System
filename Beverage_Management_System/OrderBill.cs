@@ -19,7 +19,6 @@ namespace Beverage_Management_System
     {
         OrderBillPresenter presenter;
         int id_accountant = 0;
-        Print printBill;
 
         public string search { get => txt_Search.Text; set => txt_Search.Text = value; }
 
@@ -67,11 +66,13 @@ namespace Beverage_Management_System
                 dialog.Show();
                 dialog.btt_ok.Click += (s, a) =>
                 {
-                    printBill = new Print();
-                    printBill.Show();
+                    AlertDialog print = new AlertDialog();
+                    print.setMessage("Do you want to print this bill?");
+                    print.Show();
 
-                    printBill.btt_yes.Click += (d, b) =>
+                    print.btt_ok.Click += (d, b) =>
                     {
+                        print.Close();
                         int selected_index1 = dataGV.SelectedCells[0].RowIndex;
                         DataGridViewRow selected_row1 = dataGV.Rows[selected_index1];
                         int id_choose1 = Convert.ToInt32(selected_row1.Cells["ID_ORDER_FORM"].Value);
@@ -92,11 +93,12 @@ namespace Beverage_Management_System
                         presenter.browseBill(id_choose, id_accountant, dataGV, id_form, fLayoutPl_Details);
                         dataGV.AllowUserToAddRows = false;
                         if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
-                        printBill.Close();
+                       
 
                     };
-                    printBill.btt_no.Click += (d, b) =>
+                    print.btt_cancel.Click += (d, b) =>
                     {
+                        print.Close();
                         int selected_index = dataGV.SelectedCells[0].RowIndex;
                         DataGridViewRow selected_row = dataGV.Rows[selected_index];
                         int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
@@ -105,7 +107,6 @@ namespace Beverage_Management_System
                         presenter.browseBill(id_choose, id_accountant, dataGV, id_form, fLayoutPl_Details);
                         dataGV.AllowUserToAddRows = false;
                         if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
-                        printBill.Close();
 
                     };        
                 };

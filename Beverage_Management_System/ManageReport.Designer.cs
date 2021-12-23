@@ -110,7 +110,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.RowTemplate.Height = 35;
             this.dataGV_Report.RowTemplate.ReadOnly = true;
             this.dataGV_Report.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV_Report.Size = new System.Drawing.Size(1360, 660);
+            this.dataGV_Report.Size = new System.Drawing.Size(1360, 803);
             this.dataGV_Report.TabIndex = 127;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV_Report.ThemeStyle.AlternatingRowsStyle.Font = null;

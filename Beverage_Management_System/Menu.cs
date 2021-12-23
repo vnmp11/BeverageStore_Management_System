@@ -24,7 +24,6 @@ namespace Beverage_Management_System
         ProductPresenter p = new ProductPresenter();
         OrderFormPresenter o = new OrderFormPresenter();
         int idperson;
-        Print printBill;
         public Menu(int id_person)
         {
             InitializeComponent();
@@ -164,12 +163,14 @@ namespace Beverage_Management_System
         {
             if (o.getItemOrderForm(txb_IdOrder.Text))
             {
-                printBill = new Print();
-                printBill.Show();
+                AlertDialog print = new AlertDialog();
+                print.setMessage("Do you want to print this order?");
+                print.Show();
+
 
                 ProductPresenter pre = new ProductPresenter();
 
-                printBill.btt_yes.Click += (s, a) =>
+                print.btt_ok.Click += (s, a) =>
                 {
                     p.printMenu(txb_IdOrder.Text);
 
@@ -179,7 +180,7 @@ namespace Beverage_Management_System
                         printDocument1.Print();
 
                     }
-                    printBill.Close();
+                   print.Close();
                     o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
                     MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
                     p.addOrderForm(idperson);
@@ -188,9 +189,9 @@ namespace Beverage_Management_System
 
 
                 };
-                printBill.btt_no.Click += (s, a) =>
+                print.btt_cancel.Click += (s, a) =>
                 {
-                    printBill.Close();
+                    print.Close();
                     o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
                     MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
                     p.addOrderForm(idperson);
@@ -266,14 +267,13 @@ namespace Beverage_Management_System
             e.Graphics.DrawString("------------------------------------------------------------------------", fnt, Brushes.Black, new PointF(200, y += dy));
 
 
-
-            e.Graphics.DrawString("Sub total: " + lb_subTotal.Text, fnt, Brushes.Black, new PointF(x, y += dy));
+            e.Graphics.DrawString("Items Quantity: " + lb_QtyItem.Text, fnt, Brushes.Black, new PointF(x, y += dy));
+            y += dy; 
+            e.Graphics.DrawString("Sub total: " + lb_subTotal.Text, fnt, Brushes.Black, new PointF(x, y));
             y += dy;
             e.Graphics.DrawString("Tax: " + lb_Tax.Text, fnt, Brushes.Black, new PointF(x, y));
             y += dy;
             e.Graphics.DrawString("Total Payable: " + lb_total.Text, fnt, Brushes.Black, new PointF(x, y));
-            y += dy;
-            e.Graphics.DrawString("Items Quantity: " + lb_QtyItem.Text, fnt, Brushes.Black, new PointF(x, y));
             y += dy;
             e.Graphics.DrawString("Thanks and see you next time!" , fnt, Brushes.Black, new PointF(320, y += dy));
 
