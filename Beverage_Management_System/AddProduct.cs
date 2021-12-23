@@ -133,5 +133,16 @@ namespace Beverage_Management_System
                 pB_Product.Image = new Bitmap(open.FileName);
             }
         }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txt_Name.Text = "";
+            if (cb_Goods.Items.Count > 0) cb_Goods.SelectedIndex = 0;
+            if (cb_KindOfProduct.Items.Count > 0) cb_KindOfProduct.SelectedIndex = 0;
+            if (cb_Unit.Items.Count > 0) cb_Unit.SelectedIndex = 0;
+            txt_Price.Text = "";
+            txt_Quantity.Text = "";
+            pB_Product.Image = default_img;
+        }
     }
 }

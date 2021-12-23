@@ -201,5 +201,21 @@ namespace Beverage_Management_System
         {
 
         }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txt_Username.Text = "";
+            txt_Password.Text = "";
+            txt_Name.Text = "";
+            rb_Male.Checked = true;
+            rb_Female.Checked = false;
+            dtPicker_DOB.Value = new DateTime(2001, 01, 01);
+            txt_Phone.Text = "";
+            txt_Address.Text = "";
+            rb_Accountant.Checked = true;
+            rb_Bartender.Checked = false;
+            rb_Waiter.Checked = false;
+
+        }
     }
 }

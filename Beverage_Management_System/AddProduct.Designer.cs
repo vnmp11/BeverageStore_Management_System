@@ -55,6 +55,7 @@ namespace Beverage_Management_System
             this.label6 = new System.Windows.Forms.Label();
             this.bt_Save = new Guna.UI2.WinForms.Guna2Button();
             this.btt_close = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_Clear = new Guna.UI2.WinForms.Guna2Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pB_Product)).BeginInit();
             this.panel2.SuspendLayout();
@@ -453,7 +454,7 @@ namespace Beverage_Management_System
             this.bt_Save.ForeColor = System.Drawing.Color.White;
             this.bt_Save.HoverState.Parent = this.bt_Save;
             this.bt_Save.Image = global::Beverage_Management_System.Properties.Resources.download__2_1;
-            this.bt_Save.Location = new System.Drawing.Point(238, 478);
+            this.bt_Save.Location = new System.Drawing.Point(138, 479);
             this.bt_Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Save.Name = "bt_Save";
             this.bt_Save.ShadowDecoration.Parent = this.bt_Save;
@@ -480,12 +481,37 @@ namespace Beverage_Management_System
             this.btt_close.Size = new System.Drawing.Size(44, 58);
             this.btt_close.TabIndex = 79;
             // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Clear.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Clear.BorderRadius = 25;
+            this.btn_Clear.BorderThickness = 1;
+            this.btn_Clear.CheckedState.Parent = this.btn_Clear;
+            this.btn_Clear.CustomImages.Parent = this.btn_Clear;
+            this.btn_Clear.DisabledState.Parent = this.btn_Clear;
+            this.btn_Clear.FillColor = System.Drawing.Color.Firebrick;
+            this.btn_Clear.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clear.ForeColor = System.Drawing.Color.White;
+            this.btn_Clear.HoverState.Parent = this.btn_Clear;
+            this.btn_Clear.Image = global::Beverage_Management_System.Properties.Resources.archeology;
+            this.btn_Clear.Location = new System.Drawing.Point(349, 479);
+            this.btn_Clear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.ShadowDecoration.Parent = this.btn_Clear;
+            this.btn_Clear.Size = new System.Drawing.Size(151, 62);
+            this.btn_Clear.TabIndex = 92;
+            this.btn_Clear.Text = "CLEAR";
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(633, 595);
+            this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cb_Goods);
             this.Controls.Add(this.txt_Price);
@@ -544,5 +570,6 @@ namespace Beverage_Management_System
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox cb_Goods;
+        private Guna.UI2.WinForms.Guna2Button btn_Clear;
     }
 }
