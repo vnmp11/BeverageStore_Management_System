@@ -94,8 +94,9 @@ namespace Beverage_Management_System
 
         private void txb_quantity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) || (e.KeyChar == '0'))
             {
+                MyMessageBox.showBox("Please enter a valid number");
                 e.Handled = true;
             }
 

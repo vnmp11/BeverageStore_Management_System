@@ -51,57 +51,65 @@ namespace Beverage_Management_System.Presenters
         //add kind vo day
         public void addItem(int id, String id_orderform, int quantity)
         {
-            updateQuantity(id, quantity);
-
-            MyConnection myConnection = new MyConnection();
-            myConnection.sqlcon.Open();
-
-            if (checkItem(id, id_orderform))
+            int in_stock = getIn_Stock(id);
+            if (quantity > in_stock)
             {
-                int qty = getQuantity(id, id_orderform);
-
-
-                SqlCommand cmd = new SqlCommand("Update DETAILS_ORDERFORM set QUANTITY=@quantity, TOTAL_PRICE=@total_price where ID_PRODUCT like '"+ id + "';",
-                    myConnection.sqlcon);
-                cmd.Parameters.AddWithValue("@quantity", qty+quantity);
-                cmd.Parameters.AddWithValue("@total_price", (qty + quantity)*getPrice(id));
-                cmd.ExecuteNonQuery();
-
+                MyMessageBox.showBox("The selected quantity exceeds the quantity in stock. \n In stock: " + in_stock.ToString());
             }
             else
             {
+                updateQuantity(id, quantity);
 
-                string date_create = DateTime.Now.ToString("yyyy-MM-dd");
-                SqlCommand cmd = new SqlCommand("Insert into DETAILS_ORDERFORM( ID_PRODUCT, ID_ORDERFORM,QUANTITY,TOTAL_PRICE, STATUSb,KIND) " +
-                    "values (@id_product,@id_orderform,@quantity, @total_price, @status, @kind );",
-                    myConnection.sqlcon);
+                MyConnection myConnection = new MyConnection();
+                myConnection.sqlcon.Open();
 
-                SqlCommand cmd1  = new SqlCommand("Select * from PRODUCT where ID_PRODUCT like '" + id + "%' ;",
-                   myConnection.sqlcon);
-                SqlDataReader sdr = cmd1.ExecuteReader();
-                int temp = 0;
-                if (sdr.Read())
+                if (checkItem(id, id_orderform))
                 {
-                    Console.WriteLine(id.ToString());
-                    int kind = Convert.ToInt32(sdr["ID_KIND"]);
-                    temp = kind;
-                    sdr.Close();
+                    int qty = getQuantity(id, id_orderform);
+
+
+                    SqlCommand cmd = new SqlCommand("Update DETAILS_ORDERFORM set QUANTITY=@quantity, TOTAL_PRICE=@total_price where ID_PRODUCT like '" + id + "';",
+                        myConnection.sqlcon);
+                    cmd.Parameters.AddWithValue("@quantity", qty + quantity);
+                    cmd.Parameters.AddWithValue("@total_price", (qty + quantity) * getPrice(id));
+                    cmd.ExecuteNonQuery();
+
                 }
-                
-                cmd.Parameters.AddWithValue("@id_product", id);
-                cmd.Parameters.AddWithValue("@id_orderform", id_orderform);
-                cmd.Parameters.AddWithValue("@quantity", quantity);
-                cmd.Parameters.AddWithValue("@total_price", getPrice(id) * quantity);
-                cmd.Parameters.AddWithValue("@status", 0);
-                //XLy
-                cmd.Parameters.AddWithValue("@kind", temp);
-                
-             
+                else
+                {
 
-                cmd.ExecuteNonQuery();
+                    string date_create = DateTime.Now.ToString("yyyy-MM-dd");
+                    SqlCommand cmd = new SqlCommand("Insert into DETAILS_ORDERFORM( ID_PRODUCT, ID_ORDERFORM,QUANTITY,TOTAL_PRICE, STATUSb,KIND) " +
+                        "values (@id_product,@id_orderform,@quantity, @total_price, @status, @kind );",
+                        myConnection.sqlcon);
+
+                    SqlCommand cmd1 = new SqlCommand("Select * from PRODUCT where ID_PRODUCT like '" + id + "%' ;",
+                       myConnection.sqlcon);
+                    SqlDataReader sdr = cmd1.ExecuteReader();
+                    int temp = 0;
+                    if (sdr.Read())
+                    {
+                        Console.WriteLine(id.ToString());
+                        int kind = Convert.ToInt32(sdr["ID_KIND"]);
+                        temp = kind;
+                        sdr.Close();
+                    }
+
+                    cmd.Parameters.AddWithValue("@id_product", id);
+                    cmd.Parameters.AddWithValue("@id_orderform", id_orderform);
+                    cmd.Parameters.AddWithValue("@quantity", quantity);
+                    cmd.Parameters.AddWithValue("@total_price", getPrice(id) * quantity);
+                    cmd.Parameters.AddWithValue("@status", 0);
+                    //XLy
+                    cmd.Parameters.AddWithValue("@kind", temp);
+
+
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                myConnection.sqlcon.Close();
             }
-
-            myConnection.sqlcon.Close();
         }
 
         public void removeItem(int id, int id_order)
