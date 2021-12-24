@@ -186,6 +186,7 @@ namespace Beverage_Management_System.Presenters
 
         public void fillDataInComboBox_Goods(Guna.UI2.WinForms.Guna2ComboBox cb_Goods)
         {
+            list = new List<string>();
             getListOfAgency();
             for (int i = 0; i < list.Count(); i++)
             {

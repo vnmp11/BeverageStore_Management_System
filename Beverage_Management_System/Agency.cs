@@ -147,6 +147,7 @@ namespace Beverage_Management_System
             dtGridView_Agency.AllowUserToAddRows = true;
             presenter.searchData(dtGridView_Agency);
             dtGridView_Agency.AllowUserToAddRows = false;
+            if(guna2TextBox1.Text == "") if (dtGridView_Agency.Rows.Count > 0) dtGridView_Agency.CurrentCell.Selected = false;
         }
 
     }

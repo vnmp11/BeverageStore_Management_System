@@ -282,5 +282,17 @@ namespace Beverage_Management_System
             e.Graphics.DrawString("Thanks and see you next time!" , fnt, Brushes.Black, new PointF(320, y += dy));
 
         }
+
+        private void txb_searchMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txb_searchMenu.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
     }
 }

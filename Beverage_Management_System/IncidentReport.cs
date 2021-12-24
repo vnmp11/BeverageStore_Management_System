@@ -46,14 +46,7 @@ namespace Beverage_Management_System
 
             AddReport report = new AddReport(id_orderform, reason, solution, fine, date);
             report.Show();
-            report.FormClosing += (s, a) =>
-            {
-                dataGV_Report.AllowUserToAddRows = true;
-                dataGV_Report.Rows.Clear();
-                p.showListReport(dataGV_Report);
-                dataGV_Report.AllowUserToAddRows = false;
-                if (dataGV_Report.Rows.Count > 0) dataGV_Report.CurrentCell.Selected = false;
-            };
+         
         }
 
         private void txb_Search_KeyDown(object sender, KeyEventArgs e)

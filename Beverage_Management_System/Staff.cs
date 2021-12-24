@@ -109,6 +109,7 @@ namespace Beverage_Management_System
             dtGridView_Staff.AllowUserToAddRows = true;
             presenter.searchData(dtGridView_Staff);
             dtGridView_Staff.AllowUserToAddRows = false;
+            if(txt_Search.Text == "") if (dtGridView_Staff.Rows.Count > 0) dtGridView_Staff.CurrentCell.Selected = false; 
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)
@@ -121,11 +122,6 @@ namespace Beverage_Management_System
                 }
                 else MyMessageBox.showBox("The result of searching is below", "Message");
             }
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

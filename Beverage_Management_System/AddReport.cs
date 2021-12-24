@@ -35,6 +35,8 @@ namespace Beverage_Management_System
             pre = new IncidentReportPresenter(this);
             pre.setInformation(id_orderform, reason, solution, fine, date,
                 txb_Fine, txb_Reason, txb_Solution, cb_idOrderBill, dateTime);
+            btt_SubmitReport.Visible = false;
+            btt_delete.Visible = false;
 
         }
 
@@ -168,6 +170,11 @@ namespace Beverage_Management_System
             {
                 btt_SubmitReport.PerformClick();
             }
+        }
+
+        private void AddReport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

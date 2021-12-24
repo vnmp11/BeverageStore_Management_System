@@ -94,6 +94,7 @@ namespace Beverage_Management_System
             dataGV.AllowUserToAddRows = true;
             presenter.searchData(dataGV);
             dataGV.AllowUserToAddRows = false;
+            if(txt_Search.Text == "") if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)

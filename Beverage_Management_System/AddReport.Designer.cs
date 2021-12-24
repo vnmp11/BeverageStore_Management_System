@@ -79,7 +79,6 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(20, 20);
             this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(44, 58);
             this.guna2ImageButton1.TabIndex = 125;
@@ -351,6 +350,7 @@ namespace Beverage_Management_System
             this.Name = "AddReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddReport_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddReport_KeyDown);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

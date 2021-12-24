@@ -30,6 +30,7 @@ namespace Beverage_Management_System
                 dataGV_Report.AllowUserToAddRows = true;
                 p.showListReport(dataGV_Report);
                 dataGV_Report.AllowUserToAddRows = false;
+                if (dataGV_Report.Rows.Count > 0) dataGV_Report.CurrentCell.Selected = false;
             }
             else
             {

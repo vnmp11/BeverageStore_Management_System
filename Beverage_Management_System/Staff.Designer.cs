@@ -70,7 +70,6 @@ namespace Beverage_Management_System
             this.label12.Size = new System.Drawing.Size(261, 52);
             this.label12.TabIndex = 23;
             this.label12.Text = "ALL STAFF";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel6
             // 

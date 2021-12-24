@@ -95,7 +95,7 @@ namespace Beverage_Management_System
                 };
 
             }
-            else MyMessageBox.showBox("Please choose a product whom you want to delete!", "Message");
+            else MyMessageBox.showBox("Please choose a goods which you want to delete!", "Message");
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -120,8 +120,8 @@ namespace Beverage_Management_System
             //dataGridView_Goods.Rows.Clear();
             dataGridView_Goods.AllowUserToAddRows = true;
             presenter.searchData(dataGridView_Goods,idtemp);
-            Console.WriteLine(idtemp);
             dataGridView_Goods.AllowUserToAddRows = false;
+            if(guna2TextBox1.Text == "") if (dataGridView_Goods.Rows.Count > 0) dataGridView_Goods.CurrentCell.Selected = false;
         }
 
         private void dataGridView_Goods_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
