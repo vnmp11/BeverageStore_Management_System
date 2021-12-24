@@ -129,7 +129,7 @@ namespace Beverage_Management_System
         {
             Menu menu = (Menu)this.Parent.Parent;
             AddQuatity qty = new AddQuatity();
-            int current_qty = p.getQuantity(id);
+            int current_qty = p.getQuantity(id, id_order.ToString());
             qty.txb_quantity.Text = current_qty.ToString();
             qty.Show();
 

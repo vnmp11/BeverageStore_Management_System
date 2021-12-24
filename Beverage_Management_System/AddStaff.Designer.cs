@@ -509,6 +509,7 @@ namespace Beverage_Management_System
             this.btt_close.Name = "btt_close";
             this.btt_close.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.btt_close.PressedState.Parent = this.btt_close;
+            this.btt_close.PressedState.ImageSize = new System.Drawing.Size(20, 20);
             this.btt_close.ShadowDecoration.Parent = this.btt_close;
             this.btt_close.Size = new System.Drawing.Size(44, 58);
             this.btt_close.TabIndex = 51;

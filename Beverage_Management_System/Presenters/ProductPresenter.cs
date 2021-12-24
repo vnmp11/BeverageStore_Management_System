@@ -58,9 +58,10 @@ namespace Beverage_Management_System.Presenters
 
             if (checkItem(id, id_orderform))
             {
-               
-                int qty = getQuantity(id);
-             
+                int qty = getQuantity(id, id_orderform);
+                MessageBox.Show("qty hiện tại: "+ qty.ToString());
+
+
                 SqlCommand cmd = new SqlCommand("Update DETAILS_ORDERFORM set QUANTITY=@quantity, TOTAL_PRICE=@total_price where ID_PRODUCT like '"+ id + "';",
                     myConnection.sqlcon);
                 cmd.Parameters.AddWithValue("@quantity", qty+quantity);
@@ -70,6 +71,8 @@ namespace Beverage_Management_System.Presenters
             }
             else
             {
+                MessageBox.Show("vao else");
+
                 string date_create = DateTime.Now.ToString("yyyy-MM-dd");
                 SqlCommand cmd = new SqlCommand("Insert into DETAILS_ORDERFORM( ID_PRODUCT, ID_ORDERFORM,QUANTITY,TOTAL_PRICE, STATUSb,KIND) " +
                     "values (@id_product,@id_orderform,@quantity, @total_price, @status, @kind );",
@@ -105,7 +108,7 @@ namespace Beverage_Management_System.Presenters
 
         public void removeItem(int id, int id_order)
         {
-            updateInStock(id, getQuantity(id));
+            updateInStock(id, getQuantity(id, id_order.ToString()));
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
@@ -192,6 +195,7 @@ namespace Beverage_Management_System.Presenters
 
             SqlCommand cmd = new SqlCommand("Select * from PRODUCT where ID_PRODUCT like '" + id_product + "';",
                    myConnection.sqlcon);
+
             SqlDataReader sdr = cmd.ExecuteReader();
             sdr.Read();
             int price = (int)sdr["PRICE"];
@@ -201,14 +205,17 @@ namespace Beverage_Management_System.Presenters
             return price;
         }
 
-        public int getQuantity(int id_product)
+        public int getQuantity(int id_product, String id_orderform)
         {
 
             MyConnection myConnection = new MyConnection();
             myConnection.sqlcon.Open();
 
-            SqlCommand cmd = new SqlCommand("Select * from DETAILS_ORDERFORM where ID_PRODUCT like '" + id_product + "';",
+            SqlCommand cmd = new SqlCommand("Select * from DETAILS_ORDERFORM where ID_PRODUCT=@id and ID_ORDERFORM=@id_order;",
                    myConnection.sqlcon);
+            cmd.Parameters.AddWithValue("@id", id_product);
+            cmd.Parameters.AddWithValue("@id_order", id_orderform);
+
             SqlDataReader sdr = cmd.ExecuteReader();
             sdr.Read();
             int quantity = (int)sdr["QUANTITY"];

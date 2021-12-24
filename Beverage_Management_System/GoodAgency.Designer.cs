@@ -292,6 +292,7 @@ namespace Beverage_Management_System
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
+            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(20, 20);
             this.guna2ImageButton2.ShadowDecoration.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.Size = new System.Drawing.Size(44, 56);
             this.guna2ImageButton2.TabIndex = 108;

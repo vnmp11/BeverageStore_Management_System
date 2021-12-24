@@ -58,6 +58,7 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.HoverState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(20, 20);
             this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
@@ -160,6 +161,7 @@ namespace Beverage_Management_System
             this.btt_minus.Name = "btt_minus";
             this.btt_minus.PressedState.Image = global::Beverage_Management_System.Properties.Resources.minus2;
             this.btt_minus.PressedState.Parent = this.btt_minus;
+            this.btt_minus.PressedState.ImageSize = new System.Drawing.Size(20, 20);
             this.btt_minus.ShadowDecoration.Parent = this.btt_minus;
             this.btt_minus.Size = new System.Drawing.Size(44, 56);
             this.btt_minus.TabIndex = 110;
@@ -181,6 +183,7 @@ namespace Beverage_Management_System
             this.btt_plus.Name = "btt_plus";
             this.btt_plus.PressedState.Image = global::Beverage_Management_System.Properties.Resources.add1;
             this.btt_plus.PressedState.Parent = this.btt_plus;
+            this.btt_plus.PressedState.ImageSize = new System.Drawing.Size(20, 20);
             this.btt_plus.ShadowDecoration.Parent = this.btt_plus;
             this.btt_plus.Size = new System.Drawing.Size(44, 56);
             this.btt_plus.TabIndex = 110;

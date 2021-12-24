@@ -138,7 +138,7 @@ namespace Beverage_Management_System
 
                 qty.btt_ok.Click += (s, a) => {
                     Guna.UI2.WinForms.Guna2TextBox c = menu.txb_IdOrder;
-
+                    MessageBox.Show("quantity: " + qty.txbQuantity);
                     pre.addItem(this.idProduct, c.Text, int.Parse(qty.txbQuantity));
                     menu.reloadFlowLayout();
                     menu.showTotal();

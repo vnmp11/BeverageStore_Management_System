@@ -64,6 +64,7 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.HoverState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(20, 20);
             this.guna2ImageButton1.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;

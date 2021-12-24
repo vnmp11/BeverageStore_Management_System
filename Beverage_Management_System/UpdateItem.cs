@@ -72,7 +72,7 @@ namespace Beverage_Management_System
         {
 
             ProductPresenter p = new ProductPresenter();
-            p.addItem(id_item, id_order.ToString(), int.Parse(txb_quantity.Text) - p.getQuantity(id_item));
+            p.addItem(id_item, id_order.ToString(), int.Parse(txb_quantity.Text) - p.getQuantity(id_item, id_order.ToString()));
             this.Close();
         }
         

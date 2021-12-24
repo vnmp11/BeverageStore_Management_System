@@ -90,8 +90,8 @@ namespace Beverage_Management_System
             // btt_unvisible
             // 
             this.btt_unvisible.CheckedState.Parent = this.btt_unvisible;
-            this.btt_unvisible.HoverState.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
-            this.btt_unvisible.HoverState.ImageSize = new System.Drawing.Size(15, 15);
+            this.btt_unvisible.HoverState.Image = global::Beverage_Management_System.Properties.Resources.visibility;
+            this.btt_unvisible.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.btt_unvisible.HoverState.Parent = this.btt_unvisible;
             this.btt_unvisible.Image = global::Beverage_Management_System.Properties.Resources.visibility;
             this.btt_unvisible.ImageOffset = new System.Drawing.Point(0, 0);
@@ -101,6 +101,8 @@ namespace Beverage_Management_System
             this.btt_unvisible.Location = new System.Drawing.Point(401, 232);
             this.btt_unvisible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_unvisible.Name = "btt_unvisible";
+            this.btt_unvisible.PressedState.Image = global::Beverage_Management_System.Properties.Resources.visibility;
+            this.btt_unvisible.PressedState.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_unvisible.PressedState.Parent = this.btt_unvisible;
             this.btt_unvisible.ShadowDecoration.Parent = this.btt_unvisible;
             this.btt_unvisible.Size = new System.Drawing.Size(50, 46);
@@ -110,7 +112,10 @@ namespace Beverage_Management_System
             // btt_visible
             // 
             this.btt_visible.CheckedState.Parent = this.btt_visible;
-            this.btt_visible.HoverState.Image = global::Beverage_Management_System.Properties.Resources.view;
+            this.btt_visible.HoverState.Image = global::Beverage_Management_System.Properties.Resources.visibility__1_;
+            this.btt_visible.PressedState.Image = global::Beverage_Management_System.Properties.Resources.visibility__1_;
+            this.btt_visible.PressedState.ImageSize = new System.Drawing.Size(25, 25);
+            this.btt_visible.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.btt_visible.HoverState.Parent = this.btt_visible;
             this.btt_visible.Image = global::Beverage_Management_System.Properties.Resources.visibility__1_;
             this.btt_visible.ImageOffset = new System.Drawing.Point(0, 0);
@@ -138,7 +143,7 @@ namespace Beverage_Management_System
             this.txt_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Password.FocusedState.Parent = this.txt_Password;
-            this.txt_Password.Font = new System.Drawing.Font("Segoe UI Symbol", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI Symbol", 8.059701F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.txt_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Password.HoverState.Parent = this.txt_Password;
@@ -165,7 +170,7 @@ namespace Beverage_Management_System
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.label11.Location = new System.Drawing.Point(24, 68);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(231, 50);
+            this.label11.Size = new System.Drawing.Size(221, 47);
             this.label11.TabIndex = 24;
             this.label11.Text = "Get Started!";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,7 +184,7 @@ namespace Beverage_Management_System
             this.bt_Login.CustomImages.Parent = this.bt_Login;
             this.bt_Login.DisabledState.Parent = this.bt_Login;
             this.bt_Login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.bt_Login.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Login.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Login.ForeColor = System.Drawing.Color.White;
             this.bt_Login.HoverState.Parent = this.bt_Login;
             this.bt_Login.Location = new System.Drawing.Point(155, 348);
@@ -246,12 +251,15 @@ namespace Beverage_Management_System
             // 
             this.btt_unvisible2.CheckedState.Parent = this.btt_unvisible2;
             this.btt_unvisible2.HoverState.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
+            this.btt_unvisible2.HoverState.ImageSize = new System.Drawing.Size(15, 15);
             this.btt_unvisible2.HoverState.Parent = this.btt_unvisible2;
             this.btt_unvisible2.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
             this.btt_unvisible2.ImageOffset = new System.Drawing.Point(0, 0);
             this.btt_unvisible2.ImageRotate = 0F;
             this.btt_unvisible2.Location = new System.Drawing.Point(404, 258);
             this.btt_unvisible2.Name = "btt_unvisible2";
+            this.btt_unvisible2.PressedState.Image = global::Beverage_Management_System.Properties.Resources.visibility__2_;
+            this.btt_unvisible2.PressedState.ImageSize = new System.Drawing.Size(10, 10);
             this.btt_unvisible2.PressedState.Parent = this.btt_unvisible2;
             this.btt_unvisible2.ShadowDecoration.Parent = this.btt_unvisible2;
             this.btt_unvisible2.Size = new System.Drawing.Size(32, 23);
@@ -262,12 +270,15 @@ namespace Beverage_Management_System
             // 
             this.btt_visible2.CheckedState.Parent = this.btt_visible2;
             this.btt_visible2.HoverState.Image = global::Beverage_Management_System.Properties.Resources.view;
+            this.btt_visible2.HoverState.ImageSize = new System.Drawing.Size(15, 15);
             this.btt_visible2.HoverState.Parent = this.btt_visible2;
             this.btt_visible2.Image = global::Beverage_Management_System.Properties.Resources.view;
             this.btt_visible2.ImageOffset = new System.Drawing.Point(0, 0);
             this.btt_visible2.ImageRotate = 0F;
             this.btt_visible2.Location = new System.Drawing.Point(404, 258);
             this.btt_visible2.Name = "btt_visible2";
+            this.btt_visible2.PressedState.Image = global::Beverage_Management_System.Properties.Resources.view;
+            this.btt_visible2.PressedState.ImageSize = new System.Drawing.Size(10, 10);
             this.btt_visible2.PressedState.Parent = this.btt_visible2;
             this.btt_visible2.ShadowDecoration.Parent = this.btt_visible2;
             this.btt_visible2.Size = new System.Drawing.Size(32, 23);
