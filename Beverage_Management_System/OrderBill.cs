@@ -118,9 +118,21 @@ namespace Beverage_Management_System
         }
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
-            dataGV.AllowUserToAddRows = true;
-            presenter.searchBill(dataGV);
-            dataGV.AllowUserToAddRows = false;
+            if(txt_Search.Text != "")
+            {
+                dataGV.AllowUserToAddRows = true;
+                presenter.searchBill(dataGV);
+                dataGV.AllowUserToAddRows = false;
+            }
+            else
+            {
+                dataGV.AllowUserToAddRows = true;
+                dataGV.Rows.Clear();
+                presenter.setDataGV(dataGV);
+                if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
+                dataGV.AllowUserToAddRows = false;
+            }
+           
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -176,6 +188,23 @@ namespace Beverage_Management_System
             //e.Graphics.DrawString("Items Quantity: " + lb_QtyItem.Text, fnt, Brushes.Black, new PointF(x, y));
             //y += dy;
             e.Graphics.DrawString("Thanks and see you next time!", fnt, Brushes.Black, new PointF(320, y += dy));
+        }
+
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_Search.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
+        }
+
+        private void txt_Search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

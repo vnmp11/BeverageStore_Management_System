@@ -338,13 +338,9 @@ namespace Beverage_Management_System.Presenters
             List<MOrderForm> orderlist = new List<MOrderForm>();
             dtGridView_OrderForm.Rows.Clear();
 
-            int id = 0;
-            for(int j = 0; j < waiters.Count; j++)
-            {
-                if (waiters[j].getNAME().Contains(search) == true) id = waiters[j].getID();
-            }
-
-            string querry = "Select * from ORDERFORM  where (ID_ORDERFORM like '" + search + "%' and STATUS = 0 and TOTAL_PRICE != 0) or (ID_WAITER = '" + id + "' and STATUS = 0 and TOTAL_PRICE != 0);";
+            string querry = "Select O.ID_ORDERFORM, O.ID_WAITER, O.STATUS, O.TOTAL_PRICE, P.NAME " +
+                "from ORDERFORM O join PERSON P on O.ID_WAITER = P.ID_PERSON " +
+                "where (ID_ORDERFORM like '" + search + "%' and STATUS = 0 and TOTAL_PRICE != 0) or (P.NAME like '" + search + "%' and STATUS = 0 and TOTAL_PRICE != 0);";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);

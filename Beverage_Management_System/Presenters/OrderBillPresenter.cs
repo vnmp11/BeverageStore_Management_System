@@ -246,19 +246,10 @@ namespace Beverage_Management_System.Presenters
             List<MOrderBill> list = new List<MOrderBill>();
             dataGV.Rows.Clear();
 
-            int id = 0;
-            for (int j = 0; j < bartenders.Count; j++)
-            {
-                if (bartenders[j].getNAME().Contains(orderBillView.search) == true)
-                {
-                    id = bartenders[j].getID();
-                }
-            }
-
-
-            string querry = "Select * from ORDER_BILL where STATUS = 0 and (ID_ORDER_BILL like '" + orderBillView.search + "%' or " +
-                "ID_ORDER_FORM like '" + orderBillView.search + "%' or " +
-                "ID_BARTENDER = '" + id + "');";
+            string querry = "Select O.ID_ORDER_BILL, O.ID_ORDER_FORM, O.ID_BARTENDER, O.ID_ACCOUNTANT, " +
+                "O.TOTAL_PRICE_PRODUCTS, O.FINE, O.DATE_CRE, O.TOTAL_PRICE, O.TOTAL_QUANTITY, P.NAME from ORDER_BILL O join PERSON P on O.ID_BARTENDER = P.ID_PERSON " +
+                "where STATUS = 0 and (ID_ORDER_BILL like '" + orderBillView.search + "%' or " +
+                "ID_ORDER_FORM like '" + orderBillView.search + "%' or P.NAME like '" + orderBillView.search + "%');";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);

@@ -128,10 +128,22 @@ namespace Beverage_Management_System
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
-            DtaGridView_IGF.AllowUserToAddRows = true;
-            if (id == 0) presenter.searchDataInImporForms(DtaGridView_IGF, 1, txt_Search.Text);
-            else presenter.searchDataInImporForms(DtaGridView_IGF, 0, txt_Search.Text);
-            DtaGridView_IGF.AllowUserToAddRows = false;
+            if(txt_Search.Text != "")
+            {
+                DtaGridView_IGF.AllowUserToAddRows = true;
+                if (id == 0) presenter.searchDataInImporForms(DtaGridView_IGF, 1, txt_Search.Text);
+                else presenter.searchDataInImporForms(DtaGridView_IGF, 0, txt_Search.Text);
+                DtaGridView_IGF.AllowUserToAddRows = false;
+            }
+            else
+            {
+                DtaGridView_IGF.AllowUserToAddRows = true;
+                if (id == 0) presenter.searchDataInImporForms(DtaGridView_IGF, 1, txt_Search.Text);
+                else presenter.searchDataInImporForms(DtaGridView_IGF, 0, txt_Search.Text);
+                if (DtaGridView_IGF.Rows.Count > 0) DtaGridView_IGF.CurrentCell.Selected = false;
+                DtaGridView_IGF.AllowUserToAddRows = false;
+            }
+           
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)

@@ -192,7 +192,7 @@ namespace Beverage_Management_System
             this.lb_Details.ForeColor = System.Drawing.Color.White;
             this.lb_Details.Location = new System.Drawing.Point(862, 236);
             this.lb_Details.Name = "lb_Details";
-            this.lb_Details.Size = new System.Drawing.Size(449, 78);
+            this.lb_Details.Size = new System.Drawing.Size(449, 63);
             this.lb_Details.TabIndex = 105;
             this.lb_Details.Text = "DETAILS";
             this.lb_Details.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,10 +204,10 @@ namespace Beverage_Management_System
             this.fLayoutPl_Details.AutoScroll = true;
             this.fLayoutPl_Details.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.fLayoutPl_Details.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Details.Location = new System.Drawing.Point(860, 316);
+            this.fLayoutPl_Details.Location = new System.Drawing.Point(860, 301);
             this.fLayoutPl_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Details.Name = "fLayoutPl_Details";
-            this.fLayoutPl_Details.Size = new System.Drawing.Size(451, 598);
+            this.fLayoutPl_Details.Size = new System.Drawing.Size(451, 613);
             this.fLayoutPl_Details.TabIndex = 104;
             // 
             // txt_Search
@@ -236,7 +236,7 @@ namespace Beverage_Management_System
             this.txt_Search.PlaceholderText = "Search ID or ID Bill or Bartender";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(315, 62);
+            this.txt_Search.Size = new System.Drawing.Size(342, 62);
             this.txt_Search.TabIndex = 100;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);

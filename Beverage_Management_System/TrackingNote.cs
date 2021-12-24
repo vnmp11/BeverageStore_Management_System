@@ -46,9 +46,20 @@ namespace Beverage_Management_System
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
-            dataGV.AllowUserToAddRows = true;
-            presenter.searchNote(dataGV);
-            dataGV.AllowUserToAddRows = false;
+            if(txt_Search.Text != "")
+            {
+                dataGV.AllowUserToAddRows = true;
+                presenter.searchNote(dataGV);
+                dataGV.AllowUserToAddRows = false;
+            }
+            else
+            {
+                dataGV.AllowUserToAddRows = true;
+                dataGV.Rows.Clear();
+                presenter.setDataGV(dataGV);
+                if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
+                dataGV.AllowUserToAddRows = false;
+            }
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)
@@ -61,6 +72,11 @@ namespace Beverage_Management_System
                 }
                 else MyMessageBox.showBox("The result of searching is below", "Message");
             }
+        }
+
+        private void txt_Search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

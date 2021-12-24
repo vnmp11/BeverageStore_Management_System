@@ -120,9 +120,21 @@ namespace Beverage_Management_System
 
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
-            dtGridView_OrderForm.AllowUserToAddRows = true;
-            od.searchData(dtGridView_OrderForm, txt_Search.Text);
-            dtGridView_OrderForm.AllowUserToAddRows = false;
+            if(txt_Search.Text != "")
+            {
+                dtGridView_OrderForm.AllowUserToAddRows = true;
+                od.searchData(dtGridView_OrderForm, txt_Search.Text);
+                dtGridView_OrderForm.AllowUserToAddRows = false;
+            }
+            else
+            {
+                dtGridView_OrderForm.AllowUserToAddRows = true;
+                dtGridView_OrderForm.Rows.Clear();
+                od.showOrderForm(dtGridView_OrderForm);
+                if (dtGridView_OrderForm.Rows.Count > 0) dtGridView_OrderForm.CurrentCell.Selected = false;
+                dtGridView_OrderForm.AllowUserToAddRows = false;
+            }
+            
         }
     }
 }

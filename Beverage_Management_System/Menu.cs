@@ -182,6 +182,8 @@ namespace Beverage_Management_System
                     }
                    print.Close();
                     o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
+                    layoutPl_product.Controls.Clear();
+                    showProduct(0);
                     MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
                     p.addOrderForm(idperson);
                     txb_IdOrder.Text = p.show_id();
@@ -193,6 +195,8 @@ namespace Beverage_Management_System
                 {
                     print.Close();
                     o.updateTotalOrderForm(int.Parse(txb_IdOrder.Text), int.Parse(lb_total.Text.Replace(",", "")), int.Parse(lb_QtyItem.Text));
+                    layoutPl_product.Controls.Clear();
+                    showProduct(0);
                     MyMessageBox.showBox("Created Order No." + txb_IdOrder.Text);
                     p.addOrderForm(idperson);
                     txb_IdOrder.Text = p.show_id();

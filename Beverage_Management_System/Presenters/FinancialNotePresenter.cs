@@ -33,6 +33,16 @@ namespace Beverage_Management_System.Presenters
             setDataGVGoodsImportBill_Fill(dataGV_Goods_Import_Bill);
         }
 
+        public void setDataGV1(Guna.UI2.WinForms.Guna2DataGridView dataGV_Order_Bill)
+        {
+            setDataGVOrderBill_Fill(dataGV_Order_Bill);
+        }
+
+        public void setDataGV2(Guna.UI2.WinForms.Guna2DataGridView dataGV_Goods_Import_Bill)
+        {
+            setDataGVGoodsImportBill_Fill(dataGV_Goods_Import_Bill);
+        }
+
         public void setDataGVOrderBill_Fill(Guna.UI2.WinForms.Guna2DataGridView dataGV_Order_Bill)
         {
             MyConnection myConnection = new MyConnection();
@@ -213,18 +223,10 @@ namespace Beverage_Management_System.Presenters
             List<MOrderBill> list = new List<MOrderBill>();
             dataGV_Order_Bill.Rows.Clear();
 
-            int id = 0;
-            for (int j = 0; j < accountants.Count; j++)
-            {
-                if (accountants[j].getNAME().Contains(financialNoteView.search_OrderBill) == true)
-                {
-                    id = accountants[j].getID();
-                }
-            }
-
-            string querry = "Select * from ORDER_BILL where STATUS = 1 and (ID_ORDER_BILL like '" + financialNoteView.search_OrderBill + "%' or " +
-                    "ID_ORDER_FORM like '" + financialNoteView.search_OrderBill + "%' or " +
-                    "ID_ACCOUNTANT = '" + id + "');";
+            string querry = "Select O.ID_ORDER_BILL, O.ID_ORDER_FORM, O.ID_BARTENDER, O.ID_ACCOUNTANT, " +
+                "O.TOTAL_PRICE_PRODUCTS, O.FINE, O.DATE_CON, O.TOTAL_PRICE, P.NAME from ORDER_BILL O join PERSON P on O.ID_ACCOUNTANT = P.ID_PERSON " +
+                "where STATUS = 1 and (O.ID_ORDER_BILL like '" + financialNoteView.search_OrderBill + "%' or " +
+                    "O.ID_ORDER_FORM like '" + financialNoteView.search_OrderBill + "%' or P.NAME like '" + financialNoteView.search_OrderBill + "%');";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -256,7 +258,7 @@ namespace Beverage_Management_System.Presenters
                 row.Cells[1].Value = list[i].getID_ORDER_FORM();
                 for (int j = 0; j < accountants.Count(); j++)
                 {
-                    if (accountants[j].getID() == orderBills[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
+                    if (accountants[j].getID() == list[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
                 }
                 row.Cells[3].Value = list[i].getDATE_CONFIRM();
                 row.Cells[4].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");
@@ -275,19 +277,10 @@ namespace Beverage_Management_System.Presenters
             List<MGoodsImportBill> list = new List<MGoodsImportBill>();
             dataGV_Goods_Import_Bill.Rows.Clear();
 
-            int id = 0;
-            for (int j = 0; j < accountants.Count; j++)
-            {
-                if (accountants[j].getNAME().Contains(financialNoteView.search_GoodImportBill) == true)
-                {
-                    id = accountants[j].getID();
-                }
-            }
-
-
-            string querry = "Select * from GOODS_IMPORT_BILL where STATUS = 1 and (ID_GOODS_IMPORT_BILL like '" + financialNoteView.search_GoodImportBill + "%' or " +
-                "ID_GOODS_IMPORT_FORM like '" + financialNoteView.search_GoodImportBill + "%' or " +
-                "ID_ACCOUNTANT = '" + id + "');";
+            string querry = "Select G.ID_GOODS_IMPORT_BILL, G.ID_GOODS_IMPORT_FORM, G.ID_BARTENDER, G.ID_ACCOUNTANT, " +
+                "G.DATE_CON, G.TOTAL_PRICE, P.NAME from GOODS_IMPORT_BILL G join PERSON P on G.ID_ACCOUNTANT = P.ID_PERSON " +
+                "where STATUS = 1 and (ID_GOODS_IMPORT_BILL like '" + financialNoteView.search_GoodImportBill + "%' or " +
+                "ID_GOODS_IMPORT_FORM like '" + financialNoteView.search_GoodImportBill + "%' or P.NAME like '" + financialNoteView.search_GoodImportBill + "%');";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -317,7 +310,7 @@ namespace Beverage_Management_System.Presenters
                 row.Cells[1].Value = list[i].getID_GOODS_IMPORT_FORM();
                 for (int j = 0; j < accountants.Count(); j++)
                 {
-                    if (accountants[j].getID() == goodsImportBills[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
+                    if (accountants[j].getID() == list[i].getID_ACCOUNTANT()) row.Cells[2].Value = accountants[j].getNAME();
                 }
                 row.Cells[3].Value = list[i].getDATE_CONFIRM();
                 row.Cells[4].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");

@@ -227,19 +227,10 @@ namespace Beverage_Management_System.Presenters
             List<MGoodsImportBill> list = new List<MGoodsImportBill>();
             dataGV.Rows.Clear();
 
-            int id = 0;
-            for (int j = 0; j < bartenders.Count; j++)
-            {
-                if (bartenders[j].getNAME().Contains(goodsImportBillView.search) == true)
-                {
-                    id = bartenders[j].getID();
-                }
-            }
-
-
-            string querry = "Select * from GOODS_IMPORT_BILL where STATUS = 0 and (ID_GOODS_IMPORT_BILL like '" + goodsImportBillView.search + "%' or " +
-                "ID_GOODS_IMPORT_FORM like '" + goodsImportBillView.search + "%' or " +
-                "ID_BARTENDER = '" + id + "');";
+            string querry = "Select G.ID_GOODS_IMPORT_BILL, G.ID_GOODS_IMPORT_FORM, G.ID_BARTENDER, G.ID_ACCOUNTANT, " +
+                "G.DATE_CRE, G.TOTAL_PRICE, P.NAME from GOODS_IMPORT_BILL G join PERSON P on G.ID_BARTENDER = P.ID_PERSON " +
+                "where STATUS = 0 and (ID_GOODS_IMPORT_BILL like '" + goodsImportBillView.search + "%' or " +
+                "ID_GOODS_IMPORT_FORM like '" + goodsImportBillView.search + "%' or P.NAME like '" + goodsImportBillView.search + "%');";
             SqlDataAdapter sda = new SqlDataAdapter(querry, myConnection.sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -269,7 +260,7 @@ namespace Beverage_Management_System.Presenters
                 row.Cells[1].Value = list[i].getID_GOODS_IMPORT_FORM();
                 for (int j = 0; j < bartenders.Count(); j++)
                 {
-                    if (bartenders[j].getID() == goodsImportBills[i].getID_BARTENDER()) row.Cells[2].Value = bartenders[j].getNAME();
+                    if (bartenders[j].getID() == list[i].getID_BARTENDER()) row.Cells[2].Value = bartenders[j].getNAME();
                 }
                 row.Cells[3].Value = list[i].getDATE_CREATE();
                 row.Cells[4].Value = list[i].getTOTAL_PRICE().ToString("###,###,##0");

@@ -182,10 +182,10 @@ namespace Beverage_Management_System
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fLayoutPl_Detail.AutoScroll = true;
             this.fLayoutPl_Detail.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Detail.Location = new System.Drawing.Point(719, 279);
+            this.fLayoutPl_Detail.Location = new System.Drawing.Point(719, 264);
             this.fLayoutPl_Detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fLayoutPl_Detail.Name = "fLayoutPl_Detail";
-            this.fLayoutPl_Detail.Size = new System.Drawing.Size(586, 485);
+            this.fLayoutPl_Detail.Size = new System.Drawing.Size(610, 500);
             this.fLayoutPl_Detail.TabIndex = 98;
             // 
             // panel1
@@ -198,7 +198,7 @@ namespace Beverage_Management_System
             this.panel1.Location = new System.Drawing.Point(720, 204);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(561, 71);
+            this.panel1.Size = new System.Drawing.Size(561, 62);
             this.panel1.TabIndex = 100;
             // 
             // lb_id_order
@@ -299,10 +299,10 @@ namespace Beverage_Management_System
             this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
-            this.txt_Search.PlaceholderText = "Search ID or Waiter";
+            this.txt_Search.PlaceholderText = "Search ID or Waiter\'s Full Name";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(270, 62);
+            this.txt_Search.Size = new System.Drawing.Size(319, 62);
             this.txt_Search.TabIndex = 102;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
