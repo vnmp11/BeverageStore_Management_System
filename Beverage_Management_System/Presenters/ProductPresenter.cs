@@ -59,7 +59,6 @@ namespace Beverage_Management_System.Presenters
             if (checkItem(id, id_orderform))
             {
                 int qty = getQuantity(id, id_orderform);
-                MessageBox.Show("qty hiện tại: "+ qty.ToString());
 
 
                 SqlCommand cmd = new SqlCommand("Update DETAILS_ORDERFORM set QUANTITY=@quantity, TOTAL_PRICE=@total_price where ID_PRODUCT like '"+ id + "';",
@@ -71,7 +70,6 @@ namespace Beverage_Management_System.Presenters
             }
             else
             {
-                MessageBox.Show("vao else");
 
                 string date_create = DateTime.Now.ToString("yyyy-MM-dd");
                 SqlCommand cmd = new SqlCommand("Insert into DETAILS_ORDERFORM( ID_PRODUCT, ID_ORDERFORM,QUANTITY,TOTAL_PRICE, STATUSb,KIND) " +

@@ -55,7 +55,7 @@ namespace Beverage_Management_System.Presenters
             }
         }
 
-        public bool handle_AddProduct(int id,
+        public int handle_AddProduct(int id,
             Guna.UI2.WinForms.Guna2ComboBox cb_Goods, Guna.UI2.WinForms.Guna2ComboBox cb_KindOfProduct,
             Guna.UI2.WinForms.Guna2ComboBox cb_Unit, Guna.UI2.WinForms.Guna2CirclePictureBox pB_Product,
             Image default_img)
@@ -69,7 +69,7 @@ namespace Beverage_Management_System.Presenters
                 if (picture.SequenceEqual(img) == true)
                 {
                     MyMessageBox.showBox("Please upload the product's image!", "Message");
-                    return false;
+                    return 0;
                 }
                 else
                 {
@@ -81,19 +81,20 @@ namespace Beverage_Management_System.Presenters
                     string unit = cb_Unit.SelectedItem.ToString();
                     int quantity = Int32.Parse(addProductView.quantity);
                     MProduct product = new MProduct(selected_productID, id_kind, id_goods, name, price, unit, quantity, img);
-                    if (addProduct(product, cb_Goods,
-                        cb_KindOfProduct, cb_Unit, pB_Product, default_img) == true) return true;
-                    else return false;
+                    int result = addProduct(product, cb_Goods,
+                        cb_KindOfProduct, cb_Unit, pB_Product, default_img);
+                    if (result > 0) return result;
+                    else return -1;
                 }
 
             }
             else
             {
                 MyMessageBox.showBox("Please fill in the product's information completely!", "Message");
-                return false;
+                return -1;
             }
         }
-        public bool addProduct(MProduct product,
+        public int addProduct(MProduct product,
             Guna.UI2.WinForms.Guna2ComboBox cb_Goods, Guna.UI2.WinForms.Guna2ComboBox cb_KindOfProduct,
             Guna.UI2.WinForms.Guna2ComboBox cb_Unit, Guna.UI2.WinForms.Guna2CirclePictureBox pB_Product,
             Image default_img)
@@ -117,14 +118,16 @@ namespace Beverage_Management_System.Presenters
                 int result = cmd.ExecuteNonQuery();
                 if (result > 0)
                 {
+                    myConnection.sqlcon.Close();
                     MyMessageBox.showBox("Update product's information successfully!", "Message");
-                    return true;
+                    return 2;
 
                 }
                 else
                 {
+                    myConnection.sqlcon.Close();
                     MyMessageBox.showBox("Failed! Please check your networking.", "Message");
-                    return false;
+                    return -1;
                 }
             }
             else
@@ -143,13 +146,15 @@ namespace Beverage_Management_System.Presenters
                 int result = cmd.ExecuteNonQuery();
                 if (result > 0)
                 {
+                    myConnection.sqlcon.Close();
                     MyMessageBox.showBox("Add product's information successfully!", "Message");
-                    return true;
+                    return 1;
                 }
                 else
                 {
+                    myConnection.sqlcon.Close();
                     MyMessageBox.showBox("Failed! Please check your networking.", "Message");
-                    return false;
+                    return -1;
                 }
 
             }

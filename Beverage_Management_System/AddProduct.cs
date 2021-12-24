@@ -78,11 +78,16 @@ namespace Beverage_Management_System
 
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            if (presenter.handle_AddProduct(id, cb_Goods, cb_KindOfProduct,
-                cb_Unit, pB_Product, default_img) == true)
+            int result = presenter.handle_AddProduct(id, cb_Goods, cb_KindOfProduct,
+                cb_Unit, pB_Product, default_img);
+            if (result == 1)
             {
                 presenter.refreshForm(txt_Name, txt_Price, txt_Quantity, cb_Goods,
                     cb_KindOfProduct, cb_Unit, pB_Product, default_img);
+                parent.refreshDataGV();
+            }
+            else if (result == 2)
+            {
                 parent.refreshDataGV();
             }
         }
