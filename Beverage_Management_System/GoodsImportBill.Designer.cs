@@ -40,17 +40,17 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_GOODS_IMPORT_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_BARTENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_CREATED = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_Details = new System.Windows.Forms.Label();
             this.fLayoutPl_Details = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.btt_Browse = new Guna.UI2.WinForms.Guna2Button();
             this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_GOODS_IMPORT_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_BARTENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_CREATED = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +91,7 @@ namespace Beverage_Management_System
             this.dataGV.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGV.EnableHeadersVisualStyles = false;
             this.dataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGV.Location = new System.Drawing.Point(53, 238);
+            this.dataGV.Location = new System.Drawing.Point(58, 183);
             this.dataGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
@@ -106,7 +106,7 @@ namespace Beverage_Management_System
             this.dataGV.RowHeadersVisible = false;
             this.dataGV.RowHeadersWidth = 70;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(748, 592);
+            this.dataGV.Size = new System.Drawing.Size(822, 688);
             this.dataGV.TabIndex = 99;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -130,101 +130,6 @@ namespace Beverage_Management_System
             this.dataGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
             this.dataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
-            // 
-            // lb_Details
-            // 
-            this.lb_Details.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.lb_Details.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Details.ForeColor = System.Drawing.Color.White;
-            this.lb_Details.Location = new System.Drawing.Point(835, 238);
-            this.lb_Details.Name = "lb_Details";
-            this.lb_Details.Size = new System.Drawing.Size(436, 41);
-            this.lb_Details.TabIndex = 108;
-            this.lb_Details.Text = "DETAILS";
-            this.lb_Details.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // fLayoutPl_Details
-            // 
-            this.fLayoutPl_Details.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.fLayoutPl_Details.AutoScroll = true;
-            this.fLayoutPl_Details.BackColor = System.Drawing.Color.White;
-            this.fLayoutPl_Details.Location = new System.Drawing.Point(828, 280);
-            this.fLayoutPl_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.fLayoutPl_Details.Name = "fLayoutPl_Details";
-            this.fLayoutPl_Details.Size = new System.Drawing.Size(479, 550);
-            this.fLayoutPl_Details.TabIndex = 107;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 10;
-            this.guna2Elipse1.TargetControl = this.lb_Details;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 22.02985F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label12.Location = new System.Drawing.Point(44, 46);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(495, 52);
-            this.label12.TabIndex = 109;
-            this.label12.Text = "GOODS IMPORT BILL";
-            // 
-            // btt_Browse
-            // 
-            this.btt_Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btt_Browse.BorderColor = System.Drawing.Color.Transparent;
-            this.btt_Browse.BorderRadius = 25;
-            this.btt_Browse.BorderThickness = 1;
-            this.btt_Browse.CheckedState.Parent = this.btt_Browse;
-            this.btt_Browse.CustomImages.Parent = this.btt_Browse;
-            this.btt_Browse.DisabledState.Parent = this.btt_Browse;
-            this.btt_Browse.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.btt_Browse.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btt_Browse.ForeColor = System.Drawing.Color.White;
-            this.btt_Browse.HoverState.Parent = this.btt_Browse;
-            this.btt_Browse.Image = global::Beverage_Management_System.Properties.Resources.confirm;
-            this.btt_Browse.Location = new System.Drawing.Point(1089, 851);
-            this.btt_Browse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btt_Browse.Name = "btt_Browse";
-            this.btt_Browse.ShadowDecoration.Parent = this.btt_Browse;
-            this.btt_Browse.Size = new System.Drawing.Size(182, 64);
-            this.btt_Browse.TabIndex = 106;
-            this.btt_Browse.Text = "BROWSE";
-            this.btt_Browse.Click += new System.EventHandler(this.btt_Browse_Click);
-            // 
-            // txt_Search
-            // 
-            this.txt_Search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.txt_Search.BorderRadius = 25;
-            this.txt_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Search.DefaultText = "";
-            this.txt_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Search.DisabledState.Parent = this.txt_Search;
-            this.txt_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Search.FocusedState.Parent = this.txt_Search;
-            this.txt_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Search.HoverState.Parent = this.txt_Search;
-            this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search1;
-            this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(53, 166);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
-            this.txt_Search.Name = "txt_Search";
-            this.txt_Search.PasswordChar = '\0';
-            this.txt_Search.PlaceholderText = "Search ID or ID Form or Bartender\'s Full Name";
-            this.txt_Search.SelectedText = "";
-            this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(430, 58);
-            this.txt_Search.TabIndex = 100;
-            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
-            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // ID
             // 
@@ -284,12 +189,107 @@ namespace Beverage_Management_System
             this.TOTAL_PRICE.ReadOnly = true;
             this.TOTAL_PRICE.Width = 170;
             // 
+            // lb_Details
+            // 
+            this.lb_Details.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.lb_Details.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Details.ForeColor = System.Drawing.Color.White;
+            this.lb_Details.Location = new System.Drawing.Point(909, 183);
+            this.lb_Details.Name = "lb_Details";
+            this.lb_Details.Size = new System.Drawing.Size(436, 41);
+            this.lb_Details.TabIndex = 108;
+            this.lb_Details.Text = "DETAILS";
+            this.lb_Details.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // fLayoutPl_Details
+            // 
+            this.fLayoutPl_Details.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fLayoutPl_Details.AutoScroll = true;
+            this.fLayoutPl_Details.BackColor = System.Drawing.Color.White;
+            this.fLayoutPl_Details.Location = new System.Drawing.Point(903, 226);
+            this.fLayoutPl_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fLayoutPl_Details.Name = "fLayoutPl_Details";
+            this.fLayoutPl_Details.Size = new System.Drawing.Size(479, 627);
+            this.fLayoutPl_Details.TabIndex = 107;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.TargetControl = this.lb_Details;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 22.02985F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.label12.Location = new System.Drawing.Point(52, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(495, 52);
+            this.label12.TabIndex = 109;
+            this.label12.Text = "GOODS IMPORT BILL";
+            // 
+            // btt_Browse
+            // 
+            this.btt_Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btt_Browse.BorderColor = System.Drawing.Color.Transparent;
+            this.btt_Browse.BorderRadius = 25;
+            this.btt_Browse.BorderThickness = 1;
+            this.btt_Browse.CheckedState.Parent = this.btt_Browse;
+            this.btt_Browse.CustomImages.Parent = this.btt_Browse;
+            this.btt_Browse.DisabledState.Parent = this.btt_Browse;
+            this.btt_Browse.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.btt_Browse.Font = new System.Drawing.Font("Times New Roman", 10.74627F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_Browse.ForeColor = System.Drawing.Color.White;
+            this.btt_Browse.HoverState.Parent = this.btt_Browse;
+            this.btt_Browse.Image = global::Beverage_Management_System.Properties.Resources.confirm;
+            this.btt_Browse.Location = new System.Drawing.Point(1163, 886);
+            this.btt_Browse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btt_Browse.Name = "btt_Browse";
+            this.btt_Browse.ShadowDecoration.Parent = this.btt_Browse;
+            this.btt_Browse.Size = new System.Drawing.Size(182, 64);
+            this.btt_Browse.TabIndex = 106;
+            this.btt_Browse.Text = "BROWSE";
+            this.btt_Browse.Click += new System.EventHandler(this.btt_Browse_Click);
+            // 
+            // txt_Search
+            // 
+            this.txt_Search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.txt_Search.BorderRadius = 25;
+            this.txt_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Search.DefaultText = "";
+            this.txt_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Search.DisabledState.Parent = this.txt_Search;
+            this.txt_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Search.FocusedState.Parent = this.txt_Search;
+            this.txt_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Search.HoverState.Parent = this.txt_Search;
+            this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search1;
+            this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.txt_Search.Location = new System.Drawing.Point(58, 111);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.txt_Search.Name = "txt_Search";
+            this.txt_Search.PasswordChar = '\0';
+            this.txt_Search.PlaceholderText = "Search ID or ID Form or Bartender\'s Full Name";
+            this.txt_Search.SelectedText = "";
+            this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
+            this.txt_Search.Size = new System.Drawing.Size(430, 58);
+            this.txt_Search.TabIndex = 100;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
+            // 
             // GoodsImportBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1356, 972);
+            this.ClientSize = new System.Drawing.Size(1430, 1049);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lb_Details);
             this.Controls.Add(this.fLayoutPl_Details);

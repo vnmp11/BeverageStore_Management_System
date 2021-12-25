@@ -327,7 +327,7 @@ namespace Beverage_Management_System
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ADDRESS.DefaultCellStyle = dataGridViewCellStyle10;
             this.ADDRESS.FillWeight = 10.06702F;
-            this.ADDRESS.HeaderText = "ADDRESS";
+            this.ADDRESS.HeaderText = "  ADDRESS";
             this.ADDRESS.MinimumWidth = 7;
             this.ADDRESS.Name = "ADDRESS";
             this.ADDRESS.ReadOnly = true;
@@ -338,11 +338,11 @@ namespace Beverage_Management_System
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ROLE.DefaultCellStyle = dataGridViewCellStyle11;
             this.ROLE.FillWeight = 25.24015F;
-            this.ROLE.HeaderText = "   ROLE";
+            this.ROLE.HeaderText = "        ROLE";
             this.ROLE.MinimumWidth = 7;
             this.ROLE.Name = "ROLE";
             this.ROLE.ReadOnly = true;
-            this.ROLE.Width = 120;
+            this.ROLE.Width = 150;
             // 
             // Staff
             // 

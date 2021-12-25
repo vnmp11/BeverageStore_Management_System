@@ -54,7 +54,7 @@ namespace Beverage_Management_System
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 22.02985F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label12.Location = new System.Drawing.Point(90, 49);
+            this.label12.Location = new System.Drawing.Point(52, 32);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(548, 52);
             this.label12.TabIndex = 99;
@@ -76,7 +76,7 @@ namespace Beverage_Management_System
             this.bt_Delete.ForeColor = System.Drawing.Color.White;
             this.bt_Delete.HoverState.Parent = this.bt_Delete;
             this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete2;
-            this.bt_Delete.Location = new System.Drawing.Point(936, 161);
+            this.bt_Delete.Location = new System.Drawing.Point(937, 119);
             this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
@@ -99,7 +99,7 @@ namespace Beverage_Management_System
             this.btt_Add.ForeColor = System.Drawing.Color.White;
             this.btt_Add.HoverState.Parent = this.btt_Add;
             this.btt_Add.Image = global::Beverage_Management_System.Properties.Resources.plus;
-            this.btt_Add.Location = new System.Drawing.Point(1061, 161);
+            this.btt_Add.Location = new System.Drawing.Point(1061, 119);
             this.btt_Add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btt_Add.Name = "btt_Add";
             this.btt_Add.ShadowDecoration.Parent = this.btt_Add;
@@ -127,7 +127,7 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search1;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(99, 161);
+            this.txt_Search.Location = new System.Drawing.Point(61, 119);
             this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
@@ -177,14 +177,14 @@ namespace Beverage_Management_System
             this.DtaGridView_IGF.DefaultCellStyle = dataGridViewCellStyle7;
             this.DtaGridView_IGF.EnableHeadersVisualStyles = false;
             this.DtaGridView_IGF.GridColor = System.Drawing.SystemColors.Control;
-            this.DtaGridView_IGF.Location = new System.Drawing.Point(99, 266);
+            this.DtaGridView_IGF.Location = new System.Drawing.Point(61, 214);
             this.DtaGridView_IGF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DtaGridView_IGF.Name = "DtaGridView_IGF";
             this.DtaGridView_IGF.ReadOnly = true;
             this.DtaGridView_IGF.RowHeadersVisible = false;
             this.DtaGridView_IGF.RowHeadersWidth = 60;
             this.DtaGridView_IGF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtaGridView_IGF.Size = new System.Drawing.Size(1256, 684);
+            this.DtaGridView_IGF.Size = new System.Drawing.Size(1294, 768);
             this.DtaGridView_IGF.TabIndex = 104;
             this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DtaGridView_IGF.ThemeStyle.AlternatingRowsStyle.Font = null;
