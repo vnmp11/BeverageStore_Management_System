@@ -108,6 +108,43 @@ namespace Beverage_Management_System
                 else MyMessageBox.showBox("The result of searching is below", "Message");
             }
         }
+
+        private void bt_Delete_Click_1(object sender, EventArgs e)
+        {
+            if (dataGV.SelectedCells.Count > 0)
+            {
+                AlertDialog dialog = new AlertDialog();
+                dialog.setMessage("Do you want to delete this product?");
+                dialog.Show();
+                dialog.btt_ok.Click += (s, a) =>
+                {
+                    int selected_index = dataGV.SelectedCells[0].RowIndex;
+                    DataGridViewRow selected_row = dataGV.Rows[selected_index];
+                    int id_choose = Convert.ToInt32(selected_row.Cells["ID"].Value);
+                    int result = presenter.deleteProduct(id_choose);
+                    if (result == 1)
+                    {
+                        dataGV.AllowUserToAddRows = true;
+                        dataGV.Rows.Clear();
+                        presenter.setDataGV(dataGV);
+                        dataGV.AllowUserToAddRows = false;
+                        if (dataGV.Rows.Count > 0) dataGV.CurrentCell.Selected = false;
+                        MyMessageBox.showBox("Delete this product successfully!", "Message");
+                    }
+                    else if (result == 0) MyMessageBox.showBox("You cannot delete this product because this action will affect the store's statistics", "Message");
+                    else MyMessageBox.showBox("Failed! Please check your networking.", "Message");
+                };
+
+            }
+            else MyMessageBox.showBox("Please choose a product which you want to delete!", "Message");
+            dataGV.AllowUserToAddRows = false;
+        }
+
+        private void btt_addProduct_Click(object sender, EventArgs e)
+        {
+            AddProduct frm = new AddProduct(this);
+            frm.ShowDialog();
+        }
     }
 
 }

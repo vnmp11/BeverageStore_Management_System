@@ -68,40 +68,12 @@ namespace Beverage_Management_System
 
         private void txt_SearchOrderBill_TextChanged(object sender, EventArgs e)
         {
-            if(txt_SearchOrderBill.Text != "")
-            {
-                dataGV_Order_Bill.AllowUserToAddRows = true;
-                presenter.searchOrderBill(dataGV_Order_Bill);
-                dataGV_Order_Bill.AllowUserToAddRows = false;
-            }
-            else
-            {
-                dataGV_Order_Bill.AllowUserToAddRows = true;
-                dataGV_Order_Bill.Rows.Clear();
-                presenter.setDataGV1(dataGV_Order_Bill);
-                if (dataGV_Order_Bill.Rows.Count > 0) dataGV_Order_Bill.CurrentCell.Selected = false;
-                dataGV_Order_Bill.AllowUserToAddRows = false;
-            }
-            
+
         }
 
         private void txt_SearchGoodsImportBill_TextChanged(object sender, EventArgs e)
         {
-            if(txt_SearchGoodsImportBill.Text != "")
-            {
-                dataGV_Goods_Import_Bill.AllowUserToAddRows = true;
-                presenter.searchGoodsImportBill(dataGV_Goods_Import_Bill);
-                dataGV_Goods_Import_Bill.AllowUserToAddRows = false;
-            }
-            else
-            {
-                dataGV_Goods_Import_Bill.AllowUserToAddRows = true;
-                dataGV_Goods_Import_Bill.Rows.Clear();
-                presenter.setDataGV2(dataGV_Goods_Import_Bill);
-                if (dataGV_Goods_Import_Bill.Rows.Count > 0) dataGV_Goods_Import_Bill.CurrentCell.Selected = false;
-                dataGV_Goods_Import_Bill.AllowUserToAddRows = false;
-            }
-            
+
         }
 
         private void txt_SearchOrderBill_KeyDown(object sender, KeyEventArgs e)
@@ -115,12 +87,29 @@ namespace Beverage_Management_System
                 else MyMessageBox.showBox("The result of searching is below", "Message");
             }
         }
+        private void txt_SearchOrderBill_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txt_SearchOrderBill.Text != "")
+            {
+                dataGV_Order_Bill.AllowUserToAddRows = true;
+                presenter.searchOrderBill(dataGV_Order_Bill);
+                dataGV_Order_Bill.AllowUserToAddRows = false;
+            }
+            else
+            {
+                dataGV_Order_Bill.AllowUserToAddRows = true;
+                dataGV_Order_Bill.Rows.Clear();
+                presenter.setDataGV1(dataGV_Order_Bill);
+                if (dataGV_Order_Bill.Rows.Count > 0) dataGV_Order_Bill.CurrentCell.Selected = false;
+                dataGV_Order_Bill.AllowUserToAddRows = false;
+            }
+        }
 
-        private void txt_SearchGoodsImportBill_KeyDown(object sender, KeyEventArgs e)
+        private void txt_SearchOrderBill_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (txt_SearchGoodsImportBill.Text == "")
+                if (txt_SearchOrderBill.Text == "")
                 {
                     MyMessageBox.showBox("Please enter something before searching", "Message");
                 }
@@ -128,14 +117,34 @@ namespace Beverage_Management_System
             }
         }
 
-        private void txt_SearchOrderBill_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_SearchGoodsImportBill_TextChanged_1(object sender, EventArgs e)
         {
-
+            if (txt_SearchGoodsImportBill.Text != "")
+            {
+                dataGV_Goods_Import_Bill.AllowUserToAddRows = true;
+                presenter.searchGoodsImportBill(dataGV_Goods_Import_Bill);
+                dataGV_Goods_Import_Bill.AllowUserToAddRows = false;
+            }
+            else
+            {
+                dataGV_Goods_Import_Bill.AllowUserToAddRows = true;
+                dataGV_Goods_Import_Bill.Rows.Clear();
+                presenter.setDataGV2(dataGV_Goods_Import_Bill);
+                if (dataGV_Goods_Import_Bill.Rows.Count > 0) dataGV_Goods_Import_Bill.CurrentCell.Selected = false;
+                dataGV_Goods_Import_Bill.AllowUserToAddRows = false;
+            }
         }
 
-        private void txt_SearchGoodsImportBill_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_SearchGoodsImportBill_KeyDown_1(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_SearchOrderBill.Text == "")
+                {
+                    MyMessageBox.showBox("Please enter something before searching", "Message");
+                }
+                else MyMessageBox.showBox("The result of searching is below", "Message");
+            }
         }
     }
 }

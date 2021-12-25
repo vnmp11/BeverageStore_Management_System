@@ -124,10 +124,7 @@ namespace Beverage_Management_System
             }
         }
 
-        private void guna2Button2_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
+      
 
         private void guna2Button2_Click_1(object sender, EventArgs e)
         {
@@ -148,6 +145,15 @@ namespace Beverage_Management_System
             txt_Price.Text = "";
             txt_Quantity.Text = "";
             pB_Product.Image = default_img;
+        }
+
+        private void guna2Button2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+            
         }
     }
 }

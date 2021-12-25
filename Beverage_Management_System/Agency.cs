@@ -119,7 +119,7 @@ namespace Beverage_Management_System
             }
             else
             {
-                MyMessageBox.showBox("Please choose a agency whom you want to delete!", "Message");
+                MyMessageBox.showBox("Please choose a agency which you want to update!", "Message");
             }
         }
         public void openAddAgencyForm(int id_choosed, Agency form)

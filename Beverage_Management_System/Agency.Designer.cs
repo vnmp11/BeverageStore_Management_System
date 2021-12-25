@@ -39,15 +39,15 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.dtGridView_Agency = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btt_Update = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btt_Update = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_Agency)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@ namespace Beverage_Management_System
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.label12.Location = new System.Drawing.Point(47, 26);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(217, 52);
+            this.label12.Size = new System.Drawing.Size(216, 52);
             this.label12.TabIndex = 26;
             this.label12.Text = "AGENCY";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -75,7 +75,7 @@ namespace Beverage_Management_System
             this.dtGridView_Agency.BackgroundColor = System.Drawing.Color.White;
             this.dtGridView_Agency.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridView_Agency.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -131,66 +131,6 @@ namespace Beverage_Management_System
             this.dtGridView_Agency.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.dtGridView_Agency.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtGridView_Agency.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_Agency_CellContentDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ID.FillWeight = 126.1364F;
-            this.ID.HeaderText = "  ID";
-            this.ID.MinimumWidth = 7;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 60;
-            // 
-            // NAME
-            // 
-            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NAME.DefaultCellStyle = dataGridViewCellStyle4;
-            this.NAME.FillWeight = 193.4091F;
-            this.NAME.HeaderText = "              NAME";
-            this.NAME.MinimumWidth = 7;
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            this.NAME.Width = 230;
-            // 
-            // ADDRESS
-            // 
-            this.ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ADDRESS.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ADDRESS.FillWeight = 16.81819F;
-            this.ADDRESS.HeaderText = "                                              ADDRESS";
-            this.ADDRESS.MinimumWidth = 8;
-            this.ADDRESS.Name = "ADDRESS";
-            this.ADDRESS.ReadOnly = true;
-            this.ADDRESS.Width = 570;
-            // 
-            // PHONE
-            // 
-            this.PHONE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PHONE.DefaultCellStyle = dataGridViewCellStyle6;
-            this.PHONE.FillWeight = 16.81819F;
-            this.PHONE.HeaderText = "          PHONE";
-            this.PHONE.MinimumWidth = 8;
-            this.PHONE.Name = "PHONE";
-            this.PHONE.ReadOnly = true;
-            this.PHONE.Width = 200;
-            // 
-            // ITEM
-            // 
-            this.ITEM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ITEM.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ITEM.FillWeight = 16.81819F;
-            this.ITEM.HeaderText = "              ITEM";
-            this.ITEM.MinimumWidth = 8;
-            this.ITEM.Name = "ITEM";
-            this.ITEM.ReadOnly = true;
-            this.ITEM.Width = 200;
             // 
             // btt_Update
             // 
@@ -295,6 +235,64 @@ namespace Beverage_Management_System
             this.guna2Button1.TabIndex = 28;
             this.guna2Button1.Text = "Add a new agency";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID.FillWeight = 126.1364F;
+            this.ID.HeaderText = " ID";
+            this.ID.MinimumWidth = 7;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 60;
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NAME.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NAME.FillWeight = 193.4091F;
+            this.NAME.HeaderText = "    NAME";
+            this.NAME.MinimumWidth = 7;
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            this.NAME.Width = 230;
+            // 
+            // ADDRESS
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ADDRESS.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ADDRESS.FillWeight = 16.81819F;
+            this.ADDRESS.HeaderText = "           ADDRESS";
+            this.ADDRESS.MinimumWidth = 8;
+            this.ADDRESS.Name = "ADDRESS";
+            this.ADDRESS.ReadOnly = true;
+            // 
+            // PHONE
+            // 
+            this.PHONE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PHONE.DefaultCellStyle = dataGridViewCellStyle6;
+            this.PHONE.FillWeight = 16.81819F;
+            this.PHONE.HeaderText = "     PHONE";
+            this.PHONE.MinimumWidth = 8;
+            this.PHONE.Name = "PHONE";
+            this.PHONE.ReadOnly = true;
+            this.PHONE.Width = 200;
+            // 
+            // ITEM
+            // 
+            this.ITEM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ITEM.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ITEM.FillWeight = 16.81819F;
+            this.ITEM.HeaderText = "       ITEM";
+            this.ITEM.MinimumWidth = 8;
+            this.ITEM.Name = "ITEM";
+            this.ITEM.ReadOnly = true;
+            this.ITEM.Width = 200;
             // 
             // Agency
             // 

@@ -23,6 +23,7 @@ namespace Beverage_Management_System
         public AddReport()
         {
             InitializeComponent();
+            dateTime.MaxDate = DateTime.Now.Date;
             pre = new IncidentReportPresenter(this);
             DateTime today = DateTime.Now.Date;
             dateTime.Value = today;

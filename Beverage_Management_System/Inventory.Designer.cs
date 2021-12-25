@@ -41,7 +41,6 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dataGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KIND = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@ namespace Beverage_Management_System
             this.UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.btt_addProduct = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@ namespace Beverage_Management_System
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::Beverage_Management_System.Properties.Resources.search__1_;
             this.txt_Search.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.txt_Search.Location = new System.Drawing.Point(63, 102);
+            this.txt_Search.Location = new System.Drawing.Point(63, 104);
             this.txt_Search.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
@@ -96,29 +96,6 @@ namespace Beverage_Management_System
             this.txt_Search.TabIndex = 32;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 25;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 9.134328F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = global::Beverage_Management_System.Properties.Resources.plus;
-            this.guna2Button1.Location = new System.Drawing.Point(1143, 102);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(224, 62);
-            this.guna2Button1.TabIndex = 24;
-            this.guna2Button1.Text = "Add a new product";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // dataGV
             // 
@@ -133,7 +110,7 @@ namespace Beverage_Management_System
             this.dataGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
@@ -209,7 +186,7 @@ namespace Beverage_Management_System
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.KIND.DefaultCellStyle = dataGridViewCellStyle14;
             this.KIND.FillWeight = 24.87153F;
-            this.KIND.HeaderText = "                KIND";
+            this.KIND.HeaderText = "     KIND";
             this.KIND.MinimumWidth = 7;
             this.KIND.Name = "KIND";
             this.KIND.ReadOnly = true;
@@ -221,7 +198,7 @@ namespace Beverage_Management_System
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ID_GOODS.DefaultCellStyle = dataGridViewCellStyle15;
             this.ID_GOODS.FillWeight = 26.45159F;
-            this.ID_GOODS.HeaderText = "  ID_GOODS";
+            this.ID_GOODS.HeaderText = " ID_GOODS";
             this.ID_GOODS.MinimumWidth = 7;
             this.ID_GOODS.Name = "ID_GOODS";
             this.ID_GOODS.ReadOnly = true;
@@ -233,7 +210,7 @@ namespace Beverage_Management_System
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.NAME.DefaultCellStyle = dataGridViewCellStyle16;
             this.NAME.FillWeight = 46.19893F;
-            this.NAME.HeaderText = "                   PRODUCT";
+            this.NAME.HeaderText = "PRODUCT";
             this.NAME.MinimumWidth = 7;
             this.NAME.Name = "NAME";
             this.NAME.ReadOnly = true;
@@ -241,15 +218,13 @@ namespace Beverage_Management_System
             // 
             // PRICE
             // 
-            this.PRICE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.PRICE.DefaultCellStyle = dataGridViewCellStyle17;
             this.PRICE.FillWeight = 24.85566F;
-            this.PRICE.HeaderText = "          PRICE";
+            this.PRICE.HeaderText = "      PRICE";
             this.PRICE.MinimumWidth = 7;
             this.PRICE.Name = "PRICE";
             this.PRICE.ReadOnly = true;
-            this.PRICE.Width = 180;
             // 
             // UNIT
             // 
@@ -257,7 +232,7 @@ namespace Beverage_Management_System
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.UNIT.DefaultCellStyle = dataGridViewCellStyle18;
             this.UNIT.FillWeight = 27.17766F;
-            this.UNIT.HeaderText = "        UNIT";
+            this.UNIT.HeaderText = "     UNIT";
             this.UNIT.MinimumWidth = 7;
             this.UNIT.Name = "UNIT";
             this.UNIT.ReadOnly = true;
@@ -277,7 +252,7 @@ namespace Beverage_Management_System
             // 
             // bt_Delete
             // 
-            this.bt_Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Delete.BackColor = System.Drawing.Color.Transparent;
             this.bt_Delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt_Delete.BorderRadius = 25;
@@ -290,14 +265,37 @@ namespace Beverage_Management_System
             this.bt_Delete.ForeColor = System.Drawing.Color.White;
             this.bt_Delete.HoverState.Parent = this.bt_Delete;
             this.bt_Delete.Image = global::Beverage_Management_System.Properties.Resources.delete2;
-            this.bt_Delete.Location = new System.Drawing.Point(984, 180);
+            this.bt_Delete.Location = new System.Drawing.Point(1018, 104);
             this.bt_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.ShadowDecoration.Parent = this.bt_Delete;
             this.bt_Delete.Size = new System.Drawing.Size(118, 62);
-            this.bt_Delete.TabIndex = 87;
+            this.bt_Delete.TabIndex = 129;
             this.bt_Delete.Text = "Delete";
-            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
+            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click_1);
+            // 
+            // btt_addProduct
+            // 
+            this.btt_addProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btt_addProduct.BorderColor = System.Drawing.Color.Transparent;
+            this.btt_addProduct.BorderRadius = 25;
+            this.btt_addProduct.BorderThickness = 1;
+            this.btt_addProduct.CheckedState.Parent = this.btt_addProduct;
+            this.btt_addProduct.CustomImages.Parent = this.btt_addProduct;
+            this.btt_addProduct.DisabledState.Parent = this.btt_addProduct;
+            this.btt_addProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.btt_addProduct.Font = new System.Drawing.Font("Times New Roman", 10.20895F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_addProduct.ForeColor = System.Drawing.Color.White;
+            this.btt_addProduct.HoverState.Parent = this.btt_addProduct;
+            this.btt_addProduct.Image = global::Beverage_Management_System.Properties.Resources.plus;
+            this.btt_addProduct.Location = new System.Drawing.Point(1143, 104);
+            this.btt_addProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btt_addProduct.Name = "btt_addProduct";
+            this.btt_addProduct.ShadowDecoration.Parent = this.btt_addProduct;
+            this.btt_addProduct.Size = new System.Drawing.Size(224, 62);
+            this.btt_addProduct.TabIndex = 128;
+            this.btt_addProduct.Text = "Add a new product";
+            this.btt_addProduct.Click += new System.EventHandler(this.btt_addProduct_Click);
             // 
             // Inventory
             // 
@@ -306,10 +304,10 @@ namespace Beverage_Management_System
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1430, 1049);
             this.Controls.Add(this.bt_Delete);
+            this.Controls.Add(this.btt_addProduct);
             this.Controls.Add(this.dataGV);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Inventory";
@@ -322,11 +320,9 @@ namespace Beverage_Management_System
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2TextBox txt_Search;
         public Guna.UI2.WinForms.Guna2DataGridView dataGV;
-        private Guna.UI2.WinForms.Guna2Button bt_Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn KIND;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_GOODS;
@@ -334,5 +330,7 @@ namespace Beverage_Management_System
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn UNIT;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
+        private Guna.UI2.WinForms.Guna2Button bt_Delete;
+        private Guna.UI2.WinForms.Guna2Button btt_addProduct;
     }
 }

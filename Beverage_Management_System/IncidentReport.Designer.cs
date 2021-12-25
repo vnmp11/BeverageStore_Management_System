@@ -40,16 +40,16 @@ namespace Beverage_Management_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGV_Report = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txb_Search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btt_addReport = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.ID_REPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_ORDER_FORM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.REASON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FINE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txb_Search = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btt_addReport = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_Report)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +65,7 @@ namespace Beverage_Management_System
             this.dataGV_Report.BackgroundColor = System.Drawing.Color.White;
             this.dataGV_Report.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGV_Report.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -134,86 +134,6 @@ namespace Beverage_Management_System
             this.dataGV_Report.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_Report_CellContentDoubleClick);
             this.dataGV_Report.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGV_Report_CellMouseDoubleClick);
             // 
-            // ID_REPORT
-            // 
-            this.ID_REPORT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID_REPORT.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ID_REPORT.FillWeight = 5F;
-            this.ID_REPORT.Frozen = true;
-            this.ID_REPORT.HeaderText = "  ID";
-            this.ID_REPORT.MinimumWidth = 8;
-            this.ID_REPORT.Name = "ID_REPORT";
-            this.ID_REPORT.ReadOnly = true;
-            this.ID_REPORT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID_REPORT.Width = 60;
-            // 
-            // ID_ORDER_FORM
-            // 
-            this.ID_ORDER_FORM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID_ORDER_FORM.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ID_ORDER_FORM.FillWeight = 7F;
-            this.ID_ORDER_FORM.Frozen = true;
-            this.ID_ORDER_FORM.HeaderText = "    ORDER FORM";
-            this.ID_ORDER_FORM.MinimumWidth = 7;
-            this.ID_ORDER_FORM.Name = "ID_ORDER_FORM";
-            this.ID_ORDER_FORM.ReadOnly = true;
-            this.ID_ORDER_FORM.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID_ORDER_FORM.Width = 200;
-            // 
-            // REASON
-            // 
-            this.REASON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.REASON.DefaultCellStyle = dataGridViewCellStyle5;
-            this.REASON.FillWeight = 50F;
-            this.REASON.HeaderText = "                  REASON";
-            this.REASON.MinimumWidth = 7;
-            this.REASON.Name = "REASON";
-            this.REASON.ReadOnly = true;
-            this.REASON.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.REASON.Width = 280;
-            // 
-            // SOLUTION
-            // 
-            this.SOLUTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SOLUTION.DefaultCellStyle = dataGridViewCellStyle6;
-            this.SOLUTION.FillWeight = 50F;
-            this.SOLUTION.HeaderText = "                SOLUTION";
-            this.SOLUTION.MinimumWidth = 7;
-            this.SOLUTION.Name = "SOLUTION";
-            this.SOLUTION.ReadOnly = true;
-            this.SOLUTION.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.SOLUTION.Width = 280;
-            // 
-            // FINE
-            // 
-            this.FINE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.FINE.DefaultCellStyle = dataGridViewCellStyle7;
-            this.FINE.FillWeight = 20F;
-            this.FINE.HeaderText = "          FINE";
-            this.FINE.MinimumWidth = 7;
-            this.FINE.Name = "FINE";
-            this.FINE.ReadOnly = true;
-            this.FINE.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FINE.Width = 180;
-            // 
-            // DATE
-            // 
-            this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DATE.DefaultCellStyle = dataGridViewCellStyle8;
-            this.DATE.FillWeight = 40F;
-            this.DATE.HeaderText = "          CREATED DATE";
-            this.DATE.MinimumWidth = 7;
-            this.DATE.Name = "DATE";
-            this.DATE.ReadOnly = true;
-            this.DATE.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DATE.Width = 270;
-            // 
             // txb_Search
             // 
             this.txb_Search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
@@ -237,10 +157,10 @@ namespace Beverage_Management_System
             this.txb_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txb_Search.Name = "txb_Search";
             this.txb_Search.PasswordChar = '\0';
-            this.txb_Search.PlaceholderText = "Search ID Report";
+            this.txb_Search.PlaceholderText = "Search ID or ID Order Form";
             this.txb_Search.SelectedText = "";
             this.txb_Search.ShadowDecoration.Parent = this.txb_Search;
-            this.txb_Search.Size = new System.Drawing.Size(230, 62);
+            this.txb_Search.Size = new System.Drawing.Size(294, 62);
             this.txb_Search.TabIndex = 126;
             this.txb_Search.TextChanged += new System.EventHandler(this.txb_Search_TextChanged);
             this.txb_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Search_KeyDown);
@@ -305,6 +225,82 @@ namespace Beverage_Management_System
             this.label12.Text = "INCIDENT REPORT";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // ID_REPORT
+            // 
+            this.ID_REPORT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_REPORT.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID_REPORT.FillWeight = 5F;
+            this.ID_REPORT.Frozen = true;
+            this.ID_REPORT.HeaderText = " ID";
+            this.ID_REPORT.MinimumWidth = 8;
+            this.ID_REPORT.Name = "ID_REPORT";
+            this.ID_REPORT.ReadOnly = true;
+            this.ID_REPORT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID_REPORT.Width = 60;
+            // 
+            // ID_ORDER_FORM
+            // 
+            this.ID_ORDER_FORM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID_ORDER_FORM.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ID_ORDER_FORM.FillWeight = 7F;
+            this.ID_ORDER_FORM.Frozen = true;
+            this.ID_ORDER_FORM.HeaderText = "   ORDER FORM";
+            this.ID_ORDER_FORM.MinimumWidth = 7;
+            this.ID_ORDER_FORM.Name = "ID_ORDER_FORM";
+            this.ID_ORDER_FORM.ReadOnly = true;
+            this.ID_ORDER_FORM.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID_ORDER_FORM.Width = 200;
+            // 
+            // REASON
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.REASON.DefaultCellStyle = dataGridViewCellStyle5;
+            this.REASON.FillWeight = 50F;
+            this.REASON.HeaderText = "   REASON";
+            this.REASON.MinimumWidth = 7;
+            this.REASON.Name = "REASON";
+            this.REASON.ReadOnly = true;
+            this.REASON.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SOLUTION
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SOLUTION.DefaultCellStyle = dataGridViewCellStyle6;
+            this.SOLUTION.FillWeight = 50F;
+            this.SOLUTION.HeaderText = "      SOLUTION";
+            this.SOLUTION.MinimumWidth = 7;
+            this.SOLUTION.Name = "SOLUTION";
+            this.SOLUTION.ReadOnly = true;
+            this.SOLUTION.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // FINE
+            // 
+            this.FINE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FINE.DefaultCellStyle = dataGridViewCellStyle7;
+            this.FINE.FillWeight = 20F;
+            this.FINE.HeaderText = "    FINE";
+            this.FINE.MinimumWidth = 7;
+            this.FINE.Name = "FINE";
+            this.FINE.ReadOnly = true;
+            this.FINE.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FINE.Width = 180;
+            // 
+            // DATE
+            // 
+            this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DATE.DefaultCellStyle = dataGridViewCellStyle8;
+            this.DATE.FillWeight = 40F;
+            this.DATE.HeaderText = "         CREATED DATE";
+            this.DATE.MinimumWidth = 7;
+            this.DATE.Name = "DATE";
+            this.DATE.ReadOnly = true;
+            this.DATE.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DATE.Width = 270;
+            // 
             // IncidentReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -332,12 +328,12 @@ namespace Beverage_Management_System
         public Guna.UI2.WinForms.Guna2DataGridView dataGV_Report;
         private Guna.UI2.WinForms.Guna2TextBox txb_Search;
         private Guna.UI2.WinForms.Guna2Button bt_Delete;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_REPORT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_ORDER_FORM;
         private System.Windows.Forms.DataGridViewTextBoxColumn REASON;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUTION;
         private System.Windows.Forms.DataGridViewTextBoxColumn FINE;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
-        private System.Windows.Forms.Label label12;
     }
 }

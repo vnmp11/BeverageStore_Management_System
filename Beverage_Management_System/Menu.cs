@@ -32,6 +32,7 @@ namespace Beverage_Management_System
             showDataCBbox();
             txb_IdOrder.Text = p.show_id();
             p.showItemOrder(txb_IdOrder.Text, pl_Order);
+            showTotal();
         }
 
         public void showTotal()

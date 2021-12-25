@@ -175,9 +175,9 @@ namespace Beverage_Management_System
             this.label9.Location = new System.Drawing.Point(44, 108);
             this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 24);
+            this.label9.Size = new System.Drawing.Size(145, 24);
             this.label9.TabIndex = 112;
-            this.label9.Text = "ID";
+            this.label9.Text = "ID Order Form";
             // 
             // label4
             // 

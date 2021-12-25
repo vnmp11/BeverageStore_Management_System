@@ -90,9 +90,10 @@ namespace Beverage_Management_System
             this.rb_Female.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb_Female.Name = "rb_Female";
             this.rb_Female.Size = new System.Drawing.Size(79, 21);
-            this.rb_Female.TabIndex = 11;
+            this.rb_Female.TabIndex = 35;
             this.rb_Female.Text = "Female";
             this.rb_Female.UseVisualStyleBackColor = true;
+            this.rb_Female.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rb_Female_KeyDown);
             // 
             // rb_Male
             // 
@@ -104,10 +105,11 @@ namespace Beverage_Management_System
             this.rb_Male.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb_Male.Name = "rb_Male";
             this.rb_Male.Size = new System.Drawing.Size(63, 21);
-            this.rb_Male.TabIndex = 11;
+            this.rb_Male.TabIndex = 34;
             this.rb_Male.TabStop = true;
             this.rb_Male.Text = "Male";
             this.rb_Male.UseVisualStyleBackColor = true;
+            this.rb_Male.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rb_Male_KeyDown);
             // 
             // label9
             // 
@@ -156,6 +158,7 @@ namespace Beverage_Management_System
             this.txt_Password.Location = new System.Drawing.Point(168, 261);
             this.txt_Password.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '●';
             this.txt_Password.PlaceholderText = "";
             this.txt_Password.SelectedText = "";
             this.txt_Password.ShadowDecoration.Parent = this.txt_Password;
@@ -287,7 +290,7 @@ namespace Beverage_Management_System
             this.txt_Phone.SelectedText = "";
             this.txt_Phone.ShadowDecoration.Parent = this.txt_Phone;
             this.txt_Phone.Size = new System.Drawing.Size(303, 55);
-            this.txt_Phone.TabIndex = 34;
+            this.txt_Phone.TabIndex = 37;
             this.txt_Phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Phone_KeyDown);
             this.txt_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox2_KeyPress);
             // 
@@ -315,10 +318,11 @@ namespace Beverage_Management_System
             this.rb_Accountant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb_Accountant.Name = "rb_Accountant";
             this.rb_Accountant.Size = new System.Drawing.Size(111, 23);
-            this.rb_Accountant.TabIndex = 42;
+            this.rb_Accountant.TabIndex = 39;
             this.rb_Accountant.TabStop = true;
             this.rb_Accountant.Text = "Accountant";
             this.rb_Accountant.UseVisualStyleBackColor = true;
+            this.rb_Accountant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rb_Accountant_KeyDown);
             // 
             // dtPicker_DOB
             // 
@@ -340,8 +344,9 @@ namespace Beverage_Management_System
             this.dtPicker_DOB.Name = "dtPicker_DOB";
             this.dtPicker_DOB.ShadowDecoration.Parent = this.dtPicker_DOB;
             this.dtPicker_DOB.Size = new System.Drawing.Size(303, 55);
-            this.dtPicker_DOB.TabIndex = 47;
+            this.dtPicker_DOB.TabIndex = 36;
             this.dtPicker_DOB.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            this.dtPicker_DOB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtPicker_DOB_KeyDown);
             // 
             // txt_Address
             // 
@@ -368,7 +373,7 @@ namespace Beverage_Management_System
             this.txt_Address.SelectedText = "";
             this.txt_Address.ShadowDecoration.Parent = this.txt_Address;
             this.txt_Address.Size = new System.Drawing.Size(303, 55);
-            this.txt_Address.TabIndex = 35;
+            this.txt_Address.TabIndex = 38;
             this.txt_Address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Address_KeyDown);
             // 
             // rb_Waiter
@@ -380,9 +385,10 @@ namespace Beverage_Management_System
             this.rb_Waiter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb_Waiter.Name = "rb_Waiter";
             this.rb_Waiter.Size = new System.Drawing.Size(80, 23);
-            this.rb_Waiter.TabIndex = 43;
+            this.rb_Waiter.TabIndex = 41;
             this.rb_Waiter.Text = "Waiter";
             this.rb_Waiter.UseVisualStyleBackColor = true;
+            this.rb_Waiter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rb_Waiter_KeyDown);
             // 
             // rb_Bartender
             // 
@@ -393,9 +399,10 @@ namespace Beverage_Management_System
             this.rb_Bartender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb_Bartender.Name = "rb_Bartender";
             this.rb_Bartender.Size = new System.Drawing.Size(101, 23);
-            this.rb_Bartender.TabIndex = 44;
+            this.rb_Bartender.TabIndex = 40;
             this.rb_Bartender.Text = "Bartender";
             this.rb_Bartender.UseVisualStyleBackColor = true;
+            this.rb_Bartender.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rb_Bartender_KeyDown);
             // 
             // label11
             // 

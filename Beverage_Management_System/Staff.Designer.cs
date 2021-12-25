@@ -45,6 +45,8 @@ namespace Beverage_Management_System
             this.panel6 = new System.Windows.Forms.Panel();
             this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
             this.dtGridView_Staff = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +56,6 @@ namespace Beverage_Management_System
             this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ROLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView_Staff)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +123,7 @@ namespace Beverage_Management_System
             this.dtGridView_Staff.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridView_Staff.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dtGridView_Staff.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -184,112 +184,6 @@ namespace Beverage_Management_System
             this.dtGridView_Staff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtGridView_Staff.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGridView_Staff_CellMouseDoubleClick);
             // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ID.FillWeight = 15F;
-            this.ID.HeaderText = "  ID";
-            this.ID.MinimumWidth = 7;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 60;
-            // 
-            // USERNAME
-            // 
-            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.USERNAME.DefaultCellStyle = dataGridViewCellStyle4;
-            this.USERNAME.FillWeight = 50F;
-            this.USERNAME.HeaderText = "   USERNAME";
-            this.USERNAME.MinimumWidth = 7;
-            this.USERNAME.Name = "USERNAME";
-            this.USERNAME.ReadOnly = true;
-            this.USERNAME.Width = 170;
-            // 
-            // PASSWORD
-            // 
-            this.PASSWORD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PASSWORD.DefaultCellStyle = dataGridViewCellStyle5;
-            this.PASSWORD.FillWeight = 8.825108F;
-            this.PASSWORD.HeaderText = "   PASSWORD";
-            this.PASSWORD.MinimumWidth = 7;
-            this.PASSWORD.Name = "PASSWORD";
-            this.PASSWORD.ReadOnly = true;
-            this.PASSWORD.Width = 160;
-            // 
-            // NAME
-            // 
-            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NAME.DefaultCellStyle = dataGridViewCellStyle6;
-            this.NAME.FillWeight = 11.18557F;
-            this.NAME.HeaderText = "       FULL NAME";
-            this.NAME.MinimumWidth = 7;
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            this.NAME.Width = 200;
-            // 
-            // DOB
-            // 
-            this.DOB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DOB.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DOB.FillWeight = 4.47423F;
-            this.DOB.HeaderText = "       DOB";
-            this.DOB.MinimumWidth = 7;
-            this.DOB.Name = "DOB";
-            this.DOB.ReadOnly = true;
-            this.DOB.Width = 130;
-            // 
-            // SEX
-            // 
-            this.SEX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SEX.DefaultCellStyle = dataGridViewCellStyle8;
-            this.SEX.FillWeight = 3.355673F;
-            this.SEX.HeaderText = "   SEX";
-            this.SEX.MinimumWidth = 7;
-            this.SEX.Name = "SEX";
-            this.SEX.ReadOnly = true;
-            this.SEX.Width = 90;
-            // 
-            // PHONE
-            // 
-            this.PHONE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PHONE.DefaultCellStyle = dataGridViewCellStyle9;
-            this.PHONE.FillWeight = 4.47423F;
-            this.PHONE.HeaderText = "      PHONE";
-            this.PHONE.MinimumWidth = 7;
-            this.PHONE.Name = "PHONE";
-            this.PHONE.ReadOnly = true;
-            this.PHONE.Width = 150;
-            // 
-            // ADDRESS
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ADDRESS.DefaultCellStyle = dataGridViewCellStyle10;
-            this.ADDRESS.FillWeight = 10.06702F;
-            this.ADDRESS.HeaderText = "         ADDRESS";
-            this.ADDRESS.MinimumWidth = 7;
-            this.ADDRESS.Name = "ADDRESS";
-            this.ADDRESS.ReadOnly = true;
-            // 
-            // ROLE
-            // 
-            this.ROLE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ROLE.DefaultCellStyle = dataGridViewCellStyle11;
-            this.ROLE.FillWeight = 25.24015F;
-            this.ROLE.HeaderText = " ROLE";
-            this.ROLE.MinimumWidth = 7;
-            this.ROLE.Name = "ROLE";
-            this.ROLE.ReadOnly = true;
-            this.ROLE.Width = 85;
-            // 
             // txt_Search
             // 
             this.txt_Search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
@@ -343,6 +237,112 @@ namespace Beverage_Management_System
             this.guna2Button4.TabIndex = 22;
             this.guna2Button4.Text = "Add a new staff member";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID.FillWeight = 15F;
+            this.ID.HeaderText = " ID";
+            this.ID.MinimumWidth = 7;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 60;
+            // 
+            // USERNAME
+            // 
+            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.USERNAME.DefaultCellStyle = dataGridViewCellStyle4;
+            this.USERNAME.FillWeight = 50F;
+            this.USERNAME.HeaderText = "  USERNAME";
+            this.USERNAME.MinimumWidth = 7;
+            this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
+            this.USERNAME.Width = 170;
+            // 
+            // PASSWORD
+            // 
+            this.PASSWORD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PASSWORD.DefaultCellStyle = dataGridViewCellStyle5;
+            this.PASSWORD.FillWeight = 8.825108F;
+            this.PASSWORD.HeaderText = " PASSWORD";
+            this.PASSWORD.MinimumWidth = 7;
+            this.PASSWORD.Name = "PASSWORD";
+            this.PASSWORD.ReadOnly = true;
+            this.PASSWORD.Width = 160;
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NAME.DefaultCellStyle = dataGridViewCellStyle6;
+            this.NAME.FillWeight = 11.18557F;
+            this.NAME.HeaderText = "      FULL NAME";
+            this.NAME.MinimumWidth = 7;
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            this.NAME.Width = 200;
+            // 
+            // DOB
+            // 
+            this.DOB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DOB.DefaultCellStyle = dataGridViewCellStyle7;
+            this.DOB.FillWeight = 4.47423F;
+            this.DOB.HeaderText = "       DOB";
+            this.DOB.MinimumWidth = 7;
+            this.DOB.Name = "DOB";
+            this.DOB.ReadOnly = true;
+            this.DOB.Width = 130;
+            // 
+            // SEX
+            // 
+            this.SEX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SEX.DefaultCellStyle = dataGridViewCellStyle8;
+            this.SEX.FillWeight = 3.355673F;
+            this.SEX.HeaderText = " SEX";
+            this.SEX.MinimumWidth = 7;
+            this.SEX.Name = "SEX";
+            this.SEX.ReadOnly = true;
+            this.SEX.Width = 90;
+            // 
+            // PHONE
+            // 
+            this.PHONE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PHONE.DefaultCellStyle = dataGridViewCellStyle9;
+            this.PHONE.FillWeight = 4.47423F;
+            this.PHONE.HeaderText = "    PHONE";
+            this.PHONE.MinimumWidth = 7;
+            this.PHONE.Name = "PHONE";
+            this.PHONE.ReadOnly = true;
+            this.PHONE.Width = 150;
+            // 
+            // ADDRESS
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ADDRESS.DefaultCellStyle = dataGridViewCellStyle10;
+            this.ADDRESS.FillWeight = 10.06702F;
+            this.ADDRESS.HeaderText = "ADDRESS";
+            this.ADDRESS.MinimumWidth = 7;
+            this.ADDRESS.Name = "ADDRESS";
+            this.ADDRESS.ReadOnly = true;
+            // 
+            // ROLE
+            // 
+            this.ROLE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ROLE.DefaultCellStyle = dataGridViewCellStyle11;
+            this.ROLE.FillWeight = 25.24015F;
+            this.ROLE.HeaderText = "   ROLE";
+            this.ROLE.MinimumWidth = 7;
+            this.ROLE.Name = "ROLE";
+            this.ROLE.ReadOnly = true;
+            this.ROLE.Width = 120;
             // 
             // Staff
             // 

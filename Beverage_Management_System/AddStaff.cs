@@ -217,5 +217,53 @@ namespace Beverage_Management_System
             rb_Waiter.Checked = false;
 
         }
+
+        private void rb_Accountant_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void rb_Bartender_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void rb_Waiter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void dtPicker_DOB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void rb_Male_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
+
+        private void rb_Female_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_Save.PerformClick();
+            }
+        }
     }
 }

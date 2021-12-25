@@ -130,6 +130,7 @@ namespace Beverage_Management_System
             DtaGridView_Warehouse.AllowUserToAddRows = true;
             presenter.searchData(DtaGridView_Warehouse);
             DtaGridView_Warehouse.AllowUserToAddRows = false;
+            if(guna2TextBox1.Text == "") if (DtaGridView_Warehouse.Rows.Count > 0) DtaGridView_Warehouse.CurrentCell.Selected = false;
         }
     }
 }
