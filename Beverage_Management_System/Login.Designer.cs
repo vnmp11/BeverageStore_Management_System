@@ -113,8 +113,6 @@ namespace Beverage_Management_System
             // 
             this.btt_visible.CheckedState.Parent = this.btt_visible;
             this.btt_visible.HoverState.Image = global::Beverage_Management_System.Properties.Resources.visibility__1_;
-            this.btt_visible.PressedState.Image = global::Beverage_Management_System.Properties.Resources.visibility__1_;
-            this.btt_visible.PressedState.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_visible.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.btt_visible.HoverState.Parent = this.btt_visible;
             this.btt_visible.Image = global::Beverage_Management_System.Properties.Resources.visibility__1_;
@@ -124,6 +122,8 @@ namespace Beverage_Management_System
             this.btt_visible.Location = new System.Drawing.Point(406, 241);
             this.btt_visible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_visible.Name = "btt_visible";
+            this.btt_visible.PressedState.Image = global::Beverage_Management_System.Properties.Resources.visibility__1_;
+            this.btt_visible.PressedState.ImageSize = new System.Drawing.Size(25, 25);
             this.btt_visible.PressedState.Parent = this.btt_visible;
             this.btt_visible.ShadowDecoration.Parent = this.btt_visible;
             this.btt_visible.Size = new System.Drawing.Size(36, 29);
@@ -162,6 +162,7 @@ namespace Beverage_Management_System
             this.txt_Password.Size = new System.Drawing.Size(365, 50);
             this.txt_Password.TabIndex = 2;
             this.txt_Password.TextOffset = new System.Drawing.Point(9, 0);
+            this.txt_Password.DoubleClick += new System.EventHandler(this.txt_Password_DoubleClick);
             // 
             // label11
             // 
@@ -170,7 +171,7 @@ namespace Beverage_Management_System
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
             this.label11.Location = new System.Drawing.Point(24, 68);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(221, 47);
+            this.label11.Size = new System.Drawing.Size(231, 50);
             this.label11.TabIndex = 24;
             this.label11.Text = "Get Started!";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -226,6 +227,7 @@ namespace Beverage_Management_System
             this.txt_Username.Size = new System.Drawing.Size(365, 50);
             this.txt_Username.TabIndex = 1;
             this.txt_Username.TextOffset = new System.Drawing.Point(9, 0);
+            this.txt_Username.DoubleClick += new System.EventHandler(this.txt_Username_DoubleClick);
             // 
             // btt_close
             // 

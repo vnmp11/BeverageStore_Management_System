@@ -155,5 +155,20 @@ namespace Beverage_Management_System
             }
             
         }
+
+        private void txt_Name_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Name.SelectAll(); 
+        }
+
+        private void txt_Quantity_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Quantity.SelectAll();
+        }
+
+        private void txt_Price_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Price.SelectAll();
+        }
     }
 }

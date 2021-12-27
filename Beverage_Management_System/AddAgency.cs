@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Beverage_Management_System
 {
@@ -119,6 +120,26 @@ namespace Beverage_Management_System
             {
                 guna2Button3.PerformClick();
             }
+        }
+
+        private void txt_Name_Agency_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Name_Agency.SelectAll();
+        }
+
+        private void txt_Address_Agency_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Address_Agency.SelectAll();
+        }
+
+        private void txt_Phone_Agency_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Phone_Agency.SelectAll();
+        }
+
+        private void txt_Item_Agency_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Item_Agency.SelectAll();
         }
     }
 }

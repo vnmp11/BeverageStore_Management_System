@@ -96,5 +96,15 @@ namespace Beverage_Management_System
             btt_unvisible.Show();
             txt_Password.UseSystemPasswordChar = true;
         }
+
+        private void txt_Username_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Username.SelectAll();
+        }
+
+        private void txt_Password_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Password.SelectAll();
+        }
     }
 }

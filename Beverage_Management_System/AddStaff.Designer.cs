@@ -165,6 +165,7 @@ namespace Beverage_Management_System
             this.txt_Password.Size = new System.Drawing.Size(303, 55);
             this.txt_Password.TabIndex = 32;
             this.txt_Password.UseSystemPasswordChar = true;
+            this.txt_Password.DoubleClick += new System.EventHandler(this.txt_Password_DoubleClick);
             this.txt_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Password_KeyDown);
             // 
             // label3
@@ -249,6 +250,7 @@ namespace Beverage_Management_System
             this.txt_Name.ShadowDecoration.Parent = this.txt_Name;
             this.txt_Name.Size = new System.Drawing.Size(303, 55);
             this.txt_Name.TabIndex = 33;
+            this.txt_Name.DoubleClick += new System.EventHandler(this.txt_Name_DoubleClick);
             this.txt_Name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Name_KeyDown);
             // 
             // label14
@@ -291,6 +293,7 @@ namespace Beverage_Management_System
             this.txt_Phone.ShadowDecoration.Parent = this.txt_Phone;
             this.txt_Phone.Size = new System.Drawing.Size(303, 55);
             this.txt_Phone.TabIndex = 37;
+            this.txt_Phone.DoubleClick += new System.EventHandler(this.txt_Phone_DoubleClick);
             this.txt_Phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Phone_KeyDown);
             this.txt_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox2_KeyPress);
             // 
@@ -374,6 +377,7 @@ namespace Beverage_Management_System
             this.txt_Address.ShadowDecoration.Parent = this.txt_Address;
             this.txt_Address.Size = new System.Drawing.Size(303, 55);
             this.txt_Address.TabIndex = 38;
+            this.txt_Address.DoubleClick += new System.EventHandler(this.txt_Address_DoubleClick);
             this.txt_Address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Address_KeyDown);
             // 
             // rb_Waiter
@@ -471,6 +475,7 @@ namespace Beverage_Management_System
             this.txt_Username.ShadowDecoration.Parent = this.txt_Username;
             this.txt_Username.Size = new System.Drawing.Size(303, 55);
             this.txt_Username.TabIndex = 31;
+            this.txt_Username.DoubleClick += new System.EventHandler(this.txt_Username_DoubleClick);
             this.txt_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Username_KeyDown);
             // 
             // label1

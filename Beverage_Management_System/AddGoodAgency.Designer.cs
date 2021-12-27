@@ -129,6 +129,7 @@ namespace Beverage_Management_System
             this.txt_Quantity_Good.ShadowDecoration.Parent = this.txt_Quantity_Good;
             this.txt_Quantity_Good.Size = new System.Drawing.Size(333, 50);
             this.txt_Quantity_Good.TabIndex = 119;
+            this.txt_Quantity_Good.DoubleClick += new System.EventHandler(this.txt_Quantity_Good_DoubleClick);
             this.txt_Quantity_Good.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Quantity_Good_KeyDown);
             this.txt_Quantity_Good.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Quantity_Good_KeyPress);
             // 
@@ -158,6 +159,7 @@ namespace Beverage_Management_System
             this.txt_Unit_Good.ShadowDecoration.Parent = this.txt_Unit_Good;
             this.txt_Unit_Good.Size = new System.Drawing.Size(333, 50);
             this.txt_Unit_Good.TabIndex = 118;
+            this.txt_Unit_Good.DoubleClick += new System.EventHandler(this.txt_Unit_Good_DoubleClick);
             this.txt_Unit_Good.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Unit_Good_KeyDown);
             // 
             // txt_Price_Good
@@ -186,6 +188,7 @@ namespace Beverage_Management_System
             this.txt_Price_Good.ShadowDecoration.Parent = this.txt_Price_Good;
             this.txt_Price_Good.Size = new System.Drawing.Size(333, 50);
             this.txt_Price_Good.TabIndex = 117;
+            this.txt_Price_Good.DoubleClick += new System.EventHandler(this.txt_Price_Good_DoubleClick);
             this.txt_Price_Good.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Price_Good_KeyDown);
             this.txt_Price_Good.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Price_Good_KeyPress);
             // 
@@ -264,7 +267,6 @@ namespace Beverage_Management_System
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Image = global::Beverage_Management_System.Properties.Resources.close;
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(20, 20);
             this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(44, 56);
             this.guna2ImageButton1.TabIndex = 122;
@@ -313,6 +315,7 @@ namespace Beverage_Management_System
             this.txt_Name_Good.ShadowDecoration.Parent = this.txt_Name_Good;
             this.txt_Name_Good.Size = new System.Drawing.Size(333, 50);
             this.txt_Name_Good.TabIndex = 116;
+            this.txt_Name_Good.DoubleClick += new System.EventHandler(this.txt_Name_Good_DoubleClick);
             // 
             // AddGoodAgency
             // 

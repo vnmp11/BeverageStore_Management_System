@@ -177,5 +177,20 @@ namespace Beverage_Management_System
         {
 
         }
+
+        private void txb_Fine_DoubleClick(object sender, EventArgs e)
+        {
+            txb_Fine.SelectAll();
+        }
+
+        private void txb_Reason_DoubleClick(object sender, EventArgs e)
+        {
+            txb_Reason.SelectAll();
+        }
+
+        private void txb_Solution_DoubleClick(object sender, EventArgs e)
+        {
+            txb_Solution.SelectAll();
+        }
     }
 }

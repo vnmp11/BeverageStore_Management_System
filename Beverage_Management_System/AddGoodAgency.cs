@@ -142,5 +142,25 @@ namespace Beverage_Management_System
                 guna2Button3.PerformClick();
             }
         }
+
+        private void txt_Name_Good_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Name_Good.SelectAll();
+        }
+
+        private void txt_Price_Good_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Price_Good.SelectAll();
+        }
+
+        private void txt_Unit_Good_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Unit_Good.SelectAll();
+        }
+
+        private void txt_Quantity_Good_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Quantity_Good.SelectAll();
+        }
     }
 }

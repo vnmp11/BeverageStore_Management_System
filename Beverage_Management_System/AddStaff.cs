@@ -265,5 +265,30 @@ namespace Beverage_Management_System
                 bt_Save.PerformClick();
             }
         }
+
+        private void txt_Username_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Username.SelectAll();
+        }
+
+        private void txt_Password_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Password.SelectAll();
+        }
+
+        private void txt_Name_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Name.SelectAll();
+        }
+
+        private void txt_Phone_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Phone.SelectAll();
+        }
+
+        private void txt_Address_DoubleClick(object sender, EventArgs e)
+        {
+            txt_Address.SelectAll();
+        }
     }
 }

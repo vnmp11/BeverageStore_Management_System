@@ -209,6 +209,7 @@ namespace Beverage_Management_System
             this.txt_Name.ShadowDecoration.Parent = this.txt_Name;
             this.txt_Name.Size = new System.Drawing.Size(264, 45);
             this.txt_Name.TabIndex = 83;
+            this.txt_Name.DoubleClick += new System.EventHandler(this.txt_Name_DoubleClick);
             this.txt_Name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Name_KeyDown);
             // 
             // txt_Price
@@ -237,6 +238,7 @@ namespace Beverage_Management_System
             this.txt_Price.ShadowDecoration.Parent = this.txt_Price;
             this.txt_Price.Size = new System.Drawing.Size(260, 45);
             this.txt_Price.TabIndex = 88;
+            this.txt_Price.DoubleClick += new System.EventHandler(this.txt_Price_DoubleClick);
             this.txt_Price.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Price_KeyDown);
             this.txt_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_KeyPress);
             // 
@@ -322,6 +324,7 @@ namespace Beverage_Management_System
             this.txt_Quantity.ShadowDecoration.Parent = this.txt_Quantity;
             this.txt_Quantity.Size = new System.Drawing.Size(260, 45);
             this.txt_Quantity.TabIndex = 87;
+            this.txt_Quantity.DoubleClick += new System.EventHandler(this.txt_Quantity_DoubleClick);
             this.txt_Quantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Quantity_KeyDown);
             this.txt_Quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox2_KeyPress);
             // 

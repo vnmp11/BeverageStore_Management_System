@@ -139,6 +139,7 @@ namespace Beverage_Management_System
             this.txb_Reason.Size = new System.Drawing.Size(368, 213);
             this.txb_Reason.TabIndex = 120;
             this.txb_Reason.Text = "";
+            this.txb_Reason.DoubleClick += new System.EventHandler(this.txb_Reason_DoubleClick);
             this.txb_Reason.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Reason_KeyDown);
             // 
             // dateTime
@@ -219,6 +220,7 @@ namespace Beverage_Management_System
             this.txb_Solution.Size = new System.Drawing.Size(402, 215);
             this.txb_Solution.TabIndex = 121;
             this.txb_Solution.Text = "";
+            this.txb_Solution.DoubleClick += new System.EventHandler(this.txb_Solution_DoubleClick);
             this.txb_Solution.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Solution_KeyDown);
             // 
             // label6
@@ -275,6 +277,7 @@ namespace Beverage_Management_System
             this.txb_Fine.Size = new System.Drawing.Size(226, 55);
             this.txb_Fine.TabIndex = 119;
             this.txb_Fine.TextChanged += new System.EventHandler(this.txb_Fine_TextChanged);
+            this.txb_Fine.DoubleClick += new System.EventHandler(this.txb_Fine_DoubleClick);
             this.txb_Fine.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Fine_KeyDown);
             this.txb_Fine.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_Fine_KeyPress);
             // 
