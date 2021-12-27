@@ -75,7 +75,7 @@ namespace Beverage_Management_System.Presenters
             myConnection.sqlcon.Close();
         }
 
-        public void addSupplier(AddAgency form)
+        public void addSupplier()
         {
             string name = addAgencyView.name.Trim();
             string phone = addAgencyView.phone.Trim();

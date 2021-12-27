@@ -63,7 +63,7 @@ namespace Beverage_Management_System
                   && txt_Phone_Agency.ToString().Trim() != "" && txt_Item_Agency.ToString().Trim() != "")
             {
                 AgencyPresenter agencyPresenter = new AgencyPresenter(this, id);
-                agencyPresenter.addSupplier(this);
+                agencyPresenter.addSupplier();
 
                 parent.refreshDataGV();
 
